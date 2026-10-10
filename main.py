@@ -8,7 +8,7 @@ def main():
     print("================================")
 
     removed = cleanup_expired_words()
-    print(f"Usunięte nieużywane słówka: {len(removed)}")
+    print(f"Usunięte słówka: {len(removed)}")
 
     test_words = [
         "pokaz mody",
@@ -33,9 +33,9 @@ def main():
             )
 
         if result["needs_translation"]:
-            print("Brak tłumaczenia — potrzebne dodatkowe źródło.")
+            print("Brak tłumaczenia w dostępnej bazie.")
 
-    print("\nTest zakończony.")
+    print("\nTest agenta zakończony.")
 
 
 if __name__ == "__main__":
