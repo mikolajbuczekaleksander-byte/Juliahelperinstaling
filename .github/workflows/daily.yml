@@ -5,6 +5,13 @@ on:
   schedule:
     - cron: "0 16 * * *"
 
+permissions:
+  contents: write
+
+concurrency:
+  group: instaling-helper
+  cancel-in-progress: false
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -12,6 +19,8 @@ jobs:
     steps:
       - name: Pobierz kod
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Skonfiguruj Pythona
         uses: actions/setup-python@v5
@@ -20,3 +29,19 @@ jobs:
 
       - name: Uruchom program
         run: python main.py
+
+      - name: Zapisz pamięć i słownik
+        run: |
+          mkdir -p data
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A data/
+
+          if git diff --cached --quiet; then
+            echo "Brak nowych danych do zapisania."
+          else
+            git commit -m "Aktualizacja pamięci i słownika"
+            git push origin HEAD:main
+          fi
