@@ -54,5 +54,20 @@
     "sources": [
       "dictionary"
     ]
+  },
+  "słowo testowe pamięci": {
+    "translations": [
+      {
+        "english": "memory test word",
+        "verified": true,
+        "source": "memory"
+      }
+    ],
+    "first_seen": "2026-10-10T20:18:20.608861+00:00",
+    "last_seen": "2026-10-10T20:18:20.609268+00:00",
+    "sources": [
+      "verified_feedback",
+      "memory"
+    ]
   }
 }

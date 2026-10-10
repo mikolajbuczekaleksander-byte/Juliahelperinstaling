@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "words": {
+    "{\"context\": \"test automatyczny\", \"polish\": \"słowo testowe pamięci\", \"word_count\": null}": {
+      "polish": "słowo testowe pamięci",
+      "context": "test automatyczny",
+      "word_count": null,
+      "accepted_answers": [
+        "memory test word"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "memory test word",
+          "result": "accepted",
+          "correction": null,
+          "session_id": "test-session-001",
+          "timestamp": "2026-10-10T20:18:20.608657+00:00"
+        }
+      ]
+    }
+  },
+  "sessions": {}
+}
