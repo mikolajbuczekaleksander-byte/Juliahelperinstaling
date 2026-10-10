@@ -1,0 +1,188 @@
+{
+  "pokaz mody": [
+    {
+      "english": "fashion show",
+      "words": 2
+    }
+  ],
+  "festiwal": [
+    {
+      "english": "festival",
+      "words": 1
+    }
+  ],
+  "trapez": [
+    {
+      "english": "trapeze",
+      "words": 1
+    }
+  ],
+  "do ćwiczeń": [
+    {
+      "english": "for practice",
+      "words": 2
+    }
+  ],
+  "wybieg": [
+    {
+      "english": "catwalk",
+      "words": 1
+    },
+    {
+      "english": "runway",
+      "words": 1
+    }
+  ],
+  "żongler": [
+    {
+      "english": "juggler",
+      "words": 1
+    }
+  ],
+  "żonglować": [
+    {
+      "english": "juggle",
+      "words": 1
+    }
+  ],
+  "model": [
+    {
+      "english": "model",
+      "words": 1
+    }
+  ],
+  "projektant mody": [
+    {
+      "english": "fashion designer",
+      "words": 2
+    }
+  ],
+  "pokaz": [
+    {
+      "english": "show",
+      "words": 1
+    },
+    {
+      "english": "performance",
+      "words": 1
+    }
+  ],
+  "kostium": [
+    {
+      "english": "costume",
+      "words": 1
+    }
+  ],
+  "strój": [
+    {
+      "english": "outfit",
+      "words": 1
+    },
+    {
+      "english": "costume",
+      "words": 1
+    }
+  ],
+  "publiczność": [
+    {
+      "english": "audience",
+      "words": 1
+    },
+    {
+      "english": "spectators",
+      "words": 1
+    }
+  ],
+  "występ": [
+    {
+      "english": "performance",
+      "words": 1
+    },
+    {
+      "english": "show",
+      "words": 1
+    }
+  ],
+  "cyrk": [
+    {
+      "english": "circus",
+      "words": 1
+    }
+  ],
+  "akrobata": [
+    {
+      "english": "acrobat",
+      "words": 1
+    }
+  ],
+  "akrobacja": [
+    {
+      "english": "acrobatics",
+      "words": 1
+    }
+  ],
+  "artysta": [
+    {
+      "english": "performer",
+      "words": 1
+    },
+    {
+      "english": "artist",
+      "words": 1
+    }
+  ],
+  "scena": [
+    {
+      "english": "stage",
+      "words": 1
+    }
+  ],
+  "widownia": [
+    {
+      "english": "audience",
+      "words": 1
+    }
+  ],
+  "brawa": [
+    {
+      "english": "applause",
+      "words": 1
+    }
+  ],
+  "kostium sceniczny": [
+    {
+      "english": "stage costume",
+      "words": 2
+    }
+  ],
+  "ubranie": [
+    {
+      "english": "clothing",
+      "words": 1
+    },
+    {
+      "english": "clothes",
+      "words": 1
+    }
+  ],
+  "elegancki": [
+    {
+      "english": "elegant",
+      "words": 1
+    },
+    {
+      "english": "stylish",
+      "words": 1
+    }
+  ],
+  "modny": [
+    {
+      "english": "fashionable",
+      "words": 1
+    },
+    {
+      "english": "trendy",
+      "words": 1
+    }
+  ]
+}
