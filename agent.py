@@ -4,6 +4,10 @@ from vocabulary import (
     get_word,
     cleanup_expired_words,
 )
+from memory import (
+    get_known_answers,
+    record_attempt,
+)
 
 
 def normalize(text):
@@ -11,15 +15,13 @@ def normalize(text):
 
 
 def get_word_count(text):
-    return len(text.split())
+    return len(str(text).split())
 
 
 def analyze_word(polish, context="", word_count=None):
     """
-    Analizuje słowo, sprawdza pamięć i słownik
-    oraz zapisuje nowe informacje.
-
-    Nie zgaduje odpowiedzi, jeśli nie ma tłumaczenia.
+    Analizuje słowo z wykorzystaniem słownika i pamięci.
+    Nie zgaduje, jeśli nie ma znanego tłumaczenia.
     """
     polish = normalize(polish)
 
@@ -30,15 +32,32 @@ def analyze_word(polish, context="", word_count=None):
             "translations": [],
         }
 
-    # Usuwanie słówek nieużywanych od ponad 30 dni.
     cleanup_expired_words()
 
-    # Odczyt wcześniej zapisanego słowa.
-    existing = get_word(polish)
+    known = get_known_answers(
+        polish,
+        context=context,
+        word_count=word_count,
+    )
 
+    existing = get_word(polish)
     candidates = []
 
-    # Wcześniej zapisane tłumaczenia.
+    # Najpierw odpowiedzi wcześniej zaakceptowane.
+    for answer in known["accepted_answers"]:
+        if (
+            word_count is not None
+            and get_word_count(answer) != word_count
+        ):
+            continue
+
+        candidates.append({
+            "answer": answer,
+            "source": "memory",
+            "verified": True,
+        })
+
+    # Następnie odpowiedzi zapisane w słowniku.
     if existing:
         for item in existing.get("translations", []):
             answer = item.get("english", "")
@@ -52,13 +71,19 @@ def analyze_word(polish, context="", word_count=None):
             ):
                 continue
 
+            if normalize(answer) in {
+                normalize(candidate["answer"])
+                for candidate in candidates
+            }:
+                continue
+
             candidates.append({
                 "answer": answer,
                 "source": item.get("source", "vocabulary"),
                 "verified": item.get("verified", False),
             })
 
-    # Pamięć odpowiedzi oraz słownik początkowy.
+    # Na końcu tłumaczenia znalezione przez translator.py.
     result = find_translations(
         polish,
         context=context,
@@ -80,8 +105,8 @@ def analyze_word(polish, context="", word_count=None):
             "verified": item["verified"],
         })
 
-    # Zapisujemy znalezione tłumaczenia.
-    # Nie oznaczamy propozycji jako potwierdzonych bez dowodu.
+    # Zapisujemy propozycje, ale nie oznaczamy ich
+    # jako potwierdzonych bez wiarygodnej informacji zwrotnej.
     for candidate in candidates:
         add_word(
             polish,
@@ -92,8 +117,6 @@ def analyze_word(polish, context="", word_count=None):
             source=candidate["source"],
         )
 
-    # Rejestrujemy także nowe słowo, dla którego
-    # nie udało się jeszcze znaleźć tłumaczenia.
     if not candidates:
         add_word(
             polish,
@@ -101,13 +124,12 @@ def analyze_word(polish, context="", word_count=None):
             source="awaiting_translation",
         )
 
-    if candidates:
-        status = "translations_found"
-    else:
-        status = "translation_needed"
-
     return {
-        "status": status,
+        "status": (
+            "translations_found"
+            if candidates
+            else "translation_needed"
+        ),
         "polish": polish,
         "context": context,
         "word_count": word_count,
@@ -116,46 +138,151 @@ def analyze_word(polish, context="", word_count=None):
     }
 
 
-if __name__ == "__main__":
-    polish = input("Podaj polskie słowo: ").strip()
+def learn_from_feedback(
+    polish,
+    answer,
+    accepted,
+    correction=None,
+    context="",
+    word_count=None,
+    session_id=None,
+):
+    """
+    Zapisuje wynik odpowiedzi.
 
-    context = input(
-        "Kontekst (opcjonalnie): "
-    ).strip()
+    accepted=True:
+        odpowiedź została zaakceptowana.
 
-    count_input = input(
-        "Wymagana liczba członów (opcjonalnie): "
-    ).strip()
+    accepted=False i correction:
+        odpowiedź odrzucono, a platforma pokazała poprawną.
 
-    word_count = (
-        int(count_input)
-        if count_input.isdigit()
-        else None
-    )
+    accepted=False bez correction:
+        wynik pozostaje niepewny.
+    """
+    if accepted:
+        result = "accepted"
+    elif correction and normalize(correction):
+        result = "rejected_with_correction"
+    else:
+        result = "uncertain"
 
-    result = analyze_word(
-        polish,
+    record_attempt(
+        polish=polish,
+        answer=answer,
+        result=result,
+        correction=correction,
         context=context,
         word_count=word_count,
+        session_id=session_id,
     )
 
-    print("\nWynik analizy:")
+    # Zapamiętujemy odpowiedź zaakceptowaną lub poprawkę
+    # przekazaną przez platformę.
+    if accepted:
+        add_word(
+            polish,
+            translations=[{
+                "english": answer,
+                "verified": True,
+            }],
+            source="verified_feedback",
+        )
 
-    if result["status"] == "error":
-        print(result["message"])
-    else:
-        print("Status:", result["status"])
+    elif correction and normalize(correction):
+        add_word(
+            polish,
+            translations=[{
+                "english": correction,
+                "verified": True,
+            }],
+            source="verified_feedback",
+        )
 
-        if result["translations"]:
-            for candidate in result["translations"]:
-                print(
-                    "-",
-                    candidate["answer"],
-                    "| źródło:",
-                    candidate["source"],
-                    "| potwierdzone:",
-                    candidate["verified"],
-                )
-        else:
-            print("Brak znanego tłumaczenia.")
-            print("Potrzebne jest dodatkowe źródło.")
+    return {
+        "polish": normalize(polish),
+        "answer": answer,
+        "result": result,
+        "correction": correction,
+        "saved": True,
+    }
+
+
+if __name__ == "__main__":
+    print("Instaling Helper — test agenta")
+    print("Wpisz polskie słowo, aby sprawdzić tłumaczenia.")
+    print("Aby zakończyć, wpisz: koniec")
+
+    while True:
+        polish = input("\nPolskie słowo: ").strip()
+
+        if normalize(polish) == "koniec":
+            break
+
+        context = input("Kontekst (opcjonalnie): ").strip()
+        count_input = input(
+            "Wymagana liczba członów (Enter = dowolna): "
+        ).strip()
+
+        word_count = (
+            int(count_input)
+            if count_input.isdigit()
+            else None
+        )
+
+        result = analyze_word(
+            polish,
+            context=context,
+            word_count=word_count,
+        )
+
+        print("\nWynik:", result["status"])
+
+        for candidate in result["translations"]:
+            print(
+                "-",
+                candidate["answer"],
+                "| źródło:",
+                candidate["source"],
+                "| potwierdzone:",
+                candidate["verified"],
+            )
+
+        if not result["translations"]:
+            print("Nie znaleziono tłumaczenia.")
+            continue
+
+        answer = input(
+            "\nKtórą odpowiedź sprawdzono? "
+            "(wpisz ją dokładnie): "
+        ).strip()
+
+        accepted_input = input(
+            "Czy Instaling zaakceptował odpowiedź? (t/n): "
+        ).strip().lower()
+
+        if accepted_input == "t":
+            learn_from_feedback(
+                polish,
+                answer,
+                accepted=True,
+                context=context,
+                word_count=word_count,
+            )
+            print("Zapisano zaakceptowaną odpowiedź.")
+
+        elif accepted_input == "n":
+            correction = input(
+                "Poprawna odpowiedź pokazana przez platformę "
+                "(Enter, jeśli jej nie pokazano): "
+            ).strip()
+
+            learn_from_feedback(
+                polish,
+                answer,
+                accepted=False,
+                correction=correction or None,
+                context=context,
+                word_count=word_count,
+            )
+
+            print("Zapisano wynik próby.")
