@@ -1,0 +1,32 @@
+name: Instaling Browser
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Pobierz kod
+        uses: actions/checkout@v4
+
+      - name: Skonfiguruj Pythona
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Zainstaluj Playwright
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install playwright
+
+      - name: Zainstaluj Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Otwórz Instaling i odczytaj stronę
+        run: python instaling_browser.py
