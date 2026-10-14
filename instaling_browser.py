@@ -889,30 +889,29 @@ class InstalingBrowser:
             "answer_selector": ANSWER_SELECTOR,
         }
 
-    def extract_polish_word(self, task):
+ def extract_polish_word(self, task):
         """
-        Rozpoznaje polskie słowo.
-
-        Jeśli format ekranu jest nieznany,
-        nie próbuje zgadywać.
+        Rozpoznaje słowo z treści zadania.
+        Zapisuje tekst ekranu w logach, jeśli nie znajdzie słowa.
         """
 
-        text = task["text"]
+        text = str(task.get("text", "") or "").strip()
+
+        if not text:
+            self.logger.warning("Brak tekstu zadania.")
+            return None
+
+        self.logger.info(
+            "TEKST EKRANU ZADANIA:\n%s",
+            text[:4000],
+        )
 
         patterns = (
-            (
-                r"(?:przetłumacz|przetlumacz)"
-                r"\s*:?\s*([^\n]+)"
-            ),
-            (
-                r"(?:po polsku|polskie słowo|"
-                r"polskie slowo)"
-                r"\s*:?\s*([^\n]+)"
-            ),
+            r"(?:przetłumacz|przetlumacz)\s*:?\s*([^\n]+)",
+            r"(?:po polsku|polskie słowo|polskie slowo)\s*:?\s*([^\n]+)",
         )
 
         for pattern in patterns:
-
             match = re.search(
                 pattern,
                 text,
@@ -923,15 +922,32 @@ class InstalingBrowser:
                 continue
 
             candidate = match.group(1).strip()
+            candidate = re.sub(r"\s+", " ", candidate)
 
-            if (
-                candidate
-                and len(candidate) < 100
-            ):
-
+            if candidate and len(candidate) < 100:
+                self.logger.info(
+                    "ROZPOZNANO SŁOWO: %s",
+                    candidate,
+                )
                 return candidate
 
+        self.logger.warning(
+            "Nie rozpoznano słowa. "
+            "Sprawdź tekst ekranu w artifacts/run.log."
+        )
+
+        self.save_observation({
+            "session_id": self.session_id,
+            "result": "word_not_detected",
+            "task_text": text,
+            "url": task.get("url"),
+            "timestamp": utc_timestamp(),
+        })
+
+        self.save_screenshot("word_not_detected.png")
+
         return None
+
 
     # --------------------------------------------------------
     # WYSZUKIWANIE PRZYCISKU SPRAWDZANIA
