@@ -1,21 +1,26 @@
 """
-Instaling Helper — przeglądarka, nagrywanie i testowa obsługa zadań.
+Instaling Helper — automatyzacja obserwacji sesji.
 
-Integracja:
-- agent.analyze_word()
-- agent.learn_from_feedback()
+Funkcje:
+- logowanie przez GitHub Secrets;
+- nagrywanie przeglądarki;
+- rozpoznawanie etapów otwierania sesji;
+- diagnostyka ekranu zadania;
+- pobieranie propozycji z agent.py;
+- zapisywanie obserwacji i wyników;
+- rozpoznawanie komunikatów zwrotnych;
+- zapisywanie potwierdzonych odpowiedzi.
 
-Tryb testowy:
-- maksymalnie 3 zadania;
-- brak losowego zgadywania odpowiedzi;
-- zapis wyników i logów;
-- nagrywanie przeglądarki.
+Uwaga:
+Selektory i rozpoznawanie tekstu należy zweryfikować
+na podstawie rzeczywistego ekranu InstaLing.
 """
 
 import os
 import re
 import json
 import logging
+
 from pathlib import Path
 from datetime import datetime
 
@@ -25,6 +30,7 @@ from playwright.sync_api import (
 )
 
 from agent import analyze_word, learn_from_feedback
+from memory import start_session, finish_session
 
 
 INSTALING_URL = "https://instaling.pl/"
@@ -70,6 +76,7 @@ class InstalingBrowser:
         self.browser = None
         self.context = None
         self.page = None
+
         self.logger = setup_logging()
 
         self.session_id = datetime.now().strftime(
@@ -77,8 +84,11 @@ class InstalingBrowser:
         )
 
         self.task_count = 0
+        self.session_started = False
 
     def start(self):
+        """Uruchamia przeglądarkę i nagrywanie."""
+
         ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
         VIDEO_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -120,25 +130,29 @@ class InstalingBrowser:
 
         return self.page.url
 
-    def save_screenshot(self, name="instaling.png"):
-        if self.page is None:
+    def save_screenshot(self, name):
+        """Zapisuje zrzut ekranu."""
+
+        if not self.page:
             return
 
         ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
 
-        destination = ARTIFACTS_DIR / name
+        path = ARTIFACTS_DIR / name
 
         self.page.screenshot(
-            path=str(destination),
+            path=str(path),
             full_page=True,
         )
 
         self.logger.info(
             "Zapisano zrzut ekranu: %s",
-            destination,
+            path,
         )
 
     def inspect_page(self):
+        """Pobiera widoczny tekst strony."""
+
         return {
             "url": self.page.url,
             "title": self.page.title(),
@@ -148,6 +162,8 @@ class InstalingBrowser:
         }
 
     def login(self):
+        """Loguje się przy użyciu GitHub Secrets."""
+
         login = os.environ.get(
             "INSTALING_LOGIN", ""
         ).strip()
@@ -158,8 +174,8 @@ class InstalingBrowser:
 
         if not login or not password:
             raise RuntimeError(
-                "Brak sekretów INSTALING_LOGIN lub "
-                "INSTALING_PASSWORD."
+                "Brakuje sekretów INSTALING_LOGIN "
+                "lub INSTALING_PASSWORD."
             )
 
         page = self.page
@@ -187,6 +203,7 @@ class InstalingBrowser:
 
         if password_fields.count() == 0:
             self.save_screenshot("login_error.png")
+
             raise RuntimeError(
                 "Nie znaleziono formularza logowania."
             )
@@ -236,6 +253,8 @@ class InstalingBrowser:
                     break
 
         if login_field is None:
+            self.save_screenshot("login_error.png")
+
             raise RuntimeError(
                 "Nie znaleziono pola loginu."
             )
@@ -259,6 +278,8 @@ class InstalingBrowser:
             )
 
             if not button.count():
+                self.save_screenshot("login_error.png")
+
                 raise RuntimeError(
                     "Nie znaleziono przycisku logowania."
                 )
@@ -289,6 +310,7 @@ class InstalingBrowser:
 
         if any(message in text for message in errors):
             self.save_screenshot("login_error.png")
+
             raise RuntimeError(
                 "Platforma zgłosiła błąd logowania."
             )
@@ -297,37 +319,30 @@ class InstalingBrowser:
             'input[type="password"]'
         ).count():
             self.save_screenshot("login_error.png")
+
             raise RuntimeError(
                 "Nie potwierdzono zakończenia logowania."
             )
 
         self.logger.info("Logowanie zakończone.")
-        self.logger.info("Adres: %s", result["url"])
 
         self.save_screenshot("after_login.png")
 
         return result
 
     def find_session_action(self):
-        """
-        Rozpoznaje przyciski prowadzące do sesji.
-
-        Dodatkowo obsługuje ekran pośredni, na którym
-        trzeba ponownie nacisnąć „Rozpocznij sesję”.
-        """
+        """Rozpoznaje dostępne przyciski sesji."""
 
         elements = self.page.locator(
             "a, button, input[type=button], "
             "input[type=submit], [role=button]"
         )
 
-        candidates = []
-
         priorities = (
             ("kontynuuj sesję", 100),
             ("kontynuuj sesje", 100),
             ("dokończ sesję", 95),
-            ("dokonc", 95),
+            ("dokoncz sesje", 95),
             ("rozpocznij kolejną sesję", 90),
             ("rozpocznij kolejna sesje", 90),
             ("rozpocznij sesję", 85),
@@ -336,6 +351,8 @@ class InstalingBrowser:
             ("nastepna sesja", 70),
             ("kontynuuj", 60),
         )
+
+        candidates = []
 
         for index in range(elements.count()):
             element = elements.nth(index)
@@ -355,26 +372,19 @@ class InstalingBrowser:
                     element.get_attribute("value") or ""
                 ).strip()
 
-                href = str(
-                    element.get_attribute("href") or ""
-                ).strip()
-
                 description = (
-                    f"{text} {value} {href}"
+                    f"{text} {value}"
                 ).casefold()
 
                 score = 0
 
-                for word, priority in priorities:
-                    if word in description:
+                for phrase, priority in priorities:
+                    if phrase in description:
                         score = max(score, priority)
-
-                if "session" in href.casefold():
-                    score += 10
 
                 if score:
                     candidates.append(
-                        (score, element, text or value or href)
+                        (score, element, text or value)
                     )
 
             except Exception as error:
@@ -390,46 +400,40 @@ class InstalingBrowser:
 
         for score, _, description in candidates[:5]:
             self.logger.info(
-                "Kandydat na przycisk sesji: %s; ocena=%s",
-                description[:150],
+                "Przycisk sesji: %s | priorytet=%s",
+                description[:120],
                 score,
             )
 
         return candidates[0][1] if candidates else None
 
     def open_session(self):
-        """
-        Otwiera sesję i obsługuje ekran pośredni.
+        """Przechodzi przez dostępne ekrany sesji."""
 
-        Po każdym kliknięciu sprawdza, czy pojawił się
-        ekran zadania. Jeśli nie, szuka kolejnego przycisku.
-        """
-
-        for attempt in range(4):
+        for attempt in range(5):
             state = self.inspect_page()
             text = state["text"].casefold()
 
             self.logger.info(
-                "Stan strony, etap %s:\n%s",
+                "Etap sesji %s:\n%s",
                 attempt + 1,
-                state["text"][:2500],
+                state["text"][:2000],
             )
 
-            if self.page.locator("#answer").is_visible():
+            answer = self.page.locator("#answer")
+
+            if answer.count() and answer.first.is_visible():
                 self.logger.info(
                     "Wykryto pole odpowiedzi."
                 )
-                self.save_screenshot("session_ready.png")
-                return True
 
-            if (
-                "koniec sesji" in text
-                or "powrót na stronę główną" in text
-            ):
-                self.logger.info(
-                    "Wykryto ekran końca sesji."
-                )
-                return False
+                self.save_screenshot("session_ready.png")
+
+                if not self.session_started:
+                    start_session(self.session_id)
+                    self.session_started = True
+
+                return True
 
             action = self.find_session_action()
 
@@ -439,34 +443,31 @@ class InstalingBrowser:
                 )
 
                 self.logger.warning(
-                    "Nie znaleziono kolejnego przycisku sesji."
+                    "Nie znaleziono przycisku sesji."
                 )
+
                 return False
 
             try:
-                self.logger.info(
-                    "Klikam element prowadzący do sesji."
-                )
-
                 action.click(timeout=5000)
                 self.page.wait_for_timeout(1500)
 
             except Exception as error:
                 self.logger.warning(
-                    "Kliknięcie nie powiodło się: %s",
+                    "Nie udało się kliknąć przycisku: %s",
                     error,
                 )
+
                 return False
 
-        return self.page.locator("#answer").is_visible()
+        answer = self.page.locator("#answer")
+
+        return bool(
+            answer.count() and answer.first.is_visible()
+        )
 
     def read_task(self):
-        """
-        Odczytuje tekst ekranu.
-
-        Uwaga: konkretne polskie słowo nie zawsze da się
-        pewnie wyodrębnić z samego tekstu strony.
-        """
+        """Odczytuje ekran zadania."""
 
         answer = self.page.locator("#answer")
 
@@ -475,32 +476,26 @@ class InstalingBrowser:
 
         text = self.page.locator("body").inner_text()
 
-        task = {
+        return {
             "text": text[:12000],
-            "answer_selector": "#answer",
             "url": self.page.url,
+            "answer_selector": "#answer",
         }
-
-        self.logger.info(
-            "Odczytano ekran zadania:\n%s",
-            task["text"][:3000],
-        )
-
-        return task
 
     def extract_polish_word(self, task):
         """
-        Próbuje znaleźć polskie słowo na podstawie etykiet.
+        Próbuje wyodrębnić polskie słowo.
 
-        Jeśli nie ma wystarczająco pewnego wyniku,
-        nie zgaduje.
+        Jeśli układ strony nie pasuje do znanych wzorców,
+        zwraca None zamiast zgadywać.
         """
 
         text = task["text"]
 
         patterns = (
-            r"(?:przetłumacz|przetlumacz)\s*:?\s*(.+)",
-            r"(?:po polsku|polskie słowo|polskie slowo)\s*:?\s*(.+)",
+            r"(?:przetłumacz|przetlumacz)\s*:?\s*([^\n]+)",
+            r"(?:po polsku|polskie słowo|polskie slowo)"
+            r"\s*:?\s*([^\n]+)",
         )
 
         for pattern in patterns:
@@ -511,7 +506,7 @@ class InstalingBrowser:
             )
 
             if match:
-                candidate = match.group(1).splitlines()[0].strip()
+                candidate = match.group(1).strip()
 
                 if candidate and len(candidate) < 100:
                     return candidate
@@ -519,10 +514,7 @@ class InstalingBrowser:
         return None
 
     def inspect_answer_result(self):
-        """
-        Rozpoznaje wynik tylko na podstawie widocznego
-        komunikatu platformy.
-        """
+        """Odczytuje widoczny komunikat po sprawdzeniu odpowiedzi."""
 
         text = self.page.locator("body").inner_text()
         normalized = text.casefold()
@@ -532,6 +524,13 @@ class InstalingBrowser:
             normalized,
         ):
             result = "synonym"
+
+        elif re.search(
+            r"zła wielkość liter|zla wielkosc liter"
+            r"|wielkość liter|wielkosc liter",
+            normalized,
+        ):
+            result = "capitalization"
 
         elif re.search(
             r"\bniepoprawnie\b"
@@ -557,10 +556,7 @@ class InstalingBrowser:
         }
 
     def find_correct_answer(self, text):
-        """
-        Próbuje odczytać odpowiedź z jawnego komunikatu.
-        Nie wymyśla poprawnego tłumaczenia.
-        """
+        """Odczytuje poprawkę wyłącznie z jawnego komunikatu."""
 
         patterns = (
             r"poprawna odpowiedź\s*:\s*([^\n]+)",
@@ -585,11 +581,7 @@ class InstalingBrowser:
         return None
 
     def save_observation(self, observation):
-        """
-        Zapisuje wynik do osobnego pliku JSONL.
-
-        Nie zastępuje to pamięci modułu memory.py.
-        """
+        """Dopisuje obserwację do pliku JSONL."""
 
         DATA_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -605,17 +597,18 @@ class InstalingBrowser:
 
     def process_task(self):
         """
-        Analizuje jedno zadanie.
+        Analizuje zadanie i przygotowuje tłumaczenie.
 
-        Na tym etapie nie wysyła odpowiedzi, jeżeli
-        nie udało się pewnie odczytać polskiego słowa.
+        Ta wersja nie klika automatycznie przycisku
+        sprawdzania. Najpierw należy zweryfikować
+        rozpoznawanie zadania i komunikatów.
         """
 
         task = self.read_task()
 
         if task is None:
             self.logger.warning(
-                "Brak aktywnego pola odpowiedzi."
+                "Nie znaleziono aktywnego pola odpowiedzi."
             )
             return False
 
@@ -623,8 +616,7 @@ class InstalingBrowser:
 
         if not polish:
             self.logger.warning(
-                "Nie udało się pewnie wyodrębnić polskiego słowa. "
-                "Nie wysyłam odpowiedzi."
+                "Nie udało się pewnie odczytać polskiego słowa."
             )
 
             self.save_screenshot("word_not_detected.png")
@@ -647,7 +639,7 @@ class InstalingBrowser:
 
         if not candidates:
             self.logger.warning(
-                "Brak tłumaczenia dla: %s",
+                "Brak propozycji tłumaczenia dla: %s",
                 polish,
             )
 
@@ -661,65 +653,58 @@ class InstalingBrowser:
 
             return False
 
-        # W pierwszej kolejności wybieramy tłumaczenie
-        # wcześniej potwierdzone przez platformę.
         verified = [
-            item for item in candidates
-            if item.get("verified")
+            candidate
+            for candidate in candidates
+            if candidate.get("verified")
         ]
 
-        candidate = (
-            verified[0] if verified else candidates[0]
-        )
+        candidate = verified[0] if verified else candidates[0]
 
-        answer = candidate["answer"]
-
+        self.logger.info("Polskie słowo: %s", polish)
         self.logger.info(
-            "Polskie słowo: %s",
-            polish,
-        )
-
-        self.logger.info(
-            "Wybrana odpowiedź: %s; źródło=%s; "
-            "potwierdzona=%s",
-            answer,
+            "Propozycja: %s | źródło=%s | potwierdzona=%s",
+            candidate["answer"],
             candidate.get("source"),
-            candidate.get("verified"),
+            candidate.get("verified", False),
         )
-
-        # Celowo nie wysyłamy odpowiedzi w tej wersji.
-        # Najpierw trzeba potwierdzić selektory oraz
-        # format tekstu zadania na rzeczywistym ekranie.
-        self.save_screenshot("task_detected.png")
 
         self.save_observation({
             "session_id": self.session_id,
             "polish": polish,
             "context": task["text"],
-            "candidate": answer,
+            "candidate": candidate["answer"],
             "source": candidate.get("source"),
             "verified": candidate.get("verified", False),
             "result": "candidate_prepared",
             "timestamp": datetime.now().isoformat(),
         })
 
+        self.save_screenshot("task_detected.png")
+
         self.logger.info(
-            "Kandydat przygotowany. "
-            "Automatyczne wysyłanie odpowiedzi jest wyłączone "
-            "do czasu potwierdzenia odczytu zadania."
+            "Zadanie przeanalizowane. "
+            "Automatyczne wysyłanie odpowiedzi pozostaje wyłączone "
+            "do czasu potwierdzenia selektorów strony."
         )
 
         return True
 
     def run_test(self):
+        """Wykonuje ograniczony test rozpoznawania zadań."""
+
         for index in range(MAX_TEST_TASKS):
             self.logger.info(
-                "Test zadania %s/%s",
+                "Zadanie testowe %s/%s",
                 index + 1,
                 MAX_TEST_TASKS,
             )
 
-            if not self.page.locator("#answer").is_visible():
+            answer = self.page.locator("#answer")
+
+            if not (
+                answer.count() and answer.first.is_visible()
+            ):
                 if not self.open_session():
                     self.logger.info(
                         "Nie znaleziono aktywnego zadania."
@@ -728,33 +713,30 @@ class InstalingBrowser:
 
             if not self.process_task():
                 self.logger.info(
-                    "Zatrzymano test, ponieważ zadanie "
-                    "nie mogło zostać bezpiecznie przetworzone."
+                    "Zatrzymano test z powodu niepewnego "
+                    "rozpoznania zadania."
                 )
                 break
 
-            # Nie przechodzimy automatycznie dalej,
-            # dopóki nie potwierdzimy rozpoznawania zadań.
+            # Nie przechodzimy automatycznie dalej.
             break
 
         self.save_screenshot("test_finished.png")
 
     def close(self):
-        """
-        Zamyka kontekst i przeglądarkę.
-
-        Zamknięcie kontekstu finalizuje nagranie.
-        """
+        """Zamyka kontekst i finalizuje nagranie."""
 
         if self.context:
             try:
                 self.context.close()
+
                 self.logger.info(
-                    "Zamknięto kontekst i sfinalizowano nagranie."
+                    "Zamknięto kontekst przeglądarki."
                 )
+
             except Exception as error:
                 self.logger.warning(
-                    "Błąd zamykania kontekstu: %s",
+                    "Problem podczas zamykania kontekstu: %s",
                     error,
                 )
 
