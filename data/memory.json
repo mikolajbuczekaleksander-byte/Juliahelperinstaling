@@ -93,6 +93,13 @@
           "correction": null,
           "session_id": "test-session-001",
           "timestamp": "2026-10-14T12:07:17.060342+00:00"
+        },
+        {
+          "answer": "memory test word",
+          "result": "accepted",
+          "correction": null,
+          "session_id": "test-session-001",
+          "timestamp": "2026-10-14T12:26:33.895770+00:00"
         }
       ]
     }
@@ -100,6 +107,11 @@
   "sessions": {
     "20261014_120703": {
       "started_at": "2026-10-14T12:07:16.621853+00:00",
+      "completed_at": null,
+      "status": "started"
+    },
+    "20261014_122633": {
+      "started_at": "2026-10-14T12:26:33.610071+00:00",
       "completed_at": null,
       "status": "started"
     }
