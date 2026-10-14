@@ -1,3 +1,7 @@
+"""
+Trwała pamięć Instaling Helper.
+"""
+
 import json
 import os
 import tempfile
@@ -15,11 +19,10 @@ def now():
 
 
 def normalize(text):
-    return " ".join(str(text).strip().lower().split())
+    return " ".join(str(text or "").strip().lower().split())
 
 
 def load_memory():
-    """Wczytuje pamięć albo tworzy pustą."""
     if not MEMORY_FILE.exists():
         return {
             "version": 1,
@@ -37,15 +40,14 @@ def load_memory():
 
         return data
 
-    except (json.JSONDecodeError, OSError):
+    except (json.JSONDecodeError, OSError) as error:
         raise RuntimeError(
-            "Nie można odczytać pamięci. "
-            "Plik nie został automatycznie nadpisany."
-        )
+            f"Nie można odczytać pamięci: {error}. "
+            "Plik nie został nadpisany."
+        ) from error
 
 
 def save_memory(data):
-    """Zapisuje dane bezpiecznie, aby ograniczyć ryzyko uszkodzenia."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     fd, temporary_name = tempfile.mkstemp(
@@ -61,6 +63,8 @@ def save_memory(data):
                 ensure_ascii=False,
                 indent=2,
             )
+            file.flush()
+            os.fsync(file.fileno())
 
         os.replace(temporary_name, MEMORY_FILE)
 
@@ -70,11 +74,11 @@ def save_memory(data):
 
 
 def task_key(polish, context="", word_count=None):
-    """Rozróżnia znaczenia i wskazówki dotyczące długości odpowiedzi."""
+    # Nie uzależniamy wyszukiwania odpowiedzi od całego
+    # zdania. Kontekst zapisujemy osobno w historii prób.
     return json.dumps(
         {
             "polish": normalize(polish),
-            "context": normalize(context),
             "word_count": word_count,
         },
         ensure_ascii=False,
@@ -91,44 +95,31 @@ def record_attempt(
     word_count=None,
     session_id=None,
 ):
-    """
-    Zapisuje wynik próby.
-
-    result:
-      accepted
-      rejected_with_correction
-      uncertain
-    """
-    allowed_results = {
+    allowed = {
         "accepted",
         "rejected_with_correction",
         "uncertain",
     }
 
-    if result not in allowed_results:
+    if result not in allowed:
         raise ValueError("Nieznany rodzaj wyniku.")
 
-    if not normalize(polish):
-        raise ValueError("Brakuje polskiego słowa.")
+    if not normalize(polish) or not normalize(answer):
+        raise ValueError("Brakuje słowa lub odpowiedzi.")
 
-    if not normalize(answer):
-        raise ValueError("Brakuje odpowiedzi.")
+    correction = str(correction or "").strip() or None
 
-    if result == "rejected_with_correction":
-        if not correction or not normalize(correction):
-            raise ValueError(
-                "Przy tym wyniku trzeba podać poprawną odpowiedź."
-            )
+    if result == "rejected_with_correction" and not correction:
+        raise ValueError(
+            "Wymagana jest prawidłowa odpowiedź."
+        )
 
     data = load_memory()
-
     key = task_key(polish, context, word_count)
 
     if key not in data["words"]:
         data["words"][key] = {
             "polish": polish,
-            "context": context,
-            "word_count": word_count,
             "accepted_answers": [],
             "rejected_answers": [],
             "attempts": [],
@@ -136,15 +127,18 @@ def record_attempt(
 
     entry = data["words"][key]
 
-    attempt = {
+    entry.setdefault("accepted_answers", [])
+    entry.setdefault("rejected_answers", [])
+    entry.setdefault("attempts", [])
+
+    entry["attempts"].append({
         "answer": answer,
         "result": result,
         "correction": correction,
+        "context": context,
         "session_id": session_id,
         "timestamp": now(),
-    }
-
-    entry["attempts"].append(attempt)
+    })
 
     if result == "accepted":
         accepted = entry["accepted_answers"]
@@ -177,10 +171,9 @@ def get_known_answers(
     context="",
     word_count=None,
 ):
-    """Zwraca informacje zapamiętane dla danego zadania."""
     data = load_memory()
-
     key = task_key(polish, context, word_count)
+
     entry = data["words"].get(key)
 
     if entry is None:
@@ -192,13 +185,12 @@ def get_known_answers(
 
     return {
         "known": True,
-        "accepted_answers": entry["accepted_answers"],
-        "rejected_answers": entry["rejected_answers"],
+        "accepted_answers": entry.get("accepted_answers", []),
+        "rejected_answers": entry.get("rejected_answers", []),
     }
 
 
 def start_session(session_id):
-    """Rejestruje rozpoczęcie sesji."""
     data = load_memory()
 
     data["sessions"][session_id] = {
@@ -211,12 +203,7 @@ def start_session(session_id):
 
 
 def finish_session(session_id):
-    """
-    Oznacza sesję jako ukończoną.
-    Wywołuj dopiero po potwierdzeniu zakończenia.
-    """
     data = load_memory()
-
     session = data["sessions"].get(session_id)
 
     if session is None:
@@ -232,22 +219,15 @@ def finish_session(session_id):
 
 
 def completed_sessions():
-    """Zwraca liczbę zapisanych, ukończonych sesji."""
     data = load_memory()
 
     return sum(
         1
         for session in data["sessions"].values()
-        if session["status"] == "completed"
+        if session.get("status") == "completed"
     )
 
 
 if __name__ == "__main__":
-    print("Test pamięci agenta")
-
-    print(
-        "Liczba zapisanych ukończonych sesji:",
-        completed_sessions(),
-    )
-
     print("Pamięć działa.")
+    print("Ukończone sesje:", completed_sessions())
