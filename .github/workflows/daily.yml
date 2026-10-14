@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Pobierz kod
@@ -32,13 +32,26 @@ jobs:
           python -m pip install playwright
           python -m playwright install --with-deps chromium
 
+      - name: Otwórz Instaling w przeglądarce
+        env:
+          INSTALING_LOGIN: ${{ secrets.INSTALING_LOGIN }}
+          INSTALING_PASSWORD: ${{ secrets.INSTALING_PASSWORD }}
+        run: python instaling_browser.py
+
       - name: Uruchom agenta
         run: python main.py
 
-      - name: Otwórz Instaling w przeglądarce
-        run: python instaling_browser.py
+      - name: Zapisz zrzut ekranu
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: instaling-observation
+          path: artifacts/instaling.png
+          if-no-files-found: ignore
+          retention-days: 1
 
       - name: Zapisz pamięć i słownik
+        if: success()
         run: |
           mkdir -p data
 
@@ -53,4 +66,3 @@ jobs:
             git commit -m "Aktualizacja pamięci i słownika"
             git push origin HEAD:main
           fi
-
