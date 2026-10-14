@@ -1,22 +1,22 @@
 """
-Instaling Helper — przeglądarka i obsługa zadań.
+Instaling Helper — przeglądarka, nagrywanie i obserwacja sesji.
 
 Funkcje:
 - logowanie przez GitHub Secrets;
-- analiza strony i formularzy;
-- rozpoznawanie ekranu sesji;
-- odczytywanie zadania;
-- bezpieczne przygotowanie odpowiedzi;
-- sprawdzanie wyniku;
+- nagrywanie przeglądarki do pliku wideo;
 - zapisywanie zrzutów ekranu;
-- ograniczony tryb testowy.
+- zapisywanie logów działania;
+- rozpoznawanie panelu ucznia i ekranu sesji;
+- rozpoznawanie pola odpowiedzi;
+- odczytywanie komunikatów zwrotnych;
+- bezpieczne rozpoznawanie wyników zadań.
 
-Integracja z agent.py zostanie aktywowana po potwierdzeniu
-dokładnego interfejsu modułu tłumaczącego.
+Automatyczne rozwiązywanie zadań nie jest jeszcze włączone.
 """
 
 import os
 import re
+import logging
 from pathlib import Path
 
 from playwright.sync_api import (
@@ -27,9 +27,35 @@ from playwright.sync_api import (
 
 INSTALING_URL = "https://instaling.pl/"
 ARTIFACTS_DIR = Path("artifacts")
+VIDEO_DIR = ARTIFACTS_DIR / "video"
 
-# Na początek analizujemy tylko jedno zadanie.
-MAX_TEST_TASKS = 1
+
+def setup_logging():
+    """Konfiguruje logowanie do konsoli i pliku."""
+
+    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    logger = logging.getLogger("instaling_helper")
+    logger.setLevel(logging.INFO)
+    logger.handlers.clear()
+
+    formatter = logging.Formatter(
+        "%(asctime)s | %(levelname)s | %(message)s"
+    )
+
+    console = logging.StreamHandler()
+    console.setFormatter(formatter)
+
+    file_handler = logging.FileHandler(
+        ARTIFACTS_DIR / "run.log",
+        encoding="utf-8",
+    )
+    file_handler.setFormatter(formatter)
+
+    logger.addHandler(console)
+    logger.addHandler(file_handler)
+
+    return logger
 
 
 class InstalingBrowser:
@@ -39,9 +65,13 @@ class InstalingBrowser:
         self.playwright = None
         self.browser = None
         self.page = None
+        self.logger = setup_logging()
 
     def start(self):
-        """Uruchamia Chromium i otwiera InstaLing."""
+        """Uruchamia Chromium z nagrywaniem."""
+
+        ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
+        VIDEO_DIR.mkdir(parents=True, exist_ok=True)
 
         self.playwright = sync_playwright().start()
 
@@ -51,8 +81,18 @@ class InstalingBrowser:
 
         self.page = self.browser.new_page(
             locale="pl-PL",
-            viewport={"width": 1365, "height": 900},
+            viewport={
+                "width": 1365,
+                "height": 900,
+            },
+            record_video_dir=str(VIDEO_DIR),
+            record_video_size={
+                "width": 1365,
+                "height": 900,
+            },
         )
+
+        self.logger.info("Uruchomiono Chromium.")
 
         self.page.goto(
             INSTALING_URL,
@@ -61,6 +101,11 @@ class InstalingBrowser:
         )
 
         self.page.wait_for_timeout(1500)
+
+        self.logger.info(
+            "Otwarto stronę: %s",
+            self.page.url,
+        )
 
         return self.page.url
 
@@ -75,18 +120,25 @@ class InstalingBrowser:
             exist_ok=True,
         )
 
+        destination = ARTIFACTS_DIR / name
+
         self.page.screenshot(
-            path=str(ARTIFACTS_DIR / name),
+            path=str(destination),
             full_page=True,
         )
 
-        print(f"Zapisano zrzut ekranu: {name}")
+        self.logger.info(
+            "Zapisano zrzut ekranu: %s",
+            destination,
+        )
 
     def inspect_page(self):
-        """Zwraca tekst strony, widoczne pola i przyciski."""
+        """Odczytuje tekst, pola formularza i przyciski."""
 
         if self.page is None:
-            raise RuntimeError("Przeglądarka nie jest uruchomiona.")
+            raise RuntimeError(
+                "Przeglądarka nie została uruchomiona."
+            )
 
         inputs = self.page.locator("input").evaluate_all(
             """
@@ -135,13 +187,15 @@ class InstalingBrowser:
         return {
             "url": self.page.url,
             "title": self.page.title(),
-            "text": self.page.locator("body").inner_text()[:7000],
+            "text": self.page.locator(
+                "body"
+            ).inner_text()[:10000],
             "inputs": inputs,
             "buttons": buttons,
         }
 
     def login(self):
-        """Loguje się za pomocą sekretów GitHub Actions."""
+        """Loguje się przy użyciu GitHub Secrets."""
 
         login = os.environ.get(
             "INSTALING_LOGIN", ""
@@ -154,10 +208,12 @@ class InstalingBrowser:
         if not login or not password:
             raise RuntimeError(
                 "Brak sekretów INSTALING_LOGIN lub "
-                "INSTALING_PASSWORD."
+                "INSTALING_PASSWORD. Sprawdź ustawienia "
+                "GitHub Actions."
             )
 
         page = self.page
+
         password_fields = page.locator(
             'input[type="password"]'
         )
@@ -181,6 +237,7 @@ class InstalingBrowser:
 
         if password_fields.count() == 0:
             self.save_screenshot("login_error.png")
+
             raise RuntimeError(
                 "Nie znaleziono formularza logowania."
             )
@@ -230,7 +287,11 @@ class InstalingBrowser:
                     break
 
         if login_field is None:
-            raise RuntimeError("Nie znaleziono pola loginu.")
+            self.save_screenshot("login_error.png")
+
+            raise RuntimeError(
+                "Nie znaleziono widocznego pola loginu."
+            )
 
         login_field.fill(login)
         password_fields.first.fill(password)
@@ -251,6 +312,8 @@ class InstalingBrowser:
             )
 
             if buttons.count() == 0:
+                self.save_screenshot("login_error.png")
+
                 raise RuntimeError(
                     "Nie znaleziono przycisku logowania."
                 )
@@ -268,7 +331,7 @@ class InstalingBrowser:
         page.wait_for_timeout(2000)
 
         result = self.inspect_page()
-        text = result["text"].lower()
+        text = result["text"].casefold()
 
         errors = (
             "nieprawidłowe hasło",
@@ -281,6 +344,7 @@ class InstalingBrowser:
 
         if any(message in text for message in errors):
             self.save_screenshot("login_error.png")
+
             raise RuntimeError(
                 "Platforma zgłosiła błąd logowania."
             )
@@ -289,18 +353,23 @@ class InstalingBrowser:
             'input[type="password"]'
         ).count() > 0:
             self.save_screenshot("login_error.png")
+
             raise RuntimeError(
                 "Nie potwierdzono zakończenia logowania."
             )
 
-        print("Formularz logowania został opuszczony.")
-        print("Adres:", result["url"])
-        print("Tytuł:", result["title"])
+        self.logger.info(
+            "Formularz logowania został opuszczony."
+        )
+        self.logger.info("Adres: %s", result["url"])
+        self.logger.info("Tytuł: %s", result["title"])
+
+        self.save_screenshot("after_login.png")
 
         return result
 
     def find_session_action(self):
-        """Wyszukuje widoczne elementy prowadzące do sesji."""
+        """Wyszukuje przycisk kontynuowania lub rozpoczęcia sesji."""
 
         elements = self.page.locator(
             "a, button, input[type=button], "
@@ -309,12 +378,18 @@ class InstalingBrowser:
 
         candidates = []
 
+        # Dłuższe i bardziej konkretne opisy mają wyższy priorytet.
         words = (
-            "kontynuuj",
+            "kontynuuj sesję",
+            "kontynuuj sesje",
             "dokończ sesję",
             "dokonc",
+            "rozpocznij kolejną sesję",
+            "rozpocznij kolejna sesje",
             "rozpocznij sesję",
             "rozpocznij sesje",
+            "zacznij",
+            "kontynuuj",
         )
 
         for index in range(elements.count()):
@@ -341,23 +416,31 @@ class InstalingBrowser:
 
                 description = (
                     f"{text} {value} {href}"
-                ).lower()
+                ).casefold()
 
-                score = sum(
-                    3 for word in words
-                    if word in description
-                )
+                score = 0
 
-                if "session" in href.lower():
+                for word in words:
+                    if word in description:
+                        score += 3
+
+                if "session" in href.casefold():
                     score += 2
 
                 if score:
                     candidates.append(
-                        (score, element, text or value or href)
+                        (
+                            score,
+                            element,
+                            text or value or href,
+                        )
                     )
 
-            except Exception:
-                continue
+            except Exception as error:
+                self.logger.debug(
+                    "Pominięto element: %s",
+                    error,
+                )
 
         candidates.sort(
             key=lambda item: item[0],
@@ -365,156 +448,246 @@ class InstalingBrowser:
         )
 
         for score, _, description in candidates[:5]:
-            print(
-                f"Element sesji: {description[:150]} "
-                f"(ocena {score})"
+            self.logger.info(
+                "Kandydat na przycisk sesji: %s; ocena=%s",
+                description[:150],
+                score,
             )
 
         return candidates[0][1] if candidates else None
 
     def open_session(self):
-        """Otwiera najlepszy rozpoznany element sesji."""
+        """Otwiera rozpoznany ekran sesji."""
 
         before = self.inspect_page()
 
-        print("\nAnalizuję panel ucznia...")
-        print(before["text"][:2500])
+        self.logger.info("Analizuję panel ucznia.")
+        self.logger.info(
+            "Tekst panelu:\n%s",
+            before["text"][:3000],
+        )
 
         action = self.find_session_action()
 
         if action is None:
             self.save_screenshot("session_not_found.png")
-            print("Nie znaleziono przycisku sesji.")
+
+            self.logger.warning(
+                "Nie znaleziono przycisku sesji."
+            )
+
             return False
 
         try:
             action.click(timeout=5000)
             self.page.wait_for_timeout(1500)
+
         except Exception as error:
-            print("Nie udało się otworzyć sesji:", str(error))
+            self.logger.error(
+                "Nie udało się otworzyć sesji: %s",
+                error,
+            )
+
             self.save_screenshot("session_error.png")
+
             return False
 
         after = self.inspect_page()
 
-        print("\nEkran po kliknięciu:")
-        print(after["text"][:4000])
+        self.logger.info(
+            "Ekran po kliknięciu:\n%s",
+            after["text"][:4000],
+        )
 
         self.save_screenshot("session.png")
 
         return True
 
     def read_task(self):
-        """
-        Odczytuje aktualny ekran zadania.
-
-        Nie zakłada, że każde zadanie jest pojedynczym słowem.
-        Na tym etapie tylko zbiera informacje — nie zgaduje
-        tłumaczenia i nie wysyła odpowiedzi.
-        """
+        """Odczytuje zadanie i sprawdza obecność pola odpowiedzi."""
 
         page = self.page
         answer = page.locator("#answer")
 
         if answer.count() == 0 or not answer.first.is_visible():
-            print("Nie znaleziono widocznego pola #answer.")
+            self.logger.warning(
+                "Nie znaleziono widocznego pola #answer."
+            )
+
             return None
 
         task = {
-            "text": page.locator("body").inner_text()[:7000],
+            "text": page.locator(
+                "body"
+            ).inner_text()[:10000],
             "answer_selector": "#answer",
             "url": page.url,
         }
 
-        print("\nRozpoznano ekran zadania.")
-        print("Treść strony:")
-        print(task["text"][:3000])
+        self.logger.info("Rozpoznano ekran zadania.")
+        self.logger.info(
+            "Treść zadania:\n%s",
+            task["text"][:4000],
+        )
 
         return task
 
     def inspect_answer_result(self):
         """
-        Odczytuje wynik sprawdzenia odpowiedzi.
+        Rozpoznaje komunikat zwrotny.
 
-        Wynik 'unknown' oznacza, że nie znaleziono
-        wystarczająco pewnego komunikatu.
+        correct:
+            wyraźny komunikat o poprawnej odpowiedzi;
+
+        incorrect:
+            wyraźny komunikat o błędzie;
+
+        synonym:
+            wyraźny komunikat o synonimie;
+
+        unknown:
+            wynik nie został pewnie rozpoznany.
         """
 
         text = self.page.locator("body").inner_text()
         normalized = text.casefold()
 
-        if re.search(r"\bniepoprawnie\b|\bniepoprawna odpowiedź\b", normalized):
+        # Najpierw sprawdzamy, czy platforma mówi o synonimie.
+        if re.search(
+            r"\bsynonim\b|\bsynonimem\b",
+            normalized,
+        ):
+            result = "synonym"
+
+        elif re.search(
+            r"\bniepoprawnie\b"
+            r"|\bniepoprawna odpowiedź\b"
+            r"|\bniepoprawna odpowiedz\b",
+            normalized,
+        ):
             result = "incorrect"
 
-        elif re.search(r"\bdobrze!\b|\bpoprawnie\b", normalized):
+        elif re.search(
+            r"\bdobrze\s*!?"
+            r"|\bpoprawnie\b",
+            normalized,
+        ):
             result = "correct"
 
         else:
             result = "unknown"
 
-        return {
+        observation = {
             "result": result,
-            "text": text[:7000],
+            "text": text[:10000],
         }
+
+        self.logger.info(
+            "Wynik obserwacji: %s",
+            result,
+        )
+
+        self.logger.info(
+            "Treść komunikatu:\n%s",
+            text[:3000],
+        )
+
+        return observation
 
     def run_test(self):
         """
-        Bezpieczny test rozpoznawania zadania.
+        Tryb testowy.
 
-        Celowo nie wpisuje odpowiedzi, nie klika 'Sprawdź'
-        i nie przechodzi automatycznie do następnego zadania.
+        Nie wpisuje odpowiedzi i nie klika przycisku Sprawdź.
         """
 
         task = self.read_task()
 
         if task is None:
-            print(
-                "Nie potwierdzono ekranu zadania. "
-                "Nie wykonuję dalszych akcji."
+            self.logger.warning(
+                "Nie potwierdzono ekranu zadania."
             )
+
             self.save_screenshot("task_not_found.png")
+
             return False
 
         self.save_screenshot("task_detected.png")
 
-        print(
-            "\nTest zakończony: rozpoznano pole odpowiedzi. "
-            "Automatyczne rozwiązywanie nie zostało jeszcze "
-            "włączone."
+        self.logger.info(
+            "Test zakończony: pole odpowiedzi rozpoznane. "
+            "Automatyczne rozwiązywanie jest wyłączone."
         )
 
         return True
 
     def close(self):
-        """Zamyka przeglądarkę."""
+        """Zamyka przeglądarkę i kończy nagrywanie."""
+
+        if self.page:
+            try:
+                self.page.close()
+                self.logger.info(
+                    "Zamknięto stronę; nagranie powinno zostać zapisane."
+                )
+            except Exception as error:
+                self.logger.warning(
+                    "Problem podczas zamykania strony: %s",
+                    error,
+                )
+
+            self.page = None
 
         if self.browser:
-            self.browser.close()
+            try:
+                self.browser.close()
+            except Exception as error:
+                self.logger.warning(
+                    "Problem podczas zamykania przeglądarki: %s",
+                    error,
+                )
+
             self.browser = None
 
         if self.playwright:
-            self.playwright.stop()
+            try:
+                self.playwright.stop()
+            except Exception:
+                pass
+
             self.playwright = None
+
+        self.logger.info(
+            "Zakończono działanie przeglądarki."
+        )
 
 
 def main():
-
     browser = InstalingBrowser(headless=True)
 
     try:
         url = browser.start()
-        print("Otwarto stronę:", url)
+
+        browser.logger.info(
+            "Otwarto stronę: %s",
+            url,
+        )
 
         result = browser.login()
 
-        print("\nLogowanie zakończone.")
-        print("Adres:", result["url"])
+        browser.logger.info(
+            "Zakończono próbę logowania. Adres: %s",
+            result["url"],
+        )
 
         if browser.open_session():
             browser.run_test()
 
-    except Exception as error:
-        print("Błąd przeglądarki:", str(error))
+    except Exception:
+        browser.logger.exception(
+            "Wystąpił błąd działania programu."
+        )
+
         raise
 
     finally:
