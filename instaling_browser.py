@@ -13,10 +13,11 @@ Funkcje:
 - wykonywanie dwóch pełnych sesji;
 - zapisywanie obserwacji;
 - zapisywanie nagrań i zrzutów ekranu;
-- bezpieczne zatrzymywanie przy niepewnym wyniku.
+- bezpieczne zatrzymywanie w przypadku niepewnego wyniku.
 
-Selektory i komunikaty należy zweryfikować
-na rzeczywistym ekranie InstaLing.
+UWAGA:
+Selektory strony oraz komunikaty zwrotne należy
+zweryfikować na rzeczywistym ekranie InstaLing.
 """
 
 import os
@@ -53,14 +54,25 @@ ARTIFACTS_DIR = Path("artifacts")
 VIDEO_DIR = ARTIFACTS_DIR / "video"
 DATA_DIR = Path("data")
 
+# Ile pełnych sesji ma wykonać program.
 TARGET_SESSIONS = 2
+
+# Maksymalna liczba zadań w jednej sesji.
 MAX_TASKS_PER_SESSION = 100
+
+# Maksymalna liczba prób rozpoznania ekranu sesji.
 MAX_SESSION_START_ATTEMPTS = 8
 
+# Automatyczne wpisywanie i wysyłanie odpowiedzi.
 AUTO_SUBMIT = True
+
+# Nieznany wynik oznacza zatrzymanie automatyzacji.
 STOP_ON_UNKNOWN_FEEDBACK = True
 
+# Selektor pola odpowiedzi z dotychczasowego kodu.
 ANSWER_SELECTOR = "#answer"
+
+# Maksymalny czas oczekiwania na zmianę ekranu.
 PAGE_TIMEOUT_MS = 15000
 
 
@@ -114,6 +126,7 @@ def setup_logging():
 class InstalingBrowser:
 
     def __init__(self, headless=True):
+
         self.headless = headless
 
         self.playwright = None
@@ -128,6 +141,7 @@ class InstalingBrowser:
         self.session_completed = False
 
         self.task_count = 0
+
         self.completed_sessions_this_run = 0
 
     # --------------------------------------------------------
@@ -172,7 +186,9 @@ class InstalingBrowser:
             PAGE_TIMEOUT_MS
         )
 
-        self.logger.info("Uruchomiono Chromium.")
+        self.logger.info(
+            "Uruchomiono Chromium."
+        )
 
         self.page.goto(
             INSTALING_URL,
@@ -245,6 +261,7 @@ class InstalingBrowser:
             "a",
             encoding="utf-8",
         ) as file:
+
             file.write(
                 json.dumps(
                     observation,
@@ -278,10 +295,11 @@ class InstalingBrowser:
         page = self.page
 
         password_fields = page.locator(
-            'input[type="password"]:visible'
+            'input[type="password"]'
         )
 
         if password_fields.count() == 0:
+
             links = page.get_by_role(
                 "link",
                 name=re.compile(
@@ -292,17 +310,21 @@ class InstalingBrowser:
 
             if links.count():
                 links.first.click()
+
                 page.wait_for_timeout(1000)
 
         password_fields = page.locator(
-            'input[type="password"]:visible'
+            'input[type="password"]'
         )
 
         if password_fields.count() == 0:
-            self.save_screenshot("login_error.png")
+
+            self.save_screenshot(
+                "login_error.png"
+            )
 
             raise RuntimeError(
-                "Nie znaleziono widocznego formularza logowania."
+                "Nie znaleziono formularza logowania."
             )
 
         fields = page.locator(
@@ -315,6 +337,7 @@ class InstalingBrowser:
         login_field = None
 
         for index in range(fields.count()):
+
             field = fields.nth(index)
 
             if not field.is_visible():
@@ -324,7 +347,9 @@ class InstalingBrowser:
                 continue
 
             description = " ".join(
-                str(field.get_attribute(attr) or "")
+                str(
+                    field.get_attribute(attr) or ""
+                )
                 for attr in (
                     "name",
                     "id",
@@ -344,22 +369,29 @@ class InstalingBrowser:
                     "identyfikator",
                 )
             ):
+
                 login_field = field
                 break
 
         if login_field is None:
+
             for index in range(fields.count()):
+
                 field = fields.nth(index)
 
                 if (
                     field.is_visible()
                     and field.is_enabled()
                 ):
+
                     login_field = field
                     break
 
         if login_field is None:
-            self.save_screenshot("login_error.png")
+
+            self.save_screenshot(
+                "login_error.png"
+            )
 
             raise RuntimeError(
                 "Nie znaleziono pola loginu."
@@ -374,22 +406,15 @@ class InstalingBrowser:
             'input[type="submit"]'
         )
 
-        visible_submit = None
+        if (
+            submit.count()
+            and submit.first.is_visible()
+        ):
 
-        for index in range(submit.count()):
-            element = submit.nth(index)
-
-            if (
-                element.is_visible()
-                and element.is_enabled()
-            ):
-                visible_submit = element
-                break
-
-        if visible_submit is not None:
-            visible_submit.click()
+            submit.first.click()
 
         else:
+
             button = page.get_by_role(
                 "button",
                 name=re.compile(
@@ -399,7 +424,10 @@ class InstalingBrowser:
             )
 
             if not button.count():
-                self.save_screenshot("login_error.png")
+
+                self.save_screenshot(
+                    "login_error.png"
+                )
 
                 raise RuntimeError(
                     "Nie znaleziono przycisku logowania."
@@ -408,10 +436,12 @@ class InstalingBrowser:
             button.first.click()
 
         try:
+
             page.wait_for_load_state(
                 "domcontentloaded",
                 timeout=15000,
             )
+
         except PlaywrightTimeoutError:
             pass
 
@@ -433,7 +463,10 @@ class InstalingBrowser:
             normalize(message) in text
             for message in errors
         ):
-            self.save_screenshot("login_error.png")
+
+            self.save_screenshot(
+                "login_error.png"
+            )
 
             raise RuntimeError(
                 "Platforma zgłosiła błąd logowania."
@@ -444,17 +477,22 @@ class InstalingBrowser:
         )
 
         if visible_password_fields.count():
-            self.save_screenshot("login_error.png")
+
+            self.save_screenshot(
+                "login_error.png"
+            )
 
             raise RuntimeError(
                 "Nie potwierdzono zakończenia logowania."
             )
 
         self.logger.info(
-            "Nie wykryto widocznego formularza hasła."
+            "Logowanie zakończone."
         )
 
-        self.save_screenshot("after_login.png")
+        self.save_screenshot(
+            "after_login.png"
+        )
 
         return result
 
@@ -465,7 +503,9 @@ class InstalingBrowser:
     def has_answer_field(self):
         """Sprawdza, czy pole odpowiedzi jest dostępne."""
 
-        answer = self.page.locator(ANSWER_SELECTOR)
+        answer = self.page.locator(
+            ANSWER_SELECTOR
+        )
 
         return bool(
             answer.count()
@@ -493,50 +533,71 @@ class InstalingBrowser:
         candidates = []
 
         for index in range(elements.count()):
+
             element = elements.nth(index)
 
             try:
+
                 if not element.is_visible():
                     continue
 
                 if not element.is_enabled():
                     continue
 
-                if element.evaluate(
-                    "(el) => el.tagName.toLowerCase()"
-                ) == "input":
-                    text = str(
-                        element.get_attribute("value") or ""
-                    ).strip()
-                else:
-                    text = str(
-                        element.inner_text(timeout=1000) or ""
-                    ).strip()
+                text = str(
+                    element.inner_text(
+                        timeout=1000
+                    ) or ""
+                ).strip()
+
+                value = str(
+                    element.get_attribute(
+                        "value"
+                    ) or ""
+                ).strip()
 
                 aria = str(
-                    element.get_attribute("aria-label") or ""
+                    element.get_attribute(
+                        "aria-label"
+                    ) or ""
                 ).strip()
 
                 title = str(
-                    element.get_attribute("title") or ""
+                    element.get_attribute(
+                        "title"
+                    ) or ""
                 ).strip()
 
                 description = normalize(
-                    " ".join((text, aria, title))
+                    " ".join(
+                        (
+                            text,
+                            value,
+                            aria,
+                            title,
+                        )
+                    )
                 )
 
                 if not description:
                     continue
 
                 for pattern, score in patterns:
+
                     if re.search(
                         pattern,
                         description,
                         re.IGNORECASE,
                     ):
+
                         candidates.append(
-                            (score, element, description)
+                            (
+                                score,
+                                element,
+                                description,
+                            )
                         )
+
                         break
 
             except Exception:
@@ -548,6 +609,7 @@ class InstalingBrowser:
         )
 
         for score, _, description in candidates[:5]:
+
             self.logger.info(
                 "Znaleziono akcję: %s | wynik=%s",
                 description[:100],
@@ -565,10 +627,16 @@ class InstalingBrowser:
     # --------------------------------------------------------
 
     def is_session_complete(self):
-        """Rozpoznaje ekran końca sesji."""
+        """
+        Rozpoznaje ekran końca sesji.
+
+        Wzorce trzeba zweryfikować na rzeczywistym ekranie.
+        """
 
         text = normalize(
-            self.page.locator("body").inner_text()
+            self.page.locator(
+                "body"
+            ).inner_text()
         )
 
         patterns = (
@@ -600,7 +668,9 @@ class InstalingBrowser:
             return False
 
         text = normalize(
-            self.page.locator("body").inner_text()
+            self.page.locator(
+                "body"
+            ).inner_text()
         )
 
         menu_phrases = (
@@ -618,22 +688,39 @@ class InstalingBrowser:
         )
 
     def find_session_action(self):
-        """Znajduje przycisk rozpoczęcia sesji."""
+        """Znajduje przycisk rozpoczęcia lub kontynuowania sesji."""
 
         patterns = (
-            (r"kontynuuj sesję|kontynuuj sesje", 110),
-            (r"dokończ sesję|dokoncz sesje", 105),
+            (
+                r"kontynuuj sesję|kontynuuj sesje",
+                110,
+            ),
+            (
+                r"dokończ sesję|dokoncz sesje",
+                105,
+            ),
             (
                 r"rozpocznij kolejną sesję|"
                 r"rozpocznij kolejna sesje",
                 100,
             ),
-            (r"rozpocznij sesję|rozpocznij sesje", 95),
-            (r"rozpocznij naukę|rozpocznij nauke", 90),
-            (r"następna sesja|nastepna sesja", 80),
+            (
+                r"rozpocznij sesję|rozpocznij sesje",
+                95,
+            ),
+            (
+                r"rozpocznij naukę|rozpocznij nauke",
+                90,
+            ),
+            (
+                r"następna sesja|nastepna sesja",
+                80,
+            ),
         )
 
-        return self.find_action_by_text(patterns)
+        return self.find_action_by_text(
+            patterns
+        )
 
     def return_to_menu(self):
         """Wraca do menu po zakończeniu sesji."""
@@ -649,15 +736,29 @@ class InstalingBrowser:
                 r"powrot do menu glownego",
                 115,
             ),
-            (r"wróć do menu|wroc do menu", 110),
-            (r"menu główne|menu glowne", 90),
-            (r"powrót|powrot", 50),
+            (
+                r"wróć do menu|wroc do menu",
+                110,
+            ),
+            (
+                r"menu główne|menu glowne",
+                90,
+            ),
+            (
+                r"powrót|powrot",
+                50,
+            ),
         )
 
-        action = self.find_action_by_text(patterns)
+        action = self.find_action_by_text(
+            patterns
+        )
 
         if action is None:
-            self.save_screenshot("return_to_menu_error.png")
+
+            self.save_screenshot(
+                "return_to_menu_error.png"
+            )
 
             raise RuntimeError(
                 "Sesja się zakończyła, ale nie "
@@ -665,31 +766,48 @@ class InstalingBrowser:
             )
 
         action.click(timeout=5000)
+
         self.page.wait_for_timeout(1500)
 
-        if not self.is_main_menu():
-            self.logger.warning(
-                "Nie potwierdzono jednoznacznie ekranu menu."
-            )
+        self.logger.info(
+            "Kliknięto przycisk powrotu do menu."
+        )
 
-        self.save_screenshot("main_menu.png")
+        self.save_screenshot(
+            "main_menu.png"
+        )
 
     # --------------------------------------------------------
     # OTWIERANIE SESJI
     # --------------------------------------------------------
 
     def open_session(self):
-        """Otwiera sesję i czeka na pole odpowiedzi."""
+        """
+        Otwiera sesję i czeka na pole odpowiedzi.
 
-        for attempt in range(MAX_SESSION_START_ATTEMPTS):
+        Nie uznaje samego kliknięcia za potwierdzenie,
+        że sesja została otwarta.
+        """
+
+        for attempt in range(
+            MAX_SESSION_START_ATTEMPTS
+        ):
 
             if self.has_answer_field():
-                if not self.session_started:
-                    self.session_id = datetime.now(
-                        timezone.utc
-                    ).strftime("%Y%m%d_%H%M%S")
 
-                    start_session(self.session_id)
+                if not self.session_started:
+
+                    self.session_id = (
+                        datetime.now(
+                            timezone.utc
+                        ).strftime(
+                            "%Y%m%d_%H%M%S"
+                        )
+                    )
+
+                    start_session(
+                        self.session_id
+                    )
 
                     self.session_started = True
                     self.session_completed = False
@@ -703,9 +821,12 @@ class InstalingBrowser:
                 return True
 
             if self.is_session_complete():
+
                 self.logger.warning(
-                    "Wykryto ekran końca sesji podczas otwierania."
+                    "Wykryto ekran końca sesji "
+                    "podczas otwierania."
                 )
+
                 return False
 
             self.logger.info(
@@ -724,6 +845,7 @@ class InstalingBrowser:
             action = self.find_session_action()
 
             if action is None:
+
                 self.save_screenshot(
                     f"session_start_{attempt + 1}.png"
                 )
@@ -731,17 +853,22 @@ class InstalingBrowser:
                 self.logger.warning(
                     "Nie znaleziono przycisku sesji."
                 )
+
                 return False
 
             try:
+
                 action.click(timeout=5000)
+
                 self.page.wait_for_timeout(1500)
 
             except Exception as error:
+
                 self.logger.warning(
                     "Nie udało się otworzyć sesji: %s",
                     error,
                 )
+
                 return False
 
         return self.has_answer_field()
@@ -772,7 +899,8 @@ class InstalingBrowser:
         """
         Rozpoznaje słowo na podstawie tekstu zadania.
 
-        Jeśli nie potrafi znaleźć słowa, zwraca None.
+        Jeśli nie potrafi jednoznacznie znaleźć słowa,
+        zwraca None zamiast zgadywać.
         """
 
         text = str(
@@ -780,7 +908,9 @@ class InstalingBrowser:
         ).strip()
 
         if not text:
-            self.logger.warning("Brak tekstu zadania.")
+            self.logger.warning(
+                "Brak tekstu zadania."
+            )
             return None
 
         self.logger.info(
@@ -789,11 +919,15 @@ class InstalingBrowser:
         )
 
         patterns = (
-            r"(?:przetłumacz|przetlumacz)"
-            r"\s*:?\s*([^\r\n]+)",
-
-            r"(?:po polsku|polskie słowo|polskie slowo)"
-            r"\s*:?\s*([^\r\n]+)",
+            (
+                r"(?:przetłumacz|przetlumacz)"
+                r"\s*:?\s*([^\r\n]+)"
+            ),
+            (
+                r"(?:po polsku|polskie słowo|"
+                r"polskie slowo)"
+                r"\s*:?\s*([^\r\n]+)"
+            ),
         )
 
         for pattern in patterns:
@@ -812,6 +946,7 @@ class InstalingBrowser:
                 match.group(1),
             ).strip()
 
+            # Odrzucamy puste lub podejrzanie długie wyniki.
             if not candidate or len(candidate) >= 100:
                 continue
 
@@ -824,7 +959,7 @@ class InstalingBrowser:
 
         self.logger.warning(
             "Nie rozpoznano słowa. "
-            "Sprawdź tekst zadania w artifacts/run.log."
+            "Tekst zadania zapisano w logach."
         )
 
         self.save_observation({
@@ -835,16 +970,22 @@ class InstalingBrowser:
             "timestamp": utc_timestamp(),
         })
 
-        self.save_screenshot("word_not_detected.png")
+        self.save_screenshot(
+            "word_not_detected.png"
+        )
 
         return None
 
     # --------------------------------------------------------
-    # PRZYCISK SPRAWDZANIA
+    # WYSZUKIWANIE PRZYCISKU SPRAWDZANIA
     # --------------------------------------------------------
 
     def find_submit_button(self):
-        """Wyszukuje przycisk sprawdzania odpowiedzi."""
+        """
+        Wyszukuje przycisk sprawdzania odpowiedzi.
+
+        Wybiera wyłącznie widoczny i aktywny element.
+        """
 
         patterns = (
             (r"^sprawdź$|^sprawdz$", 120),
@@ -853,7 +994,9 @@ class InstalingBrowser:
             (r"^dalej$", 50),
         )
 
-        return self.find_action_by_text(patterns)
+        return self.find_action_by_text(
+            patterns
+        )
 
     # --------------------------------------------------------
     # ODCZYT WYNIKU
@@ -861,13 +1004,19 @@ class InstalingBrowser:
 
     def inspect_answer_result(self):
         """
-        Rozpoznaje wynik odpowiedzi.
+        Odczytuje widoczny wynik odpowiedzi.
 
-        Analizowanie całej strony nie gwarantuje poprawności.
-        Komunikaty należy zweryfikować na prawdziwym ekranie.
+        Priorytet:
+        1. Wielkość liter.
+        2. Niepoprawna odpowiedź.
+        3. Synonim.
+        4. Poprawna odpowiedź.
         """
 
-        text = self.page.locator("body").inner_text()
+        text = self.page.locator(
+            "body"
+        ).inner_text()
+
         normalized = normalize(text)
 
         if re.search(
@@ -877,6 +1026,7 @@ class InstalingBrowser:
             r"wielkosc liter",
             normalized,
         ):
+
             result = "capitalization"
 
         elif re.search(
@@ -887,6 +1037,7 @@ class InstalingBrowser:
             r"zla odpowiedz",
             normalized,
         ):
+
             result = "incorrect"
 
         elif re.search(
@@ -895,6 +1046,7 @@ class InstalingBrowser:
             r"\bsynonimiczna odpowiedź\b",
             normalized,
         ):
+
             result = "synonym"
 
         elif re.search(
@@ -904,9 +1056,11 @@ class InstalingBrowser:
             r"\bprawidlowo\b",
             normalized,
         ):
+
             result = "correct"
 
         else:
+
             result = "unknown"
 
         return {
@@ -915,7 +1069,10 @@ class InstalingBrowser:
         }
 
     def find_correct_answer(self, text):
-        """Odczytuje poprawną odpowiedź z jawnego komunikatu."""
+        """
+        Odczytuje poprawną odpowiedź wyłącznie
+        z jawnego komunikatu.
+        """
 
         patterns = (
             r"poprawna odpowiedź\s*:\s*([^\n]+)",
@@ -927,6 +1084,7 @@ class InstalingBrowser:
         )
 
         for pattern in patterns:
+
             match = re.search(
                 pattern,
                 text,
@@ -934,6 +1092,7 @@ class InstalingBrowser:
             )
 
             if match:
+
                 answer = match.group(1).strip()
 
                 if answer:
@@ -942,558 +1101,18 @@ class InstalingBrowser:
         return None
 
     # --------------------------------------------------------
-    # NASTĘPNE ZADANIE
+    # PRZEJŚCIE DO NASTĘPNEGO ZADANIA
     # --------------------------------------------------------
 
     def find_next_task_button(self):
-        """Wyszukuje przycisk przejścia do kolejnego zadania."""
+        """
+        Wyszukuje przycisk przejścia dalej.
 
+        Nie klika przycisku, jeśli nie jest pewien.
+        """
         patterns = (
             (r"^następne$|^nastepne$", 120),
-            (
-                r"^następne słowo$|^nastepne slowo$",
-                120,
-            ),
-            (
-                r"^kolejne słowo$|^kolejne slowo$",
-                115,
-            ),
-            (r"^dalej$", 100),
-            (r"^kontynuuj$", 90),
-            (
-                r"^następne zadanie$|^nastepne zadanie$",
-                110,
-            ),
+            (r"^dalej$", 110),
+            (r"^kontynuuj$", 100),
         )
-
         return self.find_action_by_text(patterns)
-
-    def go_to_next_task(self):
-        """Przechodzi do kolejnego zadania."""
-
-        if self.is_session_complete():
-            return "session_complete"
-
-        action = self.find_next_task_button()
-
-        if action is None:
-            self.save_screenshot("next_task_button_missing.png")
-
-            self.logger.warning(
-                "Nie znaleziono przycisku następnego zadania."
-            )
-            return "unknown"
-
-        try:
-            action.click(timeout=5000)
-            self.page.wait_for_timeout(1000)
-
-        except Exception as error:
-            self.logger.warning(
-                "Nie udało się przejść dalej: %s",
-                error,
-            )
-            return "unknown"
-
-        if self.is_session_complete():
-            return "session_complete"
-
-        if self.has_answer_field():
-            return "next_task"
-
-        self.save_screenshot("next_task_unrecognized.png")
-
-        return "unknown"
-
-    # --------------------------------------------------------
-    # PRZETWARZANIE ZADANIA
-    # --------------------------------------------------------
-
-    def process_task(self):
-        """
-        Rozpoznaje zadanie, wyszukuje tłumaczenie,
-        wpisuje odpowiedź i analizuje wynik.
-        """
-
-        if self.is_session_complete():
-            self.logger.info("Rozpoznano koniec sesji.")
-            return "session_complete"
-
-        task = self.read_task()
-
-        if task is None:
-            self.logger.warning(
-                "Nie znaleziono aktywnego pola odpowiedzi."
-            )
-
-            self.save_screenshot("answer_field_missing.png")
-            return "stop"
-
-        polish = self.extract_polish_word(task)
-
-        if not polish:
-            self.logger.warning(
-                "Nie udało się rozpoznać słowa."
-            )
-            return "stop"
-
-        self.logger.info(
-            "Rozpoznane słowo: %s",
-            polish,
-        )
-
-        try:
-            result = analyze_word(
-                polish,
-                context=task["text"],
-            )
-
-        except Exception:
-            self.logger.exception("Błąd agenta.")
-            return "stop"
-
-        if not isinstance(result, dict):
-            self.logger.error(
-                "Agent zwrócił wynik w nieprawidłowym formacie."
-            )
-            return "stop"
-
-        candidates = result.get("translations", [])
-
-        if not candidates:
-            self.logger.warning(
-                "Brak tłumaczenia dla: %s",
-                polish,
-            )
-
-            self.save_observation({
-                "session_id": self.session_id,
-                "polish": polish,
-                "context": task["text"],
-                "result": "translation_needed",
-                "timestamp": utc_timestamp(),
-            })
-
-            return "stop"
-
-        verified = [
-            candidate
-            for candidate in candidates
-            if isinstance(candidate, dict)
-            and candidate.get("verified")
-        ]
-
-        candidate = (
-            verified[0]
-            if verified
-            else candidates[0]
-        )
-
-        if not isinstance(candidate, dict):
-            self.logger.error(
-                "Agent zwrócił kandydata w nieprawidłowym formacie."
-            )
-            return "stop"
-
-        answer = str(
-            candidate.get("answer", "")
-        ).strip()
-
-        if not answer:
-            self.logger.warning(
-                "Agent zwrócił pustą odpowiedź."
-            )
-            return "stop"
-
-        self.logger.info(
-            "Wybrana odpowiedź: %s | źródło=%s | "
-            "potwierdzona wcześniej=%s",
-            answer,
-            candidate.get("source"),
-            candidate.get("verified", False),
-        )
-
-        self.save_observation({
-            "session_id": self.session_id,
-            "polish": polish,
-            "context": task["text"],
-            "candidate": answer,
-            "source": candidate.get("source"),
-            "verified": candidate.get("verified", False),
-            "result": "candidate_prepared",
-            "timestamp": utc_timestamp(),
-        })
-
-        answer_field = self.page.locator(
-            ANSWER_SELECTOR
-        ).first
-
-        try:
-            answer_field.fill(answer)
-
-        except Exception:
-            self.logger.exception(
-                "Nie udało się wpisać odpowiedzi."
-            )
-            return "stop"
-
-        self.logger.info("Wpisano odpowiedź.")
-
-        self.save_screenshot("answer_filled.png")
-
-        if not AUTO_SUBMIT:
-            self.logger.info(
-                "AUTO_SUBMIT=False — zatrzymano przed wysłaniem."
-            )
-            return "stop"
-
-        submit_button = self.find_submit_button()
-
-        if submit_button is None:
-            self.logger.warning(
-                "Nie znaleziono przycisku sprawdzania."
-            )
-
-            self.save_screenshot("submit_button_missing.png")
-            return "stop"
-
-        try:
-            submit_button.click(timeout=5000)
-            self.page.wait_for_timeout(1000)
-
-        except Exception:
-            self.logger.exception(
-                "Nie udało się sprawdzić odpowiedzi."
-            )
-            return "stop"
-
-        self.page.wait_for_timeout(1000)
-
-        feedback = self.inspect_answer_result()
-        feedback_type = feedback["result"]
-
-        self.logger.info(
-            "Wynik platformy: %s",
-            feedback_type,
-        )
-
-        self.save_screenshot("answer_feedback.png")
-
-        if feedback_type == "unknown":
-            self.logger.warning(
-                "Nie rozpoznano informacji zwrotnej. "
-                "Nie zapisano odpowiedzi jako poprawnej."
-            )
-
-            self.save_observation({
-                "session_id": self.session_id,
-                "polish": polish,
-                "candidate": answer,
-                "result": "feedback_unknown",
-                "feedback": feedback["text"],
-                "timestamp": utc_timestamp(),
-            })
-
-            if STOP_ON_UNKNOWN_FEEDBACK:
-                return "stop"
-
-            return "stop"
-
-        correction = self.find_correct_answer(
-            feedback["text"]
-        )
-
-        if feedback_type in ("correct", "synonym"):
-            learn_from_feedback(
-                polish=polish,
-                answer=answer,
-                accepted=True,
-                context=task["text"],
-                session_id=self.session_id,
-                feedback_type=feedback_type,
-            )
-
-            self.logger.info(
-                "Zapisano zaakceptowaną odpowiedź: %s -> %s",
-                polish,
-                answer,
-            )
-
-        elif feedback_type in (
-            "incorrect",
-            "capitalization",
-        ):
-            learn_from_feedback(
-                polish=polish,
-                answer=answer,
-                accepted=False,
-                correction=correction,
-                context=task["text"],
-                session_id=self.session_id,
-                feedback_type=feedback_type,
-            )
-
-            if correction:
-                self.logger.info(
-                    "Zapisano poprawkę: %s -> %s",
-                    polish,
-                    correction,
-                )
-            else:
-                self.logger.warning(
-                    "Odpowiedź odrzucona; nie znaleziono "
-                    "jawnej poprawki."
-                )
-
-        self.save_observation({
-            "session_id": self.session_id,
-            "polish": polish,
-            "context": task["text"],
-            "candidate": answer,
-            "result": feedback_type,
-            "correction": correction,
-            "feedback": feedback["text"],
-            "timestamp": utc_timestamp(),
-        })
-
-        self.task_count += 1
-
-        self.logger.info(
-            "Liczba przetworzonych zadań: %s",
-            self.task_count,
-        )
-
-        if self.is_session_complete():
-            self.logger.info(
-                "Rozpoznano zakończenie sesji."
-            )
-            return "session_complete"
-
-        next_result = self.go_to_next_task()
-
-        if next_result == "session_complete":
-            return "session_complete"
-
-        if next_result == "unknown":
-            self.logger.warning(
-                "Nie rozpoznano następnego ekranu."
-            )
-            return "stop"
-
-        return "next_task"
-
-    # --------------------------------------------------------
-    # JEDNA SESJA
-    # --------------------------------------------------------
-
-    def run_one_session(self):
-        """Wykonuje jedną sesję."""
-
-        if not self.open_session():
-            self.logger.error(
-                "Nie udało się otworzyć sesji."
-            )
-            return False
-
-        self.logger.info(
-            "Rozpoczęto wykonywanie sesji."
-        )
-
-        self.session_completed = False
-
-        for index in range(MAX_TASKS_PER_SESSION):
-            self.logger.info(
-                "Zadanie %s/%s",
-                index + 1,
-                MAX_TASKS_PER_SESSION,
-            )
-
-            if self.is_session_complete():
-                self.session_completed = True
-                break
-
-            outcome = self.process_task()
-
-            if outcome == "session_complete":
-                self.session_completed = True
-                break
-
-            if outcome == "stop":
-                self.logger.warning(
-                    "Sesja zatrzymana z powodu niepewnego wyniku."
-                )
-
-                self.save_screenshot("session_stopped.png")
-                return False
-
-            if outcome != "next_task":
-                self.logger.warning(
-                    "Nieznany wynik przetwarzania: %s",
-                    outcome,
-                )
-                return False
-
-        if not self.session_completed:
-            self.logger.error(
-                "Sesja nie została ukończona w limicie %s zadań.",
-                MAX_TASKS_PER_SESSION,
-            )
-
-            self.save_screenshot("session_limit_reached.png")
-            return False
-
-        finish_session(self.session_id)
-
-        self.logger.info(
-            "Zakończono sesję: %s",
-            self.session_id,
-        )
-
-        self.completed_sessions_this_run += 1
-
-        self.save_screenshot("session_completed.png")
-
-        # Pozwala otworzyć i zapisać kolejną sesję
-        # w ramach tego samego uruchomienia.
-        self.session_started = False
-
-        return True
-
-    # --------------------------------------------------------
-    # DWIE SESJE
-    # --------------------------------------------------------
-
-    def run_two_sessions(self):
-        """Wykonuje dwie sesje."""
-
-        for session_number in range(
-            1,
-            TARGET_SESSIONS + 1,
-        ):
-            self.logger.info("=" * 40)
-
-            self.logger.info(
-                "SESJA %s/%s",
-                session_number,
-                TARGET_SESSIONS,
-            )
-
-            self.logger.info("=" * 40)
-
-            if not self.run_one_session():
-                self.logger.error(
-                    "Nie udało się ukończyć sesji %s.",
-                    session_number,
-                )
-                return False
-
-            self.return_to_menu()
-
-            if session_number < TARGET_SESSIONS:
-                self.logger.info(
-                    "Przygotowanie kolejnej sesji."
-                )
-
-                self.page.wait_for_timeout(1000)
-
-        self.logger.info(
-            "Zakończono wszystkie %s sesje.",
-            TARGET_SESSIONS,
-        )
-
-        return True
-
-    # --------------------------------------------------------
-    # ZAMKNIĘCIE
-    # --------------------------------------------------------
-
-    def close(self):
-        """Zamyka przeglądarkę i finalizuje nagranie."""
-
-        if self.context:
-            try:
-                self.context.close()
-
-                self.logger.info(
-                    "Zamknięto kontekst przeglądarki."
-                )
-
-            except Exception as error:
-                self.logger.warning(
-                    "Błąd zamykania kontekstu: %s",
-                    error,
-                )
-
-            self.context = None
-
-        if self.browser:
-            try:
-                self.browser.close()
-            except Exception:
-                pass
-
-            self.browser = None
-
-        if self.playwright:
-            try:
-                self.playwright.stop()
-            except Exception:
-                pass
-
-            self.playwright = None
-
-        self.logger.info(
-            "Zakończono działanie przeglądarki."
-        )
-
-
-# ============================================================
-# MAIN
-# ============================================================
-
-def main():
-    browser = InstalingBrowser(
-        headless=True,
-    )
-
-    success = False
-
-    try:
-        url = browser.start()
-
-        browser.logger.info(
-            "Otwarto stronę: %s",
-            url,
-        )
-
-        login_result = browser.login()
-
-        browser.logger.info(
-            "Zakończono etap logowania. Adres: %s",
-            login_result["url"],
-        )
-
-        success = browser.run_two_sessions()
-
-        if success:
-            browser.logger.info(
-                "SUKCES: ukończono dwie sesje."
-            )
-        else:
-            browser.logger.error(
-                "Praca nie została zakończona poprawnie. "
-                "Sprawdź artifacts/run.log i zrzuty ekranu."
-            )
-
-    except Exception:
-        browser.logger.exception(
-            "Wystąpił nieoczekiwany błąd."
-        )
-        raise
-
-    finally:
-        browser.close()
-
-
-if __name__ == "__main__":
-    main()
