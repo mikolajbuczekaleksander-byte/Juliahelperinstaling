@@ -1,14 +1,18 @@
 """
-Instaling Helper — logowanie i analiza strony.
+Instaling Helper — przeglądarka i obsługa zadań.
 
 Funkcje:
-- logowanie za pomocą GitHub Secrets,
-- odczytywanie treści strony,
-- rozpoznawanie potencjalnych przycisków sesji,
-- analiza pól formularza,
-- zapisywanie zrzutów ekranu.
+- logowanie przez GitHub Secrets;
+- analiza strony i formularzy;
+- rozpoznawanie ekranu sesji;
+- odczytywanie zadania;
+- bezpieczne przygotowanie odpowiedzi;
+- sprawdzanie wyniku;
+- zapisywanie zrzutów ekranu;
+- ograniczony tryb testowy.
 
-Automatyczne rozwiązywanie zadań nie jest jeszcze zaimplementowane.
+Integracja z agent.py zostanie aktywowana po potwierdzeniu
+dokładnego interfejsu modułu tłumaczącego.
 """
 
 import os
@@ -24,6 +28,9 @@ from playwright.sync_api import (
 INSTALING_URL = "https://instaling.pl/"
 ARTIFACTS_DIR = Path("artifacts")
 
+# Na początek analizujemy tylko jedno zadanie.
+MAX_TEST_TASKS = 1
+
 
 class InstalingBrowser:
 
@@ -34,7 +41,7 @@ class InstalingBrowser:
         self.page = None
 
     def start(self):
-        """Uruchamia przeglądarkę i otwiera Instaling."""
+        """Uruchamia Chromium i otwiera InstaLing."""
 
         self.playwright = sync_playwright().start()
 
@@ -44,10 +51,7 @@ class InstalingBrowser:
 
         self.page = self.browser.new_page(
             locale="pl-PL",
-            viewport={
-                "width": 1365,
-                "height": 900,
-            },
+            viewport={"width": 1365, "height": 900},
         )
 
         self.page.goto(
@@ -60,8 +64,8 @@ class InstalingBrowser:
 
         return self.page.url
 
-    def save_screenshot(self):
-        """Zapisuje zrzut ekranu do artifacts/instaling.png."""
+    def save_screenshot(self, name="instaling.png"):
+        """Zapisuje zrzut ekranu."""
 
         if self.page is None:
             return
@@ -72,26 +76,23 @@ class InstalingBrowser:
         )
 
         self.page.screenshot(
-            path=str(ARTIFACTS_DIR / "instaling.png"),
+            path=str(ARTIFACTS_DIR / name),
             full_page=True,
         )
 
-        print("Zapisano zrzut ekranu.")
+        print(f"Zapisano zrzut ekranu: {name}")
 
     def inspect_page(self):
-        """Odczytuje tekst strony, pola formularzy i przyciski."""
+        """Zwraca tekst strony, widoczne pola i przyciski."""
 
         if self.page is None:
-            raise RuntimeError(
-                "Przeglądarka nie została uruchomiona."
-            )
+            raise RuntimeError("Przeglądarka nie jest uruchomiona.")
 
         inputs = self.page.locator("input").evaluate_all(
             """
             elements => elements
                 .filter(el => {
                     const s = getComputedStyle(el);
-
                     return s.display !== 'none'
                         && s.visibility !== 'hidden';
                 })
@@ -106,14 +107,13 @@ class InstalingBrowser:
         )
 
         buttons = self.page.locator(
-            "button, input[type=submit], "
-            "input[type=button], a, [role=button]"
+            "button, input[type=submit], input[type=button], "
+            "a, [role=button]"
         ).evaluate_all(
             """
             elements => elements
                 .filter(el => {
                     const s = getComputedStyle(el);
-
                     return s.display !== 'none'
                         && s.visibility !== 'hidden';
                 })
@@ -135,9 +135,7 @@ class InstalingBrowser:
         return {
             "url": self.page.url,
             "title": self.page.title(),
-            "text": self.page.locator(
-                "body"
-            ).inner_text()[:7000],
+            "text": self.page.locator("body").inner_text()[:7000],
             "inputs": inputs,
             "buttons": buttons,
         }
@@ -146,31 +144,26 @@ class InstalingBrowser:
         """Loguje się za pomocą sekretów GitHub Actions."""
 
         login = os.environ.get(
-            "INSTALING_LOGIN",
-            "",
+            "INSTALING_LOGIN", ""
         ).strip()
 
         password = os.environ.get(
-            "INSTALING_PASSWORD",
-            "",
+            "INSTALING_PASSWORD", ""
         )
 
         if not login or not password:
             raise RuntimeError(
-                "Brak danych logowania. Sprawdź sekrety "
-                "INSTALING_LOGIN i INSTALING_PASSWORD."
+                "Brak sekretów INSTALING_LOGIN lub "
+                "INSTALING_PASSWORD."
             )
 
         page = self.page
-
         password_fields = page.locator(
             'input[type="password"]'
         )
 
-        # Jeżeli formularza nie ma, szukamy linku logowania.
         if password_fields.count() == 0:
-
-            login_links = page.get_by_role(
+            links = page.get_by_role(
                 "link",
                 name=re.compile(
                     r"zaloguj|logowanie",
@@ -178,17 +171,8 @@ class InstalingBrowser:
                 ),
             )
 
-            if login_links.count() > 0:
-                login_links.first.click()
-
-                try:
-                    page.wait_for_load_state(
-                        "domcontentloaded",
-                        timeout=15000,
-                    )
-                except PlaywrightTimeoutError:
-                    pass
-
+            if links.count() > 0:
+                links.first.click()
                 page.wait_for_timeout(1000)
 
         password_fields = page.locator(
@@ -196,32 +180,11 @@ class InstalingBrowser:
         )
 
         if password_fields.count() == 0:
-            self.save_screenshot()
-
-            print(
-                "Nie znaleziono formularza hasła."
-            )
-
-            print(
-                "Aktualny adres:",
-                page.url,
-            )
-
-            print(
-                "Tytuł:",
-                page.title(),
-            )
-
-            print(
-                "Treść strony:",
-                page.locator("body").inner_text()[:4000],
-            )
-
+            self.save_screenshot("login_error.png")
             raise RuntimeError(
-                "Nie rozpoznano formularza logowania."
+                "Nie znaleziono formularza logowania."
             )
 
-        # Szukamy pola loginu.
         possible_fields = page.locator(
             'input:not([type="password"]):'
             'not([type="hidden"]):'
@@ -232,17 +195,14 @@ class InstalingBrowser:
         login_field = None
 
         for index in range(possible_fields.count()):
-
             field = possible_fields.nth(index)
 
             if not field.is_visible() or not field.is_enabled():
                 continue
 
             description = " ".join(
-                str(
-                    field.get_attribute(attribute) or ""
-                )
-                for attribute in (
+                str(field.get_attribute(attr) or "")
+                for attr in (
                     "name",
                     "id",
                     "placeholder",
@@ -251,25 +211,18 @@ class InstalingBrowser:
                 )
             ).lower()
 
-            if any(
-                word in description
-                for word in (
-                    "login",
-                    "email",
-                    "user",
-                    "użytkownik",
-                    "identyfikator",
-                )
-            ):
+            if any(word in description for word in (
+                "login",
+                "email",
+                "user",
+                "użytkownik",
+                "identyfikator",
+            )):
                 login_field = field
                 break
 
-        # Jeśli nazwa pola jest nietypowa, używamy pierwszego
-        # widocznego i aktywnego pola tekstowego.
         if login_field is None:
-
             for index in range(possible_fields.count()):
-
                 field = possible_fields.nth(index)
 
                 if field.is_visible() and field.is_enabled():
@@ -277,30 +230,19 @@ class InstalingBrowser:
                     break
 
         if login_field is None:
-            self.save_screenshot()
-
-            raise RuntimeError(
-                "Nie znaleziono pola loginu."
-            )
-
-        password_field = password_fields.first
+            raise RuntimeError("Nie znaleziono pola loginu.")
 
         login_field.fill(login)
-        password_field.fill(password)
+        password_fields.first.fill(password)
 
-        # Wysyłamy formularz.
         submit = page.locator(
-            'button[type="submit"], '
-            'input[type="submit"]'
+            'button[type="submit"], input[type="submit"]'
         )
 
         if submit.count() > 0 and submit.first.is_visible():
-
             submit.first.click()
-
         else:
-
-            login_buttons = page.get_by_role(
+            buttons = page.get_by_role(
                 "button",
                 name=re.compile(
                     r"zaloguj|logowanie|login",
@@ -308,14 +250,12 @@ class InstalingBrowser:
                 ),
             )
 
-            if login_buttons.count() == 0:
-                self.save_screenshot()
-
+            if buttons.count() == 0:
                 raise RuntimeError(
                     "Nie znaleziono przycisku logowania."
                 )
 
-            login_buttons.first.click()
+            buttons.first.click()
 
         try:
             page.wait_for_load_state(
@@ -328,84 +268,56 @@ class InstalingBrowser:
         page.wait_for_timeout(2000)
 
         result = self.inspect_page()
-        text_lower = result["text"].lower()
+        text = result["text"].lower()
 
-        # Nie uznajemy samego kliknięcia za potwierdzenie sukcesu.
-        error_phrases = (
+        errors = (
             "nieprawidłowe hasło",
             "nieprawidlowe haslo",
             "błędne hasło",
             "bledne haslo",
             "nieprawidłowy login",
-            "nieprawidlowy login",
             "niepoprawne hasło",
         )
 
-        if any(
-            phrase in text_lower
-            for phrase in error_phrases
-        ):
-            self.save_screenshot()
-
+        if any(message in text for message in errors):
+            self.save_screenshot("login_error.png")
             raise RuntimeError(
-                "Instaling zgłosił błąd danych logowania."
+                "Platforma zgłosiła błąd logowania."
             )
 
         if page.locator(
             'input[type="password"]'
         ).count() > 0:
-
-            self.save_screenshot()
-
+            self.save_screenshot("login_error.png")
             raise RuntimeError(
-                "Formularz hasła nadal jest widoczny. "
-                "Nie potwierdzono logowania."
+                "Nie potwierdzono zakończenia logowania."
             )
 
         print("Formularz logowania został opuszczony.")
-        print("Aktualny adres:", result["url"])
-        print("Tytuł strony:", result["title"])
-        print("Treść strony:")
-        print(result["text"][:4000])
+        print("Adres:", result["url"])
+        print("Tytuł:", result["title"])
 
         return result
 
     def find_session_action(self):
-        """
-        Wyszukuje elementy, które mogą prowadzić do sesji.
+        """Wyszukuje widoczne elementy prowadzące do sesji."""
 
-        Nie wymaga dokładnego dopasowania nazwy przycisku.
-        Analizuje tekst, adres linku i kontekst.
-        """
-
-        page = self.page
-
-        elements = page.locator(
-            "a, button, input[type='button'], "
-            "input[type='submit'], [role='button']"
+        elements = self.page.locator(
+            "a, button, input[type=button], "
+            "input[type=submit], [role=button]"
         )
 
         candidates = []
 
-        session_words = (
-            "sesj",
-            "session",
-            "start",
-            "rozpoc",
-            "zaczn",
-            "kontynu",
-            "dokończ",
+        words = (
+            "kontynuuj",
+            "dokończ sesję",
             "dokonc",
-            "ćwicz",
-            "cwicz",
-            "zadani",
-            "continue",
-            "begin",
-            "practice",
+            "rozpocznij sesję",
+            "rozpocznij sesje",
         )
 
         for index in range(elements.count()):
-
             element = elements.nth(index)
 
             try:
@@ -423,155 +335,155 @@ class InstalingBrowser:
                     element.get_attribute("value") or ""
                 ).strip()
 
-                aria_label = str(
-                    element.get_attribute("aria-label") or ""
-                ).strip()
-
-                title = str(
-                    element.get_attribute("title") or ""
-                ).strip()
-
                 href = str(
                     element.get_attribute("href") or ""
                 ).strip()
 
-                description = " ".join(
-                    (
-                        text,
-                        value,
-                        aria_label,
-                        title,
-                        href,
-                    )
+                description = (
+                    f"{text} {value} {href}"
                 ).lower()
 
-                if not description.strip():
-                    continue
-
-                score = 0
-
-                for word in session_words:
-                    if word in description:
-                        score += 2
-
-                if "student" in href.lower():
-                    score += 1
+                score = sum(
+                    3 for word in words
+                    if word in description
+                )
 
                 if "session" in href.lower():
-                    score += 3
+                    score += 2
 
-                if "logout" in description or "wyloguj" in description:
-                    score -= 10
-
-                if score > 0:
-
-                    candidates.append({
-                        "element": element,
-                        "text": text or value or aria_label or title,
-                        "href": href,
-                        "score": score,
-                    })
+                if score:
+                    candidates.append(
+                        (score, element, text or value or href)
+                    )
 
             except Exception:
                 continue
 
         candidates.sort(
-            key=lambda item: item["score"],
+            key=lambda item: item[0],
             reverse=True,
         )
 
-        print("\nPotencjalne elementy sesji:")
-
-        for candidate in candidates[:10]:
-
+        for score, _, description in candidates[:5]:
             print(
-                f"- Ocena: {candidate['score']} | "
-                f"Tekst: {candidate['text'][:150]} | "
-                f"Link: {candidate['href'][:200]}"
+                f"Element sesji: {description[:150]} "
+                f"(ocena {score})"
             )
 
-        if not candidates:
-            print(
-                "Nie znaleziono elementów pasujących "
-                "do znanych cech sesji."
-            )
-
-            return None
-
-        return candidates[0]["element"]
+        return candidates[0][1] if candidates else None
 
     def open_session(self):
-        """Analizuje panel i próbuje otworzyć sesję."""
-
-        page = self.page
-
-        print("\nAnalizuję panel ucznia...")
+        """Otwiera najlepszy rozpoznany element sesji."""
 
         before = self.inspect_page()
 
-        print("Adres:", before["url"])
-        print("Tytuł:", before["title"])
-        print("Treść panelu:")
-        print(before["text"][:4000])
+        print("\nAnalizuję panel ucznia...")
+        print(before["text"][:2500])
 
         action = self.find_session_action()
 
         if action is None:
-            self.save_screenshot()
-
-            print(
-                "Nie znaleziono odpowiedniego elementu. "
-                "Nie klikam przypadkowych przycisków."
-            )
-
+            self.save_screenshot("session_not_found.png")
+            print("Nie znaleziono przycisku sesji.")
             return False
-
-        print("\nKlikam najlepszego kandydata.")
 
         try:
             action.click(timeout=5000)
-            page.wait_for_timeout(2000)
-
+            self.page.wait_for_timeout(1500)
         except Exception as error:
-            print(
-                "Nie udało się otworzyć elementu:",
-                str(error),
-            )
-
-            self.save_screenshot()
-
+            print("Nie udało się otworzyć sesji:", str(error))
+            self.save_screenshot("session_error.png")
             return False
 
         after = self.inspect_page()
 
-        print("\nAdres po kliknięciu:", after["url"])
-        print("Tytuł po kliknięciu:", after["title"])
-        print("Treść nowego ekranu:")
-        print(after["text"][:5000])
+        print("\nEkran po kliknięciu:")
+        print(after["text"][:4000])
 
-        changed = (
-            before["url"] != after["url"]
-            or before["text"] != after["text"]
+        self.save_screenshot("session.png")
+
+        return True
+
+    def read_task(self):
+        """
+        Odczytuje aktualny ekran zadania.
+
+        Nie zakłada, że każde zadanie jest pojedynczym słowem.
+        Na tym etapie tylko zbiera informacje — nie zgaduje
+        tłumaczenia i nie wysyła odpowiedzi.
+        """
+
+        page = self.page
+        answer = page.locator("#answer")
+
+        if answer.count() == 0 or not answer.first.is_visible():
+            print("Nie znaleziono widocznego pola #answer.")
+            return None
+
+        task = {
+            "text": page.locator("body").inner_text()[:7000],
+            "answer_selector": "#answer",
+            "url": page.url,
+        }
+
+        print("\nRozpoznano ekran zadania.")
+        print("Treść strony:")
+        print(task["text"][:3000])
+
+        return task
+
+    def inspect_answer_result(self):
+        """
+        Odczytuje wynik sprawdzenia odpowiedzi.
+
+        Wynik 'unknown' oznacza, że nie znaleziono
+        wystarczająco pewnego komunikatu.
+        """
+
+        text = self.page.locator("body").inner_text()
+        normalized = text.casefold()
+
+        if re.search(r"\bniepoprawnie\b|\bniepoprawna odpowiedź\b", normalized):
+            result = "incorrect"
+
+        elif re.search(r"\bdobrze!\b|\bpoprawnie\b", normalized):
+            result = "correct"
+
+        else:
+            result = "unknown"
+
+        return {
+            "result": result,
+            "text": text[:7000],
+        }
+
+    def run_test(self):
+        """
+        Bezpieczny test rozpoznawania zadania.
+
+        Celowo nie wpisuje odpowiedzi, nie klika 'Sprawdź'
+        i nie przechodzi automatycznie do następnego zadania.
+        """
+
+        task = self.read_task()
+
+        if task is None:
+            print(
+                "Nie potwierdzono ekranu zadania. "
+                "Nie wykonuję dalszych akcji."
+            )
+            self.save_screenshot("task_not_found.png")
+            return False
+
+        self.save_screenshot("task_detected.png")
+
+        print(
+            "\nTest zakończony: rozpoznano pole odpowiedzi. "
+            "Automatyczne rozwiązywanie nie zostało jeszcze "
+            "włączone."
         )
 
-        if changed:
-            print("\nWykryto zmianę strony.")
-        else:
-            print("\nNie wykryto zmiany strony.")
-
-        print("\nPola formularza:")
-
-        for field in after["inputs"]:
-            print(field)
-
-        print("\nWidoczne przyciski i linki:")
-
-        for button in after["buttons"]:
-            print(button)
-
-        self.save_screenshot()
-
-        return changed
+        return True
 
     def close(self):
         """Zamyka przeglądarkę."""
@@ -591,24 +503,18 @@ def main():
 
     try:
         url = browser.start()
-
         print("Otwarto stronę:", url)
 
         result = browser.login()
 
-        print("\nZakończono próbę logowania.")
-        print("Adres po logowaniu:", result["url"])
+        print("\nLogowanie zakończone.")
+        print("Adres:", result["url"])
 
-        # Próbujemy otworzyć sesję.
-        browser.open_session()
+        if browser.open_session():
+            browser.run_test()
 
     except Exception as error:
-
-        print(
-            "Błąd przeglądarki:",
-            str(error),
-        )
-
+        print("Błąd przeglądarki:", str(error))
         raise
 
     finally:
