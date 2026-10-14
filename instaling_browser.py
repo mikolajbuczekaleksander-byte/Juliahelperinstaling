@@ -6,12 +6,12 @@ Funkcje:
 - nagrywanie przeglądarki do pliku wideo;
 - zapisywanie zrzutów ekranu;
 - zapisywanie logów działania;
-- rozpoznawanie panelu ucznia i ekranu sesji;
+- rozpoznawanie panelu ucznia i ekranów pośrednich;
+- obsługa różnych przycisków rozpoczynania sesji;
 - rozpoznawanie pola odpowiedzi;
-- odczytywanie komunikatów zwrotnych;
-- bezpieczne rozpoznawanie wyników zadań.
+- odczytywanie komunikatów zwrotnych.
 
-Automatyczne rozwiązywanie zadań nie jest jeszcze włączone.
+Automatyczne rozwiązywanie zadań jest na razie wyłączone.
 """
 
 import os
@@ -26,8 +26,13 @@ from playwright.sync_api import (
 
 
 INSTALING_URL = "https://instaling.pl/"
+
 ARTIFACTS_DIR = Path("artifacts")
 VIDEO_DIR = ARTIFACTS_DIR / "video"
+
+# Ograniczenie liczby kliknięć podczas przechodzenia
+# przez ekrany pośrednie.
+MAX_SESSION_STEPS = 6
 
 
 def setup_logging():
@@ -38,6 +43,7 @@ def setup_logging():
     logger = logging.getLogger("instaling_helper")
     logger.setLevel(logging.INFO)
     logger.handlers.clear()
+    logger.propagate = False
 
     formatter = logging.Formatter(
         "%(asctime)s | %(levelname)s | %(message)s"
@@ -64,11 +70,12 @@ class InstalingBrowser:
         self.headless = headless
         self.playwright = None
         self.browser = None
+        self.context = None
         self.page = None
         self.logger = setup_logging()
 
     def start(self):
-        """Uruchamia Chromium z nagrywaniem."""
+        """Uruchamia Chromium z nagrywaniem wideo."""
 
         ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
         VIDEO_DIR.mkdir(parents=True, exist_ok=True)
@@ -79,7 +86,8 @@ class InstalingBrowser:
             headless=self.headless
         )
 
-        self.page = self.browser.new_page(
+        # Nagrywanie konfiguruje się na poziomie kontekstu.
+        self.context = self.browser.new_context(
             locale="pl-PL",
             viewport={
                 "width": 1365,
@@ -91,6 +99,8 @@ class InstalingBrowser:
                 "height": 900,
             },
         )
+
+        self.page = self.context.new_page()
 
         self.logger.info("Uruchomiono Chromium.")
 
@@ -115,25 +125,30 @@ class InstalingBrowser:
         if self.page is None:
             return
 
-        ARTIFACTS_DIR.mkdir(
-            parents=True,
-            exist_ok=True,
-        )
+        ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
 
         destination = ARTIFACTS_DIR / name
 
-        self.page.screenshot(
-            path=str(destination),
-            full_page=True,
-        )
+        try:
+            self.page.screenshot(
+                path=str(destination),
+                full_page=True,
+                timeout=15000,
+            )
 
-        self.logger.info(
-            "Zapisano zrzut ekranu: %s",
-            destination,
-        )
+            self.logger.info(
+                "Zapisano zrzut ekranu: %s",
+                destination,
+            )
+
+        except Exception as error:
+            self.logger.warning(
+                "Nie udało się zapisać zrzutu: %s",
+                error,
+            )
 
     def inspect_page(self):
-        """Odczytuje tekst, pola formularza i przyciski."""
+        """Odczytuje tekst strony, pola i widoczne przyciski."""
 
         if self.page is None:
             raise RuntimeError(
@@ -266,7 +281,7 @@ class InstalingBrowser:
                     "aria-label",
                     "type",
                 )
-            ).lower()
+            ).casefold()
 
             if any(word in description for word in (
                 "login",
@@ -368,29 +383,61 @@ class InstalingBrowser:
 
         return result
 
-    def find_session_action(self):
-        """Wyszukuje przycisk kontynuowania lub rozpoczęcia sesji."""
+    @staticmethod
+    def normalize_label(value):
+        """Normalizuje etykietę przycisku."""
 
-        elements = self.page.locator(
-            "a, button, input[type=button], "
-            "input[type=submit], [role=button]"
+        return " ".join(
+            (value or "").casefold().split()
+        )
+
+    def get_visible_session_actions(self):
+        """
+        Zwraca widoczne przyciski mogące prowadzić do sesji.
+
+        Nie klika automatycznie linków niezwiązanych z sesją.
+        """
+
+        page = self.page
+
+        elements = page.locator(
+            "button, a, [role=button], "
+            "input[type=button], input[type=submit]"
         )
 
         candidates = []
 
-        # Dłuższe i bardziej konkretne opisy mają wyższy priorytet.
-        words = (
-            "kontynuuj sesję",
-            "kontynuuj sesje",
-            "dokończ sesję",
-            "dokonc",
-            "rozpocznij kolejną sesję",
-            "rozpocznij kolejna sesje",
-            "rozpocznij sesję",
-            "rozpocznij sesje",
-            "zacznij",
-            "kontynuuj",
-        )
+        patterns = [
+            (
+                re.compile(
+                    r"rozpocznij.*sesj|"
+                    r"rozpocznij sesj",
+                    re.IGNORECASE,
+                ),
+                100,
+            ),
+            (
+                re.compile(
+                    r"kontynuuj.*sesj",
+                    re.IGNORECASE,
+                ),
+                90,
+            ),
+            (
+                re.compile(
+                    r"dokończ.*sesj|dokonc.*sesj",
+                    re.IGNORECASE,
+                ),
+                80,
+            ),
+            (
+                re.compile(
+                    r"wznów.*sesj|wznow.*sesj",
+                    re.IGNORECASE,
+                ),
+                80,
+            ),
+        ]
 
         for index in range(elements.count()):
             element = elements.nth(index)
@@ -402,38 +449,43 @@ class InstalingBrowser:
                 if not element.is_enabled():
                     continue
 
-                text = str(
-                    element.inner_text(timeout=1000) or ""
+                label = (
+                    element.inner_text(timeout=1000)
+                    or element.get_attribute("value")
+                    or element.get_attribute("aria-label")
+                    or ""
                 ).strip()
 
-                value = str(
-                    element.get_attribute("value") or ""
-                ).strip()
-
-                href = str(
+                href = (
                     element.get_attribute("href") or ""
                 ).strip()
 
-                description = (
-                    f"{text} {value} {href}"
-                ).casefold()
+                normalized = self.normalize_label(label)
 
-                score = 0
+                if not normalized:
+                    continue
 
-                for word in words:
-                    if word in description:
-                        score += 3
+                priority = None
 
-                if "session" in href.casefold():
-                    score += 2
+                for pattern, score in patterns:
+                    if pattern.search(normalized):
+                        priority = score
+                        break
 
-                if score:
+                # Dodatkowa wskazówka dla linków prowadzących
+                # do strony sesji.
+                if priority is None and "session" in href.casefold():
+                    if "dokoncz" in normalized or "dokończ" in normalized:
+                        priority = 75
+
+                if priority is not None:
                     candidates.append(
-                        (
-                            score,
-                            element,
-                            text or value or href,
-                        )
+                        {
+                            "priority": priority,
+                            "element": element,
+                            "label": label,
+                            "href": href,
+                        }
                     )
 
             except Exception as error:
@@ -443,73 +495,176 @@ class InstalingBrowser:
                 )
 
         candidates.sort(
-            key=lambda item: item[0],
+            key=lambda item: item["priority"],
             reverse=True,
         )
 
-        for score, _, description in candidates[:5]:
-            self.logger.info(
-                "Kandydat na przycisk sesji: %s; ocena=%s",
-                description[:150],
-                score,
-            )
-
-        return candidates[0][1] if candidates else None
+        return candidates
 
     def open_session(self):
-        """Otwiera rozpoznany ekran sesji."""
+        """
+        Przechodzi przez ekrany pośrednie aż do ekranu zadania.
 
-        before = self.inspect_page()
+        Po każdym kliknięciu ponownie sprawdza stronę.
+        """
 
-        self.logger.info("Analizuję panel ucznia.")
-        self.logger.info(
-            "Tekst panelu:\n%s",
-            before["text"][:3000],
-        )
-
-        action = self.find_session_action()
-
-        if action is None:
-            self.save_screenshot("session_not_found.png")
-
-            self.logger.warning(
-                "Nie znaleziono przycisku sesji."
-            )
-
-            return False
-
-        try:
-            action.click(timeout=5000)
-            self.page.wait_for_timeout(1500)
-
-        except Exception as error:
-            self.logger.error(
-                "Nie udało się otworzyć sesji: %s",
-                error,
-            )
-
-            self.save_screenshot("session_error.png")
-
-            return False
-
-        after = self.inspect_page()
+        page = self.page
 
         self.logger.info(
-            "Ekran po kliknięciu:\n%s",
-            after["text"][:4000],
+            "Rozpoczynam rozpoznawanie ekranu sesji."
         )
 
-        self.save_screenshot("session.png")
+        for step in range(1, MAX_SESSION_STEPS + 1):
+            page.wait_for_timeout(1200)
 
-        return True
+            try:
+                data = self.inspect_page()
+            except Exception:
+                self.logger.exception(
+                    "Nie udało się odczytać aktualnej strony."
+                )
+                self.save_screenshot("session_inspect_error.png")
+                return False
+
+            text = data["text"].casefold()
+
+            self.logger.info(
+                "Krok %s/%s | URL: %s",
+                step,
+                MAX_SESSION_STEPS,
+                page.url,
+            )
+
+            # Najpierw sprawdzamy, czy pojawiło się pole odpowiedzi.
+            answer = page.locator("#answer")
+
+            if (
+                answer.count() > 0
+                and answer.first.is_visible()
+                and answer.first.is_enabled()
+            ):
+                self.logger.info(
+                    "Wykryto aktywne pole odpowiedzi."
+                )
+
+                self.save_screenshot("session_ready.png")
+                return True
+
+            # Nie rozpoczynamy kolejnej sesji, jeśli bieżąca
+            # już się zakończyła.
+            if re.search(
+                r"\bkoniec sesji\b",
+                text,
+            ):
+                self.logger.info(
+                    "Wykryto ekran końca sesji."
+                )
+
+                self.save_screenshot("session_finished.png")
+                return False
+
+            # Na ekranie początkowym i pośrednim szukamy
+            # przycisków związanych z sesją.
+            candidates = self.get_visible_session_actions()
+
+            if not candidates:
+                self.logger.warning(
+                    "Nie znaleziono rozpoznanego przycisku sesji."
+                )
+
+                self.logger.info(
+                    "Widoczny tekst:\n%s",
+                    data["text"][:4000],
+                )
+
+                self.save_screenshot(
+                    "session_action_not_found.png"
+                )
+
+                return False
+
+            clicked = False
+
+            for candidate in candidates:
+                label = candidate["label"]
+                element = candidate["element"]
+
+                try:
+                    self.logger.info(
+                        "Krok %s: klikam '%s'.",
+                        step,
+                        label,
+                    )
+
+                    element.click(timeout=5000)
+
+                    page.wait_for_timeout(1500)
+
+                    self.save_screenshot(
+                        f"session_step_{step}.png"
+                    )
+
+                    clicked = True
+                    break
+
+                except Exception as error:
+                    self.logger.warning(
+                        "Nie udało się kliknąć '%s': %s",
+                        label,
+                        error,
+                    )
+
+            if not clicked:
+                self.logger.error(
+                    "Nie udało się kliknąć żadnego "
+                    "rozpoznanego przycisku sesji."
+                )
+
+                self.save_screenshot(
+                    "session_click_failed.png"
+                )
+
+                return False
+
+        # Po wykorzystaniu limitu sprawdzamy ekran jeszcze raz.
+        page.wait_for_timeout(1000)
+
+        answer = page.locator("#answer")
+
+        if (
+            answer.count() > 0
+            and answer.first.is_visible()
+            and answer.first.is_enabled()
+        ):
+            self.logger.info(
+                "Sesja gotowa — pole odpowiedzi jest widoczne."
+            )
+
+            self.save_screenshot("session_ready.png")
+            return True
+
+        self.logger.warning(
+            "Osiągnięto limit przejść bez potwierdzenia "
+            "ekranu zadania."
+        )
+
+        self.save_screenshot("session_not_ready.png")
+        return False
 
     def read_task(self):
-        """Odczytuje zadanie i sprawdza obecność pola odpowiedzi."""
+        """
+        Odczytuje aktualne zadanie.
+
+        Na tym etapie nie wpisuje odpowiedzi.
+        """
 
         page = self.page
         answer = page.locator("#answer")
 
-        if answer.count() == 0 or not answer.first.is_visible():
+        if (
+            answer.count() == 0
+            or not answer.first.is_visible()
+        ):
             self.logger.warning(
                 "Nie znaleziono widocznego pola #answer."
             )
@@ -524,9 +679,12 @@ class InstalingBrowser:
             "url": page.url,
         }
 
-        self.logger.info("Rozpoznano ekran zadania.")
         self.logger.info(
-            "Treść zadania:\n%s",
+            "Rozpoznano ekran zadania."
+        )
+
+        self.logger.info(
+            "Treść strony:\n%s",
             task["text"][:4000],
         )
 
@@ -534,25 +692,18 @@ class InstalingBrowser:
 
     def inspect_answer_result(self):
         """
-        Rozpoznaje komunikat zwrotny.
+        Rozpoznaje komunikat po sprawdzeniu odpowiedzi.
 
-        correct:
-            wyraźny komunikat o poprawnej odpowiedzi;
-
-        incorrect:
-            wyraźny komunikat o błędzie;
-
-        synonym:
-            wyraźny komunikat o synonimie;
-
-        unknown:
-            wynik nie został pewnie rozpoznany.
+        Wyniki:
+        - correct;
+        - incorrect;
+        - synonym;
+        - unknown.
         """
 
         text = self.page.locator("body").inner_text()
         normalized = text.casefold()
 
-        # Najpierw sprawdzamy, czy platforma mówi o synonimie.
         if re.search(
             r"\bsynonim\b|\bsynonimem\b",
             normalized,
@@ -596,7 +747,7 @@ class InstalingBrowser:
 
     def run_test(self):
         """
-        Tryb testowy.
+        Testuje rozpoznawanie ekranu zadania.
 
         Nie wpisuje odpowiedzi i nie klika przycisku Sprawdź.
         """
@@ -609,27 +760,28 @@ class InstalingBrowser:
             )
 
             self.save_screenshot("task_not_found.png")
-
             return False
 
         self.save_screenshot("task_detected.png")
 
         self.logger.info(
-            "Test zakończony: pole odpowiedzi rozpoznane. "
-            "Automatyczne rozwiązywanie jest wyłączone."
+            "Test zakończony. Pole odpowiedzi rozpoznane; "
+            "automatyczne rozwiązywanie pozostaje wyłączone."
         )
 
         return True
 
     def close(self):
-        """Zamyka przeglądarkę i kończy nagrywanie."""
+        """Zamyka stronę i przeglądarkę, kończąc nagrywanie."""
 
-        if self.page:
+        if self.page is not None:
             try:
                 self.page.close()
+
                 self.logger.info(
-                    "Zamknięto stronę; nagranie powinno zostać zapisane."
+                    "Zamknięto stronę."
                 )
+
             except Exception as error:
                 self.logger.warning(
                     "Problem podczas zamykania strony: %s",
@@ -638,9 +790,27 @@ class InstalingBrowser:
 
             self.page = None
 
-        if self.browser:
+        if self.context is not None:
+            try:
+                # Zamknięcie kontekstu finalizuje nagrania wideo.
+                self.context.close()
+
+                self.logger.info(
+                    "Zamknięto kontekst przeglądarki."
+                )
+
+            except Exception as error:
+                self.logger.warning(
+                    "Problem podczas zamykania kontekstu: %s",
+                    error,
+                )
+
+            self.context = None
+
+        if self.browser is not None:
             try:
                 self.browser.close()
+
             except Exception as error:
                 self.logger.warning(
                     "Problem podczas zamykania przeglądarki: %s",
@@ -649,9 +819,10 @@ class InstalingBrowser:
 
             self.browser = None
 
-        if self.playwright:
+        if self.playwright is not None:
             try:
                 self.playwright.stop()
+
             except Exception:
                 pass
 
@@ -676,7 +847,7 @@ def main():
         result = browser.login()
 
         browser.logger.info(
-            "Zakończono próbę logowania. Adres: %s",
+            "Logowanie zakończone. Adres: %s",
             result["url"],
         )
 
