@@ -32,23 +32,22 @@ jobs:
           python -m pip install playwright
           python -m playwright install --with-deps chromium
 
-      - name: Otwórz Instaling w przeglądarce
+      - name: Uruchom przeglądarkę i agenta
         env:
           INSTALING_LOGIN: ${{ secrets.INSTALING_LOGIN }}
           INSTALING_PASSWORD: ${{ secrets.INSTALING_PASSWORD }}
-        run: python instaling_browser.py
+        run: |
+          python instaling_browser.py
+          python main.py
 
-      - name: Uruchom agenta
-        run: python main.py
-
-      - name: Zapisz zrzut ekranu
+      - name: Zapisz nagrania i zrzuty ekranu
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: instaling-observation
-          path: artifacts/instaling.png
-          if-no-files-found: ignore
-          retention-days: 1
+          path: artifacts/
+          if-no-files-found: warn
+          retention-days: 7
 
       - name: Zapisz pamięć i słownik
         if: success()
