@@ -2,6 +2,7 @@ name: Instaling Helper
 
 on:
   workflow_dispatch:
+
   schedule:
     - cron: "0 16 * * *"
 
@@ -15,6 +16,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-24.04
+    timeout-minutes: 45
 
     steps:
       - name: Pobierz kod
@@ -32,19 +34,19 @@ jobs:
           python -m pip install playwright
           python -m playwright install --with-deps chromium
 
-      - name: Uruchom przeglądarkę i agenta
+      - name: Uruchom agenta InstaLing
         env:
           INSTALING_LOGIN: ${{ secrets.INSTALING_LOGIN }}
           INSTALING_PASSWORD: ${{ secrets.INSTALING_PASSWORD }}
+          PYTHONUNBUFFERED: "1"
         run: |
           python instaling_browser.py
-          python main.py
 
-      - name: Zapisz nagrania i zrzuty ekranu
+      - name: Zapisz nagrania i diagnostykę
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: instaling-observation
+          name: instaling-observation-${{ github.run_number }}
           path: artifacts/
           if-no-files-found: warn
           retention-days: 7
@@ -52,12 +54,10 @@ jobs:
       - name: Zapisz pamięć i słownik
         if: success()
         run: |
-          mkdir -p data
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add -A data/
+          git add -A data/ dictionary.json
 
           if git diff --cached --quiet; then
             echo "Brak nowych danych do zapisania."
