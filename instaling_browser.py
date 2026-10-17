@@ -121,10 +121,6 @@ class InstalingBrowser:
 
         self.task_count = 0
 
-        # Zapobiega ponownemu klikaniu przycisku
-        # sprawdzania, jeśli nie można ustalić wyniku.
-        self.last_feedback = None
-
     # --------------------------------------------------------
     # START
     # --------------------------------------------------------
@@ -354,10 +350,49 @@ class InstalingBrowser:
 
         page.wait_for_timeout(1000)
 
-        if page.locator('input[type="password"]').count():
+        password_after = page.locator('input[type="password"]')
+        try:
+            password_still_visible = (
+                password_after.count() > 0
+                and password_after.first.is_visible()
+            )
+        except Exception:
+            password_still_visible = False
+
+        page_text_after_login = normalize(self.page_text())
+        login_error_patterns = (
+            r"nieprawidłowe dane",
+            r"nieprawidlowe dane",
+            r"błędny login",
+            r"bledny login",
+            r"błędne hasło",
+            r"bledne haslo",
+            r"nieprawidłowe hasło",
+            r"nieprawidlowe haslo",
+        )
+        login_error_visible = any(
+            re.search(pattern, page_text_after_login)
+            for pattern in login_error_patterns
+        )
+
+        if password_still_visible and login_error_visible:
             self.save_screenshot("login_error.png")
             raise RuntimeError(
-                "Nie potwierdzono zakończenia logowania."
+                "Logowanie nie powiodło się: widoczny formularz "
+                "oraz komunikat o błędzie."
+            )
+
+        if password_still_visible:
+            self.logger.warning(
+                "Pole hasła nadal jest widoczne po logowaniu; "
+                "nie uznaję tego automatycznie za błąd."
+            )
+
+        if not self.has_answer_field() and login_error_visible:
+            self.save_screenshot("login_error.png")
+            raise RuntimeError(
+                "Nie potwierdzono logowania — strona zawiera "
+                "komunikat o błędzie."
             )
 
         self.logger.info("Zakończono logowanie.")
@@ -502,15 +537,66 @@ class InstalingBrowser:
             except Exception as error:
                 self.logger.debug("Błąd odczytu przycisku sesji HTML: %s", error)
 
-        # Awaryjnie zachowujemy oryginalne wyszukiwanie po tekście.
-        return self.find_action_by_text((
+        # Awaryjnie szukamy po tekście, ale dla linków sprawdzamy także href.
+        fallback_patterns = (
             (r"kontynuuj sesję|kontynuuj sesje", 120),
             (r"dokończ sesję|dokonc sesje", 115),
             (r"rozpocznij kolejną sesję|rozpocznij kolejna sesje", 110),
             (r"rozpocznij sesję|rozpocznij sesje", 100),
             (r"rozpocznij naukę|rozpocznij nauke", 90),
             (r"następna sesja|nastepna sesja", 80),
-        ))
+        )
+
+        elements = self.page.locator(
+            "button, a, [role='button'], "
+            "input[type='button'], input[type='submit']"
+        )
+        candidates = []
+
+        for index in range(elements.count()):
+            element = elements.nth(index)
+            try:
+                if not element.is_visible() or not element.is_enabled():
+                    continue
+
+                description = normalize(
+                    " ".join((
+                        str(element.inner_text(timeout=1000) or ""),
+                        str(element.get_attribute("value") or ""),
+                        str(element.get_attribute("aria-label") or ""),
+                    ))
+                )
+
+                score = None
+                for pattern, pattern_score in fallback_patterns:
+                    if re.search(pattern, description, re.IGNORECASE):
+                        score = pattern_score
+                        break
+
+                if score is None:
+                    continue
+
+                href = element.get_attribute("href")
+                if href is not None and href.strip():
+                    if "/app/session/app.php" not in href:
+                        continue
+
+                candidates.append((score, element, description, href or ""))
+            except Exception:
+                continue
+
+        candidates.sort(key=lambda item: item[0], reverse=True)
+
+        if candidates:
+            score, element, description, href = candidates[0]
+            self.logger.info(
+                "Znaleziono awaryjny przycisk sesji: %s | href=%s",
+                description,
+                href,
+            )
+            return element
+
+        return None
 
     def open_session(self):
         for attempt in range(MAX_SESSION_START_ATTEMPTS):
@@ -660,51 +746,31 @@ class InstalingBrowser:
         return ""
 
     def classify_feedback(self, text):
-        """
-        Zwraca:
-            correct
-            synonym
-            typo
-            incorrect
-            unknown
-        """
-
-        raw = str(text or "").strip()
-        value = normalize(raw)
-
+        value = re.sub(
+            r"\s+",
+            " ",
+            str(text or "").strip().lower(),
+        )
         if not value:
             return "unknown"
 
-        # Najpierw sprawdzamy błąd i literówkę.
-        # W przeciwnym razie komunikat zawierający
-        # dodatkowe słowo "Dobrze" mógłby być źle oceniony.
-
+        # Najpierw sprawdzamy błędy.
         if re.search(
-            r"\bniepoprawnie\b|\bniepoprawna odpowiedź\b|"
-            r"\bniepoprawna odpowiedz\b",
+            r"niepoprawnie|niepoprawna odpowiedź|"
+            r"niepoprawna odpowiedz",
             value,
         ):
             return "incorrect"
 
-        if re.search(
-            r"\bliterówka\b|\bliterowka\b|"
-            r"\bliterówkę\b|\bliterowke\b",
-            value,
-        ):
+        if re.search(r"literówk|literowk", value):
             return "typo"
 
-        if re.search(
-            r"\bsynonim\b|\bsynonimem\b|"
-            r"\bpoprawny synonim\b",
-            value,
-        ):
+        if re.search(r"synonim", value):
             return "synonym"
 
-        if re.search(
-            r"^dobrze[!. ]*$|"
-            r"^poprawnie[!. ]*$|"
-            r"^prawidłowo[!. ]*$|"
-            r"^prawidlowo[!. ]*$",
+        # Akceptujemy wyłącznie znane krótkie komunikaty pozytywne.
+        if re.fullmatch(
+            r"(dobrze|poprawnie|prawidłowo|prawidlowo)[!. ]*",
             value,
         ):
             return "correct"
@@ -744,15 +810,7 @@ class InstalingBrowser:
         return None
 
     def wait_for_feedback_change(self, previous_status):
-        """
-        Czeka na zmianę #sr_status po wysłaniu odpowiedzi.
-        Dzięki temu nie wykorzystujemy komunikatu
-        pozostawionego po poprzednim zadaniu.
-        """
-
-        deadline = time.monotonic() + (
-            FEEDBACK_TIMEOUT_MS / 1000
-        )
+        deadline = time.monotonic() + (FEEDBACK_TIMEOUT_MS / 1000)
 
         while time.monotonic() < deadline:
             current = self.read_status_element()
@@ -760,11 +818,7 @@ class InstalingBrowser:
             if current and current != previous_status:
                 return current
 
-            # Jeśli platforma czyści status przed odpowiedzią,
-            # a następnie ustawia ten sam komunikat,
-            # akceptujemy go dopiero po zaobserwowaniu pustego
-            # statusu lub po ponownym pojawieniu się komunikatu.
-            self.page.wait_for_timeout(150)
+            self.page.wait_for_timeout(100)
 
         current = self.read_status_element()
 
@@ -772,11 +826,6 @@ class InstalingBrowser:
             return current
 
         return ""
-
-    # --------------------------------------------------------
-    # PRZYCISKI ODPOWIEDZI
-    # --------------------------------------------------------
-
     def find_submit_button(self):
         return self.find_action_by_text((
             (r"^sprawdź$|^sprawdz$", 120),
@@ -1221,17 +1270,8 @@ class InstalingBrowser:
                 self.return_to_menu()
                 self.page.wait_for_timeout(1000)
 
-        self.logger.info(
-            "Ukończono wszystkie %s sesje.",
-            TARGET_SESSIONS,
-        )
-
+        self.logger.info("Ukończono wszystkie %s sesje.", TARGET_SESSIONS)
         return True
-
-    # --------------------------------------------------------
-    # ZAMKNIĘCIE
-    # --------------------------------------------------------
-
     def close(self):
         if self.context:
             try:
@@ -1264,7 +1304,7 @@ class InstalingBrowser:
 # ============================================================
 
 def main():
-    browser = InstalingBrowser(headless=True)
+    browser = InstalingBrowser(headless=False)
 
     try:
         browser.start()
