@@ -564,40 +564,62 @@ class InstalingBrowser:
     # --------------------------------------------------------
 
     def read_task(self):
+        """Odczytuje bieżące zdanie i dowolną polską podpowiedź z InstaLing."""
         if not self.has_answer_field():
             return None
 
+        sentence = ""
+        polish = ""
+
+        # Treść zadania może pojawić się chwilę po polu odpowiedzi, więc
+        # krótko czekamy na aktualne elementy zamiast sprawdzać count() od razu.
+        usage = self.page.locator("#question_usage").first
+        try:
+            usage.wait_for(state="attached", timeout=3000)
+            # Usuwamy ukryty tekst dostępności (np. „luka”), ale zachowujemy
+            # widoczne podkreślenie w miejscu brakującego słowa.
+            sentence = usage.evaluate(r"""el => {
+                const clone = el.cloneNode(true);
+                clone.querySelectorAll('.visually-hidden').forEach(n => n.remove());
+                return (clone.innerText || clone.textContent || '').replace(/\s+/g, ' ').trim();
+            }""")
+            sentence = str(sentence or "").strip()
+        except Exception as error:
+            self.logger.warning("Nie udało się odczytać #question_usage: %s", error)
+
+        # Nie zakładamy żadnego konkretnego polskiego słowa. Odczytujemy
+        # tekst aktualnego elementu #question_translation, niezależnie od tego,
+        # czy to „występować”, „malarstwo”, „główny bohater” czy inna podpowiedź.
+        translation = self.page.locator("#question_translation").first
+        try:
+            translation.wait_for(state="attached", timeout=3000)
+            polish = (translation.inner_text(timeout=2000) or "").strip()
+        except Exception as error:
+            self.logger.warning("Nie udało się odczytać #question_translation: %s", error)
+
         return {
             "text": self.page_text()[:12000],
+            "sentence": sentence,
+            "polish": polish,
             "url": self.page.url,
         }
 
     def extract_polish_word(self, task):
-        """
-        Próbuje wyodrębnić polskie słowo z widocznego tekstu.
+        """Najpierw czyta #question_translation, a dopiero potem używa fallbacku."""
+        direct = str(task.get("polish", "")).strip()
+        if direct and len(direct) < 100:
+            return direct
 
-        Format strony może wymagać dostosowania wzorców.
-        Nie wybieramy przypadkowego słowa, gdy nie ma
-        jednoznacznego dopasowania.
-        """
-
-        text = task["text"]
-
+        text = task.get("text", "")
         patterns = (
             r"(?:przetłumacz|przetlumacz)\s*:?\s*([^\n]+)",
             r"(?:po polsku|polskie słowo|polskie slowo)\s*:?\s*([^\n]+)",
         )
 
         for pattern in patterns:
-            match = re.search(
-                pattern,
-                text,
-                flags=re.IGNORECASE,
-            )
-
+            match = re.search(pattern, text, flags=re.IGNORECASE)
             if match:
                 candidate = match.group(1).strip()
-
                 if candidate and len(candidate) < 100:
                     return candidate
 
@@ -823,6 +845,8 @@ class InstalingBrowser:
                 "session_id": self.session_id,
                 "result": "word_not_detected",
                 "task_text": task["text"],
+                "sentence": task.get("sentence", ""),
+                "polish": task.get("polish", ""),
                 "timestamp": utc_timestamp(),
             })
 
@@ -834,7 +858,7 @@ class InstalingBrowser:
         try:
             result = analyze_word(
                 polish,
-                context=task["text"],
+                context=(task.get("sentence") or task["text"]),
             )
         except Exception:
             self.logger.exception("Błąd agenta tłumaczeń.")
