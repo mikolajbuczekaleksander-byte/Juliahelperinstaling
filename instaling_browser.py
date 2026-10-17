@@ -53,6 +53,9 @@ STOP_ON_UNKNOWN_FEEDBACK = True
 
 ANSWER_SELECTOR = "#answer"
 STATUS_SELECTOR = "#sr_status"
+CAPITALIZATION_SELECTOR = ".blue"
+SESSION_BUTTON_SELECTOR = ".btn-start-session"
+RETURN_BUTTON_SELECTOR = "#return_mainpage"
 
 PAGE_TIMEOUT_MS = 15000
 FEEDBACK_TIMEOUT_MS = 8000
@@ -447,51 +450,66 @@ class InstalingBrowser:
         return any(re.search(pattern, text) for pattern in patterns)
 
     def find_session_action(self):
-        """Znajduje akcję rozpoczęcia sesji na podstawie HTML strony.
+        """Znajduje akcję sesji przez HTML, a potem przez tekst.
 
-        W pierwszej kolejności sprawdza link <a class="btn-start-session">
-        i jego tekst „Rozpocznij codzienną sesję”. Nie zakłada na sztywno
-        wartości child_id — korzysta z href odczytanego z aktualnego HTML.
-        Jeśli takiego linku nie ma, używa dotychczasowego wyszukiwania
-        pozostałych przycisków sesji.
+        Zachowuje dotychczasowe wzorce tekstowe i dodatkowo obsługuje
+        elementy HTML z klasą .btn-start-session, w tym link
+        „Rozpocznij codzienną sesję”.
         """
-        daily_session_links = self.page.locator("a.btn-start-session")
-
-        for index in range(daily_session_links.count()):
-            link = daily_session_links.nth(index)
-
+        # Obsłuż linki HTML do sesji, w tym rozpoczęcie i dokończenie.
+        # Przykładowe teksty:
+        # - „Rozpocznij codzienną sesję”
+        # - „Dokończ sesję”
+        # W obu przypadkach sprawdzamy też docelowy adres href.
+        session_buttons = self.page.locator(SESSION_BUTTON_SELECTOR)
+        accepted_session_names = {
+            "rozpocznij codzienną sesję",
+            "rozpocznij codzienna sesje",
+            "dokończ sesję",
+            "dokoncz sesje",
+            "kontynuuj sesję",
+            "kontynuuj sesje",
+            "rozpocznij kolejną sesję",
+            "rozpocznij kolejna sesje",
+            "rozpocznij sesję",
+            "rozpocznij sesje",
+            "rozpocznij naukę",
+            "rozpocznij nauke",
+            "rozpocznij konfigurację sesji",
+            "rozpocznij konfiguracje sesji",
+            "następna sesja",
+            "nastepna sesja",
+        }
+        for index in range(session_buttons.count()):
+            element = session_buttons.nth(index)
             try:
-                if not link.is_visible() or not link.is_enabled():
+                if not element.is_visible() or not element.is_enabled():
+                    continue
+                text = normalize(element.inner_text(timeout=1000))
+                href = element.get_attribute("href") or ""
+
+                if text not in accepted_session_names:
+                    continue
+                if "/app/session/app.php" not in href:
                     continue
 
-                text = normalize(link.inner_text(timeout=1000))
-                href = link.get_attribute("href") or ""
-
-                if (
-                    text in (
-                        "rozpocznij codzienną sesję",
-                        "rozpocznij codzienna sesje",
-                    )
-                    and "/app/session/app.php" in href
-                ):
-                    self.logger.info(
-                        "Znaleziono link codziennej sesji: %s",
-                        href,
-                    )
-                    return link
-
-            except Exception as error:
-                self.logger.debug(
-                    "Nie udało się sprawdzić linku sesji: %s",
-                    error,
+                self.logger.info(
+                    "Znaleziono przycisk sesji HTML: %s | href=%s",
+                    text,
+                    href,
                 )
+                return element
+            except Exception as error:
+                self.logger.debug("Błąd odczytu przycisku sesji HTML: %s", error)
 
-        # Zachowujemy obsługę dotychczasowych wariantów przycisków.
+        # Awaryjnie zachowujemy oryginalne wyszukiwanie po tekście.
         return self.find_action_by_text((
             (r"kontynuuj sesję|kontynuuj sesje", 120),
+            (r"dokończ sesję|dokonc sesje", 115),
             (r"rozpocznij kolejną sesję|rozpocznij kolejna sesje", 110),
             (r"rozpocznij sesję|rozpocznij sesje", 100),
             (r"rozpocznij naukę|rozpocznij nauke", 90),
+            (r"następna sesja|nastepna sesja", 80),
         ))
 
     def open_session(self):
@@ -602,13 +620,22 @@ class InstalingBrowser:
         status = self.page.locator(STATUS_SELECTOR)
 
         try:
-            if status.count() == 0:
-                return ""
-
-            return status.first.inner_text().strip()
-
+            if status.count() > 0:
+                message = status.first.inner_text().strip()
+                if message:
+                    return message
         except Exception:
-            return ""
+            pass
+
+        # Dodatkowy komunikat HTML używany m.in. dla wielkości liter.
+        capitalization = self.page.locator(CAPITALIZATION_SELECTOR)
+        try:
+            if capitalization.count() > 0 and capitalization.first.is_visible():
+                return capitalization.first.inner_text().strip()
+        except Exception:
+            pass
+
+        return ""
 
     def classify_feedback(self, text):
         """
@@ -1090,11 +1117,21 @@ class InstalingBrowser:
     # --------------------------------------------------------
 
     def return_to_menu(self):
-        action = self.find_action_by_text((
-            (r"^wróć do menu głównego$|^wroc do menu glownego$", 120),
-            (r"^powrót do menu głównego$|^powrot do menu glownego$", 115),
-            (r"^wróć do menu$|^wroc do menu$", 100),
-        ))
+        # Obsługa konkretnego przycisku HTML z podanego przykładu.
+        action = self.page.locator(RETURN_BUTTON_SELECTOR).first
+        try:
+            if not action.count() or not action.is_visible() or not action.is_enabled():
+                action = None
+        except Exception:
+            action = None
+
+        # Zachowaj dotychczasowe wzorce tekstowe jako mechanizm awaryjny.
+        if action is None:
+            action = self.find_action_by_text((
+                (r"^wróć do menu głównego$|^wroc do menu glownego$", 120),
+                (r"^powrót do menu głównego$|^powrot do menu glownego$", 115),
+                (r"^wróć do menu$|^wroc do menu$", 100),
+            ))
 
         if action is None:
             self.save_screenshot("return_to_menu_error.png")
@@ -1109,12 +1146,11 @@ class InstalingBrowser:
 
         action.click(timeout=5000)
         self.page.wait_for_timeout(1000)
-
         self.save_screenshot("main_menu.png")
-
         return True
 
     # --------------------------------------------------------
+
     # WYKONANIE SESJI
     # --------------------------------------------------------
 
