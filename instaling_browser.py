@@ -836,6 +836,11 @@ class InstalingBrowser:
 
         polish = self.extract_polish_word(task)
 
+        self.logger.info("URL zadania: %s", task.get("url", ""))
+        self.logger.info("Odczytane zdanie (#question_usage): %r", task.get("sentence", ""))
+        self.logger.info("Odczytana podpowiedź (#question_translation): %r", task.get("polish", ""))
+        self.logger.info("Hasło przekazane do agenta: %r", polish)
+
         if not polish:
             self.logger.warning(
                 "Nie udało się jednoznacznie rozpoznać słowa."
@@ -868,9 +873,11 @@ class InstalingBrowser:
 
         if not candidates:
             self.logger.warning(
-                "Brak tłumaczenia dla: %s",
+                "Agent nie zwrócił żadnych tłumaczeń dla: %s. "
+                "Pole #answer nie zostanie wypełnione, bo nie ma odpowiedzi do wpisania.",
                 polish,
             )
+            self.save_screenshot("translation_missing.png")
 
             self.save_observation({
                 "session_id": self.session_id,
@@ -904,9 +911,26 @@ class InstalingBrowser:
         previous_status = self.read_status_element()
 
         try:
-            answer_field.fill(answer)
+            answer_field.wait_for(state="visible", timeout=3000)
+            if not answer_field.is_enabled():
+                raise RuntimeError("Pole #answer jest wyłączone.")
+            answer_field.fill(answer, timeout=5000)
+
+            # Potwierdzamy odczytem wartości, że wpisanie rzeczywiście się udało.
+            actual_value = answer_field.input_value(timeout=3000)
+            if actual_value.strip() != answer:
+                self.logger.error(
+                    "Weryfikacja wpisania nie powiodła się: oczekiwano %r, pole zawiera %r",
+                    answer, actual_value,
+                )
+                self.save_screenshot("answer_fill_failed.png")
+                return "stop"
+
+            self.logger.info("Potwierdzono wpisanie do #answer: %r", actual_value)
+            self.save_screenshot("answer_filled.png")
         except Exception:
-            self.logger.exception("Nie udało się wpisać odpowiedzi.")
+            self.logger.exception("Nie udało się wpisać lub zweryfikować odpowiedzi w #answer.")
+            self.save_screenshot("answer_fill_failed.png")
             return "stop"
 
         if not AUTO_SUBMIT:
