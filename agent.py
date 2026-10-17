@@ -2,26 +2,17 @@
 Instaling Helper — agent tłumaczeń i uczenia się.
 
 Priorytet:
-1. Potwierdzone odpowiedzi z pamięci.
-2. Odpowiedzi ze słownika.
-3. Tłumacz internetowy.
+1. Potwierdzone odpowiedzi dla tego samego kontekstu.
+2. Tłumaczenia uwzględniające kontekst.
+3. Lokalny słownik jako dodatkowa podpowiedź.
 
-Do pamięci jako poprawne trafiają wyłącznie odpowiedzi
-potwierdzone przez platformę.
+Odpowiedź z pamięci jest kontekstowa. Informacja zwrotna
+Instalinga ma pierwszeństwo przed niepotwierdzonym tłumaczeniem.
 """
 
 from translator import find_translations
-
-from vocabulary import (
-    add_word,
-    get_word,
-    cleanup_expired_words,
-)
-
-from memory import (
-    get_known_answers,
-    record_attempt,
-)
+from vocabulary import add_word, get_word, cleanup_expired_words
+from memory import get_known_answers, record_attempt, mark_word_seen
 
 
 def normalize(text):
@@ -39,12 +30,10 @@ def word_count(text):
 
 def add_candidate(candidates, answer, source, verified=False):
     answer = str(answer or "").strip()
-
     if not answer:
         return
 
     key = answer_key(answer)
-
     for item in candidates:
         if answer_key(item["answer"]) == key:
             if verified and not item["verified"]:
@@ -62,85 +51,49 @@ def add_candidate(candidates, answer, source, verified=False):
 
 def analyze_word(polish, context="", word_count_required=None):
     """
-    Najpierw szuka odpowiedzi w pamięci i słowniku.
-    Internet wykorzystuje dopiero wtedy, gdy brakuje
-    odpowiedzi w lokalnych źródłach.
+    Analizuje polską podpowiedź w kontekście całego zdania.
+    Jeśli istnieje potwierdzona odpowiedź dla dokładnego kontekstu,
+    zwraca ją jako najwyższy priorytet.
     """
-
     polish = str(polish or "").strip()
     context = str(context or "").strip()
 
     if not polish:
         return {
             "status": "error",
+            "polish": polish,
+            "context": context,
             "translations": [],
             "needs_translation": True,
         }
 
     cleanup_expired_words()
+    mark_word_seen(polish, context=context, word_count=word_count_required)
 
-    candidates = []
-
-    # 1. Pamięć odpowiedzi potwierdzonych przez platformę.
     known = get_known_answers(
         polish,
         context=context,
         word_count=word_count_required,
     ) or {}
 
-    rejected = {
-        answer_key(x)
-        for x in known.get("rejected_answers", [])
-    }
+    rejected = {answer_key(x) for x in known.get("rejected_answers", [])}
+    candidates = []
 
+    # Potwierdzone odpowiedzi tylko dla tego kontekstu.
     for answer in known.get("accepted_answers", []):
         if (
             word_count_required is None
             or word_count(answer) == word_count_required
         ):
-            add_candidate(
-                candidates,
-                answer,
-                "memory",
-                verified=True,
-            )
+            add_candidate(candidates, answer, "memory", verified=True)
 
-    # 2. Lokalny słownik.
-    entry = get_word(polish)
+    # Jeśli mamy odpowiedź potwierdzoną dla dokładnego kontekstu,
+    # nie pozwalamy ogólnemu tłumaczeniu jej nadpisać.
+    has_context_verified_answer = any(item["verified"] for item in candidates)
 
-    if entry:
-        for item in entry.get("translations", []):
-            answer = str(item.get("english", "")).strip()
-
-            if not answer:
-                continue
-
-            if (
-                word_count_required is not None
-                and word_count(answer) != word_count_required
-            ):
-                continue
-
-            add_candidate(
-                candidates,
-                answer,
-                item.get("source", "vocabulary"),
-                item.get("verified", False),
-            )
-
-    # Odrzucone, niepotwierdzone odpowiedzi nie powinny
-    # być ponownie proponowane.
-    candidates = [
-        item for item in candidates
-        if not (
-            answer_key(item["answer"]) in rejected
-            and not item["verified"]
-        )
-    ]
-
-    # Jeśli istnieje odpowiedź z pamięci lub słownika,
-    # nie trzeba pytać tłumacza internetowego.
-    if not candidates:
+    # W przeciwnym razie pytamy tłumacza z kontekstem, nawet jeśli
+    # lokalny słownik zawiera ogólne tłumaczenie tego polskiego hasła.
+    if not has_context_verified_answer:
         translated = find_translations(
             polish,
             context=context,
@@ -149,16 +102,13 @@ def analyze_word(polish, context="", word_count_required=None):
 
         for item in translated.get("translations", []):
             answer = str(item.get("answer", "")).strip()
-
             if not answer:
                 continue
-
             if (
                 word_count_required is not None
                 and word_count(answer) != word_count_required
             ):
                 continue
-
             add_candidate(
                 candidates,
                 answer,
@@ -166,16 +116,43 @@ def analyze_word(polish, context="", word_count_required=None):
                 item.get("verified", False),
             )
 
-    # Najpierw odpowiedzi potwierdzone.
+    # Lokalny słownik jest dodatkowym źródłem, a nie dowodem,
+    # że tłumaczenie pasuje do aktualnego zdania.
+    entry = get_word(polish)
+    if entry and not has_context_verified_answer:
+        for item in entry.get("translations", []):
+            answer = str(item.get("english", "")).strip()
+            if not answer:
+                continue
+            if (
+                word_count_required is not None
+                and word_count(answer) != word_count_required
+            ):
+                continue
+            add_candidate(
+                candidates,
+                answer,
+                item.get("source", "vocabulary"),
+                item.get("verified", False),
+            )
+
+    # Odpowiedzi odrzucone w tym kontekście nie powinny być proponowane,
+    # chyba że są oznaczone jako potwierdzone w pamięci.
+    candidates = [
+        item for item in candidates
+        if item["verified"] or answer_key(item["answer"]) not in rejected
+    ]
+
     candidates.sort(
         key=lambda item: (
             not item["verified"],
             item["source"] != "memory",
+            item["source"] != "translator",
         )
     )
 
-    # Zapis propozycji w słowniku. Niepotwierdzone
-    # tłumaczenia pozostają oznaczone jako niepotwierdzone.
+    # Przechowujemy podpowiedzi w słowniku, ale status verified
+    # pozostaje prawdziwy tylko dla odpowiedzi potwierdzonych.
     for item in candidates:
         add_word(
             polish,
@@ -206,15 +183,10 @@ def learn_from_feedback(
     feedback_type=None,
 ):
     """
-    Zapisuje odpowiedź na podstawie wyniku platformy.
-
-    accepted=True:
-        Platforma potwierdziła odpowiedź.
-
-    correction:
-        Platforma ujawniła prawidłową odpowiedź.
+    Zapisuje informację zwrotną Instalinga.
+    feedback_type może zawierać np. „Synonim”, „Literówka”
+    lub „Zła wielkość liter”.
     """
-
     polish = str(polish or "").strip()
     answer = str(answer or "").strip()
     correction = str(correction or "").strip() or None
@@ -237,10 +209,11 @@ def learn_from_feedback(
         context=context,
         word_count=word_count,
         session_id=session_id,
+        feedback_type=feedback_type,
     )
 
-    # Odpowiedź wpisana przez użytkownika jest potwierdzona
-    # tylko wtedy, gdy platforma ją zaakceptowała.
+    # Odpowiedź wpisana przez użytkownika jest potwierdzona tylko
+    # wtedy, gdy platforma zaakceptowała ją w tym konkretnym kontekście.
     if accepted:
         add_word(
             polish,
@@ -251,8 +224,8 @@ def learn_from_feedback(
             source="verified_feedback",
         )
 
-    # Jeżeli platforma podała poprawną odpowiedź,
-    # zapisujemy ją jako potwierdzoną.
+    # Korekta ze strony jest zapisywana jako informacja wskazana
+    # przez platformę. Przy kolejnej próbie kontekstowa pamięć ją zwróci.
     if correction:
         add_word(
             polish,
@@ -279,29 +252,21 @@ def get_best_candidate(polish, context="", word_count=None):
         context=context,
         word_count_required=word_count,
     )
-
     translations = result.get("translations", [])
-
     return translations[0] if translations else None
 
 
 if __name__ == "__main__":
     while True:
         polish = input("Polskie słowo (koniec = wyjście): ").strip()
-
         if normalize(polish) == "koniec":
             break
-
-        context = input("Kontekst (opcjonalnie): ").strip()
-
+        context = input("Zdanie/kontekst (opcjonalnie): ").strip()
         result = analyze_word(polish, context=context)
-
         for item in result["translations"]:
             print(
-                f"- {item['answer']} | "
-                f"źródło={item['source']} | "
+                f"- {item['answer']} | źródło={item['source']} | "
                 f"potwierdzone={item['verified']}"
             )
-
         if not result["translations"]:
             print("Nie znaleziono tłumaczenia.")
