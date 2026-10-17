@@ -834,11 +834,24 @@ class InstalingBrowser:
         ))
 
     def find_next_task_button(self):
+        button = self.page.locator("#next_word")
+
+        try:
+            if (
+                button.count() > 0
+                and button.first.is_visible()
+                and button.first.is_enabled()
+            ):
+                return button.first
+        except Exception:
+            pass
+
+        # Fallback dla innych wariantów strony.
         return self.find_action_by_text((
+            (r"^następne$", 130),
             (r"^następne słowo$|^nastepne slowo$", 120),
             (r"^kolejne słowo$|^kolejne slowo$", 115),
             (r"^następne zadanie$|^nastepne zadanie$", 110),
-            (r"^następne$|^nastepne$", 100),
             (r"^dalej$", 90),
             (r"^kontynuuj$", 80),
         ))
@@ -855,7 +868,22 @@ class InstalingBrowser:
 
         try:
             action.click(timeout=5000)
-            self.page.wait_for_timeout(500)
+
+            try:
+                self.page.locator("#answer").wait_for(
+                    state="visible",
+                    timeout=5000,
+                )
+            except PlaywrightTimeoutError:
+                if self.is_session_complete():
+                    return "session_complete"
+
+                self.save_screenshot("next_task_timeout.png")
+                self.logger.warning(
+                    "Po kliknięciu #next_word nie pojawiło się "
+                    "widoczne pole #answer."
+                )
+                return "unknown"
         except Exception as error:
             self.logger.warning(
                 "Nie udało się przejść dalej: %s",
