@@ -111,7 +111,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-17T21:07:47.088522+00:00",
-      "last_seen_at": "2026-10-17T21:07:47.090968+00:00"
+      "last_seen_at": "2026-10-17T21:24:53.639020+00:00"
     },
     "{\"context\": \"i'd like to _______ on a big stage one day.\", \"polish\": \"występować\", \"word_count\": null}": {
       "polish": "występować",
@@ -121,7 +121,55 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-17T21:14:08.200803+00:00",
-      "last_seen_at": "2026-10-17T21:14:08.203324+00:00"
+      "last_seen_at": "2026-10-17T21:24:58.231329+00:00"
+    },
+    "{\"context\": \"przejdź do treści pytanie who is the ____ luka _________ luka of the book? główny bohater twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"główny bohater\", \"word_count\": null}": {
+      "polish": "główny bohater",
+      "context": "Przejdź do treści\nPytanie\nWho is the ____\nluka\n _________\nluka\n of the book?\ngłówny bohater\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "main character"
+      ],
+      "rejected_answers": [
+        "main character. Context: Who is the ____ _________ of the book?"
+      ],
+      "attempts": [
+        {
+          "answer": "main character. Context: Who is the ____ _________ of the book?",
+          "result": "rejected_with_correction",
+          "correction": "main character",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nPytanie\nWho is the ____\nluka\n _________\nluka\n of the book?\ngłówny bohater\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261017_212453",
+          "timestamp": "2026-10-17T21:24:55.425847+00:00"
+        }
+      ],
+      "created_at": "2026-10-17T21:24:55.425833+00:00",
+      "last_seen_at": "2026-10-17T21:24:55.425843+00:00"
+    },
+    "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: main character pytanie i'd like to _______ luka on a big stage one day. występować twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"występować\", \"word_count\": null}": {
+      "polish": "występować",
+      "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: main character\nPytanie\nI'd like to _______\nluka\n on a big stage one day.\nwystępować\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "perform"
+      ],
+      "rejected_answers": [
+        "occur. Context: I'd like to _______ on a big stage one day."
+      ],
+      "attempts": [
+        {
+          "answer": "occur. Context: I'd like to _______ on a big stage one day.",
+          "result": "rejected_with_correction",
+          "correction": "perform",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: main character\nPytanie\nI'd like to _______\nluka\n on a big stage one day.\nwystępować\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261017_212453",
+          "timestamp": "2026-10-17T21:24:57.559467+00:00"
+        }
+      ],
+      "created_at": "2026-10-17T21:24:57.559454+00:00",
+      "last_seen_at": "2026-10-17T21:24:57.559463+00:00"
     }
   },
   "sessions": {
@@ -167,6 +215,11 @@
     },
     "20261017_211408": {
       "started_at": "2026-10-17T21:14:08.165877+00:00",
+      "completed_at": null,
+      "status": "started"
+    },
+    "20261017_212453": {
+      "started_at": "2026-10-17T21:24:53.591978+00:00",
       "completed_at": null,
       "status": "started"
     }

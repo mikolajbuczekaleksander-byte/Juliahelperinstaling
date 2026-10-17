@@ -69,5 +69,45 @@
       "verified_feedback",
       "memory"
     ]
+  },
+  "główny bohater": {
+    "translations": [
+      {
+        "english": "main character. Context: Who is the ____ _________ of the book?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "main character",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-17T21:24:54.839910+00:00",
+    "last_seen": "2026-10-17T21:24:55.427184+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "występować": {
+    "translations": [
+      {
+        "english": "occur. Context: I'd like to _______ on a big stage one day.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "perform",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-17T21:24:56.985948+00:00",
+    "last_seen": "2026-10-17T21:24:58.830560+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
   }
 }
