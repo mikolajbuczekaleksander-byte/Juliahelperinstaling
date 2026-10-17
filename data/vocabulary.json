@@ -109,5 +109,65 @@
       "online",
       "verified_correction"
     ]
+  },
+  "główny (pierwszoplanowy) aktor": {
+    "translations": [
+      {
+        "english": "lead actor. Context: He's the ____ _____ in that new film.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "lead actor",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-17T22:09:19.903978+00:00",
+    "last_seen": "2026-10-17T22:09:24.700074+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "ilustracje": {
+    "translations": [
+      {
+        "english": "illustrations. Context: Can you describe the _____________?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "illustrations",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-17T22:09:21.570672+00:00",
+    "last_seen": "2026-10-17T22:09:21.960140+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "powieść": {
+    "translations": [
+      {
+        "english": "novel. Context: This is my favourite _____.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "novel",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-17T22:09:23.260023+00:00",
+    "last_seen": "2026-10-17T22:09:23.650429+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
   }
 }

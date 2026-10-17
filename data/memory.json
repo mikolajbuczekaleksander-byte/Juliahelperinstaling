@@ -170,6 +170,108 @@
       ],
       "created_at": "2026-10-17T21:24:57.559454+00:00",
       "last_seen_at": "2026-10-17T21:24:57.559463+00:00"
+    },
+    "{\"context\": \"he's the ____ _____ in that new film.\", \"polish\": \"główny (pierwszoplanowy) aktor\", \"word_count\": null}": {
+      "polish": "główny (pierwszoplanowy) aktor",
+      "context": "He's the ____ _____ in that new film.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-17T22:09:18.694745+00:00",
+      "last_seen_at": "2026-10-17T22:09:23.889620+00:00"
+    },
+    "{\"context\": \"przejdź do treści pytanie he's the ____ luka _____ luka in that new film. główny (pierwszoplanowy) aktor twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"główny (pierwszoplanowy) aktor\", \"word_count\": null}": {
+      "polish": "główny (pierwszoplanowy) aktor",
+      "context": "Przejdź do treści\nPytanie\nHe's the ____\nluka\n _____\nluka\n in that new film.\ngłówny (pierwszoplanowy) aktor\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "lead actor"
+      ],
+      "rejected_answers": [
+        "lead actor. Context: He's the ____ _____ in that new film."
+      ],
+      "attempts": [
+        {
+          "answer": "lead actor. Context: He's the ____ _____ in that new film.",
+          "result": "rejected_with_correction",
+          "correction": "lead actor",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nPytanie\nHe's the ____\nluka\n _____\nluka\n in that new film.\ngłówny (pierwszoplanowy) aktor\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261017_220918",
+          "timestamp": "2026-10-17T22:09:20.325825+00:00"
+        }
+      ],
+      "created_at": "2026-10-17T22:09:20.325816+00:00",
+      "last_seen_at": "2026-10-17T22:09:20.325823+00:00"
+    },
+    "{\"context\": \"can you describe the _____________?\", \"polish\": \"ilustracje\", \"word_count\": null}": {
+      "polish": "ilustracje",
+      "context": "Can you describe the _____________?",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-17T22:09:20.558958+00:00",
+      "last_seen_at": "2026-10-17T22:09:20.561448+00:00"
+    },
+    "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: lead actor pytanie can you describe the _____________ luka ? ilustracje twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"ilustracje\", \"word_count\": null}": {
+      "polish": "ilustracje",
+      "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: lead actor\nPytanie\nCan you describe the _____________\nluka\n?\nilustracje\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "illustrations"
+      ],
+      "rejected_answers": [
+        "illustrations. Context: Can you describe the _____________?"
+      ],
+      "attempts": [
+        {
+          "answer": "illustrations. Context: Can you describe the _____________?",
+          "result": "rejected_with_correction",
+          "correction": "illustrations",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: lead actor\nPytanie\nCan you describe the _____________\nluka\n?\nilustracje\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261017_220918",
+          "timestamp": "2026-10-17T22:09:21.958727+00:00"
+        }
+      ],
+      "created_at": "2026-10-17T22:09:21.958719+00:00",
+      "last_seen_at": "2026-10-17T22:09:21.958725+00:00"
+    },
+    "{\"context\": \"this is my favourite _____.\", \"polish\": \"powieść\", \"word_count\": null}": {
+      "polish": "powieść",
+      "context": "This is my favourite _____.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-17T22:09:22.208031+00:00",
+      "last_seen_at": "2026-10-17T22:09:22.210506+00:00"
+    },
+    "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: illustrations pytanie this is my favourite _____ luka . powieść twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"powieść\", \"word_count\": null}": {
+      "polish": "powieść",
+      "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: illustrations\nPytanie\nThis is my favourite _____\nluka\n.\npowieść\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "novel"
+      ],
+      "rejected_answers": [
+        "novel. Context: This is my favourite _____."
+      ],
+      "attempts": [
+        {
+          "answer": "novel. Context: This is my favourite _____.",
+          "result": "rejected_with_correction",
+          "correction": "novel",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: illustrations\nPytanie\nThis is my favourite _____\nluka\n.\npowieść\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261017_220918",
+          "timestamp": "2026-10-17T22:09:23.649349+00:00"
+        }
+      ],
+      "created_at": "2026-10-17T22:09:23.649343+00:00",
+      "last_seen_at": "2026-10-17T22:09:23.649347+00:00"
     }
   },
   "sessions": {
@@ -225,6 +327,11 @@
     },
     "20261017_220353": {
       "started_at": "2026-10-17T22:03:53.195866+00:00",
+      "completed_at": null,
+      "status": "started"
+    },
+    "20261017_220918": {
+      "started_at": "2026-10-17T22:09:18.664602+00:00",
       "completed_at": null,
       "status": "started"
     }
