@@ -469,8 +469,26 @@ class InstalingBrowser:
         return candidates[0][1] if candidates else None
 
     def is_session_complete(self):
-        text = normalize(self.page_text())
+        # Nagłówek jest wizualnie ukryty, dlatego sprawdzamy jego obecność
+        # w DOM, a nie widoczność na ekranie.
+        heading = self.page.locator(
+            "h2.visually-hidden",
+            has_text="Koniec sesji",
+        )
+        try:
+            if heading.count() > 0:
+                self.logger.info(
+                    "Wykryto nagłówek końca sesji: h2.visually-hidden / Koniec sesji."
+                )
+                return True
+        except Exception as error:
+            self.logger.debug(
+                "Nie udało się sprawdzić nagłówka końca sesji: %s",
+                error,
+            )
 
+        # Zachowujemy wcześniejsze warianty komunikatów jako fallback.
+        text = normalize(self.page_text())
         patterns = (
             r"sesja została zakończona",
             r"sesja zakonczona",
@@ -481,8 +499,12 @@ class InstalingBrowser:
             r"powrót do menu głównego",
             r"powrot do menu glownego",
         )
-
-        return any(re.search(pattern, text) for pattern in patterns)
+        complete = any(re.search(pattern, text) for pattern in patterns)
+        if complete:
+            self.logger.info(
+                "Koniec sesji wykryty na podstawie tekstu strony."
+            )
+        return complete
 
     def find_session_action(self):
         """Znajduje akcję sesji przez HTML, a potem przez tekst.
@@ -752,30 +774,34 @@ class InstalingBrowser:
             str(text or "").strip().lower(),
         )
         if not value:
-            return "unknown"
-
+            result = "unknown"
         # Najpierw sprawdzamy błędy.
-        if re.search(
+        elif re.search(
             r"niepoprawnie|niepoprawna odpowiedź|"
             r"niepoprawna odpowiedz",
             value,
         ):
-            return "incorrect"
-
-        if re.search(r"literówk|literowk", value):
-            return "typo"
-
-        if re.search(r"synonim", value):
-            return "synonym"
-
+            result = "incorrect"
+        elif re.search(r"literówk|literowk", value):
+            result = "typo"
+        elif re.search(r"synonim", value):
+            result = "synonym"
         # Akceptujemy wyłącznie znane krótkie komunikaty pozytywne.
-        if re.fullmatch(
+        elif re.fullmatch(
             r"(dobrze|poprawnie|prawidłowo|prawidlowo)[!. ]*",
             value,
         ):
-            return "correct"
+            result = "correct"
+        else:
+            result = "unknown"
 
-        return "unknown"
+        # Pełny status zapisujemy diagnostycznie, bez danych logowania.
+        self.logger.info(
+            "Klasyfikacja statusu: tekst=%r | wynik=%s",
+            str(text or ""),
+            result,
+        )
+        return result
 
     def find_correct_answer(self, text):
         """
@@ -816,11 +842,23 @@ class InstalingBrowser:
             current = self.read_status_element()
 
             if current and current != previous_status:
+                self.logger.info(
+                    "Status zmienił się: poprzedni=%r | aktualny=%r",
+                    previous_status,
+                    current,
+                )
                 return current
 
             self.page.wait_for_timeout(100)
 
         current = self.read_status_element()
+        self.logger.warning(
+            "Brak zmiany statusu po %s ms: poprzedni=%r | aktualny=%r | przyczyna=%s",
+            FEEDBACK_TIMEOUT_MS,
+            previous_status,
+            current,
+            "brak komunikatu" if not current else "powtórzony komunikat",
+        )
 
         if current and current != previous_status:
             return current
@@ -1197,18 +1235,28 @@ class InstalingBrowser:
             )
 
             if self.is_session_complete():
+                self.logger.info(
+                    "run_one_session kończy pętlę: wykryto koniec sesji przed process_task()."
+                )
                 self.session_completed = True
                 break
 
             outcome = self.process_task()
+            self.logger.info(
+                "process_task() zwróciło: %r",
+                outcome,
+            )
 
             if outcome == "session_complete":
+                self.logger.info(
+                    "run_one_session kończy pętlę: process_task() zgłosiło koniec sesji."
+                )
                 self.session_completed = True
                 break
 
             if outcome == "stop":
                 self.logger.warning(
-                    "Sesja zatrzymana z powodu niepewnego wyniku."
+                    "run_one_session kończy się przez process_task() == 'stop', a nie przez wykrycie końca sesji."
                 )
                 self.save_screenshot("session_stopped.png")
                 return False
@@ -1270,7 +1318,31 @@ class InstalingBrowser:
             )
 
         action.click(timeout=5000)
-        self.page.wait_for_timeout(1000)
+
+        # Powrót potwierdzamy elementem charakterystycznym dla menu.
+        # state="attached" sprawdza obecność w DOM, bez wymogu widoczności.
+        menu_entry = self.page.locator(SESSION_BUTTON_SELECTOR).first
+        try:
+            menu_entry.wait_for(
+                state="attached",
+                timeout=PAGE_TIMEOUT_MS,
+            )
+        except PlaywrightTimeoutError:
+            self.logger.error(
+                "Kliknięto powrót do menu, ale element menu %r nie pojawił się w DOM w ciągu %s ms.",
+                SESSION_BUTTON_SELECTOR,
+                PAGE_TIMEOUT_MS,
+            )
+            self.save_screenshot("return_to_menu_error.png")
+            raise RuntimeError(
+                "Nie potwierdzono powrotu do menu: brak elementu "
+                f"{SESSION_BUTTON_SELECTOR!r} w DOM."
+            )
+
+        self.logger.info(
+            "Potwierdzono powrót do menu: element %r jest obecny w DOM.",
+            SESSION_BUTTON_SELECTOR,
+        )
         self.save_screenshot("main_menu.png")
         return True
 
