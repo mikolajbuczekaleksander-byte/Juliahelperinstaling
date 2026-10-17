@@ -447,6 +447,46 @@ class InstalingBrowser:
         return any(re.search(pattern, text) for pattern in patterns)
 
     def find_session_action(self):
+        """Znajduje akcję rozpoczęcia sesji na podstawie HTML strony.
+
+        W pierwszej kolejności sprawdza link <a class="btn-start-session">
+        i jego tekst „Rozpocznij codzienną sesję”. Nie zakłada na sztywno
+        wartości child_id — korzysta z href odczytanego z aktualnego HTML.
+        Jeśli takiego linku nie ma, używa dotychczasowego wyszukiwania
+        pozostałych przycisków sesji.
+        """
+        daily_session_links = self.page.locator("a.btn-start-session")
+
+        for index in range(daily_session_links.count()):
+            link = daily_session_links.nth(index)
+
+            try:
+                if not link.is_visible() or not link.is_enabled():
+                    continue
+
+                text = normalize(link.inner_text(timeout=1000))
+                href = link.get_attribute("href") or ""
+
+                if (
+                    text in (
+                        "rozpocznij codzienną sesję",
+                        "rozpocznij codzienna sesje",
+                    )
+                    and "/app/session/app.php" in href
+                ):
+                    self.logger.info(
+                        "Znaleziono link codziennej sesji: %s",
+                        href,
+                    )
+                    return link
+
+            except Exception as error:
+                self.logger.debug(
+                    "Nie udało się sprawdzić linku sesji: %s",
+                    error,
+                )
+
+        # Zachowujemy obsługę dotychczasowych wariantów przycisków.
         return self.find_action_by_text((
             (r"kontynuuj sesję|kontynuuj sesje", 120),
             (r"rozpocznij kolejną sesję|rozpocznij kolejna sesje", 110),
