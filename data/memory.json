@@ -102,6 +102,16 @@
           "timestamp": "2026-10-14T12:26:33.895770+00:00"
         }
       ]
+    },
+    "{\"context\": \"who is the ____ _________ of the book?\", \"polish\": \"główny bohater\", \"word_count\": null}": {
+      "polish": "główny bohater",
+      "context": "Who is the ____ _________ of the book?",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-17T21:07:47.088522+00:00",
+      "last_seen_at": "2026-10-17T21:07:47.090968+00:00"
     }
   },
   "sessions": {
@@ -137,6 +147,11 @@
     },
     "20261017_205856": {
       "started_at": "2026-10-17T20:58:56.338276+00:00",
+      "completed_at": null,
+      "status": "started"
+    },
+    "20261017_210747": {
+      "started_at": "2026-10-17T21:07:47.044879+00:00",
       "completed_at": null,
       "status": "started"
     }
