@@ -1304,7 +1304,7 @@ class InstalingBrowser:
 # ============================================================
 
 def main():
-    browser = InstalingBrowser(headless=False)
+    browser = InstalingBrowser(headless=True)
 
     try:
         browser.start()
