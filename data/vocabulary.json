@@ -184,7 +184,7 @@
       }
     ],
     "first_seen": "2026-10-22T16:23:48.128810+00:00",
-    "last_seen": "2026-10-22T16:23:48.613379+00:00",
+    "last_seen": "2026-10-22T16:27:47.921889+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -205,6 +205,26 @@
     ],
     "first_seen": "2026-10-22T16:23:49.530607+00:00",
     "last_seen": "2026-10-22T16:23:50.027958+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "zapasy (sport)": {
+    "translations": [
+      {
+        "english": "wrestling (sport). Context: I don't think _________ is my favourite sport. I don't like watching people fight.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "wrestling",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T16:27:46.178115+00:00",
+    "last_seen": "2026-10-22T16:27:46.701815+00:00",
     "sources": [
       "online",
       "verified_correction"
