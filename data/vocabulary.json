@@ -84,7 +84,7 @@
       }
     ],
     "first_seen": "2026-10-17T21:24:54.839910+00:00",
-    "last_seen": "2026-10-17T22:03:54.688155+00:00",
+    "last_seen": "2026-10-22T17:17:15.319226+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -104,7 +104,7 @@
       }
     ],
     "first_seen": "2026-10-17T21:24:56.985948+00:00",
-    "last_seen": "2026-10-22T16:23:50.989045+00:00",
+    "last_seen": "2026-10-22T17:18:09.694904+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -224,7 +224,7 @@
       }
     ],
     "first_seen": "2026-10-22T16:27:46.178115+00:00",
-    "last_seen": "2026-10-22T16:27:46.701815+00:00",
+    "last_seen": "2026-10-22T17:17:25.410892+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -244,7 +244,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:02:08.120040+00:00",
-    "last_seen": "2026-10-22T17:02:08.601196+00:00",
+    "last_seen": "2026-10-22T17:17:53.039182+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -264,7 +264,327 @@
       }
     ],
     "first_seen": "2026-10-22T17:02:09.633168+00:00",
-    "last_seen": "2026-10-22T17:02:10.116829+00:00",
+    "last_seen": "2026-10-22T17:17:54.424514+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "rakieta": {
+    "translations": [
+      {
+        "english": "racket. Context: I'm looking for the tennis ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "racket",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:08.814976+00:00",
+    "last_seen": "2026-10-22T17:17:57.067404+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "basen (olimpijski/pływacki)": {
+    "translations": [
+      {
+        "english": "swimming pool (Olympic/swimming). Context: Is there an outdoor swimming ____?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "(Olympic-size) (swimming) pool",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:11.875268+00:00",
+    "last_seen": "2026-10-22T17:17:55.755726+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "projekt; konstrukcja": {
+    "translations": [
+      {
+        "english": "design; construction. Context: I saw your ______. I think it's great!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "design",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:17.043459+00:00",
+    "last_seen": "2026-10-22T17:17:28.210180+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "fotografia (dziedzina); fotografika": {
+    "translations": [
+      {
+        "english": "photography (field); photography. Context: I prefer ___________ to painting.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "photography",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:19.947494+00:00",
+    "last_seen": "2026-10-22T17:17:21.388918+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "rysować": {
+    "translations": [
+      {
+        "english": "draw. Context: Patty can't ____ at all!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "draw",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:22.650006+00:00",
+    "last_seen": "2026-10-22T17:17:30.820930+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "kąpielówki": {
+    "translations": [
+      {
+        "english": "swimming trunks. Context: Have you seen my swimming ______?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "trunks",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:26.794528+00:00",
+    "last_seen": "2026-10-22T17:17:58.431113+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "kij (do baseballa, krykieta)": {
+    "translations": [
+      {
+        "english": "bat (for baseball, cricket). Context: You need a ___ to play baseball.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "bat",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:29.548509+00:00",
+    "last_seen": "2026-10-22T17:18:02.436148+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "strój kąpielowy": {
+    "translations": [
+      {
+        "english": "swimsuit. Context: Do you think I should buy this _______?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "costume",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:32.310111+00:00",
+    "last_seen": "2026-10-22T17:18:01.132412+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "jest zatytułowany...": {
+    "translations": [
+      {
+        "english": "It is titled.... Context: It's my favorite film. ____ ______ 'Interstellar'.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "it's called",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:34.951817+00:00",
+    "last_seen": "2026-10-22T17:17:40.244800+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "surfing": {
+    "translations": [
+      {
+        "english": "surfing. Context: He's a _______ champion.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "surfing",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:17:37.664484+00:00",
+    "last_seen": "2026-10-22T17:17:59.821829+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "golf": {
+    "translations": [
+      {
+        "english": "golf. Context: Playing ____ isn't as easy as it seems.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "golf",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:18:03.789125+00:00",
+    "last_seen": "2026-10-22T17:18:13.278043+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "gimnastyka": {
+    "translations": [
+      {
+        "english": "gymnastics. Context: She's keen on __________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "gymnastics",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:18:05.216949+00:00",
+    "last_seen": "2026-10-22T17:18:08.301384+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "tenis ziemny": {
+    "translations": [
+      {
+        "english": "tennis. Context: I love playing ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "tennis",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:18:06.860749+00:00",
+    "last_seen": "2026-10-22T17:18:20.482260+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "bieganie": {
+    "translations": [
+      {
+        "english": "running. Context: I love morning _______. Exercising makes me feel alive.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "running",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:18:11.212842+00:00",
+    "last_seen": "2026-10-22T17:18:18.929781+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "jazda na deskorolce": {
+    "translations": [
+      {
+        "english": "skateboarding. Context: Tim and his friends are really into _____________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "skateboarding",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:18:14.674389+00:00",
+    "last_seen": "2026-10-22T17:18:16.024337+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "piosenka": {
+    "translations": [
+      {
+        "english": "song. Context: What is that ____ about?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "song",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:18:17.585045+00:00",
+    "last_seen": "2026-10-22T17:18:21.980214+00:00",
     "sources": [
       "online",
       "verified_correction"
