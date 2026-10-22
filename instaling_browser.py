@@ -844,7 +844,10 @@ class InstalingBrowser:
             "brak komunikatu" if not current else "powtórzony komunikat",
         )
 
-        if current and current != previous_status:
+        # Ten sam komunikat może pojawić się dla kolejnych odpowiedzi.
+        # Jeżeli status nadal istnieje, traktujemy go jako bieżący feedback
+        # zamiast kończyć sesję.
+        if current:
             return current
 
         return ""
@@ -883,11 +886,9 @@ class InstalingBrowser:
         if self.is_session_complete():
             return "session_complete"
 
-        # Jeżeli InstaLing sam przełączył już ekran na następne zadanie,
-        # nie klikamy niczego drugi raz.
-        if self.has_answer_field():
-            return "next_task"
-
+        # Pole odpowiedzi może nadal być widoczne po poprzedniej odpowiedzi.
+        # Nie oznacza to, że załadowało się następne zadanie.
+        # Zawsze szukamy i klikamy przycisk następnego zadania.
         action = self.find_next_task_button()
 
         if action is None:
@@ -1108,17 +1109,13 @@ class InstalingBrowser:
             "timestamp": utc_timestamp(),
         })
 
-        # Nieznany komunikat oznacza zatrzymanie.
+        # Nieznany komunikat nie kończy sesji. Koniec następuje dopiero,
+        # gdy InstaLing pokaże #return_mainpage.
         if feedback_type == "unknown":
             self.logger.warning(
                 "Nie udało się zweryfikować odpowiedzi. "
-                "Nie zapisuję jej jako poprawnej."
+                "Kontynuuję do następnego zadania."
             )
-
-            if STOP_ON_UNKNOWN_FEEDBACK:
-                return "stop"
-
-            return "stop"
 
         # ----------------------------------------------------
         # ZAPIS ODPOWIEDZI
