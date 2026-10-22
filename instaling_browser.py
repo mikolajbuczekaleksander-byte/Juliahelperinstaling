@@ -470,45 +470,22 @@ class InstalingBrowser:
 
     def is_session_complete(self):
         """
-        Rozpoznaje koniec sesji na podstawie konkretnego, widocznego
-        przycisku HTML #return_mainpage.
+        Sesja jest zakończona WYŁĄCZNIE wtedy, gdy widoczny jest
+        aktywny przycisk #return_mainpage.
 
-        Nie uznajemy samego ukrytego nagłówka „Koniec sesji” ani
-        obecności przycisku startowego w DOM za potwierdzenie końca.
+        Sama poprawna odpowiedź, tekst „Koniec sesji” w DOM ani
+        obecność przycisku rozpoczęcia sesji nie kończą sesji.
         """
         try:
             return_button = self.page.locator(RETURN_BUTTON_SELECTOR).first
-            if (
+            return (
                 return_button.count() > 0
                 and return_button.is_visible()
                 and return_button.is_enabled()
-            ):
-                self.logger.info(
-                    "Wykryto ekran końcowy: widoczny i aktywny przycisk %s.",
-                    RETURN_BUTTON_SELECTOR,
-                )
-                self.save_screenshot("session_end_detected.png")
-                return True
-
-            # Diagnostyka: ukryty nagłówek nie jest samodzielnym dowodem
-            # zakończenia sesji, zwłaszcza gdy pole odpowiedzi nadal działa.
-            heading_count = self.page.locator(
-                "h2.visually-hidden",
-                has_text="Koniec sesji",
-            ).count()
-
-            if heading_count:
-                self.logger.debug(
-                    "Nagłówek 'Koniec sesji' istnieje w DOM, ale "
-                    "%s nie jest widoczny i aktywny; nie kończę sesji.",
-                    RETURN_BUTTON_SELECTOR,
-                )
-
-            return False
-
+            )
         except Exception as error:
             self.logger.warning(
-                "Nie udało się sprawdzić ekranu końcowego: %s",
+                "Nie udało się sprawdzić końca sesji: %s",
                 error,
             )
             return False
@@ -664,7 +641,7 @@ class InstalingBrowser:
 
             try:
                 action.click(timeout=5000)
-                self.page.wait_for_timeout(1000)
+                self.page.wait_for_timeout(1500)
             except Exception as error:
                 self.logger.error(
                     "Nie udało się rozpocząć sesji: %s",
@@ -902,20 +879,33 @@ class InstalingBrowser:
         ))
 
     def go_to_next_task(self):
+        # To jest jedyny moment, w którym uznajemy sesję za zakończoną.
         if self.is_session_complete():
             return "session_complete"
+
+        # Jeżeli InstaLing sam przełączył już ekran na następne zadanie,
+        # nie klikamy niczego drugi raz.
+        if self.has_answer_field():
+            return "next_task"
 
         action = self.find_next_task_button()
 
         if action is None:
+            if self.is_session_complete():
+                return "session_complete"
+
             self.save_screenshot("next_task_button_missing.png")
+            self.logger.warning(
+                "Nie znaleziono przycisku następnego zadania "
+                "i nie wykryto końca sesji."
+            )
             return "unknown"
 
         try:
             action.click(timeout=5000)
 
             try:
-                self.page.locator("#answer").wait_for(
+                self.page.locator(ANSWER_SELECTOR).first.wait_for(
                     state="visible",
                     timeout=5000,
                 )
@@ -923,10 +913,18 @@ class InstalingBrowser:
                 if self.is_session_complete():
                     return "session_complete"
 
+                # Czasami po kliknięciu strona potrzebuje jeszcze chwili.
+                self.page.wait_for_timeout(1000)
+
+                if self.is_session_complete():
+                    return "session_complete"
+
+                if self.has_answer_field():
+                    return "next_task"
+
                 self.save_screenshot("next_task_timeout.png")
                 self.logger.warning(
-                    "Po kliknięciu #next_word nie pojawiło się "
-                    "widoczne pole #answer."
+                    "Po przejściu dalej nie pojawiło się pole #answer."
                 )
                 return "unknown"
         except Exception as error:
@@ -1209,6 +1207,9 @@ class InstalingBrowser:
             self.task_count,
         )
 
+        # Poprawna odpowiedź NIE kończy sesji.
+        # Kończymy dopiero wtedy, gdy strona faktycznie pokaże
+        # aktywny przycisk #return_mainpage.
         if self.is_session_complete():
             return "session_complete"
 
@@ -1359,6 +1360,17 @@ class InstalingBrowser:
     # --------------------------------------------------------
 
     def run_two_sessions(self):
+        """
+        Wykonuje dokładnie TARGET_SESSIONS sesji.
+
+        Schemat:
+          1. uruchom sesję,
+          2. rozwiązuj zadania aż do #return_mainpage,
+          3. kliknij „Powrót na stronę główną”,
+          4. z menu kliknij „Rozpocznij kolejną sesję” / „Rozpocznij sesję”,
+          5. powtórz,
+          6. dopiero po powrocie do menu po ostatniej sesji zwróć sukces.
+        """
         for session_number in range(1, TARGET_SESSIONS + 1):
             self.logger.info(
                 "========== SESJA %s/%s ==========",
@@ -1366,25 +1378,115 @@ class InstalingBrowser:
                 TARGET_SESSIONS,
             )
 
-            if not self.run_one_session():
+            # Otwórz sesję. Nie kończymy programu tylko dlatego,
+            # że poprzednia sesja została już ukończona.
+            if not self.open_session():
                 self.logger.error(
-                    "Nie udało się ukończyć sesji %s.",
+                    "Nie udało się otworzyć sesji %s.",
                     session_number,
                 )
                 return False
 
-            # Po każdej ukończonej sesji klikamy „Powrót na stronę główną”.
-            # Dotyczy to również ostatniej sesji — po powrocie do menu
-            # pętla kończy się, a main() zamyka przeglądarkę.
+            # Wykonuj zadania aż do rzeczywistego końca sesji.
+            completed = False
+
+            for index in range(MAX_TASKS_PER_SESSION):
+                self.logger.info(
+                    "Sesja %s — zadanie %s/%s",
+                    session_number,
+                    index + 1,
+                    MAX_TASKS_PER_SESSION,
+                )
+
+                if self.is_session_complete():
+                    completed = True
+                    self.session_completed = True
+                    break
+
+                outcome = self.process_task()
+                self.logger.info(
+                    "process_task() zwróciło: %r",
+                    outcome,
+                )
+
+                if outcome == "session_complete":
+                    completed = True
+                    self.session_completed = True
+                    break
+
+                if outcome == "stop":
+                    self.logger.error(
+                        "Sesja %s została przerwana przez process_task().",
+                        session_number,
+                    )
+                    self.save_screenshot("session_stopped.png")
+                    return False
+
+                if outcome != "next_task":
+                    self.logger.error(
+                        "Nieoczekiwany wynik process_task(): %r",
+                        outcome,
+                    )
+                    self.save_screenshot("session_stopped.png")
+                    return False
+
+            if not completed:
+                self.logger.error(
+                    "Nie wykryto końca sesji %s w limicie %s zadań.",
+                    session_number,
+                    MAX_TASKS_PER_SESSION,
+                )
+                self.save_screenshot("session_limit_reached.png")
+                return False
+
+            finish_session(self.session_id)
+
+            self.logger.info(
+                "Potwierdzono zakończenie sesji: %s",
+                self.session_id,
+            )
+
+            self.save_screenshot(
+                f"session_{session_number}_completed.png"
+            )
+
+            # Przygotuj nową sesję z nowym ID.
+            self.session_started = False
+            self.session_completed = False
+
+            # ZAWSZE wracamy do menu po ukończonej sesji.
             self.return_to_menu()
 
             if session_number < TARGET_SESSIONS:
+                self.logger.info(
+                    "Sesja %s ukończona. Wracamy do menu i "
+                    "uruchamiamy kolejną sesję.",
+                    session_number,
+                )
+
                 self.page.wait_for_timeout(1000)
 
-        self.logger.info(
-            "Ukończono wszystkie %s sesje i powrócono na stronę główną.",
-            TARGET_SESSIONS,
-        )
+                # Dodatkowe sprawdzenie, że jesteśmy faktycznie w menu.
+                if self.has_answer_field():
+                    self.logger.error(
+                        "Po powrocie do menu nadal widoczne jest pole #answer."
+                    )
+                    self.save_screenshot("menu_return_failed.png")
+                    return False
+
+                # Następna iteracja wywoła open_session(), które kliknie
+                # odpowiedni link/przycisk:
+                # „Rozpocznij kolejną sesję” albo „Rozpocznij sesję”.
+                continue
+
+            # To jest OSTATNIA sesja. W tym miejscu jesteśmy już po
+            # kliknięciu „Powrót na stronę główną”. Dopiero teraz kończymy.
+            self.logger.info(
+                "Ukończono wszystkie %s sesje. "
+                "Po powrocie do menu można zamknąć przeglądarkę.",
+                TARGET_SESSIONS,
+            )
+
         return True
 
     def close(self):
