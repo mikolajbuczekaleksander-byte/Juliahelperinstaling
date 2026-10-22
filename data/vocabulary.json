@@ -204,7 +204,7 @@
       }
     ],
     "first_seen": "2026-10-22T16:23:49.530607+00:00",
-    "last_seen": "2026-10-22T16:23:50.027958+00:00",
+    "last_seen": "2026-10-22T17:02:11.282957+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -225,6 +225,46 @@
     ],
     "first_seen": "2026-10-22T16:27:46.178115+00:00",
     "last_seen": "2026-10-22T16:27:46.701815+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "pianka do nurkowania": {
+    "translations": [
+      {
+        "english": "diving foam. Context: We're going swimming so put on your _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "wetsuit",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:02:08.120040+00:00",
+    "last_seen": "2026-10-22T17:02:08.601196+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "buty (np. korki)": {
+    "translations": [
+      {
+        "english": "shoes (e.g. traffic jams). Context: These football _____ are really uncomfortable.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "boots",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T17:02:09.633168+00:00",
+    "last_seen": "2026-10-22T17:02:10.116829+00:00",
     "sources": [
       "online",
       "verified_correction"
