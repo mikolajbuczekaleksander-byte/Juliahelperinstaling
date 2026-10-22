@@ -469,126 +469,49 @@ class InstalingBrowser:
         return candidates[0][1] if candidates else None
 
     def is_session_complete(self):
-        """Rozpoznaje koniec sesji, nie myląc go z ukrytym, starym nagłówkiem."""
-        heading = self.page.locator(
-            "h2.visually-hidden",
-            has_text="Koniec sesji",
-        )
+        """
+        Rozpoznaje koniec sesji na podstawie konkretnego, widocznego
+        przycisku HTML #return_mainpage.
 
+        Nie uznajemy samego ukrytego nagłówka „Koniec sesji” ani
+        obecności przycisku startowego w DOM za potwierdzenie końca.
+        """
         try:
-            heading_count = heading.count()
-        except Exception as error:
-            heading_count = 0
-            self.logger.debug(
-                "Nie udało się policzyć nagłówków końca sesji: %s",
-                error,
-            )
-
-        if heading_count > 0:
-            # Zapisujemy stan strony, aby można było ustalić, czy nagłówek
-            # pochodzi z aktywnej sesji, czy pozostał w DOM po nawigacji.
-            try:
-                current_url = self.page.url
-            except Exception:
-                current_url = "<nieznany>"
-
-            try:
-                page_text = self.page_text()
-            except Exception:
-                page_text = "<nie udało się odczytać tekstu strony>"
-
-            # Nie umieszczaj danych logowania w diagnostycznym tekście strony.
-            for secret in (
-                os.environ.get("INSTALING_LOGIN", "").strip(),
-                os.environ.get("INSTALING_PASSWORD", ""),
+            return_button = self.page.locator(RETURN_BUTTON_SELECTOR).first
+            if (
+                return_button.count() > 0
+                and return_button.is_visible()
+                and return_button.is_enabled()
             ):
-                if secret:
-                    page_text = page_text.replace(secret, "[REDACTED]")
-
-            try:
-                all_headings = self.page.locator("h1, h2, h3").all_inner_texts()
-            except Exception:
-                all_headings = []
-
-            try:
-                answer_count = self.page.locator(ANSWER_SELECTOR).count()
-            except Exception:
-                answer_count = -1
-
-            try:
-                menu_button = self.page.locator(SESSION_BUTTON_SELECTOR)
-                menu_count = menu_button.count()
-                menu_texts = menu_button.all_inner_texts() if menu_count else []
-            except Exception:
-                menu_count = -1
-                menu_texts = []
-
-            self.logger.warning(
-                "DIAGNOSTYKA nagłówka 'Koniec sesji': url=%s; "
-                "pasujące_nagłówki=%s; wszystkie_h1_h2_h3=%r; "
-                "pola_odpowiedzi=%s; elementy_menu=%s; teksty_menu=%r; "
-                "tekst_strony=%r",
-                current_url,
-                heading_count,
-                all_headings,
-                answer_count,
-                menu_count,
-                menu_texts,
-                page_text[:12000],
-            )
-            self.save_screenshot("session_end_heading_diagnostic.png")
-
-            # Pole odpowiedzi jest mocniejszym sygnałem aktywnego zadania niż
-            # wizualnie ukryty nagłówek, który może pozostać w DOM.
-            if self.has_answer_field():
-                self.logger.warning(
-                    "Nagłówek 'Koniec sesji' istnieje w DOM, ale pole %s "
-                    "jest aktywne; traktuję nagłówek jako pozostałość i "
-                    "nie kończę sesji.",
-                    ANSWER_SELECTOR,
-                )
-                return False
-
-            # Potwierdzenie menu wymaga charakterystycznego elementu menu,
-            # a nie samej obecności ukrytego nagłówka.
-            if menu_count > 0:
                 self.logger.info(
-                    "Potwierdzono koniec sesji: brak aktywnego pola odpowiedzi "
-                    "i obecny element menu %s.",
-                    SESSION_BUTTON_SELECTOR,
+                    "Wykryto ekran końcowy: widoczny i aktywny przycisk %s.",
+                    RETURN_BUTTON_SELECTOR,
                 )
+                self.save_screenshot("session_end_detected.png")
                 return True
 
-            self.logger.warning(
-                "Nagłówek 'Koniec sesji' jest w DOM, ale nie ma ani aktywnego "
-                "pola odpowiedzi, ani elementu menu %s; sam nagłówek nie "
-                "wystarcza do potwierdzenia końca sesji.",
-                SESSION_BUTTON_SELECTOR,
-            )
+            # Diagnostyka: ukryty nagłówek nie jest samodzielnym dowodem
+            # zakończenia sesji, zwłaszcza gdy pole odpowiedzi nadal działa.
+            heading_count = self.page.locator(
+                "h2.visually-hidden",
+                has_text="Koniec sesji",
+            ).count()
 
-        # Tekstowe wzorce awaryjne sprawdzamy tylko wtedy, gdy nie ma aktywnego
-        # pola odpowiedzi — w przeciwnym razie tekst mógł pozostać w DOM.
-        if self.has_answer_field():
+            if heading_count:
+                self.logger.debug(
+                    "Nagłówek 'Koniec sesji' istnieje w DOM, ale "
+                    "%s nie jest widoczny i aktywny; nie kończę sesji.",
+                    RETURN_BUTTON_SELECTOR,
+                )
+
             return False
 
-        text = normalize(self.page_text())
-        patterns = (
-            r"sesja została zakończona",
-            r"sesja zakonczona",
-            r"zakończyłeś sesję",
-            r"zakonczyles sesje",
-            r"zakończyłaś sesję",
-            r"zakonczylas sesje",
-            r"powrót do menu głównego",
-            r"powrot do menu glownego",
-        )
-        complete = any(re.search(pattern, text) for pattern in patterns)
-        if complete:
-            self.logger.info(
-                "Koniec sesji wykryty na podstawie tekstu strony; "
-                "brak aktywnego pola odpowiedzi."
+        except Exception as error:
+            self.logger.warning(
+                "Nie udało się sprawdzić ekranu końcowego: %s",
+                error,
             )
-        return complete
+            return False
 
     def find_session_action(self):
         """Znajduje akcję sesji przez HTML, a potem przez tekst.
@@ -1450,12 +1373,20 @@ class InstalingBrowser:
                 )
                 return False
 
+            # Po każdej ukończonej sesji klikamy „Powrót na stronę główną”.
+            # Dotyczy to również ostatniej sesji — po powrocie do menu
+            # pętla kończy się, a main() zamyka przeglądarkę.
+            self.return_to_menu()
+
             if session_number < TARGET_SESSIONS:
-                self.return_to_menu()
                 self.page.wait_for_timeout(1000)
 
-        self.logger.info("Ukończono wszystkie %s sesje.", TARGET_SESSIONS)
+        self.logger.info(
+            "Ukończono wszystkie %s sesje i powrócono na stronę główną.",
+            TARGET_SESSIONS,
+        )
         return True
+
     def close(self):
         if self.context:
             try:
