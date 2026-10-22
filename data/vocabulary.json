@@ -104,7 +104,7 @@
       }
     ],
     "first_seen": "2026-10-17T21:24:56.985948+00:00",
-    "last_seen": "2026-10-17T21:24:58.830560+00:00",
+    "last_seen": "2026-10-22T16:23:50.989045+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -165,6 +165,46 @@
     ],
     "first_seen": "2026-10-17T22:09:23.260023+00:00",
     "last_seen": "2026-10-17T22:09:23.650429+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "pisarz": {
+    "translations": [
+      {
+        "english": "writer. Context: The famous ______ died at the age of 94.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "writer",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T16:23:48.128810+00:00",
+    "last_seen": "2026-10-22T16:23:48.613379+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "strój sportowca": {
+    "translations": [
+      {
+        "english": "athlete's outfit. Background: Footballers need to wear professional ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "strip",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-22T16:23:49.530607+00:00",
+    "last_seen": "2026-10-22T16:23:50.027958+00:00",
     "sources": [
       "online",
       "verified_correction"

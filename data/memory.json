@@ -121,7 +121,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-17T21:14:08.200803+00:00",
-      "last_seen_at": "2026-10-17T21:24:58.231329+00:00"
+      "last_seen_at": "2026-10-22T16:23:50.309506+00:00"
     },
     "{\"context\": \"przejdź do treści pytanie who is the ____ luka _________ luka of the book? główny bohater twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"główny bohater\", \"word_count\": null}": {
       "polish": "główny bohater",
@@ -272,6 +272,74 @@
       ],
       "created_at": "2026-10-17T22:09:23.649343+00:00",
       "last_seen_at": "2026-10-17T22:09:23.649347+00:00"
+    },
+    "{\"context\": \"the famous ______ died at the age of 94.\", \"polish\": \"pisarz\", \"word_count\": null}": {
+      "polish": "pisarz",
+      "context": "The famous ______ died at the age of 94.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-22T16:23:47.292953+00:00",
+      "last_seen_at": "2026-10-22T16:23:47.296186+00:00"
+    },
+    "{\"context\": \"przejdź do treści pytanie the famous ______ luka died at the age of 94. pisarz twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"pisarz\", \"word_count\": null}": {
+      "polish": "pisarz",
+      "context": "Przejdź do treści\nPytanie\nThe famous ______\nluka\n died at the age of 94.\npisarz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "writer"
+      ],
+      "rejected_answers": [
+        "writer. Context: The famous ______ died at the age of 94."
+      ],
+      "attempts": [
+        {
+          "answer": "writer. Context: The famous ______ died at the age of 94.",
+          "result": "rejected_with_correction",
+          "correction": "writer",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nPytanie\nThe famous ______\nluka\n died at the age of 94.\npisarz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261022_162347",
+          "timestamp": "2026-10-22T16:23:48.611503+00:00"
+        }
+      ],
+      "created_at": "2026-10-22T16:23:48.611489+00:00",
+      "last_seen_at": "2026-10-22T16:23:48.611499+00:00"
+    },
+    "{\"context\": \"footballers need to wear professional ______.\", \"polish\": \"strój sportowca\", \"word_count\": null}": {
+      "polish": "strój sportowca",
+      "context": "Footballers need to wear professional ______.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-22T16:23:48.892619+00:00",
+      "last_seen_at": "2026-10-22T16:23:48.896251+00:00"
+    },
+    "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: writer pytanie footballers need to wear professional ______ luka . strój sportowca twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"strój sportowca\", \"word_count\": null}": {
+      "polish": "strój sportowca",
+      "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: writer\nPytanie\nFootballers need to wear professional ______\nluka\n.\nstrój sportowca\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "strip"
+      ],
+      "rejected_answers": [
+        "athlete's outfit. Background: Footballers need to wear professional ______."
+      ],
+      "attempts": [
+        {
+          "answer": "athlete's outfit. Background: Footballers need to wear professional ______.",
+          "result": "rejected_with_correction",
+          "correction": "strip",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: writer\nPytanie\nFootballers need to wear professional ______\nluka\n.\nstrój sportowca\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261022_162347",
+          "timestamp": "2026-10-22T16:23:50.026100+00:00"
+        }
+      ],
+      "created_at": "2026-10-22T16:23:50.026085+00:00",
+      "last_seen_at": "2026-10-22T16:23:50.026096+00:00"
     }
   },
   "sessions": {
@@ -332,6 +400,11 @@
     },
     "20261017_220918": {
       "started_at": "2026-10-17T22:09:18.664602+00:00",
+      "completed_at": null,
+      "status": "started"
+    },
+    "20261022_162347": {
+      "started_at": "2026-10-22T16:23:47.242168+00:00",
       "completed_at": null,
       "status": "started"
     }
