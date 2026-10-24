@@ -484,7 +484,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:03.789125+00:00",
-    "last_seen": "2026-10-23T16:29:36.002884+00:00",
+    "last_seen": "2026-10-24T16:21:25.533338+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -604,7 +604,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:29:14.439901+00:00",
-    "last_seen": "2026-10-23T16:30:06.265982+00:00",
+    "last_seen": "2026-10-24T16:20:19.366428+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -624,7 +624,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:29:25.598517+00:00",
-    "last_seen": "2026-10-23T16:29:56.987890+00:00",
+    "last_seen": "2026-10-24T16:20:20.772095+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -644,7 +644,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:29:31.531099+00:00",
-    "last_seen": "2026-10-23T16:30:07.733904+00:00",
+    "last_seen": "2026-10-24T16:20:23.904506+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -664,7 +664,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:29:58.502937+00:00",
-    "last_seen": "2026-10-23T16:30:16.642534+00:00",
+    "last_seen": "2026-10-24T16:20:22.425342+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -684,7 +684,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:30:09.240328+00:00",
-    "last_seen": "2026-10-23T16:30:18.118467+00:00",
+    "last_seen": "2026-10-24T16:20:15.164854+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -704,7 +704,387 @@
       }
     ],
     "first_seen": "2026-10-23T16:30:15.122900+00:00",
-    "last_seen": "2026-10-23T16:30:19.718527+00:00",
+    "last_seen": "2026-10-24T16:20:10.592173+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "sztuczka karciana": {
+    "translations": [
+      {
+        "english": "card trick. Context: Over the years, I have come up with many ____ _____ ideas.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "card trick",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:20:12.097261+00:00",
+    "last_seen": "2026-10-24T16:20:26.789050+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "widownia; publiczność": {
+    "translations": [
+      {
+        "english": "audience. Context: I was in the ________ of that show.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "audience",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:20:13.656519+00:00",
+    "last_seen": "2026-10-24T16:20:33.402666+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "scena (miejsce)": {
+    "translations": [
+      {
+        "english": "scene (place). Context: The _____ is prepared for the actors.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "stage",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:20:16.564624+00:00",
+    "last_seen": "2026-10-24T16:20:17.977273+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "pisać": {
+    "translations": [
+      {
+        "english": "write. Context: I hate _______ emails, but I have to.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "write",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:20:25.363659+00:00",
+    "last_seen": "2026-10-24T16:20:29.578710+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "akcja rozgrywa się w...": {
+    "translations": [
+      {
+        "english": "The action takes place in.... Context: It's about two friends and it's ___ __ Paris.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "it's set in",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:20:28.197513+00:00",
+    "last_seen": "2026-10-24T16:20:46.533755+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "pływanie": {
+    "translations": [
+      {
+        "english": "swimming. Context: I like ________, but I don't like team sports.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "swimming",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:20:31.353991+00:00",
+    "last_seen": "2026-10-24T16:20:59.326003+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "tenis stołowy": {
+    "translations": [
+      {
+        "english": "table tennis. Context: I'm too slow to play _____ ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "table tennis",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:20:34.767567+00:00",
+    "last_seen": "2026-10-24T16:21:00.682665+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "squash (rodzaj sportu)": {
+    "translations": [
+      {
+        "english": "squash (a type of sport). Context: I play ______ once a week.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "squash",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:20:39.161550+00:00",
+    "last_seen": "2026-10-24T16:21:03.597112+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "podnoszenie ciężarów; kulturystyka": {
+    "translations": [
+      {
+        "english": "weightlifting; bodybuilding. Context: _____________ is not very popular with women.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "weightlifting",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:20:43.127179+00:00",
+    "last_seen": "2026-10-24T16:21:02.177746+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "siatkówka plażowa": {
+    "translations": [
+      {
+        "english": "beach volleyball. Context: I like _____ __________ more than other sports.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "beach volleyball",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:05.028449+00:00",
+    "last_seen": "2026-10-24T16:21:09.551581+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "reżyser": {
+    "translations": [
+      {
+        "english": "director. Context: The ________ should cooperate with the film crew.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "director",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:06.482641+00:00",
+    "last_seen": "2026-10-24T16:21:36.346372+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "jazda na łyżwach": {
+    "translations": [
+      {
+        "english": "skating. Context: I'm a failure at rollerblading, but I'm actually good at ___________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "ice-skating",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:08.044489+00:00",
+    "last_seen": "2026-10-24T16:21:20.279708+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "jazda konna": {
+    "translations": [
+      {
+        "english": "horseback riding. Context: ____________ is my favourite sport.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "horse-riding",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:11.625023+00:00",
+    "last_seen": "2026-10-24T16:21:13.046568+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "jazda na łyżworolkach": {
+    "translations": [
+      {
+        "english": "skating. Context: _____________ isn't any more difficult than roller skating.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "rollerblading",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:15.376055+00:00",
+    "last_seen": "2026-10-24T16:21:16.743680+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "hokej na lodzie": {
+    "translations": [
+      {
+        "english": "ice hockey. Context: Is ___ ______ a Winter Olympic sport?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "ice hockey",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:18.808328+00:00",
+    "last_seen": "2026-10-24T16:21:31.047052+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "bejsbol": {
+    "translations": [
+      {
+        "english": "baseball. Context: American people are crazy about ________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "baseball",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:22.300456+00:00",
+    "last_seen": "2026-10-24T16:21:23.579353+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "krykiet": {
+    "translations": [
+      {
+        "english": "cricket. Context: _______ used to be a popular game in England.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "cricket",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:26.892345+00:00",
+    "last_seen": "2026-10-24T16:21:28.205797+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "kajakarstwo": {
+    "translations": [
+      {
+        "english": "canoeing. Context: I love mountain climbing and ________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "canoeing",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:29.576764+00:00",
+    "last_seen": "2026-10-24T16:21:34.415019+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "kolarstwo": {
+    "translations": [
+      {
+        "english": "cycling. Context: You can't do _______ if you don't have a bicycle.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "cycling",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-24T16:21:33.083660+00:00",
+    "last_seen": "2026-10-24T16:21:37.765977+00:00",
     "sources": [
       "online",
       "verified_correction"
