@@ -36,7 +36,7 @@
       }
     ],
     "first_seen": "2026-10-10T20:00:34.818183+00:00",
-    "last_seen": "2026-10-10T20:12:11.660657+00:00",
+    "last_seen": "2026-10-26T16:41:29.126339+00:00",
     "sources": [
       "dictionary"
     ]
@@ -1104,7 +1104,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:03.756403+00:00",
-    "last_seen": "2026-10-25T16:21:12.139028+00:00",
+    "last_seen": "2026-10-26T16:40:43.325821+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1124,7 +1124,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:09.268101+00:00",
-    "last_seen": "2026-10-25T16:21:14.971374+00:00",
+    "last_seen": "2026-10-26T16:40:19.714394+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1144,7 +1144,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:10.693011+00:00",
-    "last_seen": "2026-10-25T16:21:20.299298+00:00",
+    "last_seen": "2026-10-26T16:40:21.272079+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1164,7 +1164,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:13.662823+00:00",
-    "last_seen": "2026-10-25T16:21:17.852316+00:00",
+    "last_seen": "2026-10-26T16:40:34.535130+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1184,7 +1184,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:16.382454+00:00",
-    "last_seen": "2026-10-25T16:21:36.912504+00:00",
+    "last_seen": "2026-10-26T16:40:22.962298+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1204,7 +1204,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:19.101880+00:00",
-    "last_seen": "2026-10-25T16:21:35.459711+00:00",
+    "last_seen": "2026-10-26T16:40:26.156386+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1224,7 +1224,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:21.772221+00:00",
-    "last_seen": "2026-10-25T16:21:23.081811+00:00",
+    "last_seen": "2026-10-26T16:40:49.013509+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1244,7 +1244,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:24.556682+00:00",
-    "last_seen": "2026-10-25T16:21:25.876412+00:00",
+    "last_seen": "2026-10-26T16:40:41.704764+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1264,7 +1264,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:27.489325+00:00",
-    "last_seen": "2026-10-25T16:21:28.878246+00:00",
+    "last_seen": "2026-10-26T16:40:32.983611+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1284,7 +1284,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:30.297309+00:00",
-    "last_seen": "2026-10-25T16:21:31.578307+00:00",
+    "last_seen": "2026-10-26T16:40:24.584750+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1304,7 +1304,347 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:33.019474+00:00",
-    "last_seen": "2026-10-25T16:21:34.255232+00:00",
+    "last_seen": "2026-10-26T16:40:27.755820+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "atrakcja": {
+    "translations": [
+      {
+        "english": "experience. Context: Visiting Disneyland was a great __________ to the kids.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "attraction",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:40:29.205183+00:00",
+    "last_seen": "2026-10-26T16:41:37.993715+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "trapez (drążek gimnastyczny)": {
+    "translations": [
+      {
+        "english": "trapezoid (gymnastic bar). Context: The acrobat was doing amazing tricks on the _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "trapeze",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:40:31.316991+00:00",
+    "last_seen": "2026-10-26T16:40:46.290602+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "to jest o.../to jest na temat...": {
+    "translations": [
+      {
+        "english": "This is about.../This is about.... Context: ____ _____ a famous composer.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "it's about",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:40:38.163640+00:00",
+    "last_seen": "2026-10-26T16:40:39.889615+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "kolekcja (wiosenna)": {
+    "translations": [
+      {
+        "english": "collection (spring). Context: The designer is really proud of his spring __________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "(spring) collection",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:40:44.746001+00:00",
+    "last_seen": "2026-10-26T16:40:50.430583+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "wysyłać (np. pliki na serwer internetowy)": {
+    "translations": [
+      {
+        "english": "send (e.g. files to a web server). Context: Please, ______ these images to our website.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "upload",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:03.961524+00:00",
+    "last_seen": "2026-10-26T16:41:21.362738+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "udostępniać w sieci": {
+    "translations": [
+      {
+        "english": "shared on the web. Context: We should always think about what we _____ ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "share online",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:05.449650+00:00",
+    "last_seen": "2026-10-26T16:41:08.563779+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "publikować": {
+    "translations": [
+      {
+        "english": "publish. Context: Should I ____ this picture of us online?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "post",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:07.063046+00:00",
+    "last_seen": "2026-10-26T16:41:11.627449+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "osoba przeprowadzająca wywiad": {
+    "translations": [
+      {
+        "english": "interviewer. Background: This ___________ always asks difficult questions.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "interviewer",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:10.084979+00:00",
+    "last_seen": "2026-10-26T16:41:18.189966+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "obraz (ilustracje, pliki graficzne)": {
+    "translations": [
+      {
+        "english": "image (illustrations, graphic files). Context: You can't download this _____ to your computer.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "image",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:13.080701+00:00",
+    "last_seen": "2026-10-26T16:41:14.525452+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "występuje w nim...": {
+    "translations": [
+      {
+        "english": "It features.... Context: __ _____ many famous actors.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "It stars ...",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:16.648966+00:00",
+    "last_seen": "2026-10-26T16:41:41.016811+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "piłka": {
+    "translations": [
+      {
+        "english": "ball. Context: He threw the ____ at me, but I couldn't catch it.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "ball",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:19.819797+00:00",
+    "last_seen": "2026-10-26T16:41:24.367629+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "program kulinarny": {
+    "translations": [
+      {
+        "english": "culinary program. Context: My mun watches this _______ ____ every Sunday.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "cooking show",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:22.799954+00:00",
+    "last_seen": "2026-10-26T16:41:32.908484+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "kij golfowy": {
+    "translations": [
+      {
+        "english": "golf club. Context: To play golf you need a ball and a ____.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "club",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:26.303496+00:00",
+    "last_seen": "2026-10-26T16:41:27.779699+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "szczotka; pędzel": {
+    "translations": [
+      {
+        "english": "brush. Context: I need a _____ to paint the wall.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "brush",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:30.720866+00:00",
+    "last_seen": "2026-10-26T16:41:46.376907+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "rola": {
+    "translations": [
+      {
+        "english": "role. Context: Getting this ____ is my dream.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "role",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:34.403083+00:00",
+    "last_seen": "2026-10-26T16:41:35.816625+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "program podróżniczy": {
+    "translations": [
+      {
+        "english": "travel program. Context: This is the best ______ ____.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "travel show",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:39.524670+00:00",
+    "last_seen": "2026-10-26T16:41:48.716817+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "pobierać, ściągać": {
+    "translations": [
+      {
+        "english": "download. Context: Since she couldn't buy the physical copy, she decided to ________ the album illegally.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "download",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-26T16:41:42.555428+00:00",
+    "last_seen": "2026-10-26T16:41:44.795848+00:00",
     "sources": [
       "online",
       "verified_correction"
