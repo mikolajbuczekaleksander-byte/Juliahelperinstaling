@@ -204,7 +204,7 @@
       }
     ],
     "first_seen": "2026-10-22T16:23:49.530607+00:00",
-    "last_seen": "2026-10-23T16:30:12.135431+00:00",
+    "last_seen": "2026-10-27T16:40:31.660338+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1324,7 +1324,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:40:29.205183+00:00",
-    "last_seen": "2026-10-26T16:41:37.993715+00:00",
+    "last_seen": "2026-10-27T16:40:10.512478+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1364,7 +1364,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:40:38.163640+00:00",
-    "last_seen": "2026-10-26T16:40:39.889615+00:00",
+    "last_seen": "2026-10-27T16:40:19.400894+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1404,7 +1404,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:03.961524+00:00",
-    "last_seen": "2026-10-26T16:41:21.362738+00:00",
+    "last_seen": "2026-10-27T16:40:12.726014+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1424,7 +1424,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:05.449650+00:00",
-    "last_seen": "2026-10-26T16:41:08.563779+00:00",
+    "last_seen": "2026-10-27T16:40:21.752803+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1444,7 +1444,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:07.063046+00:00",
-    "last_seen": "2026-10-26T16:41:11.627449+00:00",
+    "last_seen": "2026-10-27T16:40:06.099125+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1464,7 +1464,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:10.084979+00:00",
-    "last_seen": "2026-10-26T16:41:18.189966+00:00",
+    "last_seen": "2026-10-27T16:40:30.115301+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1484,7 +1484,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:13.080701+00:00",
-    "last_seen": "2026-10-26T16:41:14.525452+00:00",
+    "last_seen": "2026-10-27T16:40:15.820614+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1504,7 +1504,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:16.648966+00:00",
-    "last_seen": "2026-10-26T16:41:41.016811+00:00",
+    "last_seen": "2026-10-27T16:40:23.614023+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1544,7 +1544,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:22.799954+00:00",
-    "last_seen": "2026-10-26T16:41:32.908484+00:00",
+    "last_seen": "2026-10-27T16:40:17.468528+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1564,7 +1564,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:26.303496+00:00",
-    "last_seen": "2026-10-26T16:41:27.779699+00:00",
+    "last_seen": "2026-10-27T16:40:26.958763+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1624,7 +1624,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:39.524670+00:00",
-    "last_seen": "2026-10-26T16:41:48.716817+00:00",
+    "last_seen": "2026-10-27T16:40:08.334441+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -1645,6 +1645,325 @@
     ],
     "first_seen": "2026-10-26T16:41:42.555428+00:00",
     "last_seen": "2026-10-26T16:41:44.795848+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "występ": {
+    "translations": [
+      {
+        "english": "performance",
+        "verified": false,
+        "source": "dictionary"
+      },
+      {
+        "english": "show",
+        "verified": false,
+        "source": "dictionary"
+      }
+    ],
+    "first_seen": "2026-10-27T16:40:13.518281+00:00",
+    "last_seen": "2026-10-27T16:40:13.520349+00:00",
+    "sources": [
+      "dictionary"
+    ]
+  },
+  "został napisany przez": {
+    "translations": [
+      {
+        "english": "written by. Context: It's a well-known play _______ __ William Shakespeare.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "it's written by",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:40:28.585319+00:00",
+    "last_seen": "2026-10-27T16:40:49.313914+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "serial kryminalny": {
+    "translations": [
+      {
+        "english": "a crime drama. Context: Sherlock Holmes is a popular _____ ______ known all over the world.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "crime series",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:40:33.167886+00:00",
+    "last_seen": "2026-10-27T16:40:47.904177+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "komiks; historyjka obrazkowa": {
+    "translations": [
+      {
+        "english": "comic; picture story. Context: She likes reading ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "comic",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:40:50.842829+00:00",
+    "last_seen": "2026-10-27T16:41:00.312897+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "strona internetowa": {
+    "translations": [
+      {
+        "english": "website. Context: I found an interesting _______ devoted to role-playing games.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "website",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:40:52.341948+00:00",
+    "last_seen": "2026-10-27T16:41:20.103045+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "próba (np. teatralna)": {
+    "translations": [
+      {
+        "english": "rehearsal (e.g. theatrical). Context: During the _________, the actress asked the director for advice.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "rehearsal",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:40:54.557428+00:00",
+    "last_seen": "2026-10-27T16:40:56.328383+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "reality show": {
+    "translations": [
+      {
+        "english": "reality show. Context: This _______ ____ is silly.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "reality show",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:40:58.794758+00:00",
+    "last_seen": "2026-10-27T16:41:27.213246+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "ekran": {
+    "translations": [
+      {
+        "english": "screen. Context: The kids couldn't take their eyes off the ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "screen",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:41:02.277887+00:00",
+    "last_seen": "2026-10-27T16:41:04.008418+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "nagłówek; tytuł (w gazecie)": {
+    "translations": [
+      {
+        "english": "headline; title (in newspaper). Context: This newspaper ________ can be misleading.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "headline",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:41:05.647694+00:00",
+    "last_seen": "2026-10-27T16:41:07.293105+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "dziennikarz": {
+    "translations": [
+      {
+        "english": "journalist. Context: As a __________, she's interested in politics.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "journalist",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:41:09.245249+00:00",
+    "last_seen": "2026-10-27T16:41:11.194438+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "gazeta ogólnokrajowa": {
+    "translations": [
+      {
+        "english": "national newspaper. Context: Have you seen the front page of the ________ _________?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "national newspaper",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:41:12.918160+00:00",
+    "last_seen": "2026-10-27T16:41:14.813298+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "subskrybować; wykupić abonament": {
+    "translations": [
+      {
+        "english": "subscribe; subscribe. Context: I want to _________ to this channel.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "subscribe",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:41:17.917912+00:00",
+    "last_seen": "2026-10-27T16:41:23.911102+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "artykuł": {
+    "translations": [
+      {
+        "english": "article. Context: You absolutely must read this _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "article",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:41:21.841327+00:00",
+    "last_seen": "2026-10-27T16:41:36.262709+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "kanał; kanał telewizyjny": {
+    "translations": [
+      {
+        "english": "channel; TV channel. Context: Change the _______, my favourite serial starts in five minutes.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "channel",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:41:25.506953+00:00",
+    "last_seen": "2026-10-27T16:41:31.194083+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "kreskówka": {
+    "translations": [
+      {
+        "english": "cartoon. Context: My little sister watches ________ every weekend.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "cartoon",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:41:28.720388+00:00",
+    "last_seen": "2026-10-27T16:41:38.024961+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "reklama": {
+    "translations": [
+      {
+        "english": "advertising. Context: I've seen an interesting _____________ on TV recently.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "advertisement",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-27T16:41:32.876854+00:00",
+    "last_seen": "2026-10-27T16:41:34.488036+00:00",
     "sources": [
       "online",
       "verified_correction"
