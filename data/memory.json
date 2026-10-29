@@ -2817,7 +2817,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:40:27.756369+00:00",
-      "last_seen_at": "2026-10-28T16:41:30.012314+00:00"
+      "last_seen_at": "2026-10-29T15:57:19.902463+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: club pytanie it's a well-known play _______ luka __ luka william shakespeare. został napisany przez twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"został napisany przez\", \"word_count\": null}": {
       "polish": "został napisany przez",
@@ -3774,6 +3774,11 @@
     },
     "20261029_153402": {
       "started_at": "2026-10-29T15:34:02.945957+00:00",
+      "completed_at": null,
+      "status": "started"
+    },
+    "20261029_155719": {
+      "started_at": "2026-10-29T15:57:19.857025+00:00",
       "completed_at": null,
       "status": "started"
     }
