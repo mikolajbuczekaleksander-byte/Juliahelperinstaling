@@ -204,14 +204,15 @@
       {
         "english": "strip",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T16:23:49.530607+00:00",
-    "last_seen": "2026-10-27T16:40:31.660338+00:00",
+    "last_seen": "2026-10-29T17:21:06.634883+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "zapasy (sport)": {
@@ -224,14 +225,15 @@
       {
         "english": "wrestling",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T16:27:46.178115+00:00",
-    "last_seen": "2026-10-23T16:29:34.432023+00:00",
+    "last_seen": "2026-10-29T17:21:37.587965+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "pianka do nurkowania": {
@@ -248,7 +250,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:02:08.120040+00:00",
-    "last_seen": "2026-10-29T16:59:39.529589+00:00",
+    "last_seen": "2026-10-29T17:21:03.519463+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -431,7 +433,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:32.310111+00:00",
-    "last_seen": "2026-10-29T16:59:35.845685+00:00",
+    "last_seen": "2026-10-29T17:20:59.885156+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -468,14 +470,15 @@
       {
         "english": "surfing",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:17:37.664484+00:00",
-    "last_seen": "2026-10-23T16:29:27.135419+00:00",
+    "last_seen": "2026-10-29T17:21:55.570555+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "golf": {
@@ -488,14 +491,15 @@
       {
         "english": "golf",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:18:03.789125+00:00",
-    "last_seen": "2026-10-24T16:21:25.533338+00:00",
+    "last_seen": "2026-10-29T17:21:44.585572+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "gimnastyka": {
@@ -512,7 +516,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:05.216949+00:00",
-    "last_seen": "2026-10-29T16:59:42.533185+00:00",
+    "last_seen": "2026-10-29T17:21:46.003053+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -529,14 +533,15 @@
       {
         "english": "tennis",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:18:06.860749+00:00",
-    "last_seen": "2026-10-23T16:30:00.204863+00:00",
+    "last_seen": "2026-10-29T17:21:50.878737+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "bieganie": {
@@ -553,7 +558,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:11.212842+00:00",
-    "last_seen": "2026-10-29T16:59:48.148008+00:00",
+    "last_seen": "2026-10-29T17:21:48.986177+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -630,14 +635,15 @@
       {
         "english": "rugby",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-23T16:29:25.598517+00:00",
-    "last_seen": "2026-10-24T16:20:20.772095+00:00",
+    "last_seen": "2026-10-29T17:22:04.222894+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "piłka nożna (bre)": {
@@ -654,7 +660,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:29:31.531099+00:00",
-    "last_seen": "2026-10-29T16:50:21.641199+00:00",
+    "last_seen": "2026-10-29T17:21:41.374091+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -671,14 +677,15 @@
       {
         "english": "boxing ring",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-23T16:29:58.502937+00:00",
-    "last_seen": "2026-10-29T16:00:53.778239+00:00",
+    "last_seen": "2026-10-29T17:20:56.374918+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "stadion lekkoatletyczny/sportowy": {
@@ -691,14 +698,15 @@
       {
         "english": "(athletics, sports) stadium",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-23T16:30:09.240328+00:00",
-    "last_seen": "2026-10-24T16:20:15.164854+00:00",
+    "last_seen": "2026-10-29T17:20:58.251961+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "narciarstwo": {
@@ -816,7 +824,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:20:28.197513+00:00",
-    "last_seen": "2026-10-29T16:51:05.802091+00:00",
+    "last_seen": "2026-10-29T17:21:13.014532+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -874,14 +882,15 @@
       {
         "english": "squash",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:20:39.161550+00:00",
-    "last_seen": "2026-10-25T16:20:30.649280+00:00",
+    "last_seen": "2026-10-29T17:21:52.434451+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "podnoszenie ciężarów; kulturystyka": {
@@ -894,14 +903,15 @@
       {
         "english": "weightlifting",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:20:43.127179+00:00",
-    "last_seen": "2026-10-25T16:21:07.981841+00:00",
+    "last_seen": "2026-10-29T17:21:54.084810+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "siatkówka plażowa": {
@@ -1015,14 +1025,15 @@
       {
         "english": "ice hockey",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:21:18.808328+00:00",
-    "last_seen": "2026-10-25T16:20:43.800197+00:00",
+    "last_seen": "2026-10-29T17:21:57.183304+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "bejsbol": {
@@ -1120,7 +1131,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:03.756403+00:00",
-    "last_seen": "2026-10-29T16:50:49.557005+00:00",
+    "last_seen": "2026-10-29T17:21:08.328349+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1343,14 +1354,15 @@
       {
         "english": "attraction",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-26T16:40:29.205183+00:00",
-    "last_seen": "2026-10-27T16:40:10.512478+00:00",
+    "last_seen": "2026-10-29T17:21:19.319156+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "trapez (drążek gimnastyczny)": {
@@ -1585,14 +1597,15 @@
       {
         "english": "club",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-26T16:41:26.303496+00:00",
-    "last_seen": "2026-10-27T16:40:26.958763+00:00",
+    "last_seen": "2026-10-29T17:21:01.542805+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "szczotka; pędzel": {
@@ -2173,14 +2186,15 @@
       {
         "english": "board",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-29T15:34:04.150099+00:00",
-    "last_seen": "2026-10-29T16:00:51.818544+00:00",
+    "last_seen": "2026-10-29T17:21:21.049260+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "sklep elektroniczny": {
@@ -2298,7 +2312,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:50:19.338475+00:00",
-    "last_seen": "2026-10-29T16:59:00.634138+00:00",
+    "last_seen": "2026-10-29T17:21:05.087826+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2382,7 +2396,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:51:08.812974+00:00",
-    "last_seen": "2026-10-29T16:51:17.169766+00:00",
+    "last_seen": "2026-10-29T17:21:10.017888+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2466,7 +2480,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:59:05.708134+00:00",
-    "last_seen": "2026-10-29T16:59:07.577413+00:00",
+    "last_seen": "2026-10-29T17:21:14.631700+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2550,7 +2564,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:59:50.402390+00:00",
-    "last_seen": "2026-10-29T17:00:02.032122+00:00",
+    "last_seen": "2026-10-29T17:21:17.790313+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2572,6 +2586,90 @@
     ],
     "first_seen": "2026-10-29T16:59:57.085554+00:00",
     "last_seen": "2026-10-29T17:00:03.398401+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "ścieżka dźwiękowa": {
+    "translations": [
+      {
+        "english": "soundtrack. Context: The film was totally lame - except for the __________! Yes, the music was really cool.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "soundtrack",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T17:21:15.617553+00:00",
+    "last_seen": "2026-10-29T17:21:35.758767+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "bramka": {
+    "translations": [
+      {
+        "english": "goal. Context: You mustn't let the ball in our ____!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "goal",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T17:21:38.619330+00:00",
+    "last_seen": "2026-10-29T17:22:02.618548+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "śpiewać": {
+    "translations": [
+      {
+        "english": "sing. Context: We were _______ and dancing all night.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "sing",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T17:21:42.484630+00:00",
+    "last_seen": "2026-10-29T17:22:07.621181+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "znana osoba": {
+    "translations": [
+      {
+        "english": "known person. Context: Kim Kardashian is an American _________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "celebrity",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T17:21:59.992327+00:00",
+    "last_seen": "2026-10-29T17:22:05.902004+00:00",
     "sources": [
       "online",
       "verified_correction",
