@@ -1097,7 +1097,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-23T16:29:57.693728+00:00",
-      "last_seen_at": "2026-10-24T16:20:21.550687+00:00"
+      "last_seen_at": "2026-10-29T16:00:52.733378+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: rugby pytanie the contestants were waiting at the ______ luka ____ luka . the fight was about to begin. ring bokserski twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"ring bokserski\", \"word_count\": null}": {
       "polish": "ring bokserski",
@@ -1267,7 +1267,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-24T16:20:15.852058+00:00",
-      "last_seen_at": "2026-10-25T16:20:35.866546+00:00"
+      "last_seen_at": "2026-10-29T16:00:40.284997+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: (athletics, sports) stadium pytanie the _____ luka is prepared for the actors. scena (miejsce) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"scena (miejsce)\", \"word_count\": null}": {
       "polish": "scena (miejsce)",
@@ -1845,7 +1845,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-25T16:21:03.040726+00:00",
-      "last_seen_at": "2026-10-26T16:40:42.435112+00:00"
+      "last_seen_at": "2026-10-29T16:01:13.773207+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: it's set in pytanie can you read the ____ luka to the class? wiersz twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"wiersz\", \"word_count\": null}": {
       "polish": "wiersz",
@@ -2253,7 +2253,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-26T16:40:30.549829+00:00",
-      "last_seen_at": "2026-10-28T16:42:16.198880+00:00"
+      "last_seen_at": "2026-10-29T16:00:47.366094+00:00"
     },
     "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: attraction pytanie the acrobat was doing amazing tricks on the _______ luka . trapez (drążek gimnastyczny) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"trapez (drążek gimnastyczny)\", \"word_count\": null}": {
       "polish": "trapez (drążek gimnastyczny)",
@@ -2739,7 +2739,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-26T16:41:38.714024+00:00",
-      "last_seen_at": "2026-10-27T16:40:06.964109+00:00"
+      "last_seen_at": "2026-10-29T16:00:44.900979+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: attraction pytanie this is the best ______ luka ____ luka . program podróżniczy twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"program podróżniczy\", \"word_count\": null}": {
       "polish": "program podróżniczy",
@@ -3225,7 +3225,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:24.673908+00:00",
-      "last_seen_at": "2026-10-28T16:41:21.962359+00:00"
+      "last_seen_at": "2026-10-29T16:01:04.923743+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: subscribe pytanie change the _______ luka , my favourite serial starts in five minutes. kanał; kanał telewizyjny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kanał; kanał telewizyjny\", \"word_count\": null}": {
       "polish": "kanał; kanał telewizyjny",
@@ -3259,7 +3259,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:27.993458+00:00",
-      "last_seen_at": "2026-10-28T16:41:32.974381+00:00"
+      "last_seen_at": "2026-10-29T16:00:42.704870+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: reality show pytanie my little sister watches ________ luka every weekend. kreskówka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kreskówka\", \"word_count\": null}": {
       "polish": "kreskówka",
@@ -3293,7 +3293,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:31.912800+00:00",
-      "last_seen_at": "2026-10-28T16:41:57.910477+00:00"
+      "last_seen_at": "2026-10-29T16:01:07.091272+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: channel pytanie i've seen an interesting _____________ luka on tv recently. reklama twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"reklama\", \"word_count\": null}": {
       "polish": "reklama",
@@ -3599,7 +3599,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-29T15:34:03.187747+00:00",
-      "last_seen_at": "2026-10-29T15:34:03.202589+00:00"
+      "last_seen_at": "2026-10-29T16:00:50.139167+00:00"
     },
     "{\"context\": \"przejdź do treści pytanie take your _____ luka and come with me. let's have fun! deska twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"deska\", \"word_count\": null}": {
       "polish": "deska",
@@ -3624,6 +3624,108 @@
       ],
       "created_at": "2026-10-29T15:34:04.614500+00:00",
       "last_seen_at": "2026-10-29T15:34:04.614512+00:00"
+    },
+    "{\"context\": \"i need to buy a new mouse at an ___________ _____.\", \"polish\": \"sklep elektroniczny\", \"word_count\": null}": {
+      "polish": "sklep elektroniczny",
+      "context": "I need to buy a new mouse at an ___________ _____.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-29T16:01:09.271649+00:00",
+      "last_seen_at": "2026-10-29T16:01:18.250474+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: advertisement pytanie i need to buy a new mouse at an ___________ luka _____ luka . sklep elektroniczny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"sklep elektroniczny\", \"word_count\": null}": {
+      "polish": "sklep elektroniczny",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: advertisement\nPytanie\nI need to buy a new mouse at an ___________\nluka\n _____\nluka\n.\nsklep elektroniczny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "electronics store"
+      ],
+      "rejected_answers": [
+        "e-shop. Context: I need to buy a new mouse at an ___________ _____."
+      ],
+      "attempts": [
+        {
+          "answer": "e-shop. Context: I need to buy a new mouse at an ___________ _____.",
+          "result": "rejected_with_correction",
+          "correction": "electronics store",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: advertisement\nPytanie\nI need to buy a new mouse at an ___________\nluka\n _____\nluka\n.\nsklep elektroniczny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261029_160104",
+          "timestamp": "2026-10-29T16:01:11.363565+00:00"
+        }
+      ],
+      "created_at": "2026-10-29T16:01:11.363545+00:00",
+      "last_seen_at": "2026-10-29T16:01:11.363561+00:00"
+    },
+    "{\"context\": \"who's your favourite _______?\", \"polish\": \"aktorka\", \"word_count\": null}": {
+      "polish": "aktorka",
+      "context": "Who's your favourite _______?",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-29T16:01:11.668636+00:00",
+      "last_seen_at": "2026-10-29T16:01:11.689291+00:00"
+    },
+    "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: electronics store pytanie who's your favourite _______ luka ? aktorka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"aktorka\", \"word_count\": null}": {
+      "polish": "aktorka",
+      "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: electronics store\nPytanie\nWho's your favourite _______\nluka\n?\naktorka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "actress"
+      ],
+      "rejected_answers": [
+        "actress. Context: Who's your favourite _______?"
+      ],
+      "attempts": [
+        {
+          "answer": "actress. Context: Who's your favourite _______?",
+          "result": "rejected_with_correction",
+          "correction": "actress",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: electronics store\nPytanie\nWho's your favourite _______\nluka\n?\naktorka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261029_160104",
+          "timestamp": "2026-10-29T16:01:13.448107+00:00"
+        }
+      ],
+      "created_at": "2026-10-29T16:01:13.448084+00:00",
+      "last_seen_at": "2026-10-29T16:01:13.448102+00:00"
+    },
+    "{\"context\": \"i can't find your name on the list. there must have been a ______.\", \"polish\": \"pomyłka\", \"word_count\": null}": {
+      "polish": "pomyłka",
+      "context": "I can't find your name on the list. There must have been a ______.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-29T16:01:15.970634+00:00",
+      "last_seen_at": "2026-10-29T16:01:15.989316+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: poem pytanie i can't find your name on the list. there must have been a ______ luka . pomyłka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"pomyłka\", \"word_count\": null}": {
+      "polish": "pomyłka",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: poem\nPytanie\nI can't find your name on the list. There must have been a ______\nluka\n.\npomyłka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "mix-up"
+      ],
+      "rejected_answers": [
+        "mistaken. Context: I can't find your name on the list. There must have been a ______."
+      ],
+      "attempts": [
+        {
+          "answer": "mistaken. Context: I can't find your name on the list. There must have been a ______.",
+          "result": "rejected_with_correction",
+          "correction": "mix-up",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: poem\nPytanie\nI can't find your name on the list. There must have been a ______\nluka\n.\npomyłka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261029_160104",
+          "timestamp": "2026-10-29T16:01:17.924391+00:00"
+        }
+      ],
+      "created_at": "2026-10-29T16:01:17.924365+00:00",
+      "last_seen_at": "2026-10-29T16:01:17.924386+00:00"
     }
   },
   "sessions": {
@@ -3779,6 +3881,16 @@
     },
     "20261029_155719": {
       "started_at": "2026-10-29T15:57:19.857025+00:00",
+      "completed_at": null,
+      "status": "started"
+    },
+    "20261029_160040": {
+      "started_at": "2026-10-29T16:00:40.202075+00:00",
+      "completed_at": "2026-10-29T16:00:59.361787+00:00",
+      "status": "completed"
+    },
+    "20261029_160104": {
+      "started_at": "2026-10-29T16:01:04.834984+00:00",
       "completed_at": null,
       "status": "started"
     }
