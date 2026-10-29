@@ -164,7 +164,7 @@
       }
     ],
     "first_seen": "2026-10-17T22:09:23.260023+00:00",
-    "last_seen": "2026-10-17T22:09:23.650429+00:00",
+    "last_seen": "2026-10-29T15:34:06.577225+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -2124,6 +2124,26 @@
     ],
     "first_seen": "2026-10-28T16:42:14.030716+00:00",
     "last_seen": "2026-10-28T16:42:14.537109+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "deska": {
+    "translations": [
+      {
+        "english": "board. Context: Take your _____ and come with me. Let's have fun!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "board",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-29T15:34:04.150099+00:00",
+    "last_seen": "2026-10-29T15:34:04.627137+00:00",
     "sources": [
       "online",
       "verified_correction"
