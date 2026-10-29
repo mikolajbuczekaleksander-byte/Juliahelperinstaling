@@ -970,8 +970,16 @@ class InstalingBrowser:
             result = "typo"
         elif re.search(r"synonim", value):
             result = "synonym"
-        # Akceptujemy wyłącznie znane krótkie komunikaty pozytywne.
-        elif re.fullmatch(
+        # Pozytywny status może zawierać również jawną poprawną odpowiedź,
+        # np. „Dobrze! Poprawna odpowiedź: electronics store”.
+        # Błędy są sprawdzane wcześniej, więc „Niepoprawnie...” nie przejdzie
+        # przez ten warunek.
+        elif re.search(
+            r"^(dobrze|poprawnie|prawidłowo|prawidlowo)[!. ]*"
+            r"(poprawna odpowiedź|poprawna odpowiedz|"
+            r"prawidłowa odpowiedź|prawidlowa odpowiedz)\s*:",
+            value,
+        ) or re.fullmatch(
             r"(dobrze|poprawnie|prawidłowo|prawidlowo)[!. ]*",
             value,
         ):
@@ -1430,9 +1438,8 @@ class InstalingBrowser:
             self.task_count,
         )
 
-        if self.is_session_complete():
-            return "session_complete"
-
+        # Po feedbacku nie sprawdzaj końca sesji przed próbą przejścia dalej:
+        # platforma może na moment pokazać status i dopiero potem #next_word.
         next_result = self.go_to_next_task()
 
         if next_result == "session_complete":
@@ -1594,8 +1601,10 @@ class InstalingBrowser:
                 )
                 return False
 
+            # Po każdej ukończonej sesji wracamy do menu, także po ostatniej.
+            # Kolejna sesja rozpocznie się tylko wtedy, gdy pozostała w pętli.
+            self.return_to_menu()
             if session_number < TARGET_SESSIONS:
-                self.return_to_menu()
                 self.page.wait_for_timeout(1000)
 
         self.logger.info("Ukończono wszystkie %s sesje.", TARGET_SESSIONS)
