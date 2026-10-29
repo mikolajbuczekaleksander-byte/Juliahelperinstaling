@@ -2525,7 +2525,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-26T16:41:15.840850+00:00",
-      "last_seen_at": "2026-10-27T16:40:22.474411+00:00"
+      "last_seen_at": "2026-10-29T16:43:08.999898+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: image pytanie __ luka _____ luka many famous actors. występuje w nim... twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"występuje w nim...\", \"word_count\": null}": {
       "polish": "Występuje w nim...",
@@ -3930,6 +3930,11 @@
     },
     "20261029_161117": {
       "started_at": "2026-10-29T16:11:17.727346+00:00",
+      "completed_at": null,
+      "status": "started"
+    },
+    "20261029_164308": {
+      "started_at": "2026-10-29T16:43:08.940225+00:00",
       "completed_at": null,
       "status": "started"
     }
