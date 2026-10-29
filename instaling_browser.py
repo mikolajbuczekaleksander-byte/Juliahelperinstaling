@@ -17,6 +17,7 @@ agent.py, memory.py, vocabulary.py, translator.py.
 """
 
 import os
+import sys
 import re
 import json
 import logging
@@ -1664,7 +1665,20 @@ class InstalingBrowser:
 # ============================================================
 
 def main():
-    browser = InstalingBrowser(headless=False)
+    # Na runnerach CI/Linux nie ma serwera graficznego (X11/Wayland),
+    # więc domyślnie uruchamiamy Chromium w trybie headless.
+    # Można nadpisać ustawieniem INSTALING_HEADLESS=1 albo =0.
+    headless_setting = os.environ.get("INSTALING_HEADLESS", "").strip().lower()
+    if headless_setting in {"1", "true", "yes", "tak", "on"}:
+        headless = True
+    elif headless_setting in {"0", "false", "no", "nie", "off"}:
+        headless = False
+    else:
+        headless = sys.platform.startswith("linux") and not (
+            os.environ.get("DISPLAY") or os.environ.get("WAYLAND_DISPLAY")
+        )
+
+    browser = InstalingBrowser(headless=headless)
 
     try:
         browser.start()
