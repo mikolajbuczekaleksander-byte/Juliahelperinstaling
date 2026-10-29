@@ -591,22 +591,14 @@ class InstalingBrowser:
         return complete
 
     def find_session_action(self):
-        """Znajduje akcję sesji przez HTML, a potem przez tekst.
+        """Znajduje przycisk rozpoczęcia lub kontynuowania sesji."""
+        session_buttons = self.page.locator(".btn-start-session")
 
-        Zachowuje dotychczasowe wzorce tekstowe i dodatkowo obsługuje
-        elementy HTML z klasą .btn-start-session, w tym link
-        „Rozpocznij codzienną sesję”.
-        """
-        # Obsłuż linki HTML do sesji, w tym rozpoczęcie i dokończenie.
-        # Przykładowe teksty:
-        # - „Rozpocznij codzienną sesję”
-        # - „Dokończ sesję”
-        # W obu przypadkach sprawdzamy też docelowy adres href.
-        session_buttons = self.page.locator(SESSION_BUTTON_SELECTOR)
-        accepted_session_names = {
+        accepted_names = {
             "rozpocznij codzienną sesję",
             "rozpocznij codzienna sesje",
             "dokończ sesję",
+            "dokonc sesje",
             "dokoncz sesje",
             "kontynuuj sesję",
             "kontynuuj sesje",
@@ -616,166 +608,121 @@ class InstalingBrowser:
             "rozpocznij sesje",
             "rozpocznij naukę",
             "rozpocznij nauke",
-            "rozpocznij konfigurację sesji",
-            "rozpocznij konfiguracje sesji",
             "następna sesja",
             "nastepna sesja",
         }
+
         for index in range(session_buttons.count()):
             element = session_buttons.nth(index)
             try:
                 if not element.is_visible() or not element.is_enabled():
                     continue
-                text = normalize(element.inner_text(timeout=1000))
-                href = element.get_attribute("href") or ""
 
-                if text not in accepted_session_names:
-                    continue
-                if "/app/session/app.php" not in href:
-                    continue
+                text = normalize(element.inner_text())
+                if text in accepted_names:
+                    self.logger.info(
+                        "Znaleziono przycisk sesji: %s",
+                        text,
+                    )
+                    return element
 
-                self.logger.info(
-                    "Znaleziono przycisk sesji HTML: %s | href=%s",
-                    text,
-                    href,
-                )
-                return element
             except Exception as error:
-                self.logger.debug("Błąd odczytu przycisku sesji HTML: %s", error)
-
-        # Awaryjnie szukamy po tekście, ale dla linków sprawdzamy także href.
-        fallback_patterns = (
-            (r"kontynuuj sesję|kontynuuj sesje", 120),
-            (r"dokończ sesję|dokonc sesje", 115),
-            (r"rozpocznij kolejną sesję|rozpocznij kolejna sesje", 110),
-            (r"rozpocznij sesję|rozpocznij sesje", 100),
-            (r"rozpocznij naukę|rozpocznij nauke", 90),
-            (r"następna sesja|nastepna sesja", 80),
-        )
-
-        elements = self.page.locator(
-            "button, a, [role='button'], "
-            "input[type='button'], input[type='submit']"
-        )
-        candidates = []
-
-        for index in range(elements.count()):
-            element = elements.nth(index)
-            try:
-                if not element.is_visible() or not element.is_enabled():
-                    continue
-
-                description = normalize(
-                    " ".join((
-                        str(element.inner_text(timeout=1000) or ""),
-                        str(element.get_attribute("value") or ""),
-                        str(element.get_attribute("aria-label") or ""),
-                    ))
+                self.logger.debug(
+                    "Nie udało się sprawdzić przycisku sesji: %s",
+                    error,
                 )
 
-                score = None
-                for pattern, pattern_score in fallback_patterns:
-                    if re.search(pattern, description, re.IGNORECASE):
-                        score = pattern_score
-                        break
-
-                if score is None:
-                    continue
-
-                href = element.get_attribute("href")
-                if href is not None and href.strip():
-                    if "/app/session/app.php" not in href:
-                        continue
-
-                candidates.append((score, element, description, href or ""))
-            except Exception:
-                continue
-
-        candidates.sort(key=lambda item: item[0], reverse=True)
-
-        if candidates:
-            score, element, description, href = candidates[0]
-            self.logger.info(
-                "Znaleziono awaryjny przycisk sesji: %s | href=%s",
-                description,
-                href,
-            )
-            return element
-
-        return None
+        # Awaryjne wyszukiwanie przycisków po tekście.
+        return self.find_action_by_text((
+            (r"^kontynuuj sesję$|^kontynuuj sesje$", 130),
+            (r"^dokończ sesję$|^dokoncz sesje$", 120),
+            (
+                r"^rozpocznij kolejną sesję$|"
+                r"^rozpocznij kolejna sesje$",
+                115,
+            ),
+            (
+                r"^rozpocznij codzienną sesję$|"
+                r"^rozpocznij codzienna sesje$",
+                110,
+            ),
+            (r"^rozpocznij sesję$|^rozpocznij sesje$", 100),
+            (r"^rozpocznij naukę$|^rozpocznij nauke$", 90),
+            (r"^następna sesja$|^nastepna sesja$", 80),
+        ))
 
     def is_dont_know_screen(self):
-        """Sprawdza, czy widoczny jest ekran z przyciskiem „Nie znam”."""
+        """Sprawdza, czy dostępny jest przycisk 'Nie znam'."""
         button = self.page.locator("#dont_know_new").first
         try:
-            return button.count() > 0 and button.is_visible() and button.is_enabled()
+            return (
+                button.count() > 0
+                and button.is_visible()
+                and button.is_enabled()
+            )
         except Exception:
             return False
 
     def handle_dont_know_screen(self):
-        """Obsługuje ekran przykładowego zdania: „Nie znam”, a potem „Pomiń”.
-
-        Zwraca: 'not_present', 'next_task', 'session_complete' albo 'unknown'.
-        Nie zakłada konkretnej treści zdania — wykrywa ekran po selektorze.
-        """
+        """Kliknie 'Nie znam', a następnie 'Pomiń'."""
         button = self.page.locator("#dont_know_new").first
         try:
-            if not button.count() or not button.is_visible() or not button.is_enabled():
+            if (
+                not button.count()
+                or not button.is_visible()
+                or not button.is_enabled()
+            ):
                 return "not_present"
 
             try:
-                sentence = self.page.locator("#question_usage").inner_text(timeout=1000)
+                sentence = self.page.locator(
+                    "#question_usage"
+                ).inner_text(timeout=1000)
             except Exception:
                 sentence = ""
 
             self.logger.info(
-                "Wykryto ekran specjalny (#dont_know_new). Zdanie: %r. "
-                "Klikam 'Nie znam', a następnie 'Pomiń'.",
+                "Wykryto ekran 'Nie znam'. Zdanie: %r",
                 sentence,
             )
             button.click(timeout=5000)
 
             skip = self.page.locator("#skip").first
             skip.wait_for(state="visible", timeout=5000)
+
             if not skip.is_enabled():
-                self.logger.error("Przycisk #skip jest widoczny, ale nieaktywny.")
-                self.save_screenshot("dont_know_skip_disabled.png")
+                self.logger.warning(
+                    "Przycisk 'Pomiń' jest nieaktywny."
+                )
                 return "unknown"
 
             skip.click(timeout=5000)
-            self.logger.info("Kliknięto #skip po ekranie 'Nie znam'.")
+            self.logger.info(
+                "Kliknięto 'Pomiń'. Oczekiwanie na następny ekran."
+            )
 
-            # Po pominięciu czekamy na zwykłe zadanie, kolejny ekran specjalny
-            # albo potwierdzenie końca sesji. Ekran może pojawić się w dowolnym
-            # miejscu sesji, więc nie opieramy się na treści konkretnego zdania.
             deadline = time.monotonic() + 10
             while time.monotonic() < deadline:
                 if self.is_session_complete():
-                    self.logger.info(
-                        "Po pominięciu ekranu 'Nie znam' wykryto koniec sesji."
-                    )
                     return "session_complete"
+
                 if self.has_answer_field():
-                    self.logger.info(
-                        "Po pominięciu ekranu 'Nie znam' załadowano zwykłe zadanie."
-                    )
                     return "next_task"
+
                 if self.is_dont_know_screen():
-                    # Kolejny taki ekran z rzędu obsłuży kolejna iteracja pętli.
-                    self.logger.info(
-                        "Po pominięciu pojawił się kolejny ekran 'Nie znam'."
-                    )
                     return "next_task"
+
                 self.page.wait_for_timeout(150)
 
             self.logger.warning(
-                "Po kliknięciu #skip nie pojawiło się zwykłe zadanie ani koniec sesji."
+                "Po kliknięciu 'Pomiń' nie rozpoznano następnego ekranu."
             )
             self.save_screenshot("dont_know_after_skip_timeout.png")
             return "unknown"
+
         except Exception as error:
             self.logger.warning(
-                "Nie udało się obsłużyć ekranu 'Nie znam' / 'Pomiń': %s",
+                "Błąd obsługi 'Nie znam' / 'Pomiń': %s",
                 error,
             )
             self.save_screenshot("dont_know_screen_error.png")
