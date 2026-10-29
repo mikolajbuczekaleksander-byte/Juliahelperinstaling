@@ -3,14 +3,15 @@
     "translations": [
       {
         "english": "fashion show",
-        "verified": false,
-        "source": "dictionary"
+        "verified": true,
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-10T20:00:34.817342+00:00",
-    "last_seen": "2026-10-10T20:12:11.659281+00:00",
+    "last_seen": "2026-10-29T16:59:58.448273+00:00",
     "sources": [
-      "dictionary"
+      "dictionary",
+      "verified_feedback"
     ]
   },
   "festiwal": {
@@ -101,14 +102,15 @@
       {
         "english": "perform",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-17T21:24:56.985948+00:00",
-    "last_seen": "2026-10-22T17:18:09.694904+00:00",
+    "last_seen": "2026-10-29T16:59:02.763706+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "główny (pierwszoplanowy) aktor": {
@@ -242,14 +244,15 @@
       {
         "english": "wetsuit",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:02:08.120040+00:00",
-    "last_seen": "2026-10-23T16:29:22.451784+00:00",
+    "last_seen": "2026-10-29T16:59:39.529589+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "buty (np. korki)": {
@@ -424,14 +427,15 @@
       {
         "english": "costume",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:17:32.310111+00:00",
-    "last_seen": "2026-10-23T16:29:30.033381+00:00",
+    "last_seen": "2026-10-29T16:59:35.845685+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "jest zatytułowany...": {
@@ -504,14 +508,15 @@
       {
         "english": "gymnastics",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:18:05.216949+00:00",
-    "last_seen": "2026-10-23T16:30:13.553792+00:00",
+    "last_seen": "2026-10-29T16:59:42.533185+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "tenis ziemny": {
@@ -544,14 +549,15 @@
       {
         "english": "running",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:18:11.212842+00:00",
-    "last_seen": "2026-10-23T16:29:19.080145+00:00",
+    "last_seen": "2026-10-29T16:59:48.148008+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "jazda na deskorolce": {
@@ -729,7 +735,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:20:12.097261+00:00",
-    "last_seen": "2026-10-29T16:51:13.081702+00:00",
+    "last_seen": "2026-10-29T16:59:56.118748+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -908,14 +914,15 @@
       {
         "english": "beach volleyball",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:21:05.028449+00:00",
-    "last_seen": "2026-10-25T16:20:32.121853+00:00",
+    "last_seen": "2026-10-29T16:59:49.527968+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "reżyser": {
@@ -1088,14 +1095,15 @@
       {
         "english": "cycling",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:21:33.083660+00:00",
-    "last_seen": "2026-10-25T16:20:38.056417+00:00",
+    "last_seen": "2026-10-29T17:00:00.546663+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "wiersz": {
@@ -1133,7 +1141,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:09.268101+00:00",
-    "last_seen": "2026-10-29T16:51:01.105762+00:00",
+    "last_seen": "2026-10-29T16:58:58.970338+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1231,14 +1239,15 @@
       {
         "english": "understudy",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-25T16:21:21.772221+00:00",
-    "last_seen": "2026-10-26T16:40:49.013509+00:00",
+    "last_seen": "2026-10-29T16:59:52.449901+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "scena (np. z filmu)": {
@@ -1272,14 +1281,15 @@
       {
         "english": "star",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-25T16:21:27.489325+00:00",
-    "last_seen": "2026-10-26T16:40:32.983611+00:00",
+    "last_seen": "2026-10-29T16:58:47.461767+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "film dokumentalny; program dokumentalny": {
@@ -1292,14 +1302,15 @@
       {
         "english": "documentary",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-25T16:21:30.297309+00:00",
-    "last_seen": "2026-10-26T16:40:24.584750+00:00",
+    "last_seen": "2026-10-29T16:59:37.930542+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "mieć talent, zdolności (w jakiejś dziedzinie)": {
@@ -1512,14 +1523,15 @@
       {
         "english": "It stars ...",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-26T16:41:16.648966+00:00",
-    "last_seen": "2026-10-29T16:43:10.095474+00:00",
+    "last_seen": "2026-10-29T16:59:04.214826+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "piłka": {
@@ -1915,14 +1927,15 @@
       {
         "english": "article",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-27T16:41:21.841327+00:00",
-    "last_seen": "2026-10-28T16:41:39.657541+00:00",
+    "last_seen": "2026-10-29T16:58:45.794752+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "kanał; kanał telewizyjny": {
@@ -1980,7 +1993,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:32.876854+00:00",
-    "last_seen": "2026-10-29T16:50:01.737954+00:00",
+    "last_seen": "2026-10-29T16:59:40.918478+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2021,7 +2034,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:41:25.991139+00:00",
-    "last_seen": "2026-10-29T16:50:13.702108+00:00",
+    "last_seen": "2026-10-29T16:58:56.001942+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2078,14 +2091,15 @@
       {
         "english": "city bike",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-28T16:42:03.189323+00:00",
-    "last_seen": "2026-10-28T16:42:09.271856+00:00",
+    "last_seen": "2026-10-29T16:59:54.645493+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "pop": {
@@ -2098,14 +2112,15 @@
       {
         "english": "pop",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-28T16:42:07.690917+00:00",
-    "last_seen": "2026-10-28T16:42:08.201653+00:00",
+    "last_seen": "2026-10-29T16:59:17.662475+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "rower szosowy": {
@@ -2283,7 +2298,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:50:19.338475+00:00",
-    "last_seen": "2026-10-29T16:50:29.522036+00:00",
+    "last_seen": "2026-10-29T16:59:00.634138+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2368,6 +2383,195 @@
     ],
     "first_seen": "2026-10-29T16:51:08.812974+00:00",
     "last_seen": "2026-10-29T16:51:17.169766+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "prezenter": {
+    "translations": [
+      {
+        "english": "presenter. Context: Aren't you too ugly to be a TV _________?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "presenter",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T16:58:48.529268+00:00",
+    "last_seen": "2026-10-29T16:59:13.381861+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "otwieracz do konserw": {
+    "translations": [
+      {
+        "english": "can opener. Context: I can't open this can. Can you hand me the ___ ______?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "tin opener",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T16:58:50.899556+00:00",
+    "last_seen": "2026-10-29T16:58:54.427602+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "aktorstwo; gra aktorska": {
+    "translations": [
+      {
+        "english": "acting; acting. Context: Edward Norton's ______ is the main asset of this film.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "acting",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T16:58:52.400701+00:00",
+    "last_seen": "2026-10-29T16:59:10.379304+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "siatka, kosz (w koszykówce)": {
+    "translations": [
+      {
+        "english": "net, basket (in basketball). Context: We need a ___ to play volleyball.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "net",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T16:59:05.708134+00:00",
+    "last_seen": "2026-10-29T16:59:07.577413+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "mikrofon": {
+    "translations": [
+      {
+        "english": "microphone. Context: We couldn't hear her without a __________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "microphone",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T16:59:08.409485+00:00",
+    "last_seen": "2026-10-29T16:59:20.600196+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "projektować": {
+    "translations": [
+      {
+        "english": "design. Context: I ______ apartments for different clients at work.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "design",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T16:59:11.266461+00:00",
+    "last_seen": "2026-10-29T16:59:22.065831+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "namiot cyrkowy": {
+    "translations": [
+      {
+        "english": "circus tent. Context: A ___ ___ is a main tent in circus.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "big top",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T16:59:18.651377+00:00",
+    "last_seen": "2026-10-29T16:59:44.485183+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "gogle; okulary ochronne; okulary do pływania": {
+    "translations": [
+      {
+        "english": "goggles; safety goggles; swimming goggles. Context: Don't forget your _______ if you're going skiing.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "goggles",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T16:59:50.402390+00:00",
+    "last_seen": "2026-10-29T17:00:02.032122+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "narty": {
+    "translations": [
+      {
+        "english": "skiing. Context: Where are my ____?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "skis",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-29T16:59:57.085554+00:00",
+    "last_seen": "2026-10-29T17:00:03.398401+00:00",
     "sources": [
       "online",
       "verified_correction",
