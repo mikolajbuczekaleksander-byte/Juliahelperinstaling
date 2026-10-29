@@ -2183,7 +2183,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:01:12.827485+00:00",
-    "last_seen": "2026-10-29T16:01:13.459742+00:00",
+    "last_seen": "2026-10-29T16:11:20.747040+00:00",
     "sources": [
       "online",
       "verified_correction"
@@ -2204,6 +2204,26 @@
     ],
     "first_seen": "2026-10-29T16:01:17.287785+00:00",
     "last_seen": "2026-10-29T16:01:17.935425+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "melodia": {
+    "translations": [
+      {
+        "english": "melody. Context: She was humming a merry ____.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "tune",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-29T16:11:18.853080+00:00",
+    "last_seen": "2026-10-29T16:11:19.458371+00:00",
     "sources": [
       "online",
       "verified_correction"
