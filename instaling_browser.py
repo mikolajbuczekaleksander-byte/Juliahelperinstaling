@@ -470,161 +470,96 @@ class InstalingBrowser:
         return candidates[0][1] if candidates else None
 
     def is_session_complete(self):
-        """Rozpoznaje koniec sesji, nie myląc go z ukrytym, starym nagłówkiem."""
-        heading = self.page.locator(
-            "h2.visually-hidden",
-            has_text="Koniec sesji",
-        )
+        """
+        Potwierdza koniec sesji wyłącznie na podstawie aktywnego ekranu końcowego.
 
+        Nie używa samego tekstu „Koniec sesji” ani „powrót do menu głównego”,
+        ponieważ te elementy mogą pozostać w DOM podczas zwykłego zadania.
+        Jeśli widoczne jest pole odpowiedzi, przycisk następnego zadania albo
+        ekran „Nie znam”, sesja nadal trwa.
+        """
         try:
-            heading_count = heading.count()
-        except Exception as error:
-            heading_count = 0
-            self.logger.debug(
-                "Nie udało się policzyć nagłówków końca sesji: %s",
-                error,
-            )
-
-        if heading_count > 0:
-            # Zapisujemy stan strony, aby można było ustalić, czy nagłówek
-            # pochodzi z aktywnej sesji, czy pozostał w DOM po nawigacji.
-            try:
-                current_url = self.page.url
-            except Exception:
-                current_url = "<nieznany>"
-
-            try:
-                page_text = self.page_text()
-            except Exception:
-                page_text = "<nie udało się odczytać tekstu strony>"
-
-            # Nie umieszczaj danych logowania w diagnostycznym tekście strony.
-            for secret in (
-                os.environ.get("INSTALING_LOGIN", "").strip(),
-                os.environ.get("INSTALING_PASSWORD", ""),
-            ):
-                if secret:
-                    page_text = page_text.replace(secret, "[REDACTED]")
-
-            try:
-                all_headings = self.page.locator("h1, h2, h3").all_inner_texts()
-            except Exception:
-                all_headings = []
-
-            try:
-                answer_count = self.page.locator(ANSWER_SELECTOR).count()
-            except Exception:
-                answer_count = -1
-
-            try:
-                menu_button = self.page.locator(SESSION_BUTTON_SELECTOR)
-                menu_count = menu_button.count()
-                menu_texts = menu_button.all_inner_texts() if menu_count else []
-            except Exception:
-                menu_count = -1
-                menu_texts = []
-
-            self.logger.warning(
-                "DIAGNOSTYKA nagłówka 'Koniec sesji': url=%s; "
-                "pasujące_nagłówki=%s; wszystkie_h1_h2_h3=%r; "
-                "pola_odpowiedzi=%s; elementy_menu=%s; teksty_menu=%r; "
-                "tekst_strony=%r",
-                current_url,
-                heading_count,
-                all_headings,
-                answer_count,
-                menu_count,
-                menu_texts,
-                page_text[:12000],
-            )
-            self.save_screenshot("session_end_heading_diagnostic.png")
-
-            # Pole odpowiedzi jest mocniejszym sygnałem aktywnego zadania niż
-            # wizualnie ukryty nagłówek, który może pozostać w DOM.
+            # Silne sygnały trwającej sesji mają pierwszeństwo przed
+            # przyciskiem powrotu, który może być obecny w nieaktywnym DOM.
             if self.has_answer_field():
-                self.logger.warning(
-                    "Nagłówek 'Koniec sesji' istnieje w DOM, ale pole %s "
-                    "jest aktywne; traktuję nagłówek jako pozostałość i "
-                    "nie kończę sesji.",
-                    ANSWER_SELECTOR,
+                return False
+
+            next_button = self.page.locator("#next_word").first
+            if (
+                next_button.count() > 0
+                and next_button.is_visible()
+                and next_button.is_enabled()
+            ):
+                self.logger.debug(
+                    "Nie uznaję końca sesji: widoczny jest aktywny #next_word."
                 )
                 return False
 
-            # Przycisk „Kontynuuj sesję” oznacza, że sesję należy otworzyć,
-            # a nie że bieżąca sesja właśnie się zakończyła. Sam ukryty nagłówek
-            # plus dowolny przycisk menu nie wystarczają do uznania końca.
-            normalized_menu_texts = [normalize(value) for value in menu_texts]
-            if any(value in ("kontynuuj sesję", "kontynuuj sesje", "dokończ sesję", "dokoncz sesje")
-                   for value in normalized_menu_texts):
-                self.logger.info(
-                    "Nagłówek 'Koniec sesji' jest nieaktualny lub niejednoznaczny; "
-                    "menu zawiera akcję wznowienia %r, więc nie uznaję sesji za zakończoną.",
-                    menu_texts,
+            dont_know = self.page.locator("#dont_know_new").first
+            if (
+                dont_know.count() > 0
+                and dont_know.is_visible()
+                and dont_know.is_enabled()
+            ):
+                self.logger.debug(
+                    "Nie uznaję końca sesji: widoczny jest aktywny #dont_know_new."
                 )
                 return False
 
-            if menu_count > 0 and any(
-                value in ("rozpocznij kolejną sesję", "rozpocznij kolejna sesje", "następna sesja", "nastepna sesja")
-                for value in normalized_menu_texts
+            return_button = self.page.locator(RETURN_BUTTON_SELECTOR).first
+            if (
+                return_button.count() > 0
+                and return_button.is_visible()
+                and return_button.is_enabled()
             ):
                 self.logger.info(
-                    "Potwierdzono koniec sesji: brak aktywnego pola odpowiedzi "
-                    "i menu oferuje rozpoczęcie następnej sesji (%r).",
-                    menu_texts,
+                    "Potwierdzono koniec sesji: aktywny przycisk %s jest widoczny, "
+                    "a pole odpowiedzi i przyciski aktywnego zadania są nieobecne.",
+                    RETURN_BUTTON_SELECTOR,
                 )
                 return True
 
-            self.logger.warning(
-                "Nagłówek 'Koniec sesji' jest w DOM, ale nie ma ani aktywnego "
-                "pola odpowiedzi, ani elementu menu %s; sam nagłówek nie "
-                "wystarcza do potwierdzenia końca sesji.",
-                SESSION_BUTTON_SELECTOR,
+            # Diagnostyka nagłówka bez uznawania go samodzielnie za koniec.
+            heading = self.page.locator(
+                "h2.visually-hidden",
+                has_text="Koniec sesji",
             )
+            if heading.count() > 0:
+                try:
+                    page_text = self.page_text()
+                except Exception:
+                    page_text = "<nie udało się odczytać tekstu strony>"
 
-        # Najważniejsza kontrola: jeśli widoczny jest przycisk „Kontynuuj sesję”
-        # lub „Dokończ sesję”, trzeba wznowić sesję. Nie pozwól, aby tekst
-        # „powrót do menu głównego” pozostały w DOM oznaczał fałszywy koniec.
-        try:
-            resume = self.page.locator(
-                "button.btn-start-session, a.btn-start-session, .btn-start-session"
-            )
-            for index in range(resume.count()):
-                item = resume.nth(index)
-                if not item.is_visible() or not item.is_enabled():
-                    continue
-                label = normalize(item.inner_text(timeout=1000))
-                if label in ("kontynuuj sesję", "kontynuuj sesje", "dokończ sesję", "dokończ sesje", "dokonc sesje", "dokonc sesję"):
-                    self.logger.info(
-                        "Widoczna akcja wznowienia %r — nie uznaję strony za koniec sesji.",
-                        label,
-                    )
-                    return False
-        except Exception as error:
-            self.logger.debug("Nie udało się sprawdzić przycisku wznowienia: %s", error)
+                for secret in (
+                    os.environ.get("INSTALING_LOGIN", "").strip(),
+                    os.environ.get("INSTALING_PASSWORD", ""),
+                ):
+                    if secret:
+                        page_text = page_text.replace(secret, "[REDACTED]")
 
-        # Tekstowe wzorce awaryjne sprawdzamy tylko wtedy, gdy nie ma aktywnego
-        # pola odpowiedzi — w przeciwnym razie tekst mógł pozostać w DOM.
-        if self.has_answer_field():
+                try:
+                    all_headings = self.page.locator("h1, h2, h3").all_inner_texts()
+                except Exception:
+                    all_headings = []
+
+                self.logger.info(
+                    "Diagnostyka niepotwierdzonego nagłówka 'Koniec sesji': "
+                    "url=%s; nagłówki=%r; tekst_strony=%r",
+                    self.page.url,
+                    all_headings,
+                    page_text[:5000],
+                )
+                self.save_screenshot("session_end_heading_diagnostic.png")
+
             return False
 
-        text = normalize(self.page_text())
-        patterns = (
-            r"sesja została zakończona",
-            r"sesja zakonczona",
-            r"zakończyłeś sesję",
-            r"zakonczyles sesje",
-            r"zakończyłaś sesję",
-            r"zakonczylas sesje",
-            r"powrót do menu głównego",
-            r"powrot do menu glownego",
-        )
-        complete = any(re.search(pattern, text) for pattern in patterns)
-        if complete:
-            self.logger.info(
-                "Koniec sesji wykryty na podstawie tekstu strony; "
-                "brak aktywnego pola odpowiedzi."
+        except Exception as error:
+            self.logger.warning(
+                "Nie udało się jednoznacznie sprawdzić końca sesji; "
+                "bezpiecznie kontynuuję: %s",
+                error,
             )
-        return complete
+            return False
 
     def find_session_action(self):
         """Znajduje aktywną akcję sesji, także przycisk <button> bez href.
@@ -1144,49 +1079,81 @@ class InstalingBrowser:
         ))
 
     def go_to_next_task(self):
-        if self.is_session_complete():
-            return "session_complete"
+        """
+        Przechodzi do następnego zadania.
 
+        Priorytetem jest aktywny przycisk #next_word. Dopiero gdy przycisku
+        następnego zadania nie ma, przez chwilę czekamy na zmianę stanu strony
+        i rozpoznajemy ekran końcowy. Zapobiega to kończeniu sesji w krótkiej
+        przerwie pomiędzy pokazaniem feedbacku a przycisku następnego zadania.
+        """
         action = self.find_next_task_button()
 
         if action is None:
+            # InstaLing czasem renderuje feedback i przycisk „Następne”
+            # w osobnych krokach. Nie traktuj tej krótkiej przerwy jako końca.
+            deadline = time.monotonic() + 3
+            while time.monotonic() < deadline:
+                if self.has_answer_field():
+                    return "next_task"
+                if self.is_dont_know_screen():
+                    self.logger.info(
+                        "Po odpowiedzi pojawił się ekran specjalny #dont_know_new."
+                    )
+                    return "next_task"
+
+                action = self.find_next_task_button()
+                if action is not None:
+                    break
+
+                if self.is_session_complete():
+                    return "session_complete"
+
+                self.page.wait_for_timeout(150)
+
+        if action is None:
+            if self.is_session_complete():
+                return "session_complete"
+
             self.save_screenshot("next_task_button_missing.png")
+            self.logger.warning(
+                "Nie znaleziono przycisku następnego zadania po oczekiwaniu "
+                "i nie potwierdzono ekranu końcowego."
+            )
             return "unknown"
 
         try:
             action.click(timeout=5000)
 
-            deadline = time.monotonic() + 5
+            deadline = time.monotonic() + 8
             while time.monotonic() < deadline:
-                if self.is_session_complete():
-                    return "session_complete"
+                # Aktywne zadanie i ekran „Nie znam” mają pierwszeństwo
+                # przed ewentualnymi starymi elementami końca sesji.
                 if self.has_answer_field():
-                    break
+                    return "next_task"
                 if self.is_dont_know_screen():
                     self.logger.info(
                         "Po przejściu dalej pojawił się ekran specjalny #dont_know_new; "
                         "zostanie obsłużony przed zwykłym zadaniem."
                     )
                     return "next_task"
+                if self.is_session_complete():
+                    return "session_complete"
                 self.page.wait_for_timeout(100)
-            else:
-                self.save_screenshot("next_task_timeout.png")
-                self.logger.warning(
-                    "Po kliknięciu przycisku następnego zadania nie pojawiło się "
-                    "ani widoczne #answer, ani #dont_know_new."
-                )
-                return "unknown"
+
+            self.save_screenshot("next_task_timeout.png")
+            self.logger.warning(
+                "Po kliknięciu przycisku następnego zadania nie pojawiło się "
+                "pole #answer, ekran #dont_know_new ani potwierdzony koniec sesji."
+            )
+            return "unknown"
+
         except Exception as error:
             self.logger.warning(
                 "Nie udało się przejść dalej: %s",
                 error,
             )
             return "unknown"
-
-        if self.is_session_complete():
-            return "session_complete"
-
-        return "next_task" if self.has_answer_field() else "unknown"
 
     # --------------------------------------------------------
     # ROZWIĄZYWANIE ZADANIA
