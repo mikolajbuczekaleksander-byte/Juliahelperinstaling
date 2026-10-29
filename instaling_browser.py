@@ -17,7 +17,6 @@ agent.py, memory.py, vocabulary.py, translator.py.
 """
 
 import os
-import sys
 import re
 import json
 import logging
@@ -55,7 +54,7 @@ STOP_ON_UNKNOWN_FEEDBACK = True
 ANSWER_SELECTOR = "#answer"
 STATUS_SELECTOR = "#sr_status"
 CAPITALIZATION_SELECTOR = ".blue"
-SESSION_BUTTON_SELECTOR = "button.btn.btn-instaling.btn-start-session, button.btn-start-session, a.btn-start-session, .btn-start-session"
+SESSION_BUTTON_SELECTOR = ".btn-start-session"
 RETURN_BUTTON_SELECTOR = "#return_mainpage"
 
 PAGE_TIMEOUT_MS = 15000
@@ -471,389 +470,190 @@ class InstalingBrowser:
 
     def is_session_complete(self):
         """
-        Potwierdza koniec sesji wyłącznie na podstawie aktywnego ekranu końcowego.
+        Sesja jest zakończona WYŁĄCZNIE wtedy, gdy widoczny jest
+        aktywny przycisk #return_mainpage.
 
-        Nie używa samego tekstu „Koniec sesji” ani „powrót do menu głównego”,
-        ponieważ te elementy mogą pozostać w DOM podczas zwykłego zadania.
-        Jeśli widoczne jest pole odpowiedzi, przycisk następnego zadania albo
-        ekran „Nie znam”, sesja nadal trwa.
+        Sama poprawna odpowiedź, tekst „Koniec sesji” w DOM ani
+        obecność przycisku rozpoczęcia sesji nie kończą sesji.
         """
         try:
-            # Silne sygnały trwającej sesji mają pierwszeństwo przed
-            # przyciskiem powrotu, który może być obecny w nieaktywnym DOM.
-            if self.has_answer_field():
-                return False
-
-            next_button = self.page.locator("#next_word").first
-            if (
-                next_button.count() > 0
-                and next_button.is_visible()
-                and next_button.is_enabled()
-            ):
-                self.logger.debug(
-                    "Nie uznaję końca sesji: widoczny jest aktywny #next_word."
-                )
-                return False
-
-            dont_know = self.page.locator("#dont_know_new").first
-            if (
-                dont_know.count() > 0
-                and dont_know.is_visible()
-                and dont_know.is_enabled()
-            ):
-                self.logger.debug(
-                    "Nie uznaję końca sesji: widoczny jest aktywny #dont_know_new."
-                )
-                return False
-
             return_button = self.page.locator(RETURN_BUTTON_SELECTOR).first
-            if (
+            return (
                 return_button.count() > 0
                 and return_button.is_visible()
                 and return_button.is_enabled()
-            ):
-                self.logger.info(
-                    "Potwierdzono koniec sesji: aktywny przycisk %s jest widoczny, "
-                    "a pole odpowiedzi i przyciski aktywnego zadania są nieobecne.",
-                    RETURN_BUTTON_SELECTOR,
-                )
-                return True
-
-            # Diagnostyka nagłówka bez uznawania go samodzielnie za koniec.
-            heading = self.page.locator(
-                "h2.visually-hidden",
-                has_text="Koniec sesji",
             )
-            if heading.count() > 0:
-                try:
-                    page_text = self.page_text()
-                except Exception:
-                    page_text = "<nie udało się odczytać tekstu strony>"
-
-                for secret in (
-                    os.environ.get("INSTALING_LOGIN", "").strip(),
-                    os.environ.get("INSTALING_PASSWORD", ""),
-                ):
-                    if secret:
-                        page_text = page_text.replace(secret, "[REDACTED]")
-
-                try:
-                    all_headings = self.page.locator("h1, h2, h3").all_inner_texts()
-                except Exception:
-                    all_headings = []
-
-                self.logger.info(
-                    "Diagnostyka niepotwierdzonego nagłówka 'Koniec sesji': "
-                    "url=%s; nagłówki=%r; tekst_strony=%r",
-                    self.page.url,
-                    all_headings,
-                    page_text[:5000],
-                )
-                self.save_screenshot("session_end_heading_diagnostic.png")
-
-            return False
-
         except Exception as error:
             self.logger.warning(
-                "Nie udało się jednoznacznie sprawdzić końca sesji; "
-                "bezpiecznie kontynuuję: %s",
+                "Nie udało się sprawdzić końca sesji: %s",
                 error,
             )
             return False
 
     def find_session_action(self):
-        """Znajduje aktywną akcję sesji, także przycisk <button> bez href.
+        """Znajduje akcję sesji przez HTML, a potem przez tekst.
 
-        Najpierw sprawdza elementy .btn-start-session, a następnie wyszukuje
-        awaryjnie przyciski/linki po tekście. Linki mogą być filtrowane po href,
-        ale elementy <button> nigdy nie wymagają atrybutu href.
+        Zachowuje dotychczasowe wzorce tekstowe i dodatkowo obsługuje
+        elementy HTML z klasą .btn-start-session, w tym link
+        „Rozpocznij codzienną sesję”.
         """
-        accepted_session_names = {
-            "rozpocznij codzienną sesję", "rozpocznij codzienna sesje",
-            "dokończ sesję", "dokonc sesje", "dokończ sesje", "dokonc sesję",
-            "kontynuuj sesję", "kontynuuj sesje",
-            "rozpocznij kolejną sesję", "rozpocznij kolejna sesje",
-            "rozpocznij sesję", "rozpocznij sesje",
-            "rozpocznij naukę", "rozpocznij nauke",
-            "rozpocznij konfigurację sesji", "rozpocznij konfiguracje sesji",
-            "następna sesja", "nastepna sesja",
-        }
-
-        # Najbardziej wiarygodny selektor: dokładnie klasa z menu InstaLing.
+        # Obsłuż linki HTML do sesji, w tym rozpoczęcie i dokończenie.
+        # Przykładowe teksty:
+        # - „Rozpocznij codzienną sesję”
+        # - „Dokończ sesję”
+        # W obu przypadkach sprawdzamy też docelowy adres href.
         session_buttons = self.page.locator(SESSION_BUTTON_SELECTOR)
-        try:
-            button_count = session_buttons.count()
-        except Exception:
-            button_count = 0
-
-        for index in range(button_count):
+        accepted_session_names = {
+            "rozpocznij codzienną sesję",
+            "rozpocznij codzienna sesje",
+            "dokończ sesję",
+            "dokoncz sesje",
+            "kontynuuj sesję",
+            "kontynuuj sesje",
+            "rozpocznij kolejną sesję",
+            "rozpocznij kolejna sesje",
+            "rozpocznij sesję",
+            "rozpocznij sesje",
+            "rozpocznij naukę",
+            "rozpocznij nauke",
+            "rozpocznij konfigurację sesji",
+            "rozpocznij konfiguracje sesji",
+            "następna sesja",
+            "nastepna sesja",
+        }
+        for index in range(session_buttons.count()):
             element = session_buttons.nth(index)
             try:
                 if not element.is_visible() or not element.is_enabled():
                     continue
-                text = normalize(element.inner_text(timeout=1500))
-                value = normalize(element.get_attribute("value") or "")
-                aria = normalize(element.get_attribute("aria-label") or "")
-                label = text or value or aria
-                href = (element.get_attribute("href") or "").strip()
+                text = normalize(element.inner_text(timeout=1000))
+                href = element.get_attribute("href") or ""
 
-                # Dla linków zachowujemy kontrolę docelowego URL. Dla <button>
-                # href zwykle nie istnieje — i to nie może blokować kliknięcia.
-                tag = (element.evaluate("el => el.tagName") or "").lower()
-                if label not in accepted_session_names:
+                if text not in accepted_session_names:
                     continue
-                if tag == "a" and href and "/app/session/app.php" not in href:
+                if "/app/session/app.php" not in href:
                     continue
 
                 self.logger.info(
-                    "Znaleziono akcję sesji: tag=%s | tekst=%r | href=%r | selector=%s",
-                    tag, label, href, SESSION_BUTTON_SELECTOR,
+                    "Znaleziono przycisk sesji HTML: %s | href=%s",
+                    text,
+                    href,
                 )
                 return element
             except Exception as error:
-                self.logger.debug("Błąd odczytu .btn-start-session: %s", error)
+                self.logger.debug("Błąd odczytu przycisku sesji HTML: %s", error)
 
-        # Fallback: szukanie po tekście w przyciskach, linkach i elementach ARIA.
+        # Awaryjnie szukamy po tekście, ale dla linków sprawdzamy także href.
         fallback_patterns = (
-            (r"^kontynuuj sesję$|^kontynuuj sesje$", 130),
-            (r"^dokończ sesję$|^dokoncz sesje$", 125),
-            (r"^rozpocznij kolejną sesję$|^rozpocznij kolejna sesje$", 120),
-            (r"^rozpocznij codzienną sesję$|^rozpocznij codzienna sesje$", 115),
-            (r"^rozpocznij sesję$|^rozpocznij sesje$", 110),
-            (r"^rozpocznij naukę$|^rozpocznij nauke$", 100),
-            (r"^następna sesja$|^nastepna sesja$", 90),
+            (r"kontynuuj sesję|kontynuuj sesje", 120),
+            (r"dokończ sesję|dokonc sesje", 115),
+            (r"rozpocznij kolejną sesję|rozpocznij kolejna sesje", 110),
+            (r"rozpocznij sesję|rozpocznij sesje", 100),
+            (r"rozpocznij naukę|rozpocznij nauke", 90),
+            (r"następna sesja|nastepna sesja", 80),
         )
+
         elements = self.page.locator(
-            "button, a, [role='button'], input[type='button'], input[type='submit']"
+            "button, a, [role='button'], "
+            "input[type='button'], input[type='submit']"
         )
         candidates = []
+
         for index in range(elements.count()):
             element = elements.nth(index)
             try:
                 if not element.is_visible() or not element.is_enabled():
                     continue
-                description = normalize(" ".join((
-                    str(element.inner_text(timeout=1000) or ""),
-                    str(element.get_attribute("value") or ""),
-                    str(element.get_attribute("aria-label") or ""),
-                )))
-                score = next((score for pattern, score in fallback_patterns
-                              if re.search(pattern, description, re.IGNORECASE)), None)
+
+                description = normalize(
+                    " ".join((
+                        str(element.inner_text(timeout=1000) or ""),
+                        str(element.get_attribute("value") or ""),
+                        str(element.get_attribute("aria-label") or ""),
+                    ))
+                )
+
+                score = None
+                for pattern, pattern_score in fallback_patterns:
+                    if re.search(pattern, description, re.IGNORECASE):
+                        score = pattern_score
+                        break
+
                 if score is None:
                     continue
-                href = (element.get_attribute("href") or "").strip()
-                tag = (element.evaluate("el => el.tagName") or "").lower()
-                # Filtrowanie URL dotyczy tylko linków z niepustym href.
-                if tag == "a" and href and "/app/session/app.php" not in href:
-                    continue
-                candidates.append((score, element, description, tag, href))
+
+                href = element.get_attribute("href")
+                if href is not None and href.strip():
+                    if "/app/session/app.php" not in href:
+                        continue
+
+                candidates.append((score, element, description, href or ""))
             except Exception:
                 continue
 
         candidates.sort(key=lambda item: item[0], reverse=True)
+
         if candidates:
-            score, element, description, tag, href = candidates[0]
+            score, element, description, href = candidates[0]
             self.logger.info(
-                "Znaleziono awaryjną akcję sesji: tag=%s | tekst=%r | href=%r | score=%s",
-                tag, description, href, score,
+                "Znaleziono awaryjny przycisk sesji: %s | href=%s",
+                description,
+                href,
             )
             return element
+
         return None
 
-    def is_dont_know_screen(self):
-        """Sprawdza, czy widoczny jest ekran z przyciskiem „Nie znam”."""
-        button = self.page.locator("#dont_know_new").first
-        try:
-            return button.count() > 0 and button.is_visible() and button.is_enabled()
-        except Exception:
-            return False
-
-    def handle_dont_know_screen(self):
-        """Obsługuje ekran przykładowego zdania: „Nie znam”, a potem „Pomiń”.
-
-        Zwraca: 'not_present', 'next_task', 'session_complete' albo 'unknown'.
-        Nie zakłada konkretnej treści zdania — wykrywa ekran po selektorze.
-        """
-        button = self.page.locator("#dont_know_new").first
-        try:
-            if not button.count() or not button.is_visible() or not button.is_enabled():
-                return "not_present"
-
-            try:
-                sentence = self.page.locator("#question_usage").inner_text(timeout=1000)
-            except Exception:
-                sentence = ""
-
-            self.logger.info(
-                "Wykryto ekran specjalny (#dont_know_new). Zdanie: %r. "
-                "Klikam 'Nie znam', a następnie 'Pomiń'.",
-                sentence,
-            )
-            button.click(timeout=5000)
-
-            skip = self.page.locator("#skip").first
-            skip.wait_for(state="visible", timeout=5000)
-            if not skip.is_enabled():
-                self.logger.error("Przycisk #skip jest widoczny, ale nieaktywny.")
-                self.save_screenshot("dont_know_skip_disabled.png")
-                return "unknown"
-
-            skip.click(timeout=5000)
-            self.logger.info("Kliknięto #skip po ekranie 'Nie znam'.")
-
-            # Po pominięciu czekamy na zwykłe zadanie, kolejny ekran specjalny
-            # albo potwierdzenie końca sesji. Ekran może pojawić się w dowolnym
-            # miejscu sesji, więc nie opieramy się na treści konkretnego zdania.
-            deadline = time.monotonic() + 10
-            while time.monotonic() < deadline:
-                if self.is_session_complete():
-                    self.logger.info(
-                        "Po pominięciu ekranu 'Nie znam' wykryto koniec sesji."
-                    )
-                    return "session_complete"
-                if self.has_answer_field():
-                    self.logger.info(
-                        "Po pominięciu ekranu 'Nie znam' załadowano zwykłe zadanie."
-                    )
-                    return "next_task"
-                if self.is_dont_know_screen():
-                    # Kolejny taki ekran z rzędu obsłuży kolejna iteracja pętli.
-                    self.logger.info(
-                        "Po pominięciu pojawił się kolejny ekran 'Nie znam'."
-                    )
-                    return "next_task"
-                self.page.wait_for_timeout(150)
-
-            self.logger.warning(
-                "Po kliknięciu #skip nie pojawiło się zwykłe zadanie ani koniec sesji."
-            )
-            self.save_screenshot("dont_know_after_skip_timeout.png")
-            return "unknown"
-        except Exception as error:
-            self.logger.warning(
-                "Nie udało się obsłużyć ekranu 'Nie znam' / 'Pomiń': %s",
-                error,
-            )
-            self.save_screenshot("dont_know_screen_error.png")
-            return "unknown"
-
     def open_session(self):
-        """Otwiera lub wznawia sesję i czeka na rzeczywisty stan strony."""
         for attempt in range(MAX_SESSION_START_ATTEMPTS):
-            # Ekran specjalny może pojawić się także zaraz po kliknięciu startu.
-            special_result = self.handle_dont_know_screen()
-            if special_result == "unknown":
-                self.logger.error("Nie udało się obsłużyć ekranu 'Nie znam' / 'Pomiń'.")
-                return False
-            if special_result == "session_complete":
-                self.logger.info("Ekran specjalny zakończył się potwierdzonym końcem sesji.")
-                return False
-
             if self.has_answer_field():
                 if not self.session_started:
-                    self.session_id = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+                    self.session_id = datetime.now(
+                        timezone.utc
+                    ).strftime("%Y%m%d_%H%M%S")
+
                     start_session(self.session_id)
+
                     self.session_started = True
                     self.session_completed = False
                     self.task_count = 0
-                    self.logger.info("Rozpoczęto sesję: %s", self.session_id)
+
+                    self.logger.info(
+                        "Rozpoczęto sesję: %s",
+                        self.session_id,
+                    )
+
                 return True
 
-            if self.is_dont_know_screen():
-                # Następna iteracja obsłuży ekran; nie klikamy startu ponownie.
-                continue
-
             if self.is_session_complete():
-                self.logger.info("Nie otwieram sesji ponownie: wykryto stan końca sesji.")
                 return False
 
             action = self.find_session_action()
+
             if action is None:
-                self.save_screenshot(f"session_start_{attempt + 1}.png")
+                self.save_screenshot(
+                    f"session_start_{attempt + 1}.png"
+                )
                 self.logger.error(
-                    "Nie znaleziono widocznej i aktywnej akcji sesji. URL=%s | tekst=%r",
-                    self.page.url, self.page_text()[:5000],
+                    "Nie znaleziono przycisku rozpoczęcia sesji."
                 )
                 return False
 
             try:
-                label = normalize(action.inner_text(timeout=1000))
-            except Exception:
-                label = "<nie udało się odczytać tekstu>"
-            self.logger.info(
-                "Klikam akcję sesji (próba %s/%s): %r",
-                attempt + 1, MAX_SESSION_START_ATTEMPTS, label,
-            )
-            try:
-                action.scroll_into_view_if_needed(timeout=3000)
-                action.click(timeout=7000)
+                action.click(timeout=5000)
+                self.page.wait_for_timeout(1500)
             except Exception as error:
-                self.logger.warning("Zwykłe kliknięcie akcji sesji nie powiodło się: %s", error)
-                # Druga próba przez locator.click(force=True) tylko dla znalezionego
-                # i widocznego elementu, z logiem diagnostycznym.
-                try:
-                    if action.is_visible() and action.is_enabled():
-                        action.click(timeout=3000, force=True)
-                except Exception as force_error:
-                    self.logger.warning("Kliknięcie force nie powiodło się: %s", force_error)
-                    try:
-                        action.evaluate("el => el.click()")
-                        self.logger.info("Uruchomiono akcję sesji przez element.click() w DOM.")
-                    except Exception as dom_error:
-                        self.logger.error("Nie udało się kliknąć akcji również przez DOM: %s", dom_error)
-                        self.save_screenshot(f"session_click_error_{attempt + 1}.png")
-                        continue
+                self.logger.error(
+                    "Nie udało się rozpocząć sesji: %s",
+                    error,
+                )
+                return False
 
-            # Nie uznajemy kliknięcia za sukces. Czekamy na pole odpowiedzi,
-            # ekran specjalny lub potwierdzony koniec sesji.
-            deadline = time.monotonic() + 8
-            while time.monotonic() < deadline:
-                if self.has_answer_field():
-                    self.logger.info("Po kliknięciu akcji sesji pojawiło się aktywne #answer.")
-                    break
-                if self.is_dont_know_screen():
-                    self.logger.info("Po kliknięciu akcji sesji pojawił się ekran #dont_know_new.")
-                    break
-                if self.is_session_complete():
-                    self.logger.warning("Po kliknięciu akcji sesji wykryto stan końca sesji.")
-                    return False
-                self.page.wait_for_timeout(150)
+        return self.has_answer_field()
 
-            if self.has_answer_field():
-                if not self.session_started:
-                    self.session_id = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-                    start_session(self.session_id)
-                    self.session_started = True
-                    self.session_completed = False
-                    self.task_count = 0
-                    self.logger.info("Rozpoczęto sesję: %s", self.session_id)
-                return True
-
-            if self.is_dont_know_screen():
-                special_result = self.handle_dont_know_screen()
-                if special_result == "unknown":
-                    return False
-                if special_result == "session_complete":
-                    return False
-                if self.has_answer_field():
-                    if not self.session_started:
-                        self.session_id = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-                        start_session(self.session_id)
-                        self.session_started = True
-                        self.session_completed = False
-                        self.task_count = 0
-                        self.logger.info("Rozpoczęto sesję po ekranie specjalnym: %s", self.session_id)
-                    return True
-
-            self.logger.warning(
-                "Po kliknięciu %r nie pojawiło się #answer ani ekran specjalny; ponawiam wyszukiwanie. URL=%s",
-                label, self.page.url,
-            )
-            self.save_screenshot(f"session_start_no_state_{attempt + 1}.png")
-
-        self.logger.error("Wyczerpano próby otwierania sesji; #answer nie pojawiło się.")
-        self.save_screenshot("session_start_failed.png")
-        return False
+    # --------------------------------------------------------
+    # ROZPOZNAWANIE ZADANIA
+    # --------------------------------------------------------
 
     def read_task(self):
         """Odczytuje bieżące zdanie i dowolną polską podpowiedź z InstaLing."""
@@ -1044,7 +844,10 @@ class InstalingBrowser:
             "brak komunikatu" if not current else "powtórzony komunikat",
         )
 
-        if current and current != previous_status:
+        # Ten sam komunikat może pojawić się dla kolejnych odpowiedzi.
+        # Jeżeli status nadal istnieje, traktujemy go jako bieżący feedback
+        # zamiast kończyć sesję.
+        if current:
             return current
 
         return ""
@@ -1079,37 +882,14 @@ class InstalingBrowser:
         ))
 
     def go_to_next_task(self):
-        """
-        Przechodzi do następnego zadania.
+        # To jest jedyny moment, w którym uznajemy sesję za zakończoną.
+        if self.is_session_complete():
+            return "session_complete"
 
-        Priorytetem jest aktywny przycisk #next_word. Dopiero gdy przycisku
-        następnego zadania nie ma, przez chwilę czekamy na zmianę stanu strony
-        i rozpoznajemy ekran końcowy. Zapobiega to kończeniu sesji w krótkiej
-        przerwie pomiędzy pokazaniem feedbacku a przycisku następnego zadania.
-        """
+        # Pole odpowiedzi może nadal być widoczne po poprzedniej odpowiedzi.
+        # Nie oznacza to, że załadowało się następne zadanie.
+        # Zawsze szukamy i klikamy przycisk następnego zadania.
         action = self.find_next_task_button()
-
-        if action is None:
-            # InstaLing czasem renderuje feedback i przycisk „Następne”
-            # w osobnych krokach. Nie traktuj tej krótkiej przerwy jako końca.
-            deadline = time.monotonic() + 3
-            while time.monotonic() < deadline:
-                if self.has_answer_field():
-                    return "next_task"
-                if self.is_dont_know_screen():
-                    self.logger.info(
-                        "Po odpowiedzi pojawił się ekran specjalny #dont_know_new."
-                    )
-                    return "next_task"
-
-                action = self.find_next_task_button()
-                if action is not None:
-                    break
-
-                if self.is_session_complete():
-                    return "session_complete"
-
-                self.page.wait_for_timeout(150)
 
         if action is None:
             if self.is_session_complete():
@@ -1117,43 +897,48 @@ class InstalingBrowser:
 
             self.save_screenshot("next_task_button_missing.png")
             self.logger.warning(
-                "Nie znaleziono przycisku następnego zadania po oczekiwaniu "
-                "i nie potwierdzono ekranu końcowego."
+                "Nie znaleziono przycisku następnego zadania "
+                "i nie wykryto końca sesji."
             )
             return "unknown"
 
         try:
             action.click(timeout=5000)
 
-            deadline = time.monotonic() + 8
-            while time.monotonic() < deadline:
-                # Aktywne zadanie i ekran „Nie znam” mają pierwszeństwo
-                # przed ewentualnymi starymi elementami końca sesji.
-                if self.has_answer_field():
-                    return "next_task"
-                if self.is_dont_know_screen():
-                    self.logger.info(
-                        "Po przejściu dalej pojawił się ekran specjalny #dont_know_new; "
-                        "zostanie obsłużony przed zwykłym zadaniem."
-                    )
-                    return "next_task"
+            try:
+                self.page.locator(ANSWER_SELECTOR).first.wait_for(
+                    state="visible",
+                    timeout=5000,
+                )
+            except PlaywrightTimeoutError:
                 if self.is_session_complete():
                     return "session_complete"
-                self.page.wait_for_timeout(100)
 
-            self.save_screenshot("next_task_timeout.png")
-            self.logger.warning(
-                "Po kliknięciu przycisku następnego zadania nie pojawiło się "
-                "pole #answer, ekran #dont_know_new ani potwierdzony koniec sesji."
-            )
-            return "unknown"
+                # Czasami po kliknięciu strona potrzebuje jeszcze chwili.
+                self.page.wait_for_timeout(1000)
 
+                if self.is_session_complete():
+                    return "session_complete"
+
+                if self.has_answer_field():
+                    return "next_task"
+
+                self.save_screenshot("next_task_timeout.png")
+                self.logger.warning(
+                    "Po przejściu dalej nie pojawiło się pole #answer."
+                )
+                return "unknown"
         except Exception as error:
             self.logger.warning(
                 "Nie udało się przejść dalej: %s",
                 error,
             )
             return "unknown"
+
+        if self.is_session_complete():
+            return "session_complete"
+
+        return "next_task" if self.has_answer_field() else "unknown"
 
     # --------------------------------------------------------
     # ROZWIĄZYWANIE ZADANIA
@@ -1162,13 +947,6 @@ class InstalingBrowser:
     def process_task(self):
         if self.is_session_complete():
             return "session_complete"
-
-        if self.is_dont_know_screen():
-            special_result = self.handle_dont_know_screen()
-            if special_result in ("next_task", "session_complete"):
-                return special_result
-            if special_result == "unknown":
-                return "stop"
 
         task = self.read_task()
 
@@ -1331,17 +1109,13 @@ class InstalingBrowser:
             "timestamp": utc_timestamp(),
         })
 
-        # Nieznany komunikat oznacza zatrzymanie.
+        # Nieznany komunikat nie kończy sesji. Koniec następuje dopiero,
+        # gdy InstaLing pokaże #return_mainpage.
         if feedback_type == "unknown":
             self.logger.warning(
                 "Nie udało się zweryfikować odpowiedzi. "
-                "Nie zapisuję jej jako poprawnej."
+                "Kontynuuję do następnego zadania."
             )
-
-            if STOP_ON_UNKNOWN_FEEDBACK:
-                return "stop"
-
-            return "stop"
 
         # ----------------------------------------------------
         # ZAPIS ODPOWIEDZI
@@ -1430,6 +1204,9 @@ class InstalingBrowser:
             self.task_count,
         )
 
+        # Poprawna odpowiedź NIE kończy sesji.
+        # Kończymy dopiero wtedy, gdy strona faktycznie pokaże
+        # aktywny przycisk #return_mainpage.
         if self.is_session_complete():
             return "session_complete"
 
@@ -1580,6 +1357,17 @@ class InstalingBrowser:
     # --------------------------------------------------------
 
     def run_two_sessions(self):
+        """
+        Wykonuje dokładnie TARGET_SESSIONS sesji.
+
+        Schemat:
+          1. uruchom sesję,
+          2. rozwiązuj zadania aż do #return_mainpage,
+          3. kliknij „Powrót na stronę główną”,
+          4. z menu kliknij „Rozpocznij kolejną sesję” / „Rozpocznij sesję”,
+          5. powtórz,
+          6. dopiero po powrocie do menu po ostatniej sesji zwróć sukces.
+        """
         for session_number in range(1, TARGET_SESSIONS + 1):
             self.logger.info(
                 "========== SESJA %s/%s ==========",
@@ -1587,19 +1375,117 @@ class InstalingBrowser:
                 TARGET_SESSIONS,
             )
 
-            if not self.run_one_session():
+            # Otwórz sesję. Nie kończymy programu tylko dlatego,
+            # że poprzednia sesja została już ukończona.
+            if not self.open_session():
                 self.logger.error(
-                    "Nie udało się ukończyć sesji %s.",
+                    "Nie udało się otworzyć sesji %s.",
                     session_number,
                 )
                 return False
 
+            # Wykonuj zadania aż do rzeczywistego końca sesji.
+            completed = False
+
+            for index in range(MAX_TASKS_PER_SESSION):
+                self.logger.info(
+                    "Sesja %s — zadanie %s/%s",
+                    session_number,
+                    index + 1,
+                    MAX_TASKS_PER_SESSION,
+                )
+
+                if self.is_session_complete():
+                    completed = True
+                    self.session_completed = True
+                    break
+
+                outcome = self.process_task()
+                self.logger.info(
+                    "process_task() zwróciło: %r",
+                    outcome,
+                )
+
+                if outcome == "session_complete":
+                    completed = True
+                    self.session_completed = True
+                    break
+
+                if outcome == "stop":
+                    self.logger.error(
+                        "Sesja %s została przerwana przez process_task().",
+                        session_number,
+                    )
+                    self.save_screenshot("session_stopped.png")
+                    return False
+
+                if outcome != "next_task":
+                    self.logger.error(
+                        "Nieoczekiwany wynik process_task(): %r",
+                        outcome,
+                    )
+                    self.save_screenshot("session_stopped.png")
+                    return False
+
+            if not completed:
+                self.logger.error(
+                    "Nie wykryto końca sesji %s w limicie %s zadań.",
+                    session_number,
+                    MAX_TASKS_PER_SESSION,
+                )
+                self.save_screenshot("session_limit_reached.png")
+                return False
+
+            finish_session(self.session_id)
+
+            self.logger.info(
+                "Potwierdzono zakończenie sesji: %s",
+                self.session_id,
+            )
+
+            self.save_screenshot(
+                f"session_{session_number}_completed.png"
+            )
+
+            # Przygotuj nową sesję z nowym ID.
+            self.session_started = False
+            self.session_completed = False
+
+            # ZAWSZE wracamy do menu po ukończonej sesji.
+            self.return_to_menu()
+
             if session_number < TARGET_SESSIONS:
-                self.return_to_menu()
+                self.logger.info(
+                    "Sesja %s ukończona. Wracamy do menu i "
+                    "uruchamiamy kolejną sesję.",
+                    session_number,
+                )
+
                 self.page.wait_for_timeout(1000)
 
-        self.logger.info("Ukończono wszystkie %s sesje.", TARGET_SESSIONS)
+                # Dodatkowe sprawdzenie, że jesteśmy faktycznie w menu.
+                if self.has_answer_field():
+                    self.logger.error(
+                        "Po powrocie do menu nadal widoczne jest pole #answer."
+                    )
+                    self.save_screenshot("menu_return_failed.png")
+                    return False
+
+                # Następna iteracja wywoła open_session(), które kliknie
+                # odpowiedni link/przycisk:
+                # „Rozpocznij kolejną sesję” albo „Rozpocznij sesję”.
+                continue
+
+            # To jest OSTATNIA sesja. W tym miejscu jesteśmy już po
+            # kliknięciu „Powrót na stronę główną”. Dopiero teraz kończymy.
+            self.logger.info(
+                "Ukończono wszystkie %s sesje. "
+                "Po powrocie do menu można zamknąć przeglądarkę.",
+                TARGET_SESSIONS,
+            )
+
         return True
+
     def close(self):
         if self.context:
             try:
@@ -1632,20 +1518,7 @@ class InstalingBrowser:
 # ============================================================
 
 def main():
-    # Na runnerach CI/Linux nie ma serwera graficznego (X11/Wayland),
-    # więc domyślnie uruchamiamy Chromium w trybie headless.
-    # Można nadpisać ustawieniem INSTALING_HEADLESS=1 albo =0.
-    headless_setting = os.environ.get("INSTALING_HEADLESS", "").strip().lower()
-    if headless_setting in {"1", "true", "yes", "tak", "on"}:
-        headless = True
-    elif headless_setting in {"0", "false", "no", "nie", "off"}:
-        headless = False
-    else:
-        headless = sys.platform.startswith("linux") and not (
-            os.environ.get("DISPLAY") or os.environ.get("WAYLAND_DISPLAY")
-        )
-
-    browser = InstalingBrowser(headless=headless)
+    browser = InstalingBrowser(headless=True)
 
     try:
         browser.start()
