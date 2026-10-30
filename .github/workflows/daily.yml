@@ -1,15 +1,11 @@
 ```yaml
 name: Instaling Helper
 
-on:
+'on':
   workflow_dispatch:
 
   schedule:
-    # 10:00 czasu polskiego w okresie zimowym (UTC+1)
     - cron: "0 9 * * *"
-
-    # 10:00 czasu polskiego w okresie letnim (UTC+2)
-    - cron: "0 8 * * *"
 
 permissions:
   contents: write
