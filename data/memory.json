@@ -179,7 +179,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-17T22:09:18.694745+00:00",
-      "last_seen_at": "2026-10-17T22:09:23.889620+00:00"
+      "last_seen_at": "2026-10-30T21:59:43.565875+00:00"
     },
     "{\"context\": \"przejdź do treści pytanie he's the ____ luka _____ luka in that new film. główny (pierwszoplanowy) aktor twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"główny (pierwszoplanowy) aktor\", \"word_count\": null}": {
       "polish": "główny (pierwszoplanowy) aktor",
@@ -451,7 +451,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-22T17:17:06.446429+00:00",
-      "last_seen_at": "2026-10-30T21:11:10.138484+00:00"
+      "last_seen_at": "2026-10-30T21:59:03.335378+00:00"
     },
     "{\"context\": \"przejdź do treści pytanie i'm looking for the tennis ______ luka . rakieta twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"rakieta\", \"word_count\": null}": {
       "polish": "rakieta",
@@ -2169,7 +2169,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-25T16:21:29.618487+00:00",
-      "last_seen_at": "2026-10-29T16:59:36.812293+00:00"
+      "last_seen_at": "2026-10-30T21:59:32.653942+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: star pytanie that ___________ luka is terribly boring. film dokumentalny; program dokumentalny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"film dokumentalny; program dokumentalny\", \"word_count\": null}": {
       "polish": "film dokumentalny; program dokumentalny",
@@ -2203,7 +2203,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-25T16:21:32.352583+00:00",
-      "last_seen_at": "2026-10-26T16:40:26.888069+00:00"
+      "last_seen_at": "2026-10-30T21:59:29.409768+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: documentary pytanie martin is quite ________ luka __ luka playing comic roles. mieć talent, zdolności (w jakiejś dziedzinie) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"mieć talent, zdolności (w jakiejś dziedzinie)\", \"word_count\": null}": {
       "polish": "mieć talent, zdolności (w jakiejś dziedzinie)",
@@ -2757,7 +2757,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-26T16:41:38.714024+00:00",
-      "last_seen_at": "2026-10-29T16:51:13.377183+00:00"
+      "last_seen_at": "2026-10-30T21:59:20.266057+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: attraction pytanie this is the best ______ luka ____ luka . program podróżniczy twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"program podróżniczy\", \"word_count\": null}": {
       "polish": "program podróżniczy",
@@ -2869,7 +2869,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:40:32.398647+00:00",
-      "last_seen_at": "2026-10-28T16:41:31.531432+00:00"
+      "last_seen_at": "2026-10-30T21:59:26.139732+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: strip pytanie sherlock holmes is a popular _____ luka ______ luka known all over the world. serial kryminalny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"serial kryminalny\", \"word_count\": null}": {
       "polish": "serial kryminalny",
@@ -2937,7 +2937,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:40:51.579743+00:00",
-      "last_seen_at": "2026-10-29T16:50:02.035849+00:00"
+      "last_seen_at": "2026-10-30T21:59:31.116955+00:00"
     },
     "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: comic pytanie i found an interesting _______ luka devoted to role-playing games. strona internetowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"strona internetowa\", \"word_count\": null}": {
       "polish": "strona internetowa",
@@ -2971,7 +2971,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:40:53.665787+00:00",
-      "last_seen_at": "2026-10-29T16:50:05.900540+00:00"
+      "last_seen_at": "2026-10-30T21:59:24.461609+00:00"
     },
     "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: website pytanie during the _________ luka , the actress asked the director for advice. próba (np. teatralna) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"próba (np. teatralna)\", \"word_count\": null}": {
       "polish": "próba (np. teatralna)",
@@ -3005,7 +3005,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:40:57.688024+00:00",
-      "last_seen_at": "2026-10-28T16:41:26.789629+00:00"
+      "last_seen_at": "2026-10-30T21:59:22.507695+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: rehearsal pytanie this _______ luka ____ luka is silly. reality show twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"reality show\", \"word_count\": null}": {
       "polish": "reality show",
@@ -3073,7 +3073,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:04.711393+00:00",
-      "last_seen_at": "2026-10-28T16:41:35.956343+00:00"
+      "last_seen_at": "2026-10-30T21:59:06.696230+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: screen pytanie this newspaper ________ luka can be misleading. nagłówek; tytuł (w gazecie) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"nagłówek; tytuł (w gazecie)\", \"word_count\": null}": {
       "polish": "nagłówek; tytuł (w gazecie)",
@@ -3141,7 +3141,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:12.038554+00:00",
-      "last_seen_at": "2026-10-28T16:41:20.156677+00:00"
+      "last_seen_at": "2026-10-30T21:59:27.725734+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: journalist pytanie have you seen the front page of the ________ luka _________ luka ? gazeta ogólnokrajowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"gazeta ogólnokrajowa\", \"word_count\": null}": {
       "polish": "gazeta ogólnokrajowa",
@@ -3209,7 +3209,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:20.831994+00:00",
-      "last_seen_at": "2026-10-29T16:58:44.423045+00:00"
+      "last_seen_at": "2026-10-30T21:59:01.775618+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: website pytanie you absolutely must read this _______ luka . artykuł twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"artykuł\", \"word_count\": null}": {
       "polish": "artykuł",
@@ -3243,7 +3243,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:24.673908+00:00",
-      "last_seen_at": "2026-10-29T16:50:23.907976+00:00"
+      "last_seen_at": "2026-10-30T21:59:05.023720+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: subscribe pytanie change the _______ luka , my favourite serial starts in five minutes. kanał; kanał telewizyjny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kanał; kanał telewizyjny\", \"word_count\": null}": {
       "polish": "kanał; kanał telewizyjny",
@@ -3277,7 +3277,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:27.993458+00:00",
-      "last_seen_at": "2026-10-29T16:00:42.704870+00:00"
+      "last_seen_at": "2026-10-30T21:59:34.229917+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: reality show pytanie my little sister watches ________ luka every weekend. kreskówka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kreskówka\", \"word_count\": null}": {
       "polish": "kreskówka",
@@ -3311,7 +3311,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:31.912800+00:00",
-      "last_seen_at": "2026-10-29T16:59:39.806986+00:00"
+      "last_seen_at": "2026-10-30T21:59:00.079739+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: channel pytanie i've seen an interesting _____________ luka on tv recently. reklama twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"reklama\", \"word_count\": null}": {
       "polish": "reklama",
@@ -5834,7 +5834,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-29T17:21:14.884843+00:00",
-      "last_seen_at": "2026-10-30T21:11:53.112814+00:00"
+      "last_seen_at": "2026-10-30T21:59:35.895821+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: net pytanie the film was totally lame - except for the __________ luka ! yes, the music was really cool. ścieżka dźwiękowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"ścieżka dźwiękowa\", \"word_count\": null}": {
       "polish": "ścieżka dźwiękowa",
@@ -6995,6 +6995,526 @@
       ],
       "created_at": "2026-10-30T21:12:05.812859+00:00",
       "last_seen_at": "2026-10-30T21:12:05.812873+00:00"
+    },
+    "{\"context\": \"przejdź do treści pytanie have you seen the front page of the ________ luka _________ luka ? gazeta ogólnokrajowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"gazeta ogólnokrajowa\", \"word_count\": null}": {
+      "polish": "gazeta ogólnokrajowa",
+      "context": "Przejdź do treści\nPytanie\nHave you seen the front page of the ________\nluka\n _________\nluka\n?\ngazeta ogólnokrajowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "national newspaper"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "national newspaper",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nPytanie\nHave you seen the front page of the ________\nluka\n _________\nluka\n?\ngazeta ogólnokrajowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215857",
+          "timestamp": "2026-10-30T21:58:59.799266+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:58:59.799253+00:00",
+      "last_seen_at": "2026-10-30T21:58:59.799263+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: national newspaper pytanie i've seen an interesting _____________ luka on tv recently. reklama twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"reklama\", \"word_count\": null}": {
+      "polish": "reklama",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: national newspaper\nPytanie\nI've seen an interesting _____________\nluka\n on TV recently.\nreklama\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "advertisement"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "advertisement",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: national newspaper\nPytanie\nI've seen an interesting _____________\nluka\n on TV recently.\nreklama\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215857",
+          "timestamp": "2026-10-30T21:59:01.481671+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:01.481656+00:00",
+      "last_seen_at": "2026-10-30T21:59:01.481668+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: advertisement pytanie you absolutely must read this _______ luka . artykuł twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"artykuł\", \"word_count\": null}": {
+      "polish": "artykuł",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: advertisement\nPytanie\nYou absolutely must read this _______\nluka\n.\nartykuł\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "article"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "article",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: advertisement\nPytanie\nYou absolutely must read this _______\nluka\n.\nartykuł\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215857",
+          "timestamp": "2026-10-30T21:59:03.050683+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:03.050668+00:00",
+      "last_seen_at": "2026-10-30T21:59:03.050680+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: article pytanie i'm looking for the tennis ______ luka . rakieta twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"rakieta\", \"word_count\": null}": {
+      "polish": "rakieta",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: article\nPytanie\nI'm looking for the tennis ______\nluka\n.\nrakieta\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "racket"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "racket",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: article\nPytanie\nI'm looking for the tennis ______\nluka\n.\nrakieta\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215857",
+          "timestamp": "2026-10-30T21:59:04.734545+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:04.734530+00:00",
+      "last_seen_at": "2026-10-30T21:59:04.734542+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: racket pytanie change the _______ luka , my favourite serial starts in five minutes. kanał; kanał telewizyjny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kanał; kanał telewizyjny\", \"word_count\": null}": {
+      "polish": "kanał; kanał telewizyjny",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: racket\nPytanie\nChange the _______\nluka\n, my favourite serial starts in five minutes.\nkanał; kanał telewizyjny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "channel"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "channel",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: racket\nPytanie\nChange the _______\nluka\n, my favourite serial starts in five minutes.\nkanał; kanał telewizyjny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215857",
+          "timestamp": "2026-10-30T21:59:06.416524+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:06.416510+00:00",
+      "last_seen_at": "2026-10-30T21:59:06.416521+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: channel pytanie this newspaper ________ luka can be misleading. nagłówek; tytuł (w gazecie) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"nagłówek; tytuł (w gazecie)\", \"word_count\": null}": {
+      "polish": "nagłówek; tytuł (w gazecie)",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: channel\nPytanie\nThis newspaper ________\nluka\n can be misleading.\nnagłówek; tytuł (w gazecie)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "headline"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "headline",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: channel\nPytanie\nThis newspaper ________\nluka\n can be misleading.\nnagłówek; tytuł (w gazecie)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215857",
+          "timestamp": "2026-10-30T21:59:07.956139+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:07.956130+00:00",
+      "last_seen_at": "2026-10-30T21:59:07.956136+00:00"
+    },
+    "{\"context\": \"przejdź do treści pytanie this is the best ______ luka ____ luka . program podróżniczy twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"program podróżniczy\", \"word_count\": null}": {
+      "polish": "program podróżniczy",
+      "context": "Przejdź do treści\nPytanie\nThis is the best ______\nluka\n ____\nluka\n.\nprogram podróżniczy\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "travel show"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "travel show",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nPytanie\nThis is the best ______\nluka\n ____\nluka\n.\nprogram podróżniczy\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:22.231000+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:22.230988+00:00",
+      "last_seen_at": "2026-10-30T21:59:22.230998+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: travel show pytanie this _______ luka ____ luka is silly. reality show twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"reality show\", \"word_count\": null}": {
+      "polish": "reality show",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: travel show\nPytanie\nThis _______\nluka\n ____\nluka\n is silly.\nreality show\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "reality show"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "reality show",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: travel show\nPytanie\nThis _______\nluka\n ____\nluka\n is silly.\nreality show\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:24.182192+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:24.182178+00:00",
+      "last_seen_at": "2026-10-30T21:59:24.182189+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: reality show pytanie during the _________ luka , the actress asked the director for advice. próba (np. teatralna) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"próba (np. teatralna)\", \"word_count\": null}": {
+      "polish": "próba (np. teatralna)",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: reality show\nPytanie\nDuring the _________\nluka\n, the actress asked the director for advice.\npróba (np. teatralna)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "rehearsal"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "rehearsal",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: reality show\nPytanie\nDuring the _________\nluka\n, the actress asked the director for advice.\npróba (np. teatralna)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:25.865836+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:25.865822+00:00",
+      "last_seen_at": "2026-10-30T21:59:25.865834+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: rehearsal pytanie sherlock holmes is a popular _____ luka ______ luka known all over the world. serial kryminalny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"serial kryminalny\", \"word_count\": null}": {
+      "polish": "serial kryminalny",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: rehearsal\nPytanie\nSherlock Holmes is a popular _____\nluka\n ______\nluka\n known all over the world.\nserial kryminalny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "crime series"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "crime series",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: rehearsal\nPytanie\nSherlock Holmes is a popular _____\nluka\n ______\nluka\n known all over the world.\nserial kryminalny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:27.456618+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:27.456608+00:00",
+      "last_seen_at": "2026-10-30T21:59:27.456616+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: crime series pytanie have you seen the front page of the ________ luka _________ luka ? gazeta ogólnokrajowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"gazeta ogólnokrajowa\", \"word_count\": null}": {
+      "polish": "gazeta ogólnokrajowa",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: crime series\nPytanie\nHave you seen the front page of the ________\nluka\n _________\nluka\n?\ngazeta ogólnokrajowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "national newspaper"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "national newspaper",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: crime series\nPytanie\nHave you seen the front page of the ________\nluka\n _________\nluka\n?\ngazeta ogólnokrajowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:29.133990+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:29.133976+00:00",
+      "last_seen_at": "2026-10-30T21:59:29.133987+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: national newspaper pytanie martin is quite ________ luka __ luka playing comic roles. mieć talent, zdolności (w jakiejś dziedzinie) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"mieć talent, zdolności (w jakiejś dziedzinie)\", \"word_count\": null}": {
+      "polish": "mieć talent, zdolności (w jakiejś dziedzinie)",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: national newspaper\nPytanie\nMartin is quite ________\nluka\n __\nluka\n playing comic roles.\nmieć talent, zdolności (w jakiejś dziedzinie)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "be talented at (doing)"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "be talented at (doing)",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: national newspaper\nPytanie\nMartin is quite ________\nluka\n __\nluka\n playing comic roles.\nmieć talent, zdolności (w jakiejś dziedzinie)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:30.724492+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:30.724473+00:00",
+      "last_seen_at": "2026-10-30T21:59:30.724489+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: be talented at (doing) pytanie i found an interesting _______ luka devoted to role-playing games. strona internetowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"strona internetowa\", \"word_count\": null}": {
+      "polish": "strona internetowa",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: be talented at (doing)\nPytanie\nI found an interesting _______\nluka\n devoted to role-playing games.\nstrona internetowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "website"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "website",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: be talented at (doing)\nPytanie\nI found an interesting _______\nluka\n devoted to role-playing games.\nstrona internetowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:32.382990+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:32.382978+00:00",
+      "last_seen_at": "2026-10-30T21:59:32.382988+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: website pytanie that ___________ luka is terribly boring. film dokumentalny; program dokumentalny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"film dokumentalny; program dokumentalny\", \"word_count\": null}": {
+      "polish": "film dokumentalny; program dokumentalny",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: website\nPytanie\nThat ___________\nluka\n is terribly boring.\nfilm dokumentalny; program dokumentalny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "documentary"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "documentary",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: website\nPytanie\nThat ___________\nluka\n is terribly boring.\nfilm dokumentalny; program dokumentalny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:33.942382+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:33.942373+00:00",
+      "last_seen_at": "2026-10-30T21:59:33.942380+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: documentary pytanie my little sister watches ________ luka every weekend. kreskówka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kreskówka\", \"word_count\": null}": {
+      "polish": "kreskówka",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: documentary\nPytanie\nMy little sister watches ________\nluka\n every weekend.\nkreskówka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "cartoon"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "cartoon",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: documentary\nPytanie\nMy little sister watches ________\nluka\n every weekend.\nkreskówka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:35.614649+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:35.614635+00:00",
+      "last_seen_at": "2026-10-30T21:59:35.614646+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: cartoon pytanie the film was totally lame - except for the __________ luka ! yes, the music was really cool. ścieżka dźwiękowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"ścieżka dźwiękowa\", \"word_count\": null}": {
+      "polish": "ścieżka dźwiękowa",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: cartoon\nPytanie\nThe film was totally lame - except for the __________\nluka\n! Yes, the music was really cool.\nścieżka dźwiękowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "soundtrack"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "soundtrack",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: cartoon\nPytanie\nThe film was totally lame - except for the __________\nluka\n! Yes, the music was really cool.\nścieżka dźwiękowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:37.098950+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:37.098936+00:00",
+      "last_seen_at": "2026-10-30T21:59:37.098947+00:00"
+    },
+    "{\"context\": \"i gave the _______ to my mother and she really likes it.\", \"polish\": \"rysunek\", \"word_count\": null}": {
+      "polish": "rysunek",
+      "context": "I gave the _______ to my mother and she really likes it.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-30T21:59:37.376491+00:00",
+      "last_seen_at": "2026-10-30T21:59:45.017965+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: soundtrack pytanie i gave the _______ luka to my mother and she really likes it. rysunek twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"rysunek\", \"word_count\": null}": {
+      "polish": "rysunek",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: soundtrack\nPytanie\nI gave the _______\nluka\n to my mother and she really likes it.\nrysunek\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "drawing"
+      ],
+      "rejected_answers": [
+        "figure. Context: I gave the _______ to my mother and she really likes it."
+      ],
+      "attempts": [
+        {
+          "answer": "figure. Context: I gave the _______ to my mother and she really likes it.",
+          "result": "rejected_with_correction",
+          "correction": "drawing",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: soundtrack\nPytanie\nI gave the _______\nluka\n to my mother and she really likes it.\nrysunek\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:38.598472+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:38.598457+00:00",
+      "last_seen_at": "2026-10-30T21:59:38.598469+00:00"
+    },
+    "{\"context\": \"shakespeare was the greatest ____ of his times.\", \"polish\": \"poeta\", \"word_count\": null}": {
+      "polish": "poeta",
+      "context": "Shakespeare was the greatest ____ of his times.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-30T21:59:38.854529+00:00",
+      "last_seen_at": "2026-10-30T21:59:38.881955+00:00"
+    },
+    "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: drawing pytanie shakespeare was the greatest ____ luka of his times. poeta twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"poeta\", \"word_count\": null}": {
+      "polish": "poeta",
+      "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: drawing\nPytanie\nShakespeare was the greatest ____\nluka\n of his times.\npoeta\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "poet"
+      ],
+      "rejected_answers": [
+        "poet. Context: Shakespeare was the greatest ____ of his times."
+      ],
+      "attempts": [
+        {
+          "answer": "poet. Context: Shakespeare was the greatest ____ of his times.",
+          "result": "rejected_with_correction",
+          "correction": "poet",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: drawing\nPytanie\nShakespeare was the greatest ____\nluka\n of his times.\npoeta\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:40.017276+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:40.017260+00:00",
+      "last_seen_at": "2026-10-30T21:59:40.017273+00:00"
+    },
+    "{\"context\": \"on the wall there is a beautiful ________.\", \"polish\": \"obraz\", \"word_count\": null}": {
+      "polish": "obraz",
+      "context": "On the wall there is a beautiful ________.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-10-30T21:59:40.262883+00:00",
+      "last_seen_at": "2026-10-30T21:59:41.895926+00:00"
+    },
+    "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: poet pytanie on the wall there is a beautiful ________ luka . obraz twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"obraz\", \"word_count\": null}": {
+      "polish": "obraz",
+      "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: poet\nPytanie\nOn the wall there is a beautiful ________\nluka\n.\nobraz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "painting"
+      ],
+      "rejected_answers": [
+        "picture. Context: On the wall there is a beautiful ________."
+      ],
+      "attempts": [
+        {
+          "answer": "picture. Context: On the wall there is a beautiful ________.",
+          "result": "rejected_with_correction",
+          "correction": "painting",
+          "feedback_type": "incorrect",
+          "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: poet\nPytanie\nOn the wall there is a beautiful ________\nluka\n.\nobraz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:41.617251+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:41.617237+00:00",
+      "last_seen_at": "2026-10-30T21:59:41.617248+00:00"
+    },
+    "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: painting pytanie on the wall there is a beautiful ________ luka . obraz twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"obraz\", \"word_count\": null}": {
+      "polish": "obraz",
+      "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: painting\nPytanie\nOn the wall there is a beautiful ________\nluka\n.\nobraz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "painting"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "painting",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nNiepoprawnie Poprawna odpowiedź: painting\nPytanie\nOn the wall there is a beautiful ________\nluka\n.\nobraz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:43.281243+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:43.281229+00:00",
+      "last_seen_at": "2026-10-30T21:59:43.281240+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: painting pytanie he's the ____ luka _____ luka in that new film. główny (pierwszoplanowy) aktor twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"główny (pierwszoplanowy) aktor\", \"word_count\": null}": {
+      "polish": "główny (pierwszoplanowy) aktor",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: painting\nPytanie\nHe's the ____\nluka\n _____\nluka\n in that new film.\ngłówny (pierwszoplanowy) aktor\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "lead actor"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "lead actor",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: painting\nPytanie\nHe's the ____\nluka\n _____\nluka\n in that new film.\ngłówny (pierwszoplanowy) aktor\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:44.731245+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:44.731228+00:00",
+      "last_seen_at": "2026-10-30T21:59:44.731242+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: lead actor pytanie i gave the _______ luka to my mother and she really likes it. rysunek twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"rysunek\", \"word_count\": null}": {
+      "polish": "rysunek",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: lead actor\nPytanie\nI gave the _______\nluka\n to my mother and she really likes it.\nrysunek\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "drawing"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "drawing",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: lead actor\nPytanie\nI gave the _______\nluka\n to my mother and she really likes it.\nrysunek\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261030_215918",
+          "timestamp": "2026-10-30T21:59:46.148762+00:00"
+        }
+      ],
+      "created_at": "2026-10-30T21:59:46.148747+00:00",
+      "last_seen_at": "2026-10-30T21:59:46.148758+00:00"
     }
   },
   "sessions": {
@@ -7211,6 +7731,16 @@
     "20261030_211143": {
       "started_at": "2026-10-30T21:11:43.984442+00:00",
       "completed_at": "2026-10-30T21:12:06.027743+00:00",
+      "status": "completed"
+    },
+    "20261030_215857": {
+      "started_at": "2026-10-30T21:58:57.907197+00:00",
+      "completed_at": "2026-10-30T21:59:08.183711+00:00",
+      "status": "completed"
+    },
+    "20261030_215918": {
+      "started_at": "2026-10-30T21:59:18.847432+00:00",
+      "completed_at": "2026-10-30T21:59:46.385154+00:00",
       "status": "completed"
     }
   }

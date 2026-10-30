@@ -123,14 +123,15 @@
       {
         "english": "lead actor",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-17T22:09:19.903978+00:00",
-    "last_seen": "2026-10-17T22:09:24.700074+00:00",
+    "last_seen": "2026-10-30T21:59:44.750328+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "ilustracje": {
@@ -291,7 +292,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:08.814976+00:00",
-    "last_seen": "2026-10-30T21:11:11.575875+00:00",
+    "last_seen": "2026-10-30T21:59:04.752131+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1326,7 +1327,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:30.297309+00:00",
-    "last_seen": "2026-10-29T16:59:37.930542+00:00",
+    "last_seen": "2026-10-30T21:59:33.952042+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1343,14 +1344,15 @@
       {
         "english": "be talented at (doing)",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-25T16:21:33.019474+00:00",
-    "last_seen": "2026-10-26T16:40:27.755820+00:00",
+    "last_seen": "2026-10-30T21:59:30.736085+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "atrakcja": {
@@ -1678,7 +1680,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:39.524670+00:00",
-    "last_seen": "2026-10-29T16:51:15.003268+00:00",
+    "last_seen": "2026-10-30T21:59:22.245950+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1755,14 +1757,15 @@
       {
         "english": "crime series",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-27T16:40:33.167886+00:00",
-    "last_seen": "2026-10-28T16:41:32.181645+00:00",
+    "last_seen": "2026-10-30T21:59:27.466034+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "komiks; historyjka obrazkowa": {
@@ -1800,7 +1803,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:52.341948+00:00",
-    "last_seen": "2026-10-29T16:50:03.691308+00:00",
+    "last_seen": "2026-10-30T21:59:32.396032+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1821,7 +1824,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:54.557428+00:00",
-    "last_seen": "2026-10-29T16:50:07.672120+00:00",
+    "last_seen": "2026-10-30T21:59:25.878085+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1838,14 +1841,15 @@
       {
         "english": "reality show",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-27T16:40:58.794758+00:00",
-    "last_seen": "2026-10-28T16:41:27.776225+00:00",
+    "last_seen": "2026-10-30T21:59:24.196042+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "ekran": {
@@ -1878,14 +1882,15 @@
       {
         "english": "headline",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-27T16:41:05.647694+00:00",
-    "last_seen": "2026-10-28T16:41:36.815836+00:00",
+    "last_seen": "2026-10-30T21:59:07.967758+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "dziennikarz": {
@@ -1919,14 +1924,15 @@
       {
         "english": "national newspaper",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-27T16:41:12.918160+00:00",
-    "last_seen": "2026-10-28T16:41:21.153971+00:00",
+    "last_seen": "2026-10-30T21:59:29.148153+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "subskrybować; wykupić abonament": {
@@ -1964,7 +1970,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:21.841327+00:00",
-    "last_seen": "2026-10-29T16:58:45.794752+00:00",
+    "last_seen": "2026-10-30T21:59:03.064467+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1985,7 +1991,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:25.506953+00:00",
-    "last_seen": "2026-10-29T16:50:25.457673+00:00",
+    "last_seen": "2026-10-30T21:59:06.430756+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2002,14 +2008,15 @@
       {
         "english": "cartoon",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-27T16:41:28.720388+00:00",
-    "last_seen": "2026-10-29T16:00:43.945659+00:00",
+    "last_seen": "2026-10-30T21:59:35.629765+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "reklama": {
@@ -2026,7 +2033,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:32.876854+00:00",
-    "last_seen": "2026-10-29T16:59:40.918478+00:00",
+    "last_seen": "2026-10-30T21:59:01.496563+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2627,7 +2634,7 @@
       }
     ],
     "first_seen": "2026-10-29T17:21:15.617553+00:00",
-    "last_seen": "2026-10-30T21:11:54.261022+00:00",
+    "last_seen": "2026-10-30T21:59:37.112065+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2691,6 +2698,68 @@
     ],
     "first_seen": "2026-10-29T17:21:59.992327+00:00",
     "last_seen": "2026-10-29T17:22:05.902004+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "rysunek": {
+    "translations": [
+      {
+        "english": "figure. Context: I gave the _______ to my mother and she really likes it.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "drawing",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T21:59:38.159966+00:00",
+    "last_seen": "2026-10-30T21:59:46.162104+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "poeta": {
+    "translations": [
+      {
+        "english": "poet. Context: Shakespeare was the greatest ____ of his times.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "poet",
+        "verified": true,
+        "source": "verified_correction"
+      }
+    ],
+    "first_seen": "2026-10-30T21:59:39.578428+00:00",
+    "last_seen": "2026-10-30T21:59:40.032119+00:00",
+    "sources": [
+      "online",
+      "verified_correction"
+    ]
+  },
+  "obraz": {
+    "translations": [
+      {
+        "english": "picture. Context: On the wall there is a beautiful ________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "painting",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T21:59:41.162383+00:00",
+    "last_seen": "2026-10-30T21:59:43.296043+00:00",
     "sources": [
       "online",
       "verified_correction",
