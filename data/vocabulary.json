@@ -82,14 +82,15 @@
       {
         "english": "main character",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-17T21:24:54.839910+00:00",
-    "last_seen": "2026-10-22T17:17:15.319226+00:00",
+    "last_seen": "2026-10-30T22:04:59.410221+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "występować": {
@@ -127,7 +128,7 @@
       }
     ],
     "first_seen": "2026-10-17T22:09:19.903978+00:00",
-    "last_seen": "2026-10-30T21:59:44.750328+00:00",
+    "last_seen": "2026-10-30T22:04:31.991628+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -144,14 +145,15 @@
       {
         "english": "illustrations",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-17T22:09:21.570672+00:00",
-    "last_seen": "2026-10-17T22:09:21.960140+00:00",
+    "last_seen": "2026-10-30T22:04:30.492025+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "powieść": {
@@ -168,7 +170,7 @@
       }
     ],
     "first_seen": "2026-10-17T22:09:23.260023+00:00",
-    "last_seen": "2026-10-29T16:51:04.003774+00:00",
+    "last_seen": "2026-10-30T22:05:33.077063+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -329,14 +331,15 @@
       {
         "english": "design",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:17:17.043459+00:00",
-    "last_seen": "2026-10-23T16:30:03.367165+00:00",
+    "last_seen": "2026-10-30T22:05:39.639498+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "fotografia (dziedzina); fotografika": {
@@ -353,7 +356,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:19.947494+00:00",
-    "last_seen": "2026-10-29T16:50:27.907472+00:00",
+    "last_seen": "2026-10-30T22:04:28.823374+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -374,7 +377,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:22.650006+00:00",
-    "last_seen": "2026-10-29T16:50:17.850516+00:00",
+    "last_seen": "2026-10-30T22:05:41.088780+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -581,7 +584,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:14.674389+00:00",
-    "last_seen": "2026-10-30T21:11:14.557199+00:00",
+    "last_seen": "2026-10-30T22:05:26.993611+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1369,7 +1372,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:40:29.205183+00:00",
-    "last_seen": "2026-10-30T21:11:55.823283+00:00",
+    "last_seen": "2026-10-30T22:05:42.751404+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1761,7 +1764,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:33.167886+00:00",
-    "last_seen": "2026-10-30T21:59:27.466034+00:00",
+    "last_seen": "2026-10-30T22:05:38.191873+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1928,7 +1931,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:12.918160+00:00",
-    "last_seen": "2026-10-30T21:59:29.148153+00:00",
+    "last_seen": "2026-10-30T22:04:37.876559+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2012,7 +2015,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:28.720388+00:00",
-    "last_seen": "2026-10-30T21:59:35.629765+00:00",
+    "last_seen": "2026-10-30T22:04:34.478996+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2550,7 +2553,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:59:11.266461+00:00",
-    "last_seen": "2026-10-29T16:59:22.065831+00:00",
+    "last_seen": "2026-10-30T22:05:35.778576+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2655,7 +2658,7 @@
       }
     ],
     "first_seen": "2026-10-29T17:21:38.619330+00:00",
-    "last_seen": "2026-10-29T17:22:02.618548+00:00",
+    "last_seen": "2026-10-30T22:04:53.754211+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2718,7 +2721,7 @@
       }
     ],
     "first_seen": "2026-10-30T21:59:38.159966+00:00",
-    "last_seen": "2026-10-30T21:59:46.162104+00:00",
+    "last_seen": "2026-10-30T22:04:24.188644+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2759,7 +2762,190 @@
       }
     ],
     "first_seen": "2026-10-30T21:59:41.162383+00:00",
-    "last_seen": "2026-10-30T21:59:43.296043+00:00",
+    "last_seen": "2026-10-30T22:04:27.074190+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "orkiestra": {
+    "translations": [
+      {
+        "english": "orchestra. Context: Would you like to join the school _________? You can play the trumpet, can't you?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "orchestra",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T22:04:35.652296+00:00",
+    "last_seen": "2026-10-30T22:05:23.176436+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "muzyk": {
+    "translations": [
+      {
+        "english": "musician. Context: She's a ________ and plays the violin.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "musician",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T22:04:38.857702+00:00",
+    "last_seen": "2026-10-30T22:05:17.013462+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "projektant mody": {
+    "translations": [
+      {
+        "english": "fashion designer",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T22:04:40.953516+00:00",
+    "last_seen": "2026-10-30T22:04:41.492373+00:00",
+    "sources": [
+      "dictionary",
+      "verified_feedback"
+    ]
+  },
+  "klasyczny": {
+    "translations": [
+      {
+        "english": "classic. Context: Do you like _________ music?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "classical",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T22:04:44.020191+00:00",
+    "last_seen": "2026-10-30T22:05:19.165505+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "tancerz": {
+    "translations": [
+      {
+        "english": "dancer. Context: He is a great ______, he knows how to move.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "dancer",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T22:04:47.292911+00:00",
+    "last_seen": "2026-10-30T22:05:20.735393+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "malarz": {
+    "translations": [
+      {
+        "english": "painter. Context: Picasso was a famous _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "painter",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T22:04:55.728613+00:00",
+    "last_seen": "2026-10-30T22:05:15.642654+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "koncert": {
+    "translations": [
+      {
+        "english": "concert. Context: I've never been to a rock _______ before.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "concert",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T22:05:24.298022+00:00",
+    "last_seen": "2026-10-30T22:05:31.475909+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "obsada": {
+    "translations": [
+      {
+        "english": "cast. Context: The film has an excellent ____ of great actors.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "cast",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T22:05:27.950426+00:00",
+    "last_seen": "2026-10-30T22:05:45.583791+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "malować": {
+    "translations": [
+      {
+        "english": "paint. Context: Who _______ that picture? It's lovely.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "paint",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-10-30T22:05:29.366139+00:00",
+    "last_seen": "2026-10-30T22:05:44.131834+00:00",
     "sources": [
       "online",
       "verified_correction",
