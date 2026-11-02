@@ -86,7 +86,7 @@
       }
     ],
     "first_seen": "2026-10-17T21:24:54.839910+00:00",
-    "last_seen": "2026-10-30T22:04:59.410221+00:00",
+    "last_seen": "2026-11-02T09:57:28.868879+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -170,7 +170,7 @@
       }
     ],
     "first_seen": "2026-10-17T22:09:23.260023+00:00",
-    "last_seen": "2026-10-30T22:05:33.077063+00:00",
+    "last_seen": "2026-11-02T09:58:12.363057+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -335,7 +335,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:17.043459+00:00",
-    "last_seen": "2026-10-30T22:05:39.639498+00:00",
+    "last_seen": "2026-11-02T09:57:25.766256+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -377,7 +377,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:22.650006+00:00",
-    "last_seen": "2026-10-30T22:05:41.088780+00:00",
+    "last_seen": "2026-11-02T09:57:21.017341+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -455,14 +455,15 @@
       {
         "english": "it's called",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:17:34.951817+00:00",
-    "last_seen": "2026-10-23T16:30:10.653519+00:00",
+    "last_seen": "2026-11-02T09:57:49.001855+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "surfing": {
@@ -584,7 +585,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:14.674389+00:00",
-    "last_seen": "2026-10-30T22:05:26.993611+00:00",
+    "last_seen": "2026-11-02T09:57:46.919907+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1017,7 +1018,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:15.376055+00:00",
-    "last_seen": "2026-10-30T21:11:21.907366+00:00",
+    "last_seen": "2026-11-02T09:57:38.603202+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1100,7 +1101,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:29.576764+00:00",
-    "last_seen": "2026-10-30T21:11:13.107250+00:00",
+    "last_seen": "2026-11-02T09:57:44.399506+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1975,7 +1976,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:21.841327+00:00",
-    "last_seen": "2026-10-30T21:59:03.064467+00:00",
+    "last_seen": "2026-11-02T09:58:07.683908+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1996,7 +1997,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:25.506953+00:00",
-    "last_seen": "2026-10-30T21:59:06.430756+00:00",
+    "last_seen": "2026-11-02T09:57:50.881724+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2038,7 +2039,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:32.876854+00:00",
-    "last_seen": "2026-10-30T21:59:01.496563+00:00",
+    "last_seen": "2026-11-02T09:58:18.057036+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2096,14 +2097,15 @@
       {
         "english": "group",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-28T16:42:00.098649+00:00",
-    "last_seen": "2026-10-28T16:42:06.093391+00:00",
+    "last_seen": "2026-11-02T09:58:26.283702+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "rower bmx": {
@@ -2116,14 +2118,15 @@
       {
         "english": "BMX",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-28T16:42:01.786776+00:00",
-    "last_seen": "2026-10-28T16:42:15.447276+00:00",
+    "last_seen": "2026-11-02T09:58:30.214232+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "rower miejski": {
@@ -2140,7 +2143,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:03.189323+00:00",
-    "last_seen": "2026-10-29T16:59:54.645493+00:00",
+    "last_seen": "2026-11-02T09:58:35.604625+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2178,14 +2181,15 @@
       {
         "english": "road bike",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-28T16:42:10.779530+00:00",
-    "last_seen": "2026-10-28T16:42:12.248244+00:00",
+    "last_seen": "2026-11-02T09:58:37.551932+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "tandem, rower dwuosobowy": {
@@ -2198,14 +2202,15 @@
       {
         "english": "tandem",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-28T16:42:14.030716+00:00",
-    "last_seen": "2026-10-28T16:42:14.537109+00:00",
+    "last_seen": "2026-11-02T09:58:39.505518+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "deska": {
@@ -2239,14 +2244,15 @@
       {
         "english": "electronics store",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-29T16:01:10.726994+00:00",
-    "last_seen": "2026-10-29T16:01:19.049656+00:00",
+    "last_seen": "2026-11-02T09:58:28.150825+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "aktorka": {
@@ -2367,7 +2373,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:50:50.793724+00:00",
-    "last_seen": "2026-10-29T16:50:59.121101+00:00",
+    "last_seen": "2026-11-02T09:57:22.718897+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2493,7 +2499,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:58:52.400701+00:00",
-    "last_seen": "2026-10-29T16:59:10.379304+00:00",
+    "last_seen": "2026-11-02T09:58:20.732863+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2556,7 +2562,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:59:11.266461+00:00",
-    "last_seen": "2026-10-30T22:05:35.778576+00:00",
+    "last_seen": "2026-11-02T09:57:18.104706+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2823,7 +2829,7 @@
       }
     ],
     "first_seen": "2026-10-30T22:04:40.953516+00:00",
-    "last_seen": "2026-10-30T22:04:41.492373+00:00",
+    "last_seen": "2026-11-02T09:58:16.087369+00:00",
     "sources": [
       "dictionary",
       "verified_feedback"
@@ -2969,7 +2975,7 @@
       }
     ],
     "first_seen": "2026-11-01T09:41:09.989047+00:00",
-    "last_seen": "2026-11-01T09:41:22.869265+00:00",
+    "last_seen": "2026-11-02T09:57:42.785110+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2990,7 +2996,7 @@
       }
     ],
     "first_seen": "2026-11-01T09:41:10.792578+00:00",
-    "last_seen": "2026-11-01T09:41:30.551080+00:00",
+    "last_seen": "2026-11-02T09:57:29.739649+00:00",
     "sources": [
       "dictionary",
       "verified_correction",
@@ -3011,7 +3017,91 @@
       }
     ],
     "first_seen": "2026-11-01T09:41:20.885596+00:00",
-    "last_seen": "2026-11-01T09:41:29.795450+00:00",
+    "last_seen": "2026-11-02T09:57:35.818577+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "kino": {
+    "translations": [
+      {
+        "english": "cinema. Context: Let's meet at the ______ at half past four.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "cinema",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-02T09:57:31.566171+00:00",
+    "last_seen": "2026-11-02T09:58:10.452455+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "instrument; przyrząd": {
+    "translations": [
+      {
+        "english": "instrument. Context: Can you play any musical __________?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "instrument",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-02T09:57:40.515369+00:00",
+    "last_seen": "2026-11-02T09:58:15.240831+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "zespół": {
+    "translations": [
+      {
+        "english": "team. Context: I love this ____! I'm going to their concert next week!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "band",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-02T09:58:23.022305+00:00",
+    "last_seen": "2026-11-02T09:58:42.106119+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "dzieło sztuki": {
+    "translations": [
+      {
+        "english": "a work of art. Context: It may not be a ____ __ ___, but it's still a nice picture.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "work of art",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-02T09:58:32.248808+00:00",
+    "last_seen": "2026-11-02T09:58:45.327959+00:00",
     "sources": [
       "online",
       "verified_correction",
