@@ -311,14 +311,15 @@
       {
         "english": "(Olympic-size) (swimming) pool",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:17:11.875268+00:00",
-    "last_seen": "2026-10-23T16:29:17.639281+00:00",
+    "last_seen": "2026-11-03T09:54:22.382595+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "projekt; konstrukcja": {
@@ -459,7 +460,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:34.951817+00:00",
-    "last_seen": "2026-11-02T09:57:49.001855+00:00",
+    "last_seen": "2026-11-03T09:54:29.946771+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -894,7 +895,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:20:39.161550+00:00",
-    "last_seen": "2026-10-31T09:37:17.433353+00:00",
+    "last_seen": "2026-11-03T09:54:33.323556+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1311,7 +1312,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:27.489325+00:00",
-    "last_seen": "2026-11-01T09:40:26.925814+00:00",
+    "last_seen": "2026-11-03T09:54:38.620868+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1497,7 +1498,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:07.063046+00:00",
-    "last_seen": "2026-11-01T09:40:43.096987+00:00",
+    "last_seen": "2026-11-03T09:54:46.221261+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1602,7 +1603,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:22.799954+00:00",
-    "last_seen": "2026-11-01T09:40:48.511945+00:00",
+    "last_seen": "2026-11-03T09:53:41.459217+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1623,7 +1624,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:26.303496+00:00",
-    "last_seen": "2026-11-01T09:41:19.575433+00:00",
+    "last_seen": "2026-11-03T09:54:35.643869+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1644,7 +1645,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:30.720866+00:00",
-    "last_seen": "2026-11-01T09:41:28.005001+00:00",
+    "last_seen": "2026-11-03T09:53:02.323055+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2056,14 +2057,15 @@
       {
         "english": "carnival",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-28T16:41:24.415845+00:00",
-    "last_seen": "2026-10-28T16:41:45.527442+00:00",
+    "last_seen": "2026-11-03T09:54:49.298156+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "grać (np. kogoś w filmie)": {
@@ -2122,7 +2124,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:01.786776+00:00",
-    "last_seen": "2026-11-02T09:58:30.214232+00:00",
+    "last_seen": "2026-11-03T09:53:28.223547+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2143,7 +2145,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:03.189323+00:00",
-    "last_seen": "2026-11-02T09:58:35.604625+00:00",
+    "last_seen": "2026-11-03T09:53:31.515453+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2185,7 +2187,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:10.779530+00:00",
-    "last_seen": "2026-11-02T09:58:37.551932+00:00",
+    "last_seen": "2026-11-03T09:53:33.250516+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2206,7 +2208,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:14.030716+00:00",
-    "last_seen": "2026-11-02T09:58:39.505518+00:00",
+    "last_seen": "2026-11-03T09:53:25.944015+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2248,7 +2250,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:01:10.726994+00:00",
-    "last_seen": "2026-11-02T09:58:28.150825+00:00",
+    "last_seen": "2026-11-03T09:53:23.715669+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2269,7 +2271,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:01:12.827485+00:00",
-    "last_seen": "2026-11-01T09:41:26.304998+00:00",
+    "last_seen": "2026-11-03T09:53:06.678169+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2286,14 +2288,15 @@
       {
         "english": "mix-up",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-29T16:01:17.287785+00:00",
-    "last_seen": "2026-10-29T16:01:17.935425+00:00",
+    "last_seen": "2026-11-03T09:53:46.009472+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "melodia": {
@@ -2478,7 +2481,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:58:50.899556+00:00",
-    "last_seen": "2026-10-29T16:58:54.427602+00:00",
+    "last_seen": "2026-11-03T09:53:39.289325+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2541,7 +2544,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:59:08.409485+00:00",
-    "last_seen": "2026-10-29T16:59:20.600196+00:00",
+    "last_seen": "2026-11-03T09:54:16.058460+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2625,7 +2628,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:59:57.085554+00:00",
-    "last_seen": "2026-10-29T17:00:03.398401+00:00",
+    "last_seen": "2026-11-03T09:54:19.540121+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2771,7 +2774,7 @@
       }
     ],
     "first_seen": "2026-10-30T21:59:41.162383+00:00",
-    "last_seen": "2026-10-31T09:36:11.122905+00:00",
+    "last_seen": "2026-11-03T09:54:41.673380+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2792,7 +2795,7 @@
       }
     ],
     "first_seen": "2026-10-30T22:04:35.652296+00:00",
-    "last_seen": "2026-10-31T09:37:03.121481+00:00",
+    "last_seen": "2026-11-03T09:54:25.875314+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2849,7 +2852,7 @@
       }
     ],
     "first_seen": "2026-10-30T22:04:44.020191+00:00",
-    "last_seen": "2026-10-31T09:37:07.898043+00:00",
+    "last_seen": "2026-11-03T09:54:12.449694+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3038,7 +3041,7 @@
       }
     ],
     "first_seen": "2026-11-02T09:57:31.566171+00:00",
-    "last_seen": "2026-11-02T09:58:10.452455+00:00",
+    "last_seen": "2026-11-03T09:53:21.190436+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3059,7 +3062,7 @@
       }
     ],
     "first_seen": "2026-11-02T09:57:40.515369+00:00",
-    "last_seen": "2026-11-02T09:58:15.240831+00:00",
+    "last_seen": "2026-11-03T09:53:09.261082+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3080,7 +3083,7 @@
       }
     ],
     "first_seen": "2026-11-02T09:58:23.022305+00:00",
-    "last_seen": "2026-11-02T09:58:42.106119+00:00",
+    "last_seen": "2026-11-03T09:53:12.802256+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3101,7 +3104,70 @@
       }
     ],
     "first_seen": "2026-11-02T09:58:32.248808+00:00",
-    "last_seen": "2026-11-02T09:58:45.327959+00:00",
+    "last_seen": "2026-11-03T09:53:17.458949+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "sklep z grami": {
+    "translations": [
+      {
+        "english": "gaming shop. Context: The ______ _____ at the corner of my street closed today.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "gaming store",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-03T09:53:34.507077+00:00",
+    "last_seen": "2026-11-03T09:54:02.168227+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "kipieć, wykipieć": {
+    "translations": [
+      {
+        "english": "boil, boil. Context: Make sure the soup doesn't ____ ____.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "boil over",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-03T09:54:03.854662+00:00",
+    "last_seen": "2026-11-03T09:54:56.809332+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "dział reklamacji": {
+    "translations": [
+      {
+        "english": "complaints section. Context: If you have any issues with the service, visit the __________ __________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "complaints department",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-03T09:54:06.750885+00:00",
+    "last_seen": "2026-11-03T09:54:52.916029+00:00",
     "sources": [
       "online",
       "verified_correction",
