@@ -187,14 +187,15 @@
       {
         "english": "writer",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T16:23:48.128810+00:00",
-    "last_seen": "2026-10-23T16:29:53.944065+00:00",
+    "last_seen": "2026-11-05T09:57:22.667285+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "strój sportowca": {
@@ -253,7 +254,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:02:08.120040+00:00",
-    "last_seen": "2026-10-29T17:21:03.519463+00:00",
+    "last_seen": "2026-11-05T09:57:24.415825+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -690,7 +691,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:29:58.502937+00:00",
-    "last_seen": "2026-10-29T17:20:56.374918+00:00",
+    "last_seen": "2026-11-05T09:57:11.431664+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -728,14 +729,15 @@
       {
         "english": "skiing",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-23T16:30:15.122900+00:00",
-    "last_seen": "2026-10-24T16:20:10.592173+00:00",
+    "last_seen": "2026-11-05T09:57:14.998934+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "sztuczka karciana": {
@@ -871,14 +873,15 @@
       {
         "english": "table tennis",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:20:34.767567+00:00",
-    "last_seen": "2026-10-25T16:21:05.115661+00:00",
+    "last_seen": "2026-11-05T09:57:26.064930+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "squash (rodzaj sportu)": {
@@ -937,7 +940,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:05.028449+00:00",
-    "last_seen": "2026-10-29T16:59:49.527968+00:00",
+    "last_seen": "2026-11-05T09:57:13.262924+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -975,14 +978,15 @@
       {
         "english": "ice-skating",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:21:08.044489+00:00",
-    "last_seen": "2026-10-25T16:20:49.640773+00:00",
+    "last_seen": "2026-11-05T09:57:27.893023+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "jazda konna": {
@@ -995,14 +999,15 @@
       {
         "english": "horse-riding",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:21:11.625023+00:00",
-    "last_seen": "2026-10-25T16:21:06.483714+00:00",
+    "last_seen": "2026-11-05T09:57:09.558157+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "jazda na łyżworolkach": {
@@ -1057,14 +1062,15 @@
       {
         "english": "baseball",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:21:22.300456+00:00",
-    "last_seen": "2026-10-25T16:20:40.810731+00:00",
+    "last_seen": "2026-11-05T09:57:07.655296+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "krykiet": {
@@ -1228,7 +1234,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:16.382454+00:00",
-    "last_seen": "2026-10-29T16:50:54.894756+00:00",
+    "last_seen": "2026-11-05T09:57:18.866061+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2082,7 +2088,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:41:25.991139+00:00",
-    "last_seen": "2026-10-29T16:58:56.001942+00:00",
+    "last_seen": "2026-11-05T09:57:35.313144+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2750,14 +2756,15 @@
       {
         "english": "poet",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-30T21:59:39.578428+00:00",
-    "last_seen": "2026-10-30T21:59:40.032119+00:00",
+    "last_seen": "2026-11-05T09:57:16.850250+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "obraz": {
@@ -3168,6 +3175,342 @@
     ],
     "first_seen": "2026-11-03T09:54:06.750885+00:00",
     "last_seen": "2026-11-04T09:58:47.932198+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "opowiadanie": {
+    "translations": [
+      {
+        "english": "storytelling. Context: I prefer novels to _____ _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "short story",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:57:20.181882+00:00",
+    "last_seen": "2026-11-05T09:57:33.533936+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "rekordzista": {
+    "translations": [
+      {
+        "english": "record holder. Context: She is the ______ ______ for the currect world record in long jump.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "record holder",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:57:29.143714+00:00",
+    "last_seen": "2026-11-05T09:57:53.468281+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "kara; grzywna": {
+    "translations": [
+      {
+        "english": "penalty; fine. Context: He had to pay the _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "penalty",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:57:31.125973+00:00",
+    "last_seen": "2026-11-05T09:57:51.146211+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "taktyka": {
+    "translations": [
+      {
+        "english": "tactics. Context: Our coach revealed his _______ just before the match.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "tactics",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:57:54.625003+00:00",
+    "last_seen": "2026-11-05T09:58:00.339849+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "robić coś na zmianę; zmieniać się": {
+    "translations": [
+      {
+        "english": "do something different; change. Context: Both male and female eagles ____ _____ to feed their young.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "take turns",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:57:56.351110+00:00",
+    "last_seen": "2026-11-05T09:58:04.101156+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "punkty karne": {
+    "translations": [
+      {
+        "english": "penalty points. Context: Our team got _______ because of him at the end of the game.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "penalty",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:57:58.220381+00:00",
+    "last_seen": "2026-11-05T09:58:14.648829+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "przeciwnik; oponent": {
+    "translations": [
+      {
+        "english": "opponent. Background: Graf's ________ in today's final will be Sukova.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "opponent",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:01.448589+00:00",
+    "last_seen": "2026-11-05T09:58:11.265019+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "obóz sportowy": {
+    "translations": [
+      {
+        "english": "sports camp. Context: I'm going on ______ ____ to practice sports for the whole week.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "sports camp",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:05.442261+00:00",
+    "last_seen": "2026-11-05T09:58:07.834078+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "rzut karny": {
+    "translations": [
+      {
+        "english": "penalty kick. Context: The referee awarded a _______ to the home team.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "penalty",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:08.985488+00:00",
+    "last_seen": "2026-11-05T09:58:24.702293+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "etap, część": {
+    "translations": [
+      {
+        "english": "stage, part. Context: At this _____ of his life he should live without his parents.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "stage",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:12.466345+00:00",
+    "last_seen": "2026-11-05T09:58:17.999706+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "reguła; zasada; przepis": {
+    "translations": [
+      {
+        "english": "rule; rule; provision. Context: School _____ sometimes seem just stupid.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "rule",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:15.711309+00:00",
+    "last_seen": "2026-11-05T09:58:38.631498+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "ważny moment": {
+    "translations": [
+      {
+        "english": "important moment. Context: Your performance was the _________ of the match.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "highlight",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:19.112161+00:00",
+    "last_seen": "2026-11-05T09:58:21.399202+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "zranić się, doznać kontuzji": {
+    "translations": [
+      {
+        "english": "get hurt, get injured. Context: I ___ ____ because of not warming up earlier.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "get hurt",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:22.605035+00:00",
+    "last_seen": "2026-11-05T09:58:28.010086+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "zawierać, obejmować; dotyczyć": {
+    "translations": [
+      {
+        "english": "include. Context: What does your new work _______?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "involve",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:25.780255+00:00",
+    "last_seen": "2026-11-05T09:58:36.832057+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "wpaść na kogoś": {
+    "translations": [
+      {
+        "english": "run into someone. Context: Sorry, I didn't mean to _____ ____ you!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "crash into somebody",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:29.232750+00:00",
+    "last_seen": "2026-11-05T09:58:31.561233+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "niezwykły": {
+    "translations": [
+      {
+        "english": "unusual. Context: That goal was just __________!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "incredible",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-05T09:58:32.920462+00:00",
+    "last_seen": "2026-11-05T09:58:35.206819+00:00",
     "sources": [
       "online",
       "verified_correction",
