@@ -12065,7 +12065,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-05T09:57:19.115070+00:00",
-      "last_seen_at": "2026-11-05T09:57:32.025363+00:00"
+      "last_seen_at": "2026-11-06T09:58:01.578290+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: athletics pytanie i prefer novels to _____ luka _______ luka . opowiadanie twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"opowiadanie\", \"word_count\": null}": {
       "polish": "opowiadanie",
@@ -12221,7 +12221,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-05T09:57:30.064909+00:00",
-      "last_seen_at": "2026-11-05T09:57:49.855221+00:00"
+      "last_seen_at": "2026-11-06T09:58:06.181393+00:00"
     },
     "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: record holder pytanie he had to pay the _______ luka . kara; grzywna twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kara; grzywna\", \"word_count\": null}": {
       "polish": "kara; grzywna",
@@ -12374,7 +12374,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-05T09:57:53.711139+00:00",
-      "last_seen_at": "2026-11-05T09:57:59.100598+00:00"
+      "last_seen_at": "2026-11-06T09:57:59.576362+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: record holder pytanie our coach revealed his _______ luka just before the match. taktyka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"taktyka\", \"word_count\": null}": {
       "polish": "taktyka",
@@ -12610,7 +12610,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-05T09:58:08.092181+00:00",
-      "last_seen_at": "2026-11-05T09:58:23.401394+00:00"
+      "last_seen_at": "2026-11-06T09:58:04.168514+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: sports camp pytanie the referee awarded a _______ luka to the home team. rzut karny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"rzut karny\", \"word_count\": null}": {
       "polish": "rzut karny",
@@ -13093,6 +13093,72 @@
       ],
       "created_at": "2026-11-05T09:58:38.612261+00:00",
       "last_seen_at": "2026-11-05T09:58:38.612279+00:00"
+    },
+    "{\"context\": \"przejdź do treści pytanie our coach revealed his _______ luka just before the match. taktyka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"taktyka\", \"word_count\": null}": {
+      "polish": "taktyka",
+      "context": "Przejdź do treści\nPytanie\nOur coach revealed his _______\nluka\n just before the match.\ntaktyka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "tactics"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "tactics",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nPytanie\nOur coach revealed his _______\nluka\n just before the match.\ntaktyka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261106_095759",
+          "timestamp": "2026-11-06T09:58:01.267685+00:00"
+        }
+      ],
+      "created_at": "2026-11-06T09:58:01.267655+00:00",
+      "last_seen_at": "2026-11-06T09:58:01.267681+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: tactics pytanie i prefer novels to _____ luka _______ luka . opowiadanie twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"opowiadanie\", \"word_count\": null}": {
+      "polish": "opowiadanie",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: tactics\nPytanie\nI prefer novels to _____\nluka\n _______\nluka\n.\nopowiadanie\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "short story"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "short story",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: tactics\nPytanie\nI prefer novels to _____\nluka\n _______\nluka\n.\nopowiadanie\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261106_095759",
+          "timestamp": "2026-11-06T09:58:03.050073+00:00"
+        }
+      ],
+      "created_at": "2026-11-06T09:58:03.050053+00:00",
+      "last_seen_at": "2026-11-06T09:58:03.050071+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: short story pytanie the referee awarded a _______ luka to the home team. rzut karny twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"rzut karny\", \"word_count\": null}": {
+      "polish": "rzut karny",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: short story\nPytanie\nThe referee awarded a _______\nluka\n to the home team.\nrzut karny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "penalty"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "penalty",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: short story\nPytanie\nThe referee awarded a _______\nluka\n to the home team.\nrzut karny\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261106_095759",
+          "timestamp": "2026-11-06T09:58:05.831616+00:00"
+        }
+      ],
+      "created_at": "2026-11-06T09:58:05.831596+00:00",
+      "last_seen_at": "2026-11-06T09:58:05.831614+00:00"
     }
   },
   "sessions": {
@@ -13390,6 +13456,11 @@
       "started_at": "2026-11-05T09:57:49.731944+00:00",
       "completed_at": "2026-11-05T09:58:38.843177+00:00",
       "status": "completed"
+    },
+    "20261106_095759": {
+      "started_at": "2026-11-06T09:57:59.415608+00:00",
+      "completed_at": null,
+      "status": "started"
     }
   }
 }
