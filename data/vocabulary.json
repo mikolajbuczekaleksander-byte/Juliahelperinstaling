@@ -8,7 +8,7 @@
       }
     ],
     "first_seen": "2026-10-10T20:00:34.817342+00:00",
-    "last_seen": "2026-10-29T16:59:58.448273+00:00",
+    "last_seen": "2026-11-07T09:43:30.407248+00:00",
     "sources": [
       "dictionary",
       "verified_feedback"
@@ -271,14 +271,15 @@
       {
         "english": "boots",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:02:09.633168+00:00",
-    "last_seen": "2026-10-23T16:30:04.835766+00:00",
+    "last_seen": "2026-11-07T09:43:01.654215+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "rakieta": {
@@ -771,14 +772,15 @@
       {
         "english": "audience",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:20:13.656519+00:00",
-    "last_seen": "2026-10-25T16:20:50.981872+00:00",
+    "last_seen": "2026-11-07T09:42:58.655213+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "scena (miejsce)": {
@@ -791,14 +793,15 @@
       {
         "english": "stage",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:20:16.564624+00:00",
-    "last_seen": "2026-10-29T16:00:41.733353+00:00",
+    "last_seen": "2026-11-07T09:43:12.341118+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "pisać": {
@@ -877,7 +880,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:20:34.767567+00:00",
-    "last_seen": "2026-11-05T09:57:26.064930+00:00",
+    "last_seen": "2026-11-07T09:43:51.188155+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1087,7 +1090,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:26.892345+00:00",
-    "last_seen": "2026-10-30T21:11:17.522400+00:00",
+    "last_seen": "2026-11-07T09:43:00.147095+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2676,7 +2679,7 @@
       }
     ],
     "first_seen": "2026-10-29T17:21:38.619330+00:00",
-    "last_seen": "2026-10-30T22:04:53.754211+00:00",
+    "last_seen": "2026-11-07T09:43:34.698240+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2697,7 +2700,7 @@
       }
     ],
     "first_seen": "2026-10-29T17:21:42.484630+00:00",
-    "last_seen": "2026-10-29T17:22:07.621181+00:00",
+    "last_seen": "2026-11-07T09:43:40.337092+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2718,7 +2721,7 @@
       }
     ],
     "first_seen": "2026-10-29T17:21:59.992327+00:00",
-    "last_seen": "2026-10-29T17:22:05.902004+00:00",
+    "last_seen": "2026-11-07T09:43:37.558112+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3216,7 +3219,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:57:29.143714+00:00",
-    "last_seen": "2026-11-05T09:57:53.468281+00:00",
+    "last_seen": "2026-11-07T09:42:54.126701+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3279,7 +3282,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:57:56.351110+00:00",
-    "last_seen": "2026-11-05T09:58:04.101156+00:00",
+    "last_seen": "2026-11-07T09:42:57.036384+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3300,7 +3303,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:57:58.220381+00:00",
-    "last_seen": "2026-11-05T09:58:14.648829+00:00",
+    "last_seen": "2026-11-07T09:43:05.921417+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3321,7 +3324,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:01.448589+00:00",
-    "last_seen": "2026-11-05T09:58:11.265019+00:00",
+    "last_seen": "2026-11-07T09:43:36.017793+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3342,7 +3345,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:05.442261+00:00",
-    "last_seen": "2026-11-05T09:58:07.834078+00:00",
+    "last_seen": "2026-11-07T09:43:10.906354+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3384,7 +3387,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:12.466345+00:00",
-    "last_seen": "2026-11-05T09:58:17.999706+00:00",
+    "last_seen": "2026-11-07T09:43:38.915193+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3405,7 +3408,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:15.711309+00:00",
-    "last_seen": "2026-11-05T09:58:38.631498+00:00",
+    "last_seen": "2026-11-07T09:43:04.301223+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3426,7 +3429,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:19.112161+00:00",
-    "last_seen": "2026-11-05T09:58:21.399202+00:00",
+    "last_seen": "2026-11-07T09:43:16.141235+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3447,7 +3450,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:22.605035+00:00",
-    "last_seen": "2026-11-05T09:58:28.010086+00:00",
+    "last_seen": "2026-11-07T09:43:33.298300+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3468,7 +3471,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:25.780255+00:00",
-    "last_seen": "2026-11-05T09:58:36.832057+00:00",
+    "last_seen": "2026-11-07T09:42:55.575724+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3489,7 +3492,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:29.232750+00:00",
-    "last_seen": "2026-11-05T09:58:31.561233+00:00",
+    "last_seen": "2026-11-07T09:43:14.174741+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3510,7 +3513,196 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:32.920462+00:00",
-    "last_seen": "2026-11-05T09:58:35.206819+00:00",
+    "last_seen": "2026-11-07T09:43:08.156414+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "boisko do piłki nożnej/rugby": {
+    "translations": [
+      {
+        "english": "football/rugby field. Context: Football _____ is slightly bigger than a rugby pitch.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "(football, rugby) pitch",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-07T09:43:02.531587+00:00",
+    "last_seen": "2026-11-07T09:43:19.054201+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "wystawiać (sztukę, przedstawienie)": {
+    "translations": [
+      {
+        "english": "exhibit (play, performance). Context: My class ___ __ an amazing play last week.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "put on",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-07T09:43:09.054498+00:00",
+    "last_seen": "2026-11-07T09:43:17.614170+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "(sztuczny) stok (narciarski)": {
+    "translations": [
+      {
+        "english": "(artificial) slope (ski). Context: There are a lot of ___ ___ ______ in the mountains.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "(dry) (ski) slope",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-07T09:43:31.414443+00:00",
+    "last_seen": "2026-11-07T09:43:44.433130+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "zająć drugie miejsce": {
+    "translations": [
+      {
+        "english": "take second place. Context: She ____ ______ in the last month's race.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "come second",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-07T09:43:41.269468+00:00",
+    "last_seen": "2026-11-07T09:43:47.092450+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "skupiony": {
+    "translations": [
+      {
+        "english": "focused. Context: Marcus is very _______ when he's playing board games, he wants to win every time.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "focused",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-07T09:43:42.701406+00:00",
+    "last_seen": "2026-11-07T09:43:57.296191+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "brązowy medal": {
+    "translations": [
+      {
+        "english": "bronze medal. Context: He has won three ______ ______ and a silver one.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "bronze medal",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-07T09:43:45.327858+00:00",
+    "last_seen": "2026-11-07T09:44:05.390406+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "pobić rekord": {
+    "translations": [
+      {
+        "english": "break the record. Context: He is expected to _____ ___ ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "break a record",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-07T09:43:48.049250+00:00",
+    "last_seen": "2026-11-07T09:43:49.833944+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "wygrywać": {
+    "translations": [
+      {
+        "english": "win. Context: Your team is the best, so you'll ___!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "win",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-07T09:43:54.327531+00:00",
+    "last_seen": "2026-11-07T09:44:00.865144+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "sędzia sportowy": {
+    "translations": [
+      {
+        "english": "sports referee. Context: The _______ held up a red card.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "referee",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-07T09:43:58.734538+00:00",
+    "last_seen": "2026-11-07T09:44:03.245387+00:00",
     "sources": [
       "online",
       "verified_correction",
