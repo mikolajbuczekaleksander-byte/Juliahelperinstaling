@@ -107,7 +107,7 @@
       }
     ],
     "first_seen": "2026-10-17T21:24:56.985948+00:00",
-    "last_seen": "2026-11-01T09:41:00.820015+00:00",
+    "last_seen": "2026-11-08T09:42:35.561912+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -397,14 +397,15 @@
       {
         "english": "trunks",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:17:26.794528+00:00",
-    "last_seen": "2026-10-23T16:29:24.183404+00:00",
+    "last_seen": "2026-11-08T09:42:42.853552+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "kij (do baseballa, krykieta)": {
@@ -964,7 +965,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:06.482641+00:00",
-    "last_seen": "2026-11-01T09:40:38.756620+00:00",
+    "last_seen": "2026-11-08T09:42:54.406133+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1174,7 +1175,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:09.268101+00:00",
-    "last_seen": "2026-10-30T21:11:23.380872+00:00",
+    "last_seen": "2026-11-08T09:42:44.582477+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1216,7 +1217,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:13.662823+00:00",
-    "last_seen": "2026-10-30T21:11:19.003544+00:00",
+    "last_seen": "2026-11-08T09:43:14.948642+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1342,7 +1343,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:30.297309+00:00",
-    "last_seen": "2026-11-04T09:57:25.514128+00:00",
+    "last_seen": "2026-11-08T09:43:22.832959+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1819,7 +1820,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:52.341948+00:00",
-    "last_seen": "2026-11-01T09:40:30.542571+00:00",
+    "last_seen": "2026-11-08T09:43:35.094751+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1840,7 +1841,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:54.557428+00:00",
-    "last_seen": "2026-11-01T09:40:17.997626+00:00",
+    "last_seen": "2026-11-08T09:43:11.436391+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2301,7 +2302,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:01:17.287785+00:00",
-    "last_seen": "2026-11-03T09:53:46.009472+00:00",
+    "last_seen": "2026-11-08T09:43:27.384709+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2658,7 +2659,7 @@
       }
     ],
     "first_seen": "2026-10-29T17:21:15.617553+00:00",
-    "last_seen": "2026-10-30T21:59:37.112065+00:00",
+    "last_seen": "2026-11-08T09:43:18.057726+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2883,7 +2884,7 @@
       }
     ],
     "first_seen": "2026-10-30T22:04:47.292911+00:00",
-    "last_seen": "2026-11-01T09:40:44.712048+00:00",
+    "last_seen": "2026-11-08T09:42:51.372235+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2925,7 +2926,7 @@
       }
     ],
     "first_seen": "2026-10-30T22:05:24.298022+00:00",
-    "last_seen": "2026-11-01T09:40:28.880824+00:00",
+    "last_seen": "2026-11-08T09:42:46.041490+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2967,7 +2968,7 @@
       }
     ],
     "first_seen": "2026-10-30T22:05:29.366139+00:00",
-    "last_seen": "2026-11-01T09:40:22.794873+00:00",
+    "last_seen": "2026-11-08T09:42:49.948753+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3534,7 +3535,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:02.531587+00:00",
-    "last_seen": "2026-11-07T09:43:19.054201+00:00",
+    "last_seen": "2026-11-08T09:43:16.540406+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3555,7 +3556,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:09.054498+00:00",
-    "last_seen": "2026-11-07T09:43:17.614170+00:00",
+    "last_seen": "2026-11-08T09:42:32.025762+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3576,7 +3577,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:31.414443+00:00",
-    "last_seen": "2026-11-07T09:43:44.433130+00:00",
+    "last_seen": "2026-11-08T09:42:37.223414+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3597,7 +3598,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:41.269468+00:00",
-    "last_seen": "2026-11-07T09:43:47.092450+00:00",
+    "last_seen": "2026-11-08T09:42:38.755805+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3618,7 +3619,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:42.701406+00:00",
-    "last_seen": "2026-11-07T09:43:57.296191+00:00",
+    "last_seen": "2026-11-08T09:42:33.657784+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3639,7 +3640,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:45.327858+00:00",
-    "last_seen": "2026-11-07T09:44:05.390406+00:00",
+    "last_seen": "2026-11-08T09:43:12.955047+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3660,7 +3661,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:48.049250+00:00",
-    "last_seen": "2026-11-07T09:43:49.833944+00:00",
+    "last_seen": "2026-11-08T09:43:09.725578+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3681,7 +3682,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:54.327531+00:00",
-    "last_seen": "2026-11-07T09:44:00.865144+00:00",
+    "last_seen": "2026-11-08T09:42:52.878012+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3702,7 +3703,154 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:58.734538+00:00",
-    "last_seen": "2026-11-07T09:44:03.245387+00:00",
+    "last_seen": "2026-11-08T09:42:40.711139+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "fabuła; akcja; wątek": {
+    "translations": [
+      {
+        "english": "plot; action; plot. Context: The ____ in the book is really complicated. I'll have to read it again to understand what's going on.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "plot",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-08T09:42:55.543992+00:00",
+    "last_seen": "2026-11-08T09:42:57.577234+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "lodowisko": {
+    "translations": [
+      {
+        "english": "rink. Context: Let's go to the ice-skating ____.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "(ice-skating) rink",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-08T09:43:19.254156+00:00",
+    "last_seen": "2026-11-08T09:43:41.154438+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "chronić; zabezpieczać": {
+    "translations": [
+      {
+        "english": "protect. Context: We should _______ the environment.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "protect",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-08T09:43:20.809246+00:00",
+    "last_seen": "2026-11-08T09:43:30.419556+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "zawodowy sportowiec": {
+    "translations": [
+      {
+        "english": "professional athlete. Background: His dream was to be a ____________ _______. Now he's a P.E. teacher.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "professional athlete",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-08T09:43:23.911282+00:00",
+    "last_seen": "2026-11-08T09:43:25.939560+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "zawody; turniej": {
+    "translations": [
+      {
+        "english": "competition; tournament. Context: I've got my tennis __________ at the weekend. I must win!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "tournament",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-08T09:43:28.364096+00:00",
+    "last_seen": "2026-11-08T09:43:33.602618+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "okrążenie": {
+    "translations": [
+      {
+        "english": "lap. Context: There are two more ____ to go in the race.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "lap",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-08T09:43:31.509185+00:00",
+    "last_seen": "2026-11-08T09:43:39.561345+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "kibic": {
+    "translations": [
+      {
+        "english": "fan. Context: I'm the _________ of the hosting country.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "supporter",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-08T09:43:36.124673+00:00",
+    "last_seen": "2026-11-08T09:43:38.099551+00:00",
     "sources": [
       "online",
       "verified_correction",
