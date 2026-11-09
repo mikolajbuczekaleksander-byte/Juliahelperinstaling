@@ -945,7 +945,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:05.028449+00:00",
-    "last_seen": "2026-11-05T09:57:13.262924+00:00",
+    "last_seen": "2026-11-09T10:00:48.913320+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1134,7 +1134,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:33.083660+00:00",
-    "last_seen": "2026-11-04T09:58:20.049943+00:00",
+    "last_seen": "2026-11-09T10:00:44.310606+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2990,7 +2990,7 @@
       }
     ],
     "first_seen": "2026-11-01T09:41:09.989047+00:00",
-    "last_seen": "2026-11-02T09:57:42.785110+00:00",
+    "last_seen": "2026-11-09T09:59:49.738570+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3179,7 +3179,7 @@
       }
     ],
     "first_seen": "2026-11-03T09:54:06.750885+00:00",
-    "last_seen": "2026-11-04T09:58:47.932198+00:00",
+    "last_seen": "2026-11-09T09:59:58.332316+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3557,7 +3557,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:09.054498+00:00",
-    "last_seen": "2026-11-08T09:42:32.025762+00:00",
+    "last_seen": "2026-11-09T09:59:56.889325+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3977,7 +3977,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:46.883812+00:00",
-    "last_seen": "2026-11-09T09:04:58.710383+00:00",
+    "last_seen": "2026-11-09T09:59:51.335420+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3998,7 +3998,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:49.221989+00:00",
-    "last_seen": "2026-11-09T09:05:03.186529+00:00",
+    "last_seen": "2026-11-09T09:59:55.512965+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4019,7 +4019,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:50.812445+00:00",
-    "last_seen": "2026-11-09T09:04:53.306890+00:00",
+    "last_seen": "2026-11-09T09:59:47.064088+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4040,7 +4040,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:56.005073+00:00",
-    "last_seen": "2026-11-09T09:05:13.858797+00:00",
+    "last_seen": "2026-11-09T09:59:48.452303+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4061,7 +4061,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:00.482817+00:00",
-    "last_seen": "2026-11-09T09:05:19.636530+00:00",
+    "last_seen": "2026-11-09T09:59:44.027736+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4082,7 +4082,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:04.529716+00:00",
-    "last_seen": "2026-11-09T09:05:07.002958+00:00",
+    "last_seen": "2026-11-09T09:59:52.680548+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4103,7 +4103,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:10.178117+00:00",
-    "last_seen": "2026-11-09T09:05:35.145596+00:00",
+    "last_seen": "2026-11-09T09:59:54.070040+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4124,7 +4124,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:15.568715+00:00",
-    "last_seen": "2026-11-09T09:05:23.729371+00:00",
+    "last_seen": "2026-11-09T09:59:39.987639+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4145,7 +4145,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:21.235104+00:00",
-    "last_seen": "2026-11-09T09:05:33.126857+00:00",
+    "last_seen": "2026-11-09T09:59:42.485114+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4166,7 +4166,280 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:27.461872+00:00",
-    "last_seen": "2026-11-09T09:05:30.083796+00:00",
+    "last_seen": "2026-11-09T09:59:45.576843+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "kopać; kopnąć": {
+    "translations": [
+      {
+        "english": "kick. Context: Neil ______ the ball.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "kick",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:59:59.292118+00:00",
+    "last_seen": "2026-11-09T10:00:17.288050+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "popierać; pomagać; kibicować": {
+    "translations": [
+      {
+        "english": "support; help; cheer. Context: The fans _________ their team.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "support",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:00.626831+00:00",
+    "last_seen": "2026-11-09T10:00:18.689938+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "chybić, spudłować, nie trafić": {
+    "translations": [
+      {
+        "english": "miss, miss, miss. Background: How did he ____ the goal?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "miss",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:19.725777+00:00",
+    "last_seen": "2026-11-09T10:00:24.469208+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "trenować": {
+    "translations": [
+      {
+        "english": "train. Context: Do you _____ tennis or football?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "train",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:21.220017+00:00",
+    "last_seen": "2026-11-09T10:00:53.404414+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "konkurować": {
+    "translations": [
+      {
+        "english": "compete. Context: They always _______ with each other.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "compete",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:22.627057+00:00",
+    "last_seen": "2026-11-09T10:00:30.114270+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "pokonać; pobić": {
+    "translations": [
+      {
+        "english": "beat. Context: This team was ______ by 10 points.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "beat",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:25.363514+00:00",
+    "last_seen": "2026-11-09T10:00:27.133717+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "złapać": {
+    "translations": [
+      {
+        "english": "catch. Context: Just _____ the ball and then throw it to her.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "catch",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:28.078387+00:00",
+    "last_seen": "2026-11-09T10:00:33.016578+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "mistrz": {
+    "translations": [
+      {
+        "english": "master. Context: She's the world's ________ in karate.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "champion",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:31.209124+00:00",
+    "last_seen": "2026-11-09T10:00:36.218803+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "remisować": {
+    "translations": [
+      {
+        "english": "draw. Context: Despite some terrible plays by their quarterback, they managed to ____.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "draw",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:34.008124+00:00",
+    "last_seen": "2026-11-09T10:00:39.008545+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "gimnastyk; gimnastyczka": {
+    "translations": [
+      {
+        "english": "gymnast. Context: He can perform twists, he is a _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "gymnast",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:37.191073+00:00",
+    "last_seen": "2026-11-09T10:00:47.352541+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "pływak": {
+    "translations": [
+      {
+        "english": "swimmer. Context: Anna's a great _______. She won a medal last week.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "swimmer",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:40.321815+00:00",
+    "last_seen": "2026-11-09T10:00:42.272608+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "biegacz": {
+    "translations": [
+      {
+        "english": "runner. Context: Mike is a fast ______, but Jack seems fitter.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "runner",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:45.350220+00:00",
+    "last_seen": "2026-11-09T10:00:51.982947+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "ciężarowiec; sztangista": {
+    "translations": [
+      {
+        "english": "weightlifter; weightlifter. Context: A ____________ must be strong.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "weightlifter",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T10:00:50.145274+00:00",
+    "last_seen": "2026-11-09T10:00:54.806443+00:00",
     "sources": [
       "online",
       "verified_correction",
