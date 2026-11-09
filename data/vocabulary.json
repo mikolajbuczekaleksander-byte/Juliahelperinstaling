@@ -296,7 +296,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:08.814976+00:00",
-    "last_seen": "2026-10-30T21:59:04.752131+00:00",
+    "last_seen": "2026-11-09T09:03:58.006912+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -815,14 +815,15 @@
       {
         "english": "write",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-24T16:20:25.363659+00:00",
-    "last_seen": "2026-10-25T16:20:35.153501+00:00",
+    "last_seen": "2026-11-09T09:03:38.430794+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "akcja rozgrywa się w...": {
@@ -2197,7 +2198,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:10.779530+00:00",
-    "last_seen": "2026-11-03T09:53:33.250516+00:00",
+    "last_seen": "2026-11-09T09:05:08.753036+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3010,7 +3011,7 @@
       }
     ],
     "first_seen": "2026-11-01T09:41:10.792578+00:00",
-    "last_seen": "2026-11-02T09:57:29.739649+00:00",
+    "last_seen": "2026-11-09T09:03:47.104626+00:00",
     "sources": [
       "dictionary",
       "verified_correction",
@@ -3724,7 +3725,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:42:55.543992+00:00",
-    "last_seen": "2026-11-08T09:42:57.577234+00:00",
+    "last_seen": "2026-11-09T09:03:20.972323+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3745,7 +3746,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:19.254156+00:00",
-    "last_seen": "2026-11-08T09:43:41.154438+00:00",
+    "last_seen": "2026-11-09T09:03:42.756753+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3766,7 +3767,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:20.809246+00:00",
-    "last_seen": "2026-11-08T09:43:30.419556+00:00",
+    "last_seen": "2026-11-09T09:03:32.813021+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3787,7 +3788,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:23.911282+00:00",
-    "last_seen": "2026-11-08T09:43:25.939560+00:00",
+    "last_seen": "2026-11-09T09:03:24.590847+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3808,7 +3809,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:28.364096+00:00",
-    "last_seen": "2026-11-08T09:43:33.602618+00:00",
+    "last_seen": "2026-11-09T09:03:18.031062+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3829,7 +3830,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:31.509185+00:00",
-    "last_seen": "2026-11-08T09:43:39.561345+00:00",
+    "last_seen": "2026-11-09T09:03:50.654199+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3850,7 +3851,322 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:36.124673+00:00",
-    "last_seen": "2026-11-08T09:43:38.099551+00:00",
+    "last_seen": "2026-11-09T09:03:29.408814+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "kort tenisowy/boisko do koszykówki": {
+    "translations": [
+      {
+        "english": "tennis court/basketball court. Background: We played basketball on the new _____ yesterday.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "tennis, basketball court",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:03:45.905988+00:00",
+    "last_seen": "2026-11-09T09:04:20.035993+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "ubrudzić się błotem": {
+    "translations": [
+      {
+        "english": "get dirty. Context: You can often ___ _____ on an obstacle course.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "get muddy",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:03:53.473165+00:00",
+    "last_seen": "2026-11-09T09:04:38.770878+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "potknąć się": {
+    "translations": [
+      {
+        "english": "trip. Context: She _______ on the pavement and fell.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "trip",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:04:00.727456+00:00",
+    "last_seen": "2026-11-09T09:04:40.988866+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "zestaw; komplet": {
+    "translations": [
+      {
+        "english": "set. Context: He should have brought his medical ___ to the game.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "kit",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:04:07.935214+00:00",
+    "last_seen": "2026-11-09T09:04:35.192888+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "uderzać; stuknąć; dotknąć": {
+    "translations": [
+      {
+        "english": "hit; tap; touch. Context: Why did you ___ him?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "hit",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:04:13.800504+00:00",
+    "last_seen": "2026-11-09T09:04:45.406694+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "łączyć; przyłączać (się); dołączyć": {
+    "translations": [
+      {
+        "english": "connect; join; join. Context: Would you like to ____ us? We're going to the cinema tonight.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "join",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:04:46.883812+00:00",
+    "last_seen": "2026-11-09T09:04:58.710383+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "rzucać; wyrzucić": {
+    "translations": [
+      {
+        "english": "throw. Context: _____ the ball, and I'll catch it.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "throw",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:04:49.221989+00:00",
+    "last_seen": "2026-11-09T09:05:03.186529+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "strzelać gole": {
+    "translations": [
+      {
+        "english": "score goals. Context: He's the best player on the pitch. He always ______ many _____!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "score goals",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:04:50.812445+00:00",
+    "last_seen": "2026-11-09T09:04:53.306890+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "brać udział (w zawodach)": {
+    "translations": [
+      {
+        "english": "participate (in competitions). Context: Should I _____ the singing competition?",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "enter",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:04:56.005073+00:00",
+    "last_seen": "2026-11-09T09:05:13.858797+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "pozycja; położenie": {
+    "translations": [
+      {
+        "english": "position. Context: The doctor told her to lie in a comfortable ________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "position",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:05:00.482817+00:00",
+    "last_seen": "2026-11-09T09:05:19.636530+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "gracz": {
+    "translations": [
+      {
+        "english": "player. Context: The ______ sat at the table and Tim started to shuffle the cards.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "player",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:05:04.529716+00:00",
+    "last_seen": "2026-11-09T09:05:07.002958+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "drużyna": {
+    "translations": [
+      {
+        "english": "team. Context: I'm in the football ____.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "team",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:05:10.178117+00:00",
+    "last_seen": "2026-11-09T09:05:35.145596+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "przegrać": {
+    "translations": [
+      {
+        "english": "lose. Context: I'm sure you won't ____ the match. You're great!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "lose",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:05:15.568715+00:00",
+    "last_seen": "2026-11-09T09:05:23.729371+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "ćwiczyć (się); trenować; uprawiać; stosować": {
+    "translations": [
+      {
+        "english": "to exercise; to train; to cultivate; to apply. Context: John has been __________ the violin since high school.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "practise",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:05:21.235104+00:00",
+    "last_seen": "2026-11-09T09:05:33.126857+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "trener; osoba prowadząca szkolenie": {
+    "translations": [
+      {
+        "english": "trainer; person conducting the training. Context: He went to the gym with his _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "trainer",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-09T09:05:27.461872+00:00",
+    "last_seen": "2026-11-09T09:05:30.083796+00:00",
     "sources": [
       "online",
       "verified_correction",
