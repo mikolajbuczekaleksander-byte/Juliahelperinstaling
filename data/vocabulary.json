@@ -14,20 +14,6 @@
       "verified_feedback"
     ]
   },
-  "festiwal": {
-    "translations": [
-      {
-        "english": "festival",
-        "verified": false,
-        "source": "dictionary"
-      }
-    ],
-    "first_seen": "2026-10-10T20:00:34.817793+00:00",
-    "last_seen": "2026-10-10T20:12:11.659996+00:00",
-    "sources": [
-      "dictionary"
-    ]
-  },
   "żongler": {
     "translations": [
       {
@@ -41,20 +27,6 @@
     "sources": [
       "dictionary",
       "verified_feedback"
-    ]
-  },
-  "trapez": {
-    "translations": [
-      {
-        "english": "trapeze",
-        "verified": false,
-        "source": "dictionary"
-      }
-    ],
-    "first_seen": "2026-10-10T20:00:34.818659+00:00",
-    "last_seen": "2026-10-10T20:12:11.661297+00:00",
-    "sources": [
-      "dictionary"
     ]
   },
   "słowo testowe pamięci": {
@@ -3032,7 +3004,7 @@
       }
     ],
     "first_seen": "2026-11-01T09:41:20.885596+00:00",
-    "last_seen": "2026-11-02T09:57:35.818577+00:00",
+    "last_seen": "2026-11-10T09:53:09.504823+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3095,7 +3067,7 @@
       }
     ],
     "first_seen": "2026-11-02T09:58:23.022305+00:00",
-    "last_seen": "2026-11-03T09:53:12.802256+00:00",
+    "last_seen": "2026-11-10T09:53:25.281522+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3116,7 +3088,7 @@
       }
     ],
     "first_seen": "2026-11-02T09:58:32.248808+00:00",
-    "last_seen": "2026-11-03T09:53:17.458949+00:00",
+    "last_seen": "2026-11-10T09:53:27.781708+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3872,7 +3844,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:03:45.905988+00:00",
-    "last_seen": "2026-11-09T09:04:20.035993+00:00",
+    "last_seen": "2026-11-10T09:53:04.886789+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3893,7 +3865,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:03:53.473165+00:00",
-    "last_seen": "2026-11-09T09:04:38.770878+00:00",
+    "last_seen": "2026-11-10T09:53:38.666014+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3914,7 +3886,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:00.727456+00:00",
-    "last_seen": "2026-11-09T09:04:40.988866+00:00",
+    "last_seen": "2026-11-10T09:53:00.207362+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3935,7 +3907,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:07.935214+00:00",
-    "last_seen": "2026-11-09T09:04:35.192888+00:00",
+    "last_seen": "2026-11-10T09:52:58.715224+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3956,7 +3928,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:13.800504+00:00",
-    "last_seen": "2026-11-09T09:04:45.406694+00:00",
+    "last_seen": "2026-11-10T09:53:40.304685+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3977,7 +3949,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:46.883812+00:00",
-    "last_seen": "2026-11-09T09:59:51.335420+00:00",
+    "last_seen": "2026-11-10T09:53:29.401868+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3998,7 +3970,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:49.221989+00:00",
-    "last_seen": "2026-11-09T09:59:55.512965+00:00",
+    "last_seen": "2026-11-10T09:53:30.899278+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4019,7 +3991,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:50.812445+00:00",
-    "last_seen": "2026-11-09T09:59:47.064088+00:00",
+    "last_seen": "2026-11-10T09:53:46.416000+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4040,7 +4012,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:56.005073+00:00",
-    "last_seen": "2026-11-09T09:59:48.452303+00:00",
+    "last_seen": "2026-11-10T09:53:35.174816+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4061,7 +4033,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:00.482817+00:00",
-    "last_seen": "2026-11-09T09:59:44.027736+00:00",
+    "last_seen": "2026-11-10T09:53:44.969767+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4082,7 +4054,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:04.529716+00:00",
-    "last_seen": "2026-11-09T09:59:52.680548+00:00",
+    "last_seen": "2026-11-10T09:53:33.801892+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4103,7 +4075,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:10.178117+00:00",
-    "last_seen": "2026-11-09T09:59:54.070040+00:00",
+    "last_seen": "2026-11-10T09:53:47.867207+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4145,7 +4117,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:21.235104+00:00",
-    "last_seen": "2026-11-09T09:59:42.485114+00:00",
+    "last_seen": "2026-11-10T09:53:07.952658+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4166,7 +4138,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:27.461872+00:00",
-    "last_seen": "2026-11-09T09:59:45.576843+00:00",
+    "last_seen": "2026-11-10T09:52:49.500641+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4187,7 +4159,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:59:59.292118+00:00",
-    "last_seen": "2026-11-09T10:00:17.288050+00:00",
+    "last_seen": "2026-11-10T09:52:51.530409+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4208,7 +4180,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:00.626831+00:00",
-    "last_seen": "2026-11-09T10:00:18.689938+00:00",
+    "last_seen": "2026-11-10T09:53:06.417550+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4229,7 +4201,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:19.725777+00:00",
-    "last_seen": "2026-11-09T10:00:24.469208+00:00",
+    "last_seen": "2026-11-10T09:52:53.720664+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4250,7 +4222,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:21.220017+00:00",
-    "last_seen": "2026-11-09T10:00:53.404414+00:00",
+    "last_seen": "2026-11-10T09:53:32.264380+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4271,7 +4243,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:22.627057+00:00",
-    "last_seen": "2026-11-09T10:00:30.114270+00:00",
+    "last_seen": "2026-11-10T09:53:01.739761+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4292,7 +4264,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:25.363514+00:00",
-    "last_seen": "2026-11-09T10:00:27.133717+00:00",
+    "last_seen": "2026-11-10T09:53:10.853092+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4313,7 +4285,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:28.078387+00:00",
-    "last_seen": "2026-11-09T10:00:33.016578+00:00",
+    "last_seen": "2026-11-10T09:53:41.883602+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4334,7 +4306,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:31.209124+00:00",
-    "last_seen": "2026-11-09T10:00:36.218803+00:00",
+    "last_seen": "2026-11-10T09:53:12.535180+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4355,7 +4327,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:34.008124+00:00",
-    "last_seen": "2026-11-09T10:00:39.008545+00:00",
+    "last_seen": "2026-11-10T09:53:43.436805+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4376,7 +4348,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:37.191073+00:00",
-    "last_seen": "2026-11-09T10:00:47.352541+00:00",
+    "last_seen": "2026-11-10T09:52:55.320037+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4397,7 +4369,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:40.321815+00:00",
-    "last_seen": "2026-11-09T10:00:42.272608+00:00",
+    "last_seen": "2026-11-10T09:53:03.370655+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4418,7 +4390,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:45.350220+00:00",
-    "last_seen": "2026-11-09T10:00:51.982947+00:00",
+    "last_seen": "2026-11-10T09:53:36.502593+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4439,7 +4411,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:50.145274+00:00",
-    "last_seen": "2026-11-09T10:00:54.806443+00:00",
+    "last_seen": "2026-11-10T09:52:57.061597+00:00",
     "sources": [
       "online",
       "verified_correction",
