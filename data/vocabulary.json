@@ -205,7 +205,7 @@
       }
     ],
     "first_seen": "2026-10-22T16:27:46.178115+00:00",
-    "last_seen": "2026-10-31T09:35:57.721639+00:00",
+    "last_seen": "2026-11-11T09:55:47.212410+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -812,7 +812,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:20:28.197513+00:00",
-    "last_seen": "2026-11-04T09:58:22.866237+00:00",
+    "last_seen": "2026-11-11T09:56:51.367439+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1628,7 +1628,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:30.720866+00:00",
-    "last_seen": "2026-11-03T09:53:02.323055+00:00",
+    "last_seen": "2026-11-11T09:56:49.646895+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1772,7 +1772,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:50.842829+00:00",
-    "last_seen": "2026-11-01T09:41:13.077582+00:00",
+    "last_seen": "2026-11-11T09:56:57.677899+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2107,7 +2107,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:01.786776+00:00",
-    "last_seen": "2026-11-03T09:53:28.223547+00:00",
+    "last_seen": "2026-11-11T09:56:10.951440+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2128,7 +2128,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:03.189323+00:00",
-    "last_seen": "2026-11-03T09:53:31.515453+00:00",
+    "last_seen": "2026-11-11T09:56:07.562134+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2233,7 +2233,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:01:10.726994+00:00",
-    "last_seen": "2026-11-03T09:53:23.715669+00:00",
+    "last_seen": "2026-11-11T09:56:09.230451+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2317,7 +2317,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:49:59.296306+00:00",
-    "last_seen": "2026-10-29T16:50:44.202950+00:00",
+    "last_seen": "2026-11-11T09:55:50.379132+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2816,7 +2816,7 @@
       }
     ],
     "first_seen": "2026-10-30T22:04:40.953516+00:00",
-    "last_seen": "2026-11-02T09:58:16.087369+00:00",
+    "last_seen": "2026-11-11T09:56:55.576284+00:00",
     "sources": [
       "dictionary",
       "verified_feedback"
@@ -3424,7 +3424,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:22.605035+00:00",
-    "last_seen": "2026-11-07T09:43:33.298300+00:00",
+    "last_seen": "2026-11-11T09:55:43.886653+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4096,7 +4096,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:15.568715+00:00",
-    "last_seen": "2026-11-09T09:59:39.987639+00:00",
+    "last_seen": "2026-11-11T09:56:02.750993+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4390,7 +4390,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:45.350220+00:00",
-    "last_seen": "2026-11-10T09:53:36.502593+00:00",
+    "last_seen": "2026-11-11T09:56:54.710961+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4412,6 +4412,216 @@
     ],
     "first_seen": "2026-11-09T10:00:50.145274+00:00",
     "last_seen": "2026-11-10T09:52:57.061597+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "rowerzysta; kolarz": {
+    "translations": [
+      {
+        "english": "cyclist; cyclist. Background: The _______ was doing his best to win the race.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "cyclist",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:55:45.119536+00:00",
+    "last_seen": "2026-11-11T09:56:42.746656+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "kapitan; dowódca": {
+    "translations": [
+      {
+        "english": "captain; commander. Context: The _______ said the ship was about to leave port.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "captain",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:55:48.340141+00:00",
+    "last_seen": "2026-11-11T09:56:44.566707+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "wiwatować; robić owację": {
+    "translations": [
+      {
+        "english": "cheer; give an ovation. Context: The audience _______ the team.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "cheer",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:55:51.817134+00:00",
+    "last_seen": "2026-11-11T09:56:41.023104+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "trener": {
+    "translations": [
+      {
+        "english": "coach. Context: The _____ congratulated his team on the victory.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "coach",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:55:55.243829+00:00",
+    "last_seen": "2026-11-11T09:56:39.349435+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "piłkarz": {
+    "translations": [
+      {
+        "english": "player. Context: You must train really hard to become a __________.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "footballer",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:55:58.599483+00:00",
+    "last_seen": "2026-11-11T09:56:46.245931+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "wysportowany": {
+    "translations": [
+      {
+        "english": "athletic. Context: George is an ________ boy.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "athletic",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:56:04.012542+00:00",
+    "last_seen": "2026-11-11T09:56:34.361780+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "nurek; skoczek do wody": {
+    "translations": [
+      {
+        "english": "diver; diver. Context: The Caribbeans are a paradise for ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "diver",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:56:12.068127+00:00",
+    "last_seen": "2026-11-11T09:56:35.945146+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "lekkoatleta; sportowiec": {
+    "translations": [
+      {
+        "english": "athlete; athlete. Context: Leo wants to become an _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "athlete",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:56:16.498586+00:00",
+    "last_seen": "2026-11-11T09:56:37.612699+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "bokser": {
+    "translations": [
+      {
+        "english": "boxer. Context: The _____ lost the fight.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "boxer",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:56:47.521465+00:00",
+    "last_seen": "2026-11-11T09:57:02.395265+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "science fiction; fantastyka naukowa": {
+    "translations": [
+      {
+        "english": "science fiction; science fiction. Context: I prefer fantasy to _______ _______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "science fiction",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-11T09:56:52.567510+00:00",
+    "last_seen": "2026-11-11T09:57:00.628715+00:00",
     "sources": [
       "online",
       "verified_correction",
