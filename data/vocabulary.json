@@ -223,10 +223,15 @@
         "english": "wetsuit",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "wetsuit. Context: We're going swimming so put on your _______.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-22T17:02:08.120040+00:00",
-    "last_seen": "2026-11-05T09:57:24.415825+00:00",
+    "last_seen": "2026-11-13T09:58:29.717934+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -390,14 +395,15 @@
       {
         "english": "bat",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-22T17:17:29.548509+00:00",
-    "last_seen": "2026-10-23T16:29:55.363795+00:00",
+    "last_seen": "2026-11-13T09:57:08.203536+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "strój kąpielowy": {
@@ -477,7 +483,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:03.789125+00:00",
-    "last_seen": "2026-10-31T09:37:12.902417+00:00",
+    "last_seen": "2026-11-13T09:57:28.120920+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -519,7 +525,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:06.860749+00:00",
-    "last_seen": "2026-10-31T09:36:53.696934+00:00",
+    "last_seen": "2026-11-13T09:56:22.640545+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -645,7 +651,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:29:31.531099+00:00",
-    "last_seen": "2026-10-31T09:36:13.852477+00:00",
+    "last_seen": "2026-11-13T09:57:17.239951+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -687,7 +693,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:30:09.240328+00:00",
-    "last_seen": "2026-11-04T09:57:53.796812+00:00",
+    "last_seen": "2026-11-13T09:57:53.133195+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -834,7 +840,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:20:31.353991+00:00",
-    "last_seen": "2026-10-31T09:35:59.881464+00:00",
+    "last_seen": "2026-11-13T09:56:31.658789+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1028,7 +1034,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:18.808328+00:00",
-    "last_seen": "2026-10-31T09:37:22.200694+00:00",
+    "last_seen": "2026-11-13T09:57:49.483652+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1088,10 +1094,15 @@
         "english": "canoeing",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "kayaking. Context: I love mountain climbing and ________.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-24T16:21:29.576764+00:00",
-    "last_seen": "2026-11-02T09:57:44.399506+00:00",
+    "last_seen": "2026-11-13T09:58:11.217375+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1238,7 +1249,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:19.101880+00:00",
-    "last_seen": "2026-11-01T09:40:46.512983+00:00",
+    "last_seen": "2026-11-13T09:58:08.060069+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1445,7 +1456,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:03.961524+00:00",
-    "last_seen": "2026-11-01T09:41:08.596091+00:00",
+    "last_seen": "2026-11-13T09:56:13.556397+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1534,7 +1545,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:13.080701+00:00",
-    "last_seen": "2026-11-01T09:40:24.329630+00:00",
+    "last_seen": "2026-11-13T09:57:26.320024+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1576,7 +1587,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:19.819797+00:00",
-    "last_seen": "2026-10-29T16:51:07.371768+00:00",
+    "last_seen": "2026-11-13T09:56:59.010997+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1852,7 +1863,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:58.794758+00:00",
-    "last_seen": "2026-11-04T09:58:41.501929+00:00",
+    "last_seen": "2026-11-13T09:58:15.714146+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1956,7 +1967,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:17.917912+00:00",
-    "last_seen": "2026-11-01T09:40:19.649601+00:00",
+    "last_seen": "2026-11-13T09:56:40.768693+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2208,7 +2219,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:14.030716+00:00",
-    "last_seen": "2026-11-03T09:53:25.944015+00:00",
+    "last_seen": "2026-11-13T09:57:46.304732+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2415,10 +2426,15 @@
         "english": "model",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "model. Context: Sheila is planning to become a _____. She's obsessed with her looks.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-29T16:50:56.858704+00:00",
-    "last_seen": "2026-10-29T16:51:11.105413+00:00",
+    "last_seen": "2026-11-13T09:58:13.110132+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3272,7 +3288,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:57:54.625003+00:00",
-    "last_seen": "2026-11-06T09:58:01.286713+00:00",
+    "last_seen": "2026-11-13T09:58:06.149402+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3466,7 +3482,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:22.605035+00:00",
-    "last_seen": "2026-11-11T09:55:43.886653+00:00",
+    "last_seen": "2026-11-13T09:57:37.235771+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4019,10 +4035,15 @@
         "english": "throw",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "to throw; to toss. Context: _____ the ball, and I'll catch it.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:04:49.221989+00:00",
-    "last_seen": "2026-11-10T09:53:30.899278+00:00",
+    "last_seen": "2026-11-13T09:58:22.447209+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4106,7 +4127,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:04.529716+00:00",
-    "last_seen": "2026-11-10T09:53:33.801892+00:00",
+    "last_seen": "2026-11-13T09:58:24.284558+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4208,10 +4229,15 @@
         "english": "kick",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "to kick. Context: Neil ______ the ball.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:59:59.292118+00:00",
-    "last_seen": "2026-11-10T09:52:51.530409+00:00",
+    "last_seen": "2026-11-13T09:58:36.937426+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4271,10 +4297,15 @@
         "english": "train",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "play. Context: Do you _____ tennis or football?",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T10:00:21.220017+00:00",
-    "last_seen": "2026-11-10T09:53:32.264380+00:00",
+    "last_seen": "2026-11-13T09:58:26.055187+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4313,10 +4344,15 @@
         "english": "beat",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "to defeat; to beat. Context: This team was ______ by 10 points.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T10:00:25.363514+00:00",
-    "last_seen": "2026-11-10T09:53:10.853092+00:00",
+    "last_seen": "2026-11-13T09:58:34.988396+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4337,7 +4373,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:28.078387+00:00",
-    "last_seen": "2026-11-10T09:53:41.883602+00:00",
+    "last_seen": "2026-11-13T09:58:32.772321+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4447,7 +4483,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:45.350220+00:00",
-    "last_seen": "2026-11-11T09:56:54.710961+00:00",
+    "last_seen": "2026-11-13T09:58:17.388277+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4682,7 +4718,7 @@
       }
     ],
     "first_seen": "2026-11-11T09:56:47.521465+00:00",
-    "last_seen": "2026-11-12T09:56:10.359912+00:00",
+    "last_seen": "2026-11-13T09:58:19.266971+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4734,7 +4770,7 @@
       }
     ],
     "first_seen": "2026-11-12T09:56:46.678560+00:00",
-    "last_seen": "2026-11-12T09:57:14.583824+00:00",
+    "last_seen": "2026-11-13T09:58:39.503517+00:00",
     "sources": [
       "online",
       "verified_correction",
