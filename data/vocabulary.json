@@ -29,21 +29,6 @@
       "verified_feedback"
     ]
   },
-  "słowo testowe pamięci": {
-    "translations": [
-      {
-        "english": "memory test word",
-        "verified": true,
-        "source": "memory"
-      }
-    ],
-    "first_seen": "2026-10-10T20:18:20.608861+00:00",
-    "last_seen": "2026-10-14T12:26:33.897078+00:00",
-    "sources": [
-      "verified_feedback",
-      "memory"
-    ]
-  },
   "główny bohater": {
     "translations": [
       {
@@ -121,7 +106,7 @@
       }
     ],
     "first_seen": "2026-10-17T22:09:21.570672+00:00",
-    "last_seen": "2026-11-04T09:57:35.265506+00:00",
+    "last_seen": "2026-11-14T09:43:45.485286+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -291,10 +276,15 @@
         "english": "(Olympic-size) (swimming) pool",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "pool (Olympic/swimming). Context: Is there an outdoor swimming ____?",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-22T17:17:11.875268+00:00",
-    "last_seen": "2026-11-03T09:54:22.382595+00:00",
+    "last_seen": "2026-11-14T09:43:09.673126+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -462,7 +452,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:37.664484+00:00",
-    "last_seen": "2026-10-31T09:35:53.353980+00:00",
+    "last_seen": "2026-11-14T09:42:53.853703+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -504,7 +494,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:05.216949+00:00",
-    "last_seen": "2026-10-31T09:36:40.032248+00:00",
+    "last_seen": "2026-11-14T09:42:57.622364+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -546,7 +536,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:11.212842+00:00",
-    "last_seen": "2026-10-31T09:36:18.122784+00:00",
+    "last_seen": "2026-11-14T09:42:50.606768+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -693,7 +683,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:30:09.240328+00:00",
-    "last_seen": "2026-11-13T09:57:53.133195+00:00",
+    "last_seen": "2026-11-14T09:43:36.628247+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -774,10 +764,15 @@
         "english": "stage",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "stage (place). Context: The _____ is prepared for the actors.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-24T16:20:16.564624+00:00",
-    "last_seen": "2026-11-07T09:43:12.341118+00:00",
+    "last_seen": "2026-11-14T09:43:25.951938+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -903,7 +898,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:20:43.127179+00:00",
-    "last_seen": "2026-10-31T09:36:42.557643+00:00",
+    "last_seen": "2026-11-14T09:43:00.012061+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -924,7 +919,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:05.028449+00:00",
-    "last_seen": "2026-11-09T10:00:48.913320+00:00",
+    "last_seen": "2026-11-14T09:43:23.517250+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1162,10 +1157,15 @@
         "english": "boxing",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "Boxing. Context: Jim's keen on ______, but I don't like it at all.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-25T16:21:09.268101+00:00",
-    "last_seen": "2026-11-08T09:42:44.582477+00:00",
+    "last_seen": "2026-11-14T09:43:27.574880+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1186,7 +1186,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:10.693011+00:00",
-    "last_seen": "2026-11-12T09:56:30.825360+00:00",
+    "last_seen": "2026-11-14T09:43:50.008283+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1267,10 +1267,15 @@
         "english": "understudy",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "Understudy; a substitute for an actor in a given role. Context: She did not take the great opportunity she had as an __________.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-25T16:21:21.772221+00:00",
-    "last_seen": "2026-11-01T09:40:34.831353+00:00",
+    "last_seen": "2026-11-14T09:42:44.808897+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1288,10 +1293,15 @@
         "english": "scene",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "scene (e.g., from a movie). Context: It's that funny _____ from my favorite movie.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-25T16:21:24.556682+00:00",
-    "last_seen": "2026-11-01T09:41:17.225160+00:00",
+    "last_seen": "2026-11-14T09:43:07.905328+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1521,10 +1531,15 @@
         "english": "interviewer",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "The person conducting the interview. Context: This ___________ always asks difficult questions.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-26T16:41:10.084979+00:00",
-    "last_seen": "2026-11-01T09:40:32.279900+00:00",
+    "last_seen": "2026-11-14T09:43:06.152189+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1671,7 +1686,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:34.403083+00:00",
-    "last_seen": "2026-11-01T09:41:15.224134+00:00",
+    "last_seen": "2026-11-14T09:42:52.207692+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1713,7 +1728,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:42.555428+00:00",
-    "last_seen": "2026-11-01T09:41:07.042073+00:00",
+    "last_seen": "2026-11-14T09:43:01.688834+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1800,7 +1815,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:50.842829+00:00",
-    "last_seen": "2026-11-11T09:56:57.677899+00:00",
+    "last_seen": "2026-11-14T09:43:34.974802+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1821,7 +1836,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:52.341948+00:00",
-    "last_seen": "2026-11-12T09:56:45.443466+00:00",
+    "last_seen": "2026-11-14T09:43:31.653624+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1925,7 +1940,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:09.245249+00:00",
-    "last_seen": "2026-11-01T09:40:41.662938+00:00",
+    "last_seen": "2026-11-14T09:43:03.324784+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2174,10 +2189,15 @@
         "english": "pop",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "Previous context: I prefer rock to ___.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-28T16:42:07.690917+00:00",
-    "last_seen": "2026-10-29T16:59:17.662475+00:00",
+    "last_seen": "2026-11-14T09:43:39.088574+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2455,7 +2475,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:51:08.812974+00:00",
-    "last_seen": "2026-10-30T21:11:49.656324+00:00",
+    "last_seen": "2026-11-14T09:42:46.554345+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2623,7 +2643,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:59:50.402390+00:00",
-    "last_seen": "2026-11-04T09:58:39.247958+00:00",
+    "last_seen": "2026-11-14T09:43:40.693141+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3222,10 +3242,15 @@
         "english": "short story",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "short story. Context: I prefer novels to _____ _______.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-05T09:57:20.181882+00:00",
-    "last_seen": "2026-11-06T09:58:03.332718+00:00",
+    "last_seen": "2026-11-14T09:42:55.754175+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3267,7 +3292,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:57:31.125973+00:00",
-    "last_seen": "2026-11-06T09:58:06.906455+00:00",
+    "last_seen": "2026-11-14T09:43:33.339281+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3437,10 +3462,15 @@
         "english": "rule",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "rule; principle; regulation. Context: School _____ sometimes seem just stupid.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-05T09:58:15.711309+00:00",
-    "last_seen": "2026-11-07T09:43:04.301223+00:00",
+    "last_seen": "2026-11-14T09:43:21.905111+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3739,7 +3769,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:58.734538+00:00",
-    "last_seen": "2026-11-08T09:42:40.711139+00:00",
+    "last_seen": "2026-11-14T09:43:29.307992+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3909,10 +3939,15 @@
         "english": "tennis, basketball court",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "tennis court/basketball court. Context: We played basketball on the new _____ yesterday.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:03:45.905988+00:00",
-    "last_seen": "2026-11-10T09:53:04.886789+00:00",
+    "last_seen": "2026-11-14T09:43:42.442298+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4624,7 +4659,7 @@
       }
     ],
     "first_seen": "2026-11-11T09:55:58.599483+00:00",
-    "last_seen": "2026-11-12T09:56:04.937769+00:00",
+    "last_seen": "2026-11-14T09:43:47.121777+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4774,6 +4809,21 @@
     "sources": [
       "online",
       "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "cyrk": {
+    "translations": [
+      {
+        "english": "circus",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-14T09:42:46.871563+00:00",
+    "last_seen": "2026-11-14T09:42:47.271809+00:00",
+    "sources": [
+      "dictionary",
       "verified_feedback"
     ]
   }

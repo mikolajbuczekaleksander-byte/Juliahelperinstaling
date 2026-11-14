@@ -1,108 +1,6 @@
 {
   "version": 1,
   "words": {
-    "{\"context\": \"test automatyczny\", \"polish\": \"słowo testowe pamięci\", \"word_count\": null}": {
-      "polish": "słowo testowe pamięci",
-      "context": "test automatyczny",
-      "word_count": null,
-      "accepted_answers": [
-        "memory test word"
-      ],
-      "rejected_answers": [],
-      "attempts": [
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-10T20:18:20.608657+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-10T20:57:54.583750+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-11T08:31:10.792533+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-11T10:02:55.007384+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-11T10:07:50.213783+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-14T09:35:54.679530+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-14T10:13:13.808221+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-14T10:21:03.585325+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-14T10:46:04.491543+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-14T11:20:05.663790+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-14T11:35:03.904756+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-14T12:07:17.060342+00:00"
-        },
-        {
-          "answer": "memory test word",
-          "result": "accepted",
-          "correction": null,
-          "session_id": "test-session-001",
-          "timestamp": "2026-10-14T12:26:33.895770+00:00"
-        }
-      ]
-    },
     "{\"context\": \"who is the ____ _________ of the book?\", \"polish\": \"główny bohater\", \"word_count\": null}": {
       "polish": "główny bohater",
       "context": "Who is the ____ _________ of the book?",
@@ -222,7 +120,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-17T22:09:20.558958+00:00",
-      "last_seen_at": "2026-11-04T09:57:31.076189+00:00"
+      "last_seen_at": "2026-11-14T09:43:44.033408+00:00"
     },
     "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: lead actor pytanie can you describe the _____________ luka ? ilustracje twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"ilustracje\", \"word_count\": null}": {
       "polish": "ilustracje",
@@ -503,7 +401,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-22T17:17:11.111169+00:00",
-      "last_seen_at": "2026-11-03T09:54:19.856087+00:00"
+      "last_seen_at": "2026-11-14T09:43:08.295084+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: boots pytanie is there an outdoor swimming ____ luka ? basen (olimpijski/pływacki) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"basen (olimpijski/pływacki)\", \"word_count\": null}": {
       "polish": "basen (olimpijski/pływacki)",
@@ -775,7 +673,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-22T17:17:37.004085+00:00",
-      "last_seen_at": "2026-10-31T09:35:50.477344+00:00"
+      "last_seen_at": "2026-11-14T09:42:52.492838+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: bat pytanie he's a _______ luka champion. surfing twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"surfing\", \"word_count\": null}": {
       "polish": "surfing",
@@ -843,7 +741,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-22T17:18:04.537755+00:00",
-      "last_seen_at": "2026-10-31T09:36:37.796541+00:00"
+      "last_seen_at": "2026-11-14T09:42:56.040093+00:00"
     },
     "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: golf pytanie she's keen on __________ luka . gimnastyka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"gimnastyka\", \"word_count\": null}": {
       "polish": "gimnastyka",
@@ -911,7 +809,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-22T17:18:10.422441+00:00",
-      "last_seen_at": "2026-10-31T09:36:14.162246+00:00"
+      "last_seen_at": "2026-11-14T09:42:49.261231+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: perform pytanie i love morning _______ luka . exercising makes me feel alive. bieganie twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"bieganie\", \"word_count\": null}": {
       "polish": "bieganie",
@@ -1149,7 +1047,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-23T16:30:08.410922+00:00",
-      "last_seen_at": "2026-11-13T09:57:50.430748+00:00"
+      "last_seen_at": "2026-11-14T09:43:35.264372+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: football pytanie our town has a new sports _______ luka . stadion lekkoatletyczny/sportowy twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"stadion lekkoatletyczny/sportowy\", \"word_count\": null}": {
       "polish": "stadion lekkoatletyczny/sportowy",
@@ -1285,7 +1183,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-24T16:20:15.852058+00:00",
-      "last_seen_at": "2026-11-07T09:43:11.186638+00:00"
+      "last_seen_at": "2026-11-14T09:43:24.542980+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: (athletics, sports) stadium pytanie the _____ luka is prepared for the actors. scena (miejsce) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"scena (miejsce)\", \"word_count\": null}": {
       "polish": "scena (miejsce)",
@@ -1489,7 +1387,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-24T16:20:42.081153+00:00",
-      "last_seen_at": "2026-10-31T09:36:40.333529+00:00"
+      "last_seen_at": "2026-11-14T09:42:58.500927+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: table tennis pytanie _____________ luka is not very popular with women. podnoszenie ciężarów; kulturystyka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"podnoszenie ciężarów; kulturystyka\", \"word_count\": null}": {
       "polish": "podnoszenie ciężarów; kulturystyka",
@@ -1523,7 +1421,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-24T16:21:04.244211+00:00",
-      "last_seen_at": "2026-11-09T10:00:47.642100+00:00"
+      "last_seen_at": "2026-11-14T09:43:22.218917+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: squash pytanie i like _____ luka __________ luka more than other sports. siatkówka plażowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"siatkówka plażowa\", \"word_count\": null}": {
       "polish": "siatkówka plażowa",
@@ -1897,7 +1795,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-25T16:21:08.671321+00:00",
-      "last_seen_at": "2026-11-08T09:42:43.149703+00:00"
+      "last_seen_at": "2026-11-14T09:43:26.257402+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: weightlifting pytanie jim's keen on ______ luka , but i don't like it at all. boks; pięściarstwo twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"boks; pięściarstwo\", \"word_count\": null}": {
       "polish": "boks; pięściarstwo",
@@ -1931,7 +1829,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-25T16:21:09.969464+00:00",
-      "last_seen_at": "2026-11-12T09:56:29.442902+00:00"
+      "last_seen_at": "2026-11-14T09:43:48.698962+00:00"
     },
     "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: boxing pytanie he loves mountain ________ luka . wspinaczka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"wspinaczka\", \"word_count\": null}": {
       "polish": "wspinaczka",
@@ -2067,7 +1965,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-25T16:21:20.952553+00:00",
-      "last_seen_at": "2026-11-01T09:40:32.563713+00:00"
+      "last_seen_at": "2026-11-14T09:42:43.003392+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: climbing pytanie she did not take the great opportunity she had as an __________ luka . dubler; zastępca aktora w danej roli twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"dubler; zastępca aktora w danej roli\", \"word_count\": null}": {
       "polish": "dubler; zastępca aktora w danej roli",
@@ -2101,7 +1999,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-25T16:21:23.903093+00:00",
-      "last_seen_at": "2026-11-01T09:41:15.511504+00:00"
+      "last_seen_at": "2026-11-14T09:43:06.576937+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: understudy pytanie it's that funny _____ luka from my favourite movie. scena (np. z filmu) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"scena (np. z filmu)\", \"word_count\": null}": {
       "polish": "scena (np. z filmu)",
@@ -2493,7 +2391,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-26T16:41:09.283510+00:00",
-      "last_seen_at": "2026-11-01T09:40:30.852767+00:00"
+      "last_seen_at": "2026-11-14T09:43:03.620359+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: share online pytanie this ___________ luka always asks difficult questions. osoba przeprowadzająca wywiad twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"osoba przeprowadzająca wywiad\", \"word_count\": null}": {
       "polish": "osoba przeprowadzająca wywiad",
@@ -2741,7 +2639,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-26T16:41:33.618101+00:00",
-      "last_seen_at": "2026-11-01T09:41:13.352077+00:00"
+      "last_seen_at": "2026-11-14T09:42:50.923378+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: cooking show pytanie getting this ____ luka is my dream. rola twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"rola\", \"word_count\": null}": {
       "polish": "rola",
@@ -2809,7 +2707,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-26T16:41:41.729431+00:00",
-      "last_seen_at": "2026-11-01T09:41:04.772458+00:00"
+      "last_seen_at": "2026-11-14T09:43:00.294848+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: it stars ... pytanie since she couldn't buy the physical copy, she decided to ________ luka the album illegally. pobierać, ściągać twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"pobierać, ściągać\", \"word_count\": null}": {
       "polish": "pobierać, ściągać",
@@ -2921,7 +2819,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:40:50.031987+00:00",
-      "last_seen_at": "2026-11-11T09:56:56.516047+00:00"
+      "last_seen_at": "2026-11-14T09:43:33.629181+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: it's written by pytanie she likes reading ______ luka . komiks; historyjka obrazkowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"komiks; historyjka obrazkowa\", \"word_count\": null}": {
       "polish": "komiks; historyjka obrazkowa",
@@ -2955,7 +2853,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:40:51.579743+00:00",
-      "last_seen_at": "2026-11-12T09:56:44.004782+00:00"
+      "last_seen_at": "2026-11-14T09:43:30.244659+00:00"
     },
     "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: comic pytanie i found an interesting _______ luka devoted to role-playing games. strona internetowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"strona internetowa\", \"word_count\": null}": {
       "polish": "strona internetowa",
@@ -3125,7 +3023,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-27T16:41:08.177488+00:00",
-      "last_seen_at": "2026-11-01T09:40:39.955396+00:00"
+      "last_seen_at": "2026-11-14T09:43:01.980111+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: headline pytanie as a __________ luka , she's interested in politics. dziennikarz twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"dziennikarz\", \"word_count\": null}": {
       "polish": "dziennikarz",
@@ -3533,7 +3431,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-28T16:42:06.825660+00:00",
-      "last_seen_at": "2026-10-29T16:59:16.255449+00:00"
+      "last_seen_at": "2026-11-14T09:43:37.590970+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: group pytanie i prefer rock to ___ luka . pop twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"pop\", \"word_count\": null}": {
       "polish": "pop",
@@ -4526,7 +4424,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-29T16:51:07.646136+00:00",
-      "last_seen_at": "2026-10-30T21:11:48.411379+00:00"
+      "last_seen_at": "2026-11-14T09:42:45.113746+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: ball pytanie are there any ___ luka _________ luka in your town? galeria sztuki twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"galeria sztuki\", \"word_count\": null}": {
       "polish": "galeria sztuki",
@@ -5134,10 +5032,19 @@
           "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nI prefer rock to ___\nluka\n.\npop\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
           "session_id": "20261029_165844",
           "timestamp": "2026-10-29T16:59:17.649368+00:00"
+        },
+        {
+          "answer": "pop",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nI prefer rock to ___\nluka\n.\npop\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:39.066561+00:00"
         }
       ],
       "created_at": "2026-10-29T16:59:17.649349+00:00",
-      "last_seen_at": "2026-10-29T16:59:17.649364+00:00"
+      "last_seen_at": "2026-11-14T09:43:39.066546+00:00"
     },
     "{\"context\": \"a ___ ___ is a main tent in circus.\", \"polish\": \"namiot cyrkowy\", \"word_count\": null}": {
       "polish": "namiot cyrkowy",
@@ -5432,7 +5339,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-10-29T16:59:49.786527+00:00",
-      "last_seen_at": "2026-11-04T09:58:37.310597+00:00"
+      "last_seen_at": "2026-11-14T09:43:39.377939+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: beach volleyball pytanie don't forget your _______ luka if you're going skiing. gogle; okulary ochronne; okulary do pływania twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"gogle; okulary ochronne; okulary do pływania\", \"word_count\": null}": {
       "polish": "gogle; okulary ochronne; okulary do pływania",
@@ -8896,10 +8803,19 @@
           "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: gymnastics\nPytanie\n_____________\nluka\n is not very popular with women.\npodnoszenie ciężarów; kulturystyka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
           "session_id": "20261031_093633",
           "timestamp": "2026-10-31T09:36:42.535869+00:00"
+        },
+        {
+          "answer": "weightlifting",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: gymnastics\nPytanie\n_____________\nluka\n is not very popular with women.\npodnoszenie ciężarów; kulturystyka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:59.990595+00:00"
         }
       ],
       "created_at": "2026-10-31T09:36:42.535856+00:00",
-      "last_seen_at": "2026-10-31T09:36:42.535867+00:00"
+      "last_seen_at": "2026-11-14T09:42:59.990579+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: weightlifting pytanie i prefer ___________ luka to painting. fotografia (dziedzina); fotografika twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"fotografia (dziedzina); fotografika\", \"word_count\": null}": {
       "polish": "fotografia (dziedzina); fotografika",
@@ -12119,7 +12035,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-05T09:57:19.115070+00:00",
-      "last_seen_at": "2026-11-06T09:58:01.578290+00:00"
+      "last_seen_at": "2026-11-14T09:42:54.141576+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: athletics pytanie i prefer novels to _____ luka _______ luka . opowiadanie twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"opowiadanie\", \"word_count\": null}": {
       "polish": "opowiadanie",
@@ -12275,7 +12191,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-05T09:57:30.064909+00:00",
-      "last_seen_at": "2026-11-06T09:58:06.181393+00:00"
+      "last_seen_at": "2026-11-14T09:43:31.951949+00:00"
     },
     "{\"context\": \"przejdź do treści niepoprawnie poprawna odpowiedź: record holder pytanie he had to pay the _______ luka . kara; grzywna twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kara; grzywna\", \"word_count\": null}": {
       "polish": "kara; grzywna",
@@ -12776,7 +12692,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-05T09:58:14.888708+00:00",
-      "last_seen_at": "2026-11-07T09:43:03.259879+00:00"
+      "last_seen_at": "2026-11-14T09:43:20.456655+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: penalty pytanie school _____ luka sometimes seem just stupid. reguła; zasada; przepis twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"reguła; zasada; przepis\", \"word_count\": null}": {
       "polish": "reguła; zasada; przepis",
@@ -14097,7 +14013,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-07T09:43:57.529670+00:00",
-      "last_seen_at": "2026-11-08T09:42:39.065510+00:00"
+      "last_seen_at": "2026-11-14T09:43:27.958876+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: focused pytanie the _______ luka held up a red card. sędzia sportowy twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"sędzia sportowy\", \"word_count\": null}": {
       "polish": "sędzia sportowy",
@@ -15227,7 +15143,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-09T09:03:42.987341+00:00",
-      "last_seen_at": "2026-11-10T09:53:03.631410+00:00"
+      "last_seen_at": "2026-11-14T09:43:40.990693+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: (ice-skating) rink pytanie we played basketball on the new _____ luka yesterday. kort tenisowy/boisko do koszykówki twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kort tenisowy/boisko do koszykówki\", \"word_count\": null}": {
       "polish": "kort tenisowy/boisko do koszykówki",
@@ -18199,7 +18115,7 @@
       "rejected_answers": [],
       "attempts": [],
       "created_at": "2026-11-11T09:55:57.667458+00:00",
-      "last_seen_at": "2026-11-12T09:56:03.516242+00:00"
+      "last_seen_at": "2026-11-14T09:43:45.781270+00:00"
     },
     "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: captain pytanie you must train really hard to become a __________ luka . piłkarz twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"piłkarz\", \"word_count\": null}": {
       "polish": "piłkarz",
@@ -19200,10 +19116,19 @@
           "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nI found an interesting _______\nluka\n devoted to role-playing games.\nstrona internetowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
           "session_id": "20261112_095641",
           "timestamp": "2026-11-12T09:56:45.406289+00:00"
+        },
+        {
+          "answer": "website",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nI found an interesting _______\nluka\n devoted to role-playing games.\nstrona internetowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:31.632735+00:00"
         }
       ],
       "created_at": "2026-11-12T09:56:45.406269+00:00",
-      "last_seen_at": "2026-11-12T09:56:45.406286+00:00"
+      "last_seen_at": "2026-11-14T09:43:31.632721+00:00"
     },
     "{\"context\": \"we could all bake cakes and sell them at a school ____.\", \"polish\": \"targ, jarmark\", \"word_count\": null}": {
       "polish": "targ, jarmark",
@@ -20140,6 +20065,610 @@
       ],
       "created_at": "2026-11-13T09:58:39.481449+00:00",
       "last_seen_at": "2026-11-13T09:58:39.481463+00:00"
+    },
+    "{\"context\": \"przejdź do treści pytanie she did not take the great opportunity she had as an __________ luka . dubler; zastępca aktora w danej roli twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"dubler; zastępca aktora w danej roli\", \"word_count\": null}": {
+      "polish": "dubler; zastępca aktora w danej roli",
+      "context": "Przejdź do treści\nPytanie\nShe did not take the great opportunity she had as an __________\nluka\n.\ndubler; zastępca aktora w danej roli\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "understudy"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "understudy",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nPytanie\nShe did not take the great opportunity she had as an __________\nluka\n.\ndubler; zastępca aktora w danej roli\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:44.788558+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:42:44.788539+00:00",
+      "last_seen_at": "2026-11-14T09:42:44.788555+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: understudy pytanie are there any ___ luka _________ luka in your town? galeria sztuki twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"galeria sztuki\", \"word_count\": null}": {
+      "polish": "galeria sztuki",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: understudy\nPytanie\nAre there any ___\nluka\n _________\nluka\n in your town?\ngaleria sztuki\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "art gallery"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "art gallery",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: understudy\nPytanie\nAre there any ___\nluka\n _________\nluka\n in your town?\ngaleria sztuki\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:46.534077+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:42:46.534059+00:00",
+      "last_seen_at": "2026-11-14T09:42:46.534074+00:00"
+    },
+    "{\"context\": \"mr jones took his children to the ______. they loved the clowns and animals.\", \"polish\": \"cyrk\", \"word_count\": null}": {
+      "polish": "cyrk",
+      "context": "Mr Jones took his children to the ______. They loved the clowns and animals.",
+      "word_count": null,
+      "accepted_answers": [],
+      "rejected_answers": [],
+      "attempts": [],
+      "created_at": "2026-11-14T09:42:46.777991+00:00",
+      "last_seen_at": "2026-11-14T09:42:46.843603+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: art gallery pytanie mr jones took his children to the ______ luka . they loved the clowns and animals. cyrk twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"cyrk\", \"word_count\": null}": {
+      "polish": "cyrk",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: art gallery\nPytanie\nMr Jones took his children to the ______\nluka\n. They loved the clowns and animals.\ncyrk\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "circus"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "circus",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: art gallery\nPytanie\nMr Jones took his children to the ______\nluka\n. They loved the clowns and animals.\ncyrk\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:47.251104+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:42:47.251087+00:00",
+      "last_seen_at": "2026-11-14T09:42:47.251102+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: circus pytanie he had to pay the _______ luka . kara; grzywna twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kara; grzywna\", \"word_count\": null}": {
+      "polish": "kara; grzywna",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: circus\nPytanie\nHe had to pay the _______\nluka\n.\nkara; grzywna\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "penalty"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "penalty",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: circus\nPytanie\nHe had to pay the _______\nluka\n.\nkara; grzywna\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:48.952395+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:42:48.952377+00:00",
+      "last_seen_at": "2026-11-14T09:42:48.952393+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: penalty pytanie i love morning _______ luka . exercising makes me feel alive. bieganie twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"bieganie\", \"word_count\": null}": {
+      "polish": "bieganie",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: penalty\nPytanie\nI love morning _______\nluka\n. Exercising makes me feel alive.\nbieganie\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "running"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "running",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: penalty\nPytanie\nI love morning _______\nluka\n. Exercising makes me feel alive.\nbieganie\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:50.586430+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:42:50.586412+00:00",
+      "last_seen_at": "2026-11-14T09:42:50.586428+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: running pytanie getting this ____ luka is my dream. rola twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"rola\", \"word_count\": null}": {
+      "polish": "rola",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: running\nPytanie\nGetting this ____\nluka\n is my dream.\nrola\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "role"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "role",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: running\nPytanie\nGetting this ____\nluka\n is my dream.\nrola\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:52.186632+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:42:52.186613+00:00",
+      "last_seen_at": "2026-11-14T09:42:52.186630+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: role pytanie he's a _______ luka champion. surfing twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"surfing\", \"word_count\": null}": {
+      "polish": "surfing",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: role\nPytanie\nHe's a _______\nluka\n champion.\nsurfing\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "surfing"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "surfing",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: role\nPytanie\nHe's a _______\nluka\n champion.\nsurfing\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:53.832757+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:42:53.832739+00:00",
+      "last_seen_at": "2026-11-14T09:42:53.832755+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: surfing pytanie i prefer novels to _____ luka _______ luka . opowiadanie twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"opowiadanie\", \"word_count\": null}": {
+      "polish": "opowiadanie",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: surfing\nPytanie\nI prefer novels to _____\nluka\n _______\nluka\n.\nopowiadanie\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "short story"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "short story",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: surfing\nPytanie\nI prefer novels to _____\nluka\n _______\nluka\n.\nopowiadanie\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:55.733448+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:42:55.733430+00:00",
+      "last_seen_at": "2026-11-14T09:42:55.733445+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: short story pytanie she's keen on __________ luka . gimnastyka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"gimnastyka\", \"word_count\": null}": {
+      "polish": "gimnastyka",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: short story\nPytanie\nShe's keen on __________\nluka\n.\ngimnastyka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "gymnastics"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "gymnastics",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: short story\nPytanie\nShe's keen on __________\nluka\n.\ngimnastyka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:42:57.416222+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:42:57.416209+00:00",
+      "last_seen_at": "2026-11-14T09:42:57.416220+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: weightlifting pytanie since she couldn't buy the physical copy, she decided to ________ luka the album illegally. pobierać, ściągać twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"pobierać, ściągać\", \"word_count\": null}": {
+      "polish": "pobierać, ściągać",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: weightlifting\nPytanie\nSince she couldn't buy the physical copy, she decided to ________\nluka\n the album illegally.\npobierać, ściągać\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "download"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "download",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: weightlifting\nPytanie\nSince she couldn't buy the physical copy, she decided to ________\nluka\n the album illegally.\npobierać, ściągać\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:43:01.667204+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:01.667186+00:00",
+      "last_seen_at": "2026-11-14T09:43:01.667202+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: download pytanie as a __________ luka , she's interested in politics. dziennikarz twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"dziennikarz\", \"word_count\": null}": {
+      "polish": "dziennikarz",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: download\nPytanie\nAs a __________\nluka\n, she's interested in politics.\ndziennikarz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "journalist"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "journalist",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: download\nPytanie\nAs a __________\nluka\n, she's interested in politics.\ndziennikarz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:43:03.298311+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:03.298293+00:00",
+      "last_seen_at": "2026-11-14T09:43:03.298308+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: journalist pytanie this ___________ luka always asks difficult questions. osoba przeprowadzająca wywiad twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"osoba przeprowadzająca wywiad\", \"word_count\": null}": {
+      "polish": "osoba przeprowadzająca wywiad",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: journalist\nPytanie\nThis ___________\nluka\n always asks difficult questions.\nosoba przeprowadzająca wywiad\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "interviewer"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "interviewer",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: journalist\nPytanie\nThis ___________\nluka\n always asks difficult questions.\nosoba przeprowadzająca wywiad\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:43:05.916029+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:05.916014+00:00",
+      "last_seen_at": "2026-11-14T09:43:05.916027+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: interviewer pytanie it's that funny _____ luka from my favourite movie. scena (np. z filmu) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"scena (np. z filmu)\", \"word_count\": null}": {
+      "polish": "scena (np. z filmu)",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: interviewer\nPytanie\nIt's that funny _____\nluka\n from my favourite movie.\nscena (np. z filmu)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "scene"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "scene",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: interviewer\nPytanie\nIt's that funny _____\nluka\n from my favourite movie.\nscena (np. z filmu)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:43:07.883504+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:07.883486+00:00",
+      "last_seen_at": "2026-11-14T09:43:07.883501+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: scene pytanie is there an outdoor swimming ____ luka ? basen (olimpijski/pływacki) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"basen (olimpijski/pływacki)\", \"word_count\": null}": {
+      "polish": "basen (olimpijski/pływacki)",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: scene\nPytanie\nIs there an outdoor swimming ____\nluka\n?\nbasen (olimpijski/pływacki)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "(Olympic-size) (swimming) pool"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "(Olympic-size) (swimming) pool",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: scene\nPytanie\nIs there an outdoor swimming ____\nluka\n?\nbasen (olimpijski/pływacki)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094242",
+          "timestamp": "2026-11-14T09:43:09.652624+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:09.652607+00:00",
+      "last_seen_at": "2026-11-14T09:43:09.652621+00:00"
+    },
+    "{\"context\": \"przejdź do treści pytanie school _____ luka sometimes seem just stupid. reguła; zasada; przepis twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"reguła; zasada; przepis\", \"word_count\": null}": {
+      "polish": "reguła; zasada; przepis",
+      "context": "Przejdź do treści\nPytanie\nSchool _____\nluka\n sometimes seem just stupid.\nreguła; zasada; przepis\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "rule"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "rule",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nPytanie\nSchool _____\nluka\n sometimes seem just stupid.\nreguła; zasada; przepis\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:21.884185+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:21.884167+00:00",
+      "last_seen_at": "2026-11-14T09:43:21.884183+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: rule pytanie i like _____ luka __________ luka more than other sports. siatkówka plażowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"siatkówka plażowa\", \"word_count\": null}": {
+      "polish": "siatkówka plażowa",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: rule\nPytanie\nI like _____\nluka\n __________\nluka\n more than other sports.\nsiatkówka plażowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "beach volleyball"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "beach volleyball",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: rule\nPytanie\nI like _____\nluka\n __________\nluka\n more than other sports.\nsiatkówka plażowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:23.496370+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:23.496352+00:00",
+      "last_seen_at": "2026-11-14T09:43:23.496368+00:00"
+    },
+    "{\"context\": \"przejdź do treści nowe słówko - czy już je znasz? pytanie the _____ luka is prepared for the actors. scena (miejsce) twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"scena (miejsce)\", \"word_count\": null}": {
+      "polish": "scena (miejsce)",
+      "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nThe _____\nluka\n is prepared for the actors.\nscena (miejsce)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "stage"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "stage",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nThe _____\nluka\n is prepared for the actors.\nscena (miejsce)\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:25.930890+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:25.930872+00:00",
+      "last_seen_at": "2026-11-14T09:43:25.930887+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: stage pytanie jim's keen on ______ luka , but i don't like it at all. boks; pięściarstwo twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"boks; pięściarstwo\", \"word_count\": null}": {
+      "polish": "boks; pięściarstwo",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: stage\nPytanie\nJim's keen on ______\nluka\n, but I don't like it at all.\nboks; pięściarstwo\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "boxing"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "boxing",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: stage\nPytanie\nJim's keen on ______\nluka\n, but I don't like it at all.\nboks; pięściarstwo\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:27.553973+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:27.553954+00:00",
+      "last_seen_at": "2026-11-14T09:43:27.553971+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: boxing pytanie the _______ luka held up a red card. sędzia sportowy twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"sędzia sportowy\", \"word_count\": null}": {
+      "polish": "sędzia sportowy",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: boxing\nPytanie\nThe _______\nluka\n held up a red card.\nsędzia sportowy\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "referee"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "referee",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: boxing\nPytanie\nThe _______\nluka\n held up a red card.\nsędzia sportowy\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:29.284174+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:29.284157+00:00",
+      "last_seen_at": "2026-11-14T09:43:29.284172+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: website pytanie he had to pay the _______ luka . kara; grzywna twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kara; grzywna\", \"word_count\": null}": {
+      "polish": "kara; grzywna",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: website\nPytanie\nHe had to pay the _______\nluka\n.\nkara; grzywna\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "penalty"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "penalty",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: website\nPytanie\nHe had to pay the _______\nluka\n.\nkara; grzywna\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:33.318182+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:33.318163+00:00",
+      "last_seen_at": "2026-11-14T09:43:33.318179+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: penalty pytanie she likes reading ______ luka . komiks; historyjka obrazkowa twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"komiks; historyjka obrazkowa\", \"word_count\": null}": {
+      "polish": "komiks; historyjka obrazkowa",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: penalty\nPytanie\nShe likes reading ______\nluka\n.\nkomiks; historyjka obrazkowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "comic"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "comic",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: penalty\nPytanie\nShe likes reading ______\nluka\n.\nkomiks; historyjka obrazkowa\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:34.953936+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:34.953918+00:00",
+      "last_seen_at": "2026-11-14T09:43:34.953933+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: comic pytanie our town has a new sports _______ luka . stadion lekkoatletyczny/sportowy twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"stadion lekkoatletyczny/sportowy\", \"word_count\": null}": {
+      "polish": "stadion lekkoatletyczny/sportowy",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: comic\nPytanie\nOur town has a new sports _______\nluka\n.\nstadion lekkoatletyczny/sportowy\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "(athletics, sports) stadium"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "(athletics, sports) stadium",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: comic\nPytanie\nOur town has a new sports _______\nluka\n.\nstadion lekkoatletyczny/sportowy\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:36.601972+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:36.601954+00:00",
+      "last_seen_at": "2026-11-14T09:43:36.601969+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: pop pytanie don't forget your _______ luka if you're going skiing. gogle; okulary ochronne; okulary do pływania twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"gogle; okulary ochronne; okulary do pływania\", \"word_count\": null}": {
+      "polish": "gogle; okulary ochronne; okulary do pływania",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: pop\nPytanie\nDon't forget your _______\nluka\n if you're going skiing.\ngogle; okulary ochronne; okulary do pływania\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "goggles"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "goggles",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: pop\nPytanie\nDon't forget your _______\nluka\n if you're going skiing.\ngogle; okulary ochronne; okulary do pływania\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:40.671185+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:40.671166+00:00",
+      "last_seen_at": "2026-11-14T09:43:40.671182+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: goggles pytanie we played basketball on the new _____ luka yesterday. kort tenisowy/boisko do koszykówki twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"kort tenisowy/boisko do koszykówki\", \"word_count\": null}": {
+      "polish": "kort tenisowy/boisko do koszykówki",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: goggles\nPytanie\nWe played basketball on the new _____\nluka\n yesterday.\nkort tenisowy/boisko do koszykówki\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "tennis, basketball court"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "tennis, basketball court",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: goggles\nPytanie\nWe played basketball on the new _____\nluka\n yesterday.\nkort tenisowy/boisko do koszykówki\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:42.420216+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:42.420195+00:00",
+      "last_seen_at": "2026-11-14T09:43:42.420214+00:00"
+    },
+    "{\"context\": \"przejdź do treści nowe słówko - czy już je znasz? pytanie can you describe the _____________ luka ? ilustracje twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"ilustracje\", \"word_count\": null}": {
+      "polish": "ilustracje",
+      "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nCan you describe the _____________\nluka\n?\nilustracje\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "illustrations"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "illustrations",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nCan you describe the _____________\nluka\n?\nilustracje\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:45.464161+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:45.464144+00:00",
+      "last_seen_at": "2026-11-14T09:43:45.464159+00:00"
+    },
+    "{\"context\": \"przejdź do treści dobrze! poprawna odpowiedź: illustrations pytanie you must train really hard to become a __________ luka . piłkarz twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"piłkarz\", \"word_count\": null}": {
+      "polish": "piłkarz",
+      "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: illustrations\nPytanie\nYou must train really hard to become a __________\nluka\n.\npiłkarz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "footballer"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "footballer",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nDobrze! Poprawna odpowiedź: illustrations\nPytanie\nYou must train really hard to become a __________\nluka\n.\npiłkarz\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:47.100296+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:47.100277+00:00",
+      "last_seen_at": "2026-11-14T09:43:47.100293+00:00"
+    },
+    "{\"context\": \"przejdź do treści nowe słówko - czy już je znasz? pytanie he loves mountain ________ luka . wspinaczka twoja odpowiedź sprawdź deklaracja dostępności\", \"polish\": \"wspinaczka\", \"word_count\": null}": {
+      "polish": "wspinaczka",
+      "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nHe loves mountain ________\nluka\n.\nwspinaczka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+      "word_count": null,
+      "accepted_answers": [
+        "climbing"
+      ],
+      "rejected_answers": [],
+      "attempts": [
+        {
+          "answer": "climbing",
+          "result": "accepted",
+          "correction": null,
+          "feedback_type": "correct",
+          "context": "Przejdź do treści\nNowe słówko - czy już je znasz?\nPytanie\nHe loves mountain ________\nluka\n.\nwspinaczka\n \n \nTwoja odpowiedź\nSprawdź\n \n \nDeklaracja dostępności",
+          "session_id": "20261114_094320",
+          "timestamp": "2026-11-14T09:43:49.986438+00:00"
+        }
+      ],
+      "created_at": "2026-11-14T09:43:49.986415+00:00",
+      "last_seen_at": "2026-11-14T09:43:49.986435+00:00"
     }
   },
   "sessions": {
@@ -20521,6 +21050,16 @@
     "20261113_095803": {
       "started_at": "2026-11-13T09:58:03.697534+00:00",
       "completed_at": "2026-11-13T09:58:39.703523+00:00",
+      "status": "completed"
+    },
+    "20261114_094242": {
+      "started_at": "2026-11-14T09:42:42.848559+00:00",
+      "completed_at": "2026-11-14T09:43:09.875614+00:00",
+      "status": "completed"
+    },
+    "20261114_094320": {
+      "started_at": "2026-11-14T09:43:20.336106+00:00",
+      "completed_at": "2026-11-14T09:43:50.213291+00:00",
       "status": "completed"
     }
   }
