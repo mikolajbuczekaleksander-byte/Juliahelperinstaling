@@ -187,10 +187,15 @@
         "english": "wrestling",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "wrestling (sport). Context: I don't think _________ is my favorite sport. I don't like watching people fight.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-22T16:27:46.178115+00:00",
-    "last_seen": "2026-11-11T09:55:47.212410+00:00",
+    "last_seen": "2026-11-15T09:44:20.481602+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -557,7 +562,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:18:14.674389+00:00",
-    "last_seen": "2026-11-02T09:57:46.919907+00:00",
+    "last_seen": "2026-11-15T09:44:34.649238+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -620,7 +625,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:29:25.598517+00:00",
-    "last_seen": "2026-10-29T17:22:04.222894+00:00",
+    "last_seen": "2026-11-15T09:43:46.970422+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -641,7 +646,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:29:31.531099+00:00",
-    "last_seen": "2026-11-13T09:57:17.239951+00:00",
+    "last_seen": "2026-11-15T09:44:23.347666+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -811,10 +816,15 @@
         "english": "it's set in",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "The story takes place in.... Context: It's about two friends and it's ___ __ Paris.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-24T16:20:28.197513+00:00",
-    "last_seen": "2026-11-11T09:56:51.367439+00:00",
+    "last_seen": "2026-11-15T09:44:40.152740+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1118,7 +1128,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:33.083660+00:00",
-    "last_seen": "2026-11-09T10:00:44.310606+00:00",
+    "last_seen": "2026-11-15T09:44:26.384288+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1707,7 +1717,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:39.524670+00:00",
-    "last_seen": "2026-11-04T09:58:27.868286+00:00",
+    "last_seen": "2026-11-15T09:44:28.516088+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1940,7 +1950,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:09.245249+00:00",
-    "last_seen": "2026-11-14T09:43:03.324784+00:00",
+    "last_seen": "2026-11-15T09:44:38.582944+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2063,10 +2073,15 @@
         "english": "advertisement",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "commercial. Context: I've seen an interesting _____________ on TV recently.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-27T16:41:32.876854+00:00",
-    "last_seen": "2026-11-02T09:58:18.057036+00:00",
+    "last_seen": "2026-11-15T09:44:42.280277+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2150,7 +2165,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:01.786776+00:00",
-    "last_seen": "2026-11-11T09:56:10.951440+00:00",
+    "last_seen": "2026-11-15T09:43:57.520703+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2171,7 +2186,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:03.189323+00:00",
-    "last_seen": "2026-11-11T09:56:07.562134+00:00",
+    "last_seen": "2026-11-15T09:43:58.990396+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2197,7 +2212,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:07.690917+00:00",
-    "last_seen": "2026-11-14T09:43:39.088574+00:00",
+    "last_seen": "2026-11-15T09:44:18.983258+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2260,7 +2275,7 @@
       }
     ],
     "first_seen": "2026-10-29T15:34:04.150099+00:00",
-    "last_seen": "2026-11-04T09:57:30.755295+00:00",
+    "last_seen": "2026-11-15T09:44:05.565372+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2278,10 +2293,15 @@
         "english": "electronics store",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "online store. Context: I need to buy a new mouse at an ___________ _____.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-29T16:01:10.726994+00:00",
-    "last_seen": "2026-11-11T09:56:09.230451+00:00",
+    "last_seen": "2026-11-15T09:43:56.068511+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2496,7 +2516,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:58:48.529268+00:00",
-    "last_seen": "2026-10-29T16:59:13.381861+00:00",
+    "last_seen": "2026-11-15T09:43:45.486338+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2952,7 +2972,7 @@
       }
     ],
     "first_seen": "2026-10-30T22:05:24.298022+00:00",
-    "last_seen": "2026-11-08T09:42:46.041490+00:00",
+    "last_seen": "2026-11-15T09:44:36.081666+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3036,7 +3056,7 @@
       }
     ],
     "first_seen": "2026-11-01T09:41:10.792578+00:00",
-    "last_seen": "2026-11-09T09:03:47.104626+00:00",
+    "last_seen": "2026-11-15T09:44:40.847405+00:00",
     "sources": [
       "dictionary",
       "verified_correction",
@@ -3083,7 +3103,7 @@
       }
     ],
     "first_seen": "2026-11-02T09:57:31.566171+00:00",
-    "last_seen": "2026-11-12T09:56:52.910019+00:00",
+    "last_seen": "2026-11-15T09:44:21.930354+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3601,7 +3621,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:02.531587+00:00",
-    "last_seen": "2026-11-12T09:57:07.047480+00:00",
+    "last_seen": "2026-11-15T09:44:31.082618+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3661,10 +3681,15 @@
         "english": "come second",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "come in second. Context: She ____ ______ in the last month's race.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-07T09:43:41.269468+00:00",
-    "last_seen": "2026-11-08T09:42:38.755805+00:00",
+    "last_seen": "2026-11-15T09:43:51.586583+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3682,10 +3707,15 @@
         "english": "focused",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "focused. Context: Marcus is very _______ when he's playing board games; he wants to win every time.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-07T09:43:42.701406+00:00",
-    "last_seen": "2026-11-08T09:42:33.657784+00:00",
+    "last_seen": "2026-11-15T09:43:54.531875+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3706,7 +3736,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:45.327858+00:00",
-    "last_seen": "2026-11-08T09:43:12.955047+00:00",
+    "last_seen": "2026-11-15T09:43:53.051350+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3727,7 +3757,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:48.049250+00:00",
-    "last_seen": "2026-11-08T09:43:09.725578+00:00",
+    "last_seen": "2026-11-15T09:43:50.035579+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3787,10 +3817,15 @@
         "english": "plot",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "plot; action; storyline. Context: The ____ in the book is really complicated. I'll have to read it again to understand what's going on.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-08T09:42:55.543992+00:00",
-    "last_seen": "2026-11-09T09:03:20.972323+00:00",
+    "last_seen": "2026-11-15T09:44:24.882904+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4007,10 +4042,15 @@
         "english": "kit",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "kit. Context: He should have brought his medical ___ to the game.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:04:07.935214+00:00",
-    "last_seen": "2026-11-10T09:52:58.715224+00:00",
+    "last_seen": "2026-11-15T09:44:33.183337+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4204,7 +4244,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:15.568715+00:00",
-    "last_seen": "2026-11-11T09:56:02.750993+00:00",
+    "last_seen": "2026-11-15T09:43:48.504975+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4824,6 +4864,27 @@
     "last_seen": "2026-11-14T09:42:47.271809+00:00",
     "sources": [
       "dictionary",
+      "verified_feedback"
+    ]
+  },
+  "koncert na świeżym powietrzu": {
+    "translations": [
+      {
+        "english": "an outdoor concert. Context: I'd rather go to an _______ _______ than to a gallery.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "outdoor concert",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-15T09:44:00.673658+00:00",
+    "last_seen": "2026-11-15T09:44:07.053921+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
       "verified_feedback"
     ]
   }
