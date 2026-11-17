@@ -23,7 +23,7 @@
       }
     ],
     "first_seen": "2026-10-10T20:00:34.818183+00:00",
-    "last_seen": "2026-10-29T16:50:47.770872+00:00",
+    "last_seen": "2026-11-17T09:58:45.285362+00:00",
     "sources": [
       "dictionary",
       "verified_feedback"
@@ -688,7 +688,7 @@
       }
     ],
     "first_seen": "2026-10-23T16:30:09.240328+00:00",
-    "last_seen": "2026-11-14T09:43:36.628247+00:00",
+    "last_seen": "2026-11-17T09:59:46.904391+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -994,10 +994,15 @@
         "english": "horse-riding",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "horse riding. Context: ____________ is my favorite sport.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-24T16:21:11.625023+00:00",
-    "last_seen": "2026-11-05T09:57:09.558157+00:00",
+    "last_seen": "2026-11-17T09:59:35.683726+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1081,7 +1086,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:26.892345+00:00",
-    "last_seen": "2026-11-07T09:43:00.147095+00:00",
+    "last_seen": "2026-11-17T09:59:45.083216+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1749,8 +1754,8 @@
     "translations": [
       {
         "english": "performance",
-        "verified": false,
-        "source": "dictionary"
+        "verified": true,
+        "source": "verified_feedback"
       },
       {
         "english": "show",
@@ -1759,9 +1764,10 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:13.518281+00:00",
-    "last_seen": "2026-10-27T16:40:13.520349+00:00",
+    "last_seen": "2026-11-17T09:59:04.605013+00:00",
     "sources": [
-      "dictionary"
+      "dictionary",
+      "verified_feedback"
     ]
   },
   "został napisany przez": {
@@ -2424,10 +2430,15 @@
         "english": "actor",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "actor. Context: Mike should become an _____ – he's very talented!",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-29T16:50:50.793724+00:00",
-    "last_seen": "2026-11-02T09:57:22.718897+00:00",
+    "last_seen": "2026-11-17T09:59:03.776719+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2448,7 +2459,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:50:52.378104+00:00",
-    "last_seen": "2026-10-29T16:51:18.946390+00:00",
+    "last_seen": "2026-11-17T09:58:54.802042+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2495,7 +2506,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:51:08.812974+00:00",
-    "last_seen": "2026-11-14T09:42:46.554345+00:00",
+    "last_seen": "2026-11-17T09:59:38.022414+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3220,10 +3231,15 @@
         "english": "Boil over, overflow. Context: Make sure the soup doesn't ____ ____.",
         "verified": false,
         "source": "online"
+      },
+      {
+        "english": "Boil over. Context: Make sure the soup doesn't ____ ____.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-03T09:54:03.854662+00:00",
-    "last_seen": "2026-11-12T09:56:24.425252+00:00",
+    "last_seen": "2026-11-17T09:59:39.880542+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3443,7 +3459,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:08.985488+00:00",
-    "last_seen": "2026-11-12T09:57:01.053758+00:00",
+    "last_seen": "2026-11-17T09:59:41.605668+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3660,10 +3676,15 @@
         "english": "(dry) (ski) slope",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "(Artificial) (ski) slope. Context: There are a lot of ___ ___ ______ in the mountains.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-07T09:43:31.414443+00:00",
-    "last_seen": "2026-11-08T09:42:37.223414+00:00",
+    "last_seen": "2026-11-17T09:58:58.337457+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3778,7 +3799,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:54.327531+00:00",
-    "last_seen": "2026-11-08T09:42:52.878012+00:00",
+    "last_seen": "2026-11-17T09:59:00.432670+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3869,10 +3890,15 @@
         "english": "protect",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "to protect; to safeguard. Context: We should _______ the environment.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-08T09:43:20.809246+00:00",
-    "last_seen": "2026-11-09T09:03:32.813021+00:00",
+    "last_seen": "2026-11-17T09:59:23.495985+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3890,10 +3916,15 @@
         "english": "professional athlete",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "professional athlete. Context: His dream was to be a ____________ _______. Now he's a P.E. teacher.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-08T09:43:23.911282+00:00",
-    "last_seen": "2026-11-09T09:03:24.590847+00:00",
+    "last_seen": "2026-11-17T09:59:34.017639+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3914,7 +3945,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:28.364096+00:00",
-    "last_seen": "2026-11-09T09:03:18.031062+00:00",
+    "last_seen": "2026-11-17T09:59:32.230518+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3935,7 +3966,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:31.509185+00:00",
-    "last_seen": "2026-11-09T09:03:50.654199+00:00",
+    "last_seen": "2026-11-17T09:59:21.747868+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3956,7 +3987,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:36.124673+00:00",
-    "last_seen": "2026-11-09T09:03:29.408814+00:00",
+    "last_seen": "2026-11-17T09:59:07.884300+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4024,7 +4055,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:00.727456+00:00",
-    "last_seen": "2026-11-10T09:53:00.207362+00:00",
+    "last_seen": "2026-11-17T09:59:06.186259+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4139,7 +4170,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:04:50.812445+00:00",
-    "last_seen": "2026-11-10T09:53:46.416000+00:00",
+    "last_seen": "2026-11-17T09:58:49.088776+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4157,10 +4188,15 @@
         "english": "enter",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "take part (in a competition). Context: Should I _____ the singing competition?",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:04:56.005073+00:00",
-    "last_seen": "2026-11-10T09:53:35.174816+00:00",
+    "last_seen": "2026-11-17T09:58:50.825353+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4223,7 +4259,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:10.178117+00:00",
-    "last_seen": "2026-11-10T09:53:47.867207+00:00",
+    "last_seen": "2026-11-17T09:58:56.451715+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4262,10 +4298,15 @@
         "english": "practise",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "to practice; to train; to engage in; to apply. Context: John has been __________ the violin since high school.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:05:21.235104+00:00",
-    "last_seen": "2026-11-10T09:53:07.952658+00:00",
+    "last_seen": "2026-11-17T09:59:30.522540+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4286,7 +4327,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:27.461872+00:00",
-    "last_seen": "2026-11-10T09:52:49.500641+00:00",
+    "last_seen": "2026-11-17T09:58:52.486374+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4351,10 +4392,15 @@
         "english": "miss",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "miss, miss the target, fail to hit. Context: How did he ____ the goal?",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T10:00:19.725777+00:00",
-    "last_seen": "2026-11-10T09:52:53.720664+00:00",
+    "last_seen": "2026-11-17T09:59:28.813733+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4466,10 +4512,15 @@
         "english": "champion",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "champion. Context: She's the world's ________ in karate.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T10:00:31.209124+00:00",
-    "last_seen": "2026-11-10T09:53:12.535180+00:00",
+    "last_seen": "2026-11-17T09:59:09.646973+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4516,7 +4567,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:37.191073+00:00",
-    "last_seen": "2026-11-10T09:52:55.320037+00:00",
+    "last_seen": "2026-11-17T09:59:27.111643+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4537,7 +4588,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:40.321815+00:00",
-    "last_seen": "2026-11-10T09:53:03.370655+00:00",
+    "last_seen": "2026-11-17T09:59:02.188931+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4576,10 +4627,15 @@
         "english": "weightlifter",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "Weightlifter. Context: A ____________ must be strong.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T10:00:50.145274+00:00",
-    "last_seen": "2026-11-10T09:52:57.061597+00:00",
+    "last_seen": "2026-11-17T09:58:47.169053+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4881,7 +4937,28 @@
       }
     ],
     "first_seen": "2026-11-15T09:44:00.673658+00:00",
-    "last_seen": "2026-11-15T09:44:07.053921+00:00",
+    "last_seen": "2026-11-17T09:59:25.267523+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "rock": {
+    "translations": [
+      {
+        "english": "rock. Context: I listen to ____ and pop.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "rock",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-17T09:59:42.850034+00:00",
+    "last_seen": "2026-11-17T09:59:48.729640+00:00",
     "sources": [
       "online",
       "verified_correction",
