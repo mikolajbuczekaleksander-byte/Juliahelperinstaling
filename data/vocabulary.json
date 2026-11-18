@@ -61,10 +61,15 @@
         "english": "perform",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "perform. Context: I'd like to _______ on a big stage one day.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-17T21:24:56.985948+00:00",
-    "last_seen": "2026-11-08T09:42:35.561912+00:00",
+    "last_seen": "2026-11-18T10:02:04.169431+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -148,7 +153,7 @@
       }
     ],
     "first_seen": "2026-10-22T16:23:48.128810+00:00",
-    "last_seen": "2026-11-05T09:57:22.667285+00:00",
+    "last_seen": "2026-11-18T10:01:57.131977+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -263,7 +268,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:08.814976+00:00",
-    "last_seen": "2026-11-09T09:03:58.006912+00:00",
+    "last_seen": "2026-11-18T10:02:07.985844+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -289,7 +294,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:11.875268+00:00",
-    "last_seen": "2026-11-14T09:43:09.673126+00:00",
+    "last_seen": "2026-11-18T10:01:52.203768+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -394,7 +399,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:29.548509+00:00",
-    "last_seen": "2026-11-13T09:57:08.203536+00:00",
+    "last_seen": "2026-11-18T10:02:11.781684+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -795,10 +800,15 @@
         "english": "write",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "write. Context: I hate _______ e-mails, but I have to.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-24T16:20:25.363659+00:00",
-    "last_seen": "2026-11-09T09:03:38.430794+00:00",
+    "last_seen": "2026-11-18T10:01:46.503778+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1911,14 +1921,15 @@
       {
         "english": "screen",
         "verified": true,
-        "source": "verified_correction"
+        "source": "verified_feedback"
       }
     ],
     "first_seen": "2026-10-27T16:41:02.277887+00:00",
-    "last_seen": "2026-10-28T16:41:29.256673+00:00",
+    "last_seen": "2026-11-18T10:01:34.139495+00:00",
     "sources": [
       "online",
-      "verified_correction"
+      "verified_correction",
+      "verified_feedback"
     ]
   },
   "nagłówek; tytuł (w gazecie)": {
@@ -2391,7 +2402,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:49:59.296306+00:00",
-    "last_seen": "2026-11-11T09:55:50.379132+00:00",
+    "last_seen": "2026-11-18T10:01:54.023777+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2412,7 +2423,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:50:19.338475+00:00",
-    "last_seen": "2026-11-01T09:41:24.830137+00:00",
+    "last_seen": "2026-11-18T10:02:06.070045+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2587,10 +2598,15 @@
         "english": "net",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "net, hoop (in basketball). Context: We need a ___ to play volleyball.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-29T16:59:05.708134+00:00",
-    "last_seen": "2026-11-04T09:58:25.311430+00:00",
+    "last_seen": "2026-11-18T10:01:48.438227+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2611,7 +2627,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:59:08.409485+00:00",
-    "last_seen": "2026-11-03T09:54:16.058460+00:00",
+    "last_seen": "2026-11-18T10:02:09.935370+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2692,10 +2708,15 @@
         "english": "skis",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "skis. Context: Where are my ____?",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-29T16:59:57.085554+00:00",
-    "last_seen": "2026-11-03T09:54:19.540121+00:00",
+    "last_seen": "2026-11-18T10:01:32.186584+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3208,7 +3229,7 @@
       }
     ],
     "first_seen": "2026-11-03T09:53:34.507077+00:00",
-    "last_seen": "2026-11-12T09:57:12.648267+00:00",
+    "last_seen": "2026-11-18T10:02:01.633975+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3239,7 +3260,7 @@
       }
     ],
     "first_seen": "2026-11-03T09:54:03.854662+00:00",
-    "last_seen": "2026-11-17T09:59:39.880542+00:00",
+    "last_seen": "2026-11-18T10:01:59.732965+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3527,7 +3548,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:19.112161+00:00",
-    "last_seen": "2026-11-07T09:43:16.141235+00:00",
+    "last_seen": "2026-11-18T10:02:15.232990+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3710,7 +3731,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:41.269468+00:00",
-    "last_seen": "2026-11-15T09:43:51.586583+00:00",
+    "last_seen": "2026-11-18T10:01:18.976602+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4013,7 +4034,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:03:45.905988+00:00",
-    "last_seen": "2026-11-14T09:43:42.442298+00:00",
+    "last_seen": "2026-11-18T10:01:28.538881+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4031,10 +4052,15 @@
         "english": "get muddy",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "get muddy. Context: You can often ___ _____ on an obstacle course.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:03:53.473165+00:00",
-    "last_seen": "2026-11-10T09:53:38.666014+00:00",
+    "last_seen": "2026-11-18T10:01:10.617943+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4099,10 +4125,15 @@
         "english": "hit",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "to hit; to tap; to touch. Context: Why did you ___ him?",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:04:13.800504+00:00",
-    "last_seen": "2026-11-10T09:53:40.304685+00:00",
+    "last_seen": "2026-11-18T10:01:12.582308+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4120,10 +4151,15 @@
         "english": "join",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "to join; to connect (with); to attach. Context: Would you like to ____ us? We're going to the movies tonight.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:04:46.883812+00:00",
-    "last_seen": "2026-11-10T09:53:29.401868+00:00",
+    "last_seen": "2026-11-18T10:01:04.826262+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4217,7 +4253,7 @@
       }
     ],
     "first_seen": "2026-11-09T09:05:00.482817+00:00",
-    "last_seen": "2026-11-10T09:53:44.969767+00:00",
+    "last_seen": "2026-11-18T10:01:06.834296+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4374,7 +4410,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:00.626831+00:00",
-    "last_seen": "2026-11-10T09:53:06.417550+00:00",
+    "last_seen": "2026-11-18T10:01:02.675564+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4447,7 +4483,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:22.627057+00:00",
-    "last_seen": "2026-11-10T09:53:01.739761+00:00",
+    "last_seen": "2026-11-18T10:01:08.737986+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4520,7 +4556,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:31.209124+00:00",
-    "last_seen": "2026-11-17T09:59:09.646973+00:00",
+    "last_seen": "2026-11-18T10:01:26.620375+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4567,7 +4603,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:37.191073+00:00",
-    "last_seen": "2026-11-17T09:59:27.111643+00:00",
+    "last_seen": "2026-11-18T10:01:20.986722+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4661,7 +4697,7 @@
       }
     ],
     "first_seen": "2026-11-11T09:55:45.119536+00:00",
-    "last_seen": "2026-11-12T09:56:03.215173+00:00",
+    "last_seen": "2026-11-18T10:01:50.349849+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4958,10 +4994,25 @@
       }
     ],
     "first_seen": "2026-11-17T09:59:42.850034+00:00",
-    "last_seen": "2026-11-17T09:59:48.729640+00:00",
+    "last_seen": "2026-11-18T10:01:16.172259+00:00",
     "sources": [
       "online",
       "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "festiwal": {
+    "translations": [
+      {
+        "english": "festival",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-18T10:02:12.219600+00:00",
+    "last_seen": "2026-11-18T10:02:12.699870+00:00",
+    "sources": [
+      "dictionary",
       "verified_feedback"
     ]
   }
