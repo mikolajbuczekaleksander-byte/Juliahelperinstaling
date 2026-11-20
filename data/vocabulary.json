@@ -69,7 +69,7 @@
       }
     ],
     "first_seen": "2026-10-17T21:24:56.985948+00:00",
-    "last_seen": "2026-11-18T10:02:04.169431+00:00",
+    "last_seen": "2026-11-20T09:58:35.059442+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -897,7 +897,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:20:39.161550+00:00",
-    "last_seen": "2026-11-03T09:54:33.323556+00:00",
+    "last_seen": "2026-11-20T09:57:48.763224+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1030,10 +1030,15 @@
         "english": "rollerblading",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "Roller skating. Context: _____________ isn't any more difficult than roller skating.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-24T16:21:15.376055+00:00",
-    "last_seen": "2026-11-02T09:57:38.603202+00:00",
+    "last_seen": "2026-11-20T09:57:35.296958+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1054,7 +1059,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:21:18.808328+00:00",
-    "last_seen": "2026-11-13T09:57:49.483652+00:00",
+    "last_seen": "2026-11-20T09:57:41.914680+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1211,7 +1216,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:10.693011+00:00",
-    "last_seen": "2026-11-14T09:43:50.008283+00:00",
+    "last_seen": "2026-11-20T09:57:46.661020+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1391,10 +1396,15 @@
         "english": "be talented at (doing)",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "to have talent, abilities (in a certain field). Context: Martin is quite ________ __ playing comic roles.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-25T16:21:33.019474+00:00",
-    "last_seen": "2026-11-04T09:57:45.049148+00:00",
+    "last_seen": "2026-11-20T09:58:09.227420+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1528,7 +1538,7 @@
       }
     ],
     "first_seen": "2026-10-26T16:41:05.449650+00:00",
-    "last_seen": "2026-11-12T09:56:29.125083+00:00",
+    "last_seen": "2026-11-20T09:58:18.398669+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1785,7 +1795,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:40:13.518281+00:00",
-    "last_seen": "2026-11-17T09:59:04.605013+00:00",
+    "last_seen": "2026-11-20T09:58:36.023614+00:00",
     "sources": [
       "dictionary",
       "verified_feedback"
@@ -1828,10 +1838,15 @@
         "english": "crime series",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "crime series. Context: Sherlock Holmes is a popular _____ ______ known all over the world.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-27T16:40:33.167886+00:00",
-    "last_seen": "2026-11-04T09:57:49.650239+00:00",
+    "last_seen": "2026-11-20T09:58:33.121688+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1959,10 +1974,15 @@
         "english": "headline",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "headline; title (in a newspaper). Context: This newspaper ________ can be misleading.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-27T16:41:05.647694+00:00",
-    "last_seen": "2026-11-04T09:58:32.649524+00:00",
+    "last_seen": "2026-11-20T09:57:52.834646+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2022,10 +2042,15 @@
         "english": "subscribe",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "To subscribe. Context: I want to _________ to this channel.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-27T16:41:17.917912+00:00",
-    "last_seen": "2026-11-13T09:56:40.768693+00:00",
+    "last_seen": "2026-11-20T09:57:50.774428+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2161,7 +2186,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:41:25.991139+00:00",
-    "last_seen": "2026-11-19T10:01:07.882969+00:00",
+    "last_seen": "2026-11-20T09:58:21.505149+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2179,10 +2204,15 @@
         "english": "group",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "group. Context: It's my favorite music _____.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-28T16:42:00.098649+00:00",
-    "last_seen": "2026-11-04T09:58:00.816663+00:00",
+    "last_seen": "2026-11-20T09:57:28.867984+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2271,7 +2301,7 @@
       }
     ],
     "first_seen": "2026-10-28T16:42:10.779530+00:00",
-    "last_seen": "2026-11-09T09:05:08.753036+00:00",
+    "last_seen": "2026-11-20T09:57:54.770853+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2313,7 +2343,7 @@
       }
     ],
     "first_seen": "2026-10-29T15:34:04.150099+00:00",
-    "last_seen": "2026-11-15T09:44:05.565372+00:00",
+    "last_seen": "2026-11-20T09:58:31.062108+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2357,10 +2387,15 @@
         "english": "actress",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "actress. Context: Who's your favorite _______?",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-29T16:01:12.827485+00:00",
-    "last_seen": "2026-11-03T09:53:06.678169+00:00",
+    "last_seen": "2026-11-20T09:57:30.859750+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2598,10 +2633,15 @@
         "english": "acting",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "Acting. Context: Edward Norton's ______ is the main asset of this film.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-29T16:58:52.400701+00:00",
-    "last_seen": "2026-11-04T09:58:43.815176+00:00",
+    "last_seen": "2026-11-20T09:58:11.276989+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2779,7 +2819,7 @@
       }
     ],
     "first_seen": "2026-10-29T17:21:38.619330+00:00",
-    "last_seen": "2026-11-07T09:43:34.698240+00:00",
+    "last_seen": "2026-11-20T09:58:16.258568+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3109,7 +3149,7 @@
       }
     ],
     "first_seen": "2026-11-01T09:41:10.792578+00:00",
-    "last_seen": "2026-11-15T09:44:40.847405+00:00",
+    "last_seen": "2026-11-20T09:58:12.225606+00:00",
     "sources": [
       "dictionary",
       "verified_correction",
@@ -3156,7 +3196,7 @@
       }
     ],
     "first_seen": "2026-11-02T09:57:31.566171+00:00",
-    "last_seen": "2026-11-15T09:44:21.930354+00:00",
+    "last_seen": "2026-11-20T09:58:07.296929+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3224,7 +3264,7 @@
       }
     ],
     "first_seen": "2026-11-02T09:58:32.248808+00:00",
-    "last_seen": "2026-11-10T09:53:27.781708+00:00",
+    "last_seen": "2026-11-20T09:58:29.162271+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3281,7 +3321,7 @@
       }
     ],
     "first_seen": "2026-11-03T09:54:03.854662+00:00",
-    "last_seen": "2026-11-18T10:01:59.732965+00:00",
+    "last_seen": "2026-11-20T09:58:25.807733+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3527,7 +3567,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:12.466345+00:00",
-    "last_seen": "2026-11-07T09:43:38.915193+00:00",
+    "last_seen": "2026-11-20T09:58:14.294449+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3929,7 +3969,7 @@
       }
     ],
     "first_seen": "2026-11-08T09:43:19.254156+00:00",
-    "last_seen": "2026-11-12T09:57:05.109447+00:00",
+    "last_seen": "2026-11-20T09:57:37.957442+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4192,10 +4232,15 @@
         "english": "to join; to connect (with); to attach. Context: Would you like to ____ us? We're going to the movies tonight.",
         "verified": false,
         "source": "online"
+      },
+      {
+        "english": "to join; to join (up); to come along. Context: Would you like to ____ us? We're going to the movies tonight.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-09T09:04:46.883812+00:00",
-    "last_seen": "2026-11-18T10:01:04.826262+00:00",
+    "last_seen": "2026-11-20T09:57:44.559817+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4519,7 +4564,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:22.627057+00:00",
-    "last_seen": "2026-11-18T10:01:08.737986+00:00",
+    "last_seen": "2026-11-20T09:58:23.474544+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4545,7 +4590,7 @@
       }
     ],
     "first_seen": "2026-11-09T10:00:25.363514+00:00",
-    "last_seen": "2026-11-13T09:58:34.988396+00:00",
+    "last_seen": "2026-11-20T09:57:39.944427+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4848,7 +4893,7 @@
       }
     ],
     "first_seen": "2026-11-11T09:56:04.012542+00:00",
-    "last_seen": "2026-11-19T10:00:21.596688+00:00",
+    "last_seen": "2026-11-20T09:57:32.998162+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4947,7 +4992,7 @@
       }
     ],
     "first_seen": "2026-11-11T09:56:52.567510+00:00",
-    "last_seen": "2026-11-12T09:56:15.391380+00:00",
+    "last_seen": "2026-11-20T09:57:26.912497+00:00",
     "sources": [
       "online",
       "verified_correction",
