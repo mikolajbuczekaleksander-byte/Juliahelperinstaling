@@ -8,7 +8,7 @@
       }
     ],
     "first_seen": "2026-10-10T20:00:34.817342+00:00",
-    "last_seen": "2026-11-07T09:43:30.407248+00:00",
+    "last_seen": "2026-11-21T09:46:05.266620+00:00",
     "sources": [
       "dictionary",
       "verified_feedback"
@@ -129,10 +129,15 @@
         "english": "novel",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "novel. Context: This is my favorite _____.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-17T22:09:23.260023+00:00",
-    "last_seen": "2026-11-02T09:58:12.363057+00:00",
+    "last_seen": "2026-11-21T09:45:54.360158+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -244,10 +249,15 @@
         "english": "boots",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "boots (e.g., cleats). Context: These football _____ are really uncomfortable.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-22T17:02:09.633168+00:00",
-    "last_seen": "2026-11-07T09:43:01.654215+00:00",
+    "last_seen": "2026-11-21T09:46:00.074139+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -315,7 +325,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:17.043459+00:00",
-    "last_seen": "2026-11-02T09:57:25.766256+00:00",
+    "last_seen": "2026-11-21T09:45:44.129141+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -357,7 +367,7 @@
       }
     ],
     "first_seen": "2026-10-22T17:17:22.650006+00:00",
-    "last_seen": "2026-11-02T09:57:21.017341+00:00",
+    "last_seen": "2026-11-21T09:45:51.901670+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -834,7 +844,7 @@
       }
     ],
     "first_seen": "2026-10-24T16:20:28.197513+00:00",
-    "last_seen": "2026-11-15T09:44:40.152740+00:00",
+    "last_seen": "2026-11-21T09:46:23.139603+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1242,7 +1252,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:13.662823+00:00",
-    "last_seen": "2026-11-19T10:01:32.232351+00:00",
+    "last_seen": "2026-11-21T09:46:26.453919+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1357,7 +1367,7 @@
       }
     ],
     "first_seen": "2026-10-25T16:21:27.489325+00:00",
-    "last_seen": "2026-11-03T09:54:38.620868+00:00",
+    "last_seen": "2026-11-21T09:46:40.348044+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -1422,10 +1432,15 @@
         "english": "attraction",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "attraction. Context: Visiting Disneyland was a great __________ for the kids.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-26T16:40:29.205183+00:00",
-    "last_seen": "2026-10-30T22:05:42.751404+00:00",
+    "last_seen": "2026-11-21T09:46:33.745049+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2071,7 +2086,7 @@
       }
     ],
     "first_seen": "2026-10-27T16:41:21.841327+00:00",
-    "last_seen": "2026-11-02T09:58:07.683908+00:00",
+    "last_seen": "2026-11-21T09:46:04.460017+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2089,10 +2104,15 @@
         "english": "channel",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "Channel; TV channel. Context: Change the _______, my favorite show starts in five minutes.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-10-27T16:41:25.506953+00:00",
-    "last_seen": "2026-11-02T09:57:50.881724+00:00",
+    "last_seen": "2026-11-21T09:45:40.597759+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2458,7 +2478,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:49:59.296306+00:00",
-    "last_seen": "2026-11-18T10:01:54.023777+00:00",
+    "last_seen": "2026-11-21T09:46:07.532380+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2594,7 +2614,7 @@
       }
     ],
     "first_seen": "2026-10-29T16:58:48.529268+00:00",
-    "last_seen": "2026-11-19T10:00:58.733521+00:00",
+    "last_seen": "2026-11-21T09:46:44.890416+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -2819,7 +2839,7 @@
       }
     ],
     "first_seen": "2026-10-29T17:21:38.619330+00:00",
-    "last_seen": "2026-11-20T09:58:16.258568+00:00",
+    "last_seen": "2026-11-21T09:46:32.087156+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3243,7 +3263,7 @@
       }
     ],
     "first_seen": "2026-11-02T09:58:23.022305+00:00",
-    "last_seen": "2026-11-12T09:56:51.309771+00:00",
+    "last_seen": "2026-11-21T09:46:24.806497+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3290,7 +3310,7 @@
       }
     ],
     "first_seen": "2026-11-03T09:53:34.507077+00:00",
-    "last_seen": "2026-11-19T10:01:00.798835+00:00",
+    "last_seen": "2026-11-21T09:46:29.871975+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3454,10 +3474,15 @@
         "english": "take turns",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "to take turns doing something; to alternate. Context: Both male and female eagles ____ _____ to feed their young.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-05T09:57:56.351110+00:00",
-    "last_seen": "2026-11-07T09:42:57.036384+00:00",
+    "last_seen": "2026-11-21T09:45:47.605034+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3478,7 +3503,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:57:58.220381+00:00",
-    "last_seen": "2026-11-07T09:43:05.921417+00:00",
+    "last_seen": "2026-11-21T09:45:56.042714+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3522,10 +3547,15 @@
         "english": "sports camp",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "sports camp. Context: I'm going on ______ ____ to practise sports for the whole week.",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-05T09:58:05.442261+00:00",
-    "last_seen": "2026-11-07T09:43:10.906354+00:00",
+    "last_seen": "2026-11-21T09:45:49.324678+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3567,7 +3597,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:12.466345+00:00",
-    "last_seen": "2026-11-20T09:58:14.294449+00:00",
+    "last_seen": "2026-11-21T09:46:28.149168+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3614,7 +3644,7 @@
       }
     ],
     "first_seen": "2026-11-05T09:58:19.112161+00:00",
-    "last_seen": "2026-11-18T10:02:15.232990+00:00",
+    "last_seen": "2026-11-21T09:46:02.819438+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3684,10 +3714,15 @@
         "english": "crash into somebody",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "bump into someone. Context: Sorry, I didn't mean to _____ ____ you!",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-05T09:58:29.232750+00:00",
-    "last_seen": "2026-11-07T09:43:14.174741+00:00",
+    "last_seen": "2026-11-21T09:46:21.469868+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3705,10 +3740,15 @@
         "english": "incredible",
         "verified": true,
         "source": "verified_feedback"
+      },
+      {
+        "english": "extraordinary. Context: That goal was just __________!",
+        "verified": false,
+        "source": "online"
       }
     ],
     "first_seen": "2026-11-05T09:58:32.920462+00:00",
-    "last_seen": "2026-11-07T09:43:08.156414+00:00",
+    "last_seen": "2026-11-21T09:45:42.357354+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3854,7 +3894,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:45.327858+00:00",
-    "last_seen": "2026-11-15T09:43:53.051350+00:00",
+    "last_seen": "2026-11-21T09:46:38.635409+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -3917,7 +3957,7 @@
       }
     ],
     "first_seen": "2026-11-07T09:43:58.734538+00:00",
-    "last_seen": "2026-11-19T10:01:26.160979+00:00",
+    "last_seen": "2026-11-21T09:46:43.296929+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -4872,7 +4912,7 @@
       }
     ],
     "first_seen": "2026-11-11T09:55:58.599483+00:00",
-    "last_seen": "2026-11-14T09:43:47.121777+00:00",
+    "last_seen": "2026-11-21T09:46:35.373951+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -5018,7 +5058,7 @@
       }
     ],
     "first_seen": "2026-11-12T09:56:46.678560+00:00",
-    "last_seen": "2026-11-13T09:58:39.503517+00:00",
+    "last_seen": "2026-11-21T09:45:45.891030+00:00",
     "sources": [
       "online",
       "verified_correction",
@@ -5094,6 +5134,48 @@
     "last_seen": "2026-11-18T10:02:12.699870+00:00",
     "sources": [
       "dictionary",
+      "verified_feedback"
+    ]
+  },
+  "parada; pochód; pokaz": {
+    "translations": [
+      {
+        "english": "parade; procession; show. Context: The inhabitants were watching a colorful ______.",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "parade",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-21T09:46:19.232388+00:00",
+    "last_seen": "2026-11-21T09:46:46.551674+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
+      "verified_feedback"
+    ]
+  },
+  "pokaz magii": {
+    "translations": [
+      {
+        "english": "magic show. Context: The _____ ____ last night was spectacular!",
+        "verified": false,
+        "source": "online"
+      },
+      {
+        "english": "magic show",
+        "verified": true,
+        "source": "verified_feedback"
+      }
+    ],
+    "first_seen": "2026-11-21T09:46:36.536816+00:00",
+    "last_seen": "2026-11-21T09:46:48.197370+00:00",
+    "sources": [
+      "online",
+      "verified_correction",
       "verified_feedback"
     ]
   }
